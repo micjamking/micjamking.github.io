@@ -25,6 +25,10 @@ module.exports = function (grunt) {
       // Add vendor prefixes
       postcss: {
         options: {
+          map: {
+              inline: false,
+              annotation: './'
+          },
           processors: [
             require('autoprefixer-core')({browsers: ['last 2 versions']})
           ]
