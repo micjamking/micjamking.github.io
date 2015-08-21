@@ -7,19 +7,19 @@ module.exports = function (grunt) {
     grunt.initConfig({
       // CSS | Process SCSS files
       sass: {
-          options: {
-              sourceMap: false,
-              outputStyle: 'expanded'
-          },
-          dist: {
-            files: [{
-              expand: true,
-              cwd: 'scss/',
-              src: ['{,*/}*.scss'],
-              dest: './',
-              ext: '.css'
-            }]
-          }
+        options: {
+          sourceMap: true,
+          outputStyle: 'expanded'
+        },
+        dist: {
+          files: [{
+            expand: true,
+            cwd: 'scss/',
+            src: ['{,*/}*.scss'],
+            dest: './',
+            ext: '.css'
+          }]
+        }
       },
 
       // Add vendor prefixes
@@ -41,6 +41,9 @@ module.exports = function (grunt) {
 
       // Minify CSS
       cssmin: {
+        options: {
+          sourceMap: true,
+        },
         target: {
           files: {
             expand: true,
@@ -62,7 +65,26 @@ module.exports = function (grunt) {
       // Check js files for errors
       jshint: {
           options: {
-            jshintrc: '.jshintrc'
+            node: true,
+            browser: true,
+            esnext: true,
+            bitwise: true,
+            camelcase: false,
+            curly: true,
+            eqeqeq: true,
+            immed: true,
+            indent: 2,
+            latedef: true,
+            newcap: true,
+            noarg: true,
+            quotmark: 'single',
+            regexp: true,
+            undef: true,
+            unused: true,
+            strict: true,
+            trailing: true,
+            smarttabs: true,
+            globals: {}
           },
           grunt: [
             'Gruntfile.js',

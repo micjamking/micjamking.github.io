@@ -8,6 +8,7 @@ Icon
 ._*
 .Spotlight-V100
 .Trashes
+error.log
 
 # Yeoman
 node_modules
