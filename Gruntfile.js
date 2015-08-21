@@ -1,0 +1,136 @@
+module.exports = function (grunt) {
+    'use strict';
+
+    require('load-grunt-tasks')(grunt);
+    require('time-grunt')(grunt);
+
+    grunt.initConfig({
+      // CSS | Process SCSS files
+      sass: {
+          options: {
+              sourceMap: false,
+              outputStyle: 'expanded'
+          },
+          dist: {
+            files: [{
+              expand: true,
+              cwd: 'scss/',
+              src: ['{,*/}*.scss'],
+              dest: './',
+              ext: '.css'
+            }]
+          }
+      },
+
+      // Add vendor prefixes
+      postcss: {
+        options: {
+          processors: [
+            require('autoprefixer-core')({browsers: ['last 2 versions']})
+          ]
+        },
+        dist: {
+          files: [{
+              expand: true,
+              cwd: './',
+              src: '{,*/}*.css',
+              dest: './'
+          }]
+        }
+      },
+
+      // Minify CSS
+      cssmin: {
+        target: {
+          files: {
+            expand: true,
+            './style.css': './style.css'
+          }
+        }
+      },
+
+      // JS | Concat js files
+      concat: {
+        dist: {
+          src: [
+                './js/app.js'
+               ],
+          dest: './script.js',
+        },
+      },
+
+      // Check js files for errors
+      jshint: {
+          options: {
+            jshintrc: '.jshintrc'
+          },
+          grunt: [
+            'Gruntfile.js',
+          ],
+          scripts: [
+            './js/app.js'
+          ]
+      },
+
+      // Minify js files
+      uglify: {
+        options: {
+          preserveComments: false,
+          mangle: true
+        },
+        dist: {
+          files: {
+            './script.js': ['./script.js']
+          }
+        }
+      },
+
+      // Watch files for changes
+      watch: {
+        options: {
+          livereload: 35729
+        },
+        sass: {
+          files: './scss/**/*.scss',
+          tasks: ['sass', 'postcss']
+        },
+        php: {
+          files: ['./**/*.php']
+        },
+        gruntfile: {
+          files: 'Gruntfile.js',
+          tasks: ['jshint:grunt']
+        },
+        scripts: {
+          files: './js/app.js',
+          tasks: ['jshint:scripts', 'concat']
+        }
+      }
+
+    });
+
+    // Development
+    grunt.registerTask('serve', [
+        'jshint',
+        'sass',
+        'postcss',
+        'concat',
+        'watch'
+    ]);
+
+    // Build
+    grunt.registerTask('build', [
+        'jshint',
+        'sass',
+        'postcss',
+        'cssmin',
+        'concat',
+        'uglify'
+    ]);
+
+    // Default
+    grunt.registerTask('default', [
+        'build',
+    ]);
+
+};

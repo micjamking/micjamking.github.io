@@ -1,5 +1,5 @@
 {
-  "name": "http://mikeking.io",
+  "name": "mikeking.io",
   "version": "1.0.0",
   "description": "Personal site",
   "private": true,
@@ -8,5 +8,19 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/micjamking/micjamking.github.io.git"
+  },
+  "devDependencies": {
+    "autoprefixer-core": "^5.2.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-cssmin": "^0.13.0",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-jsdoc": "^0.6.7",
+    "grunt-postcss": "^0.5.5",
+    "grunt-sass": "^1.0.0",
+    "load-grunt-tasks": "^3.2.0",
+    "time-grunt": "^1.2.1"
   }
 }
