@@ -116,20 +116,20 @@ module.exports = function (grunt) {
         options: {
           livereload: 35729
         },
+        html: {
+          files: ['./**/*.html']
+        },
         sass: {
           files: './scss/**/*.scss',
           tasks: ['sass', 'postcss']
         },
-        php: {
-          files: ['./**/*.php']
+        scripts: {
+          files: './js/app.js',
+          tasks: ['jshint:scripts', 'concat']
         },
         gruntfile: {
           files: 'Gruntfile.js',
           tasks: ['jshint:grunt']
-        },
-        scripts: {
-          files: './js/app.js',
-          tasks: ['jshint:scripts', 'concat']
         }
       }
 

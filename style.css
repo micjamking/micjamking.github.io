@@ -4,9 +4,21 @@
 /**
  * Base
  */
-* {
+*,
+*:before,
+*:after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+/**
+ * Typography
+ *  
+ */
+body {
+  font: normal normal 300 16px/1.5 "Neuton", serif;
+  font-size: 100%;
 }
 
 h1,
@@ -15,14 +27,35 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: normal;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
 }
 
-body {
-  font-size: 100%;
+p,
+ul {
+  font-size: 1.5em;
 }
 
 /**
+ * Base
+ */
+/**
+ * Media Queries
+ */
+/**
  * Modules
  */
+/**
+ * Layout
+ */
+.container {
+  margin: 0 auto;
+  width: 90%;
+}
+
+@media only screen and (min-width: 40em) {
+  .container {
+    width: 80%;
+  }
+}
 /*# sourceMappingURL=style.css.map */
