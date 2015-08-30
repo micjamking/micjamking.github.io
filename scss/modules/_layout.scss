@@ -1,0 +1,12 @@
+/**
+ * Layout
+ */
+
+.container {
+	margin: 0 auto;
+	width: 90%;
+
+	@media #{$medium} {
+	  width: 80%;
+	}
+}

@@ -1,0 +1,33 @@
+/**
+ * Base
+ */
+
+$base-font: 16px !default;
+
+$screen: 'only screen';
+$small-breakpoint:  #{640px/$base-font}em;
+$medium-breakpoint: #{1024px/$base-font}em;
+$large-breakpoint:  #{1440px/$base-font}em;
+$xlarge-breakpoint: #{1920px/$base-font}em;
+
+
+/**
+ * Media Queries
+ */
+$small:  '#{$screen}';
+$medium: '#{$screen} and (min-width: #{$small-breakpoint})';
+$large:  '#{$screen} and (min-width: #{$medium-breakpoint})';
+
+$small-range:  '#{$screen} and (min-width: 0) and (max-width: #{$small-breakpoint})';
+$medium-range: '#{$screen} and (min-width: #{$small-breakpoint}) and (max-width: #{$medium-breakpoint})';
+$large-range:  '#{$screen} and (min-width: #{$medium-breakpoint}) and (max-width: #{$large-breakpoint})';
+$xlarge: '#{$screen} and (min-width: #{$large-breakpoint})';
+
+$retina: (
+  '#{$screen} and (-webkit-min-device-pixel-ratio: 1.25)',
+  '#{$screen} and (min--moz-device-pixel-ratio: 1.25)',
+  '#{$screen} and (-o-min-device-pixel-ratio: 1.25/1)',
+  '#{$screen} and (min-device-pixel-ratio: 1.25)',
+  '#{$screen} and (min-resolution: 200dpi)',
+  '#{$screen} and (min-resolution: 1.25dppx)'
+);
