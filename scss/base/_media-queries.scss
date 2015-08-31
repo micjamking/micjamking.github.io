@@ -1,0 +1,41 @@
+/**
+ * Media Queries
+ */
+$screen: 'only screen';
+
+/**
+ * @section Breakpoints
+ *
+ * "Relative units in media queries are based on 
+ * the initial value, which means that units are 
+ * never based on results of declarations"
+ * http://www.w3.org/TR/css3-mediaqueries/#units
+ */
+$small-breakpoint:  em-calc(640px, 16px);
+$medium-breakpoint: em-calc(1024px, 16px);
+$large-breakpoint:  em-calc(1440px, 16px);
+$xlarge-breakpoint: em-calc(1920px, 16px);
+
+/**
+ * @section Mobile first queries 
+ */
+$small-screen:  '#{$screen}';
+$medium-screen: '#{$screen} and (min-width: #{$small-breakpoint})';
+$large-screen:  '#{$screen} and (min-width: #{$medium-breakpoint})';
+$xlarge-screen: '#{$screen} and (min-width: #{$large-breakpoint})';
+
+//$small-range:  '#{$screen} and (min-width: 0) and (max-width: #{$small-breakpoint})';
+//$medium-range: '#{$screen} and (min-width: #{$small-breakpoint}) and (max-width: #{$medium-breakpoint})';
+//$large-range:  '#{$screen} and (min-width: #{$medium-breakpoint}) and (max-width: #{$large-breakpoint})';
+
+/**
+ * @section Retina query 
+ */
+$retina: (
+  '#{$screen} and (-webkit-min-device-pixel-ratio: 1.25)',
+  '#{$screen} and (min--moz-device-pixel-ratio: 1.25)',
+  '#{$screen} and (-o-min-device-pixel-ratio: 1.25/1)',
+  '#{$screen} and (min-device-pixel-ratio: 1.25)',
+  '#{$screen} and (min-resolution: 200dpi)',
+  '#{$screen} and (min-resolution: 1.25dppx)'
+);

@@ -1,5 +1,9 @@
 /**
- * Vendor
+ * Main stylesheet
+ * 
+ * @project mikeking.io
+ * @author Mike King
+ * @copyright 2015
  */
 
 
@@ -7,11 +11,14 @@
  * Base
  */
 @import "base/reset";
-@import "base/typography";
 @import "base/variables";
 @import "base/utilities";
+@import "base/media-queries";
+@import "base/typography";
+@import "base/animations";
 
 /**
  * Modules
  */
+@import "modules/greeting";
 @import "modules/layout";

@@ -1,8 +1,15 @@
 /**
- * Vendor
+ * Main stylesheet
+ * 
+ * @project mikeking.io
+ * @author Mike King
+ * @copyright 2015
  */
 /**
  * Base
+ */
+/**
+ * Reset 
  */
 *,
 *:before,
@@ -12,50 +19,423 @@
   box-sizing: border-box;
 }
 
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent;
+    color: #000;
+    box-shadow: none;
+    text-shadow: none;
+  }
+}
+
 /**
- * Typography
- *  
+ * Variables
  */
-body {
-  font: normal normal 300 16px/1.5 "Neuton", serif;
-  font-size: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-}
-
-p,
-ul {
-  font-size: 1.5em;
-}
-
 /**
- * Base
+ * @section Typography
+ */
+/**
+ * @section Colors
+ */
+/**
+ * @section Greeting settings
+ */
+/**
+ * Utilities
+ */
+/**
+ * @section Functions
+ */
+/**
+ * rem/em Calculator
+ *
+ * target / context = result
+ * @param {$target}  Target size in pixels (ie. 32px)
+ * @param {$context} Font size providing context for proportion, defaults to $base-font)
+ * @param {$unit} unit for rem/em output, defaults to 'em'
+ */
+/**
+ * Exponent Calculator
+ *
+ * https://gist.github.com/scottkellum/1160816
+ * @param {$base} base number
+ * @param {$exponent} exponent/power number
+ */
+/**
+ * Type Scale Calculator
+ * 
+ * Create typographic scales
+ * @param {$i} increment of scale; 0 is base
+ * @param {$scale} scale ratio; defaults to 1.25
  */
 /**
  * Media Queries
  */
 /**
- * Modules
+ * @section Breakpoints
+ *
+ * "Relative units in media queries are based on 
+ * the initial value, which means that units are 
+ * never based on results of declarations"
+ * http://www.w3.org/TR/css3-mediaqueries/#units
  */
 /**
- * Layout
+ * @section Mobile first queries 
  */
-.container {
-  margin: 0 auto;
-  width: 90%;
+/**
+ * @section Retina query 
+ */
+/**
+ * Typography
+ */
+html {
+  font-size: 20px;
+}
+
+body {
+  font: normal normal 300 1em/1.5 "Neuton", serif;
+  color: #4e4e56;
+  text-rendering: optimizeLegibility;
 }
 
 @media only screen and (min-width: 40em) {
-  .container {
-    width: 80%;
+  body {
+    font-size: 1.25em;
   }
+}
+
+/**
+ * @section Headings
+ */
+h1,
+h2 {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 1.953125em;
+}
+
+h2 {
+  font-size: 1.5625em;
+}
+
+/**
+ * @section Inline
+ */
+p {
+  margin: 0 0 1em;
+  text-align: justify;
+}
+
+a {
+  text-decoration: none;
+  word-wrap: break-word;
+  color: #93c893;
+}
+
+a:link {
+  color: #93c893;
+}
+
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  outline: none;
+  color: #689c81;
+}
+
+a:hover {
+  color: #689c81;
+}
+
+/**
+ * Animations
+ */
+.main-header {
+  -webkit-animation: fadeIn 0.5s forwards 0.5s ease-in, fadeOut 0.5s forwards 6s ease-out;
+          animation: fadeIn 0.5s forwards 0.5s ease-in, fadeOut 0.5s forwards 6s ease-out;
+}
+
+.text {
+  -webkit-animation: stroke 6s infinite linear;
+          animation: stroke 6s infinite linear;
+}
+
+.gravatar {
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 6.5s;
+          animation-delay: 6.5s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-name: bounceInUp;
+          animation-name: bounceInUp;
+  -webkit-animation-delay: 6.5s;
+          animation-delay: 6.5s;
+}
+
+.name {
+  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
+          animation: fadeIn 0.5s forwards 6.75s ease-in;
+}
+
+.occupation {
+  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
+          animation: fadeIn 0.5s forwards 6.75s ease-in;
+}
+
+.biography {
+  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
+          animation: fadeIn 0.5s forwards 6.75s ease-in;
+}
+
+.twitter {
+  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
+          animation: fadeIn 0.5s forwards 6.75s ease-in;
+}
+
+.medium {
+  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
+          animation: fadeIn 0.5s forwards 6.75s ease-in;
+}
+
+.codepen {
+  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
+          animation: fadeIn 0.5s forwards 6.75s ease-in;
+}
+
+.github {
+  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
+          animation: fadeIn 0.5s forwards 6.75s ease-in;
+}
+
+.email {
+  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
+          animation: fadeIn 0.5s forwards 6.75s ease-in;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes stroke {
+  100% {
+    stroke-dashoffset: -250;
+  }
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: -250;
+  }
+}
+
+@-webkit-keyframes bounceInUp {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 300px, 0);
+            transform: translate3d(0, 300px, 0);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+            transform: translate3d(0, -20px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+            transform: translate3d(0, 5px, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounceInUp {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 300px, 0);
+            transform: translate3d(0, 300px, 0);
+  }
+  70% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+            transform: translate3d(0, -20px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+            transform: translate3d(0, 5px, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+/**
+ * Modules
+ */
+/**
+ * Greeting
+ */
+.main-header {
+  opacity: 0;
+  width: 20em;
+  height: 6em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -3em 0 0 -10em;
+}
+
+.main-header .greeting {
+  font-size: 3.8146972656em;
+  line-height: 1;
+  text-align: center;
+  margin: 0;
+}
+
+@media only screen and (min-width: 40em) {
+  .main-header .greeting {
+    font-size: 5.9604644775em;
+  }
+}
+
+.main-header .text {
+  fill: none;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-dasharray: 40 210;
+  stroke-dashoffset: 0;
+}
+
+.main-header .text:nth-child(5n + 1) {
+  stroke: #deb56e;
+  -webkit-animation-delay: -1.2s;
+          animation-delay: -1.2s;
+}
+
+.main-header .text:nth-child(5n + 2) {
+  stroke: #93c893;
+  -webkit-animation-delay: -2.4s;
+          animation-delay: -2.4s;
+}
+
+.main-header .text:nth-child(5n + 3) {
+  stroke: #e2d59d;
+  -webkit-animation-delay: -3.6s;
+          animation-delay: -3.6s;
+}
+
+.main-header .text:nth-child(5n + 4) {
+  stroke: #689c81;
+  -webkit-animation-delay: -4.8s;
+          animation-delay: -4.8s;
+}
+
+.main-header .text:nth-child(5n + 5) {
+  stroke: #4e4e56;
+  -webkit-animation-delay: -6s;
+          animation-delay: -6s;
+}
+
+/**
+ * Layout
+ */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.container {
+  width: 90%;
+  height: 100%;
+  max-width: 28em;
+  margin: 0 auto;
+}
+
+.main-content {
+  text-align: center;
+  margin: 3em 0 0;
+}
+
+.social li {
+  list-style: none;
+}
+
+.gravatar {
+  border-radius: 12em;
+  width: 6em;
+  height: 6em;
+}
+
+@media only screen and (min-width: 40em) {
+  .gravatar {
+    width: 7.2em;
+    height: 7.2em;
+  }
+}
+
+.gravatar,
+.name,
+.occupation,
+.biography,
+.twitter,
+.medium,
+.codepen,
+.github,
+.email {
+  opacity: 0;
 }
 /*# sourceMappingURL=style.css.map */

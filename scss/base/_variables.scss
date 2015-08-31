@@ -1,33 +1,32 @@
 /**
- * Base
+ * Variables
  */
-
-$base-font: 16px !default;
-
-$screen: 'only screen';
-$small-breakpoint:  #{640px/$base-font}em;
-$medium-breakpoint: #{1024px/$base-font}em;
-$large-breakpoint:  #{1440px/$base-font}em;
-$xlarge-breakpoint: #{1920px/$base-font}em;
-
 
 /**
- * Media Queries
+ * @section Typography
  */
-$small:  '#{$screen}';
-$medium: '#{$screen} and (min-width: #{$small-breakpoint})';
-$large:  '#{$screen} and (min-width: #{$medium-breakpoint})';
+$base-font: 20px;
+$line-height: 1.5;
+$serif: 'Neuton', serif;
+$sans-serif: 'Lato', sans-serif;
 
-$small-range:  '#{$screen} and (min-width: 0) and (max-width: #{$small-breakpoint})';
-$medium-range: '#{$screen} and (min-width: #{$small-breakpoint}) and (max-width: #{$medium-breakpoint})';
-$large-range:  '#{$screen} and (min-width: #{$medium-breakpoint}) and (max-width: #{$large-breakpoint})';
-$xlarge: '#{$screen} and (min-width: #{$large-breakpoint})';
+/**
+ * @section Colors
+ */
+$harvest-gold: hsl(38, 63%, 65%);
+$zombie: hsl(49, 54%, 75%);
+$dark-sea-green: hsl(120, 32%, 68%);
+$patina: hsl(149, 21%, 51%);
+$abbey: hsl(247, 5%, 32%);
 
-$retina: (
-  '#{$screen} and (-webkit-min-device-pixel-ratio: 1.25)',
-  '#{$screen} and (min--moz-device-pixel-ratio: 1.25)',
-  '#{$screen} and (-o-min-device-pixel-ratio: 1.25/1)',
-  '#{$screen} and (min-device-pixel-ratio: 1.25)',
-  '#{$screen} and (min-resolution: 200dpi)',
-  '#{$screen} and (min-resolution: 1.25dppx)'
-);
+$colors: $harvest-gold, $dark-sea-green, $zombie, $patina, $abbey;
+
+/**
+ * @section Greeting settings
+ */
+$max: length($colors);
+$dash: 40;
+$dash-gap: 10;
+$dash-space: $dash * ($max - 1) + $dash-gap * $max;
+$time: 6s;
+$time-step: $time/$max;

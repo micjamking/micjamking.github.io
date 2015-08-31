@@ -1,0 +1,40 @@
+/**
+ * Greeting
+ */
+
+.main-header {
+  opacity: 0;
+  width: em-calc(400px);
+  height: em-calc(120px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: em-calc(-60px) 0 0 em-calc(-200px);
+
+  .greeting {
+    font-size: type-scale(6);
+    line-height: 1;
+    text-align: center;
+    margin: 0;
+
+    @media #{$medium-screen}{
+      font-size: type-scale(8);
+    }
+  }
+
+  .text {
+    fill: none;
+    stroke-width: 2;
+    stroke-linejoin: round;
+    stroke-dasharray: $dash $dash-space;
+    stroke-dashoffset: 0;
+
+    @for $item from 1 through $max {
+      &:nth-child(#{$max}n + #{$item}) {
+        $color: nth($colors, $item);
+        stroke: $color;
+        animation-delay: -($time-step * $item);
+      }
+    }
+  }
+}
