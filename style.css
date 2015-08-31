@@ -157,8 +157,10 @@ a:hover {
  * Animations
  */
 .main-header {
-  -webkit-animation: fadeIn 0.5s forwards 0.5s ease-in, fadeOut 0.5s forwards 6s ease-out;
-          animation: fadeIn 0.5s forwards 0.5s ease-in, fadeOut 0.5s forwards 6s ease-out;
+  /*   animation: fadeIn 0.5s forwards 0.5s ease-in, 
+             fadeOut 0.5s forwards 6s ease-out; */
+  -webkit-animation: fadeIn 0.5s forwards 0.5s ease-in;
+          animation: fadeIn 0.5s forwards 0.5s ease-in;
 }
 
 .text {
@@ -166,61 +168,42 @@ a:hover {
           animation: stroke 6s infinite linear;
 }
 
-.gravatar {
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 6.5s;
-          animation-delay: 6.5s;
-  -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-  -webkit-animation-name: bounceInUp;
-          animation-name: bounceInUp;
-  -webkit-animation-delay: 6.5s;
-          animation-delay: 6.5s;
+/* .gravatar {
+  @include bounceInUp();
+  animation-delay: 6.5s;
 }
 
 .name {
-  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
-          animation: fadeIn 0.5s forwards 6.75s ease-in;
+  animation: fadeIn 0.5s forwards 6.75s ease-in;
 }
 
 .occupation {
-  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
-          animation: fadeIn 0.5s forwards 6.75s ease-in;
+  animation: fadeIn 0.5s forwards 6.75s ease-in;
 }
 
 .biography {
-  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
-          animation: fadeIn 0.5s forwards 6.75s ease-in;
+  animation: fadeIn 0.5s forwards 6.75s ease-in;
 }
 
 .twitter {
-  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
-          animation: fadeIn 0.5s forwards 6.75s ease-in;
+  animation: fadeIn 0.5s forwards 6.75s ease-in;
 }
 
 .medium {
-  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
-          animation: fadeIn 0.5s forwards 6.75s ease-in;
+  animation: fadeIn 0.5s forwards 6.75s ease-in;
 }
 
 .codepen {
-  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
-          animation: fadeIn 0.5s forwards 6.75s ease-in;
+  animation: fadeIn 0.5s forwards 6.75s ease-in;
 }
 
 .github {
-  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
-          animation: fadeIn 0.5s forwards 6.75s ease-in;
+  animation: fadeIn 0.5s forwards 6.75s ease-in;
 }
 
 .email {
-  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
-          animation: fadeIn 0.5s forwards 6.75s ease-in;
-}
-
+  animation: fadeIn 0.5s forwards 6.75s ease-in;
+} */
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
@@ -229,7 +212,6 @@ a:hover {
     opacity: 1;
   }
 }
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -407,7 +389,7 @@ body {
 
 .main-content {
   text-align: center;
-  margin: 3em 0 0;
+  padding: 3em 0 0;
 }
 
 .social li {
