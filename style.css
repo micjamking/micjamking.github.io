@@ -39,6 +39,8 @@
 /**
  * @section Colors
  */
+/* $colors: hsl(171, 63%, 56%), hsl(171, 63%, 56%), hsl(54, 99%, 71%), hsl(13, 95%, 71%), hsl(340, 95%, 64%);  */
+/* $colors: hsl(64, 62%, 64%), hsl(87, 48%, 64%),hsl(126, 35%, 62%), hsl(355, 26%, 53%), hsl(342, 84%, 45%); */
 /**
  * @section Greeting settings
  */
@@ -157,10 +159,9 @@ a:hover {
  * Animations
  */
 .main-header {
-  /*   animation: fadeIn 0.5s forwards 0.5s ease-in, 
-             fadeOut 0.5s forwards 6s ease-out; */
-  -webkit-animation: fadeIn 0.5s forwards 0.5s ease-in;
-          animation: fadeIn 0.5s forwards 0.5s ease-in;
+  -webkit-animation: fadeIn 0.5s forwards 0.5s ease-in, fadeOut 0.5s forwards 6s ease-out;
+          animation: fadeIn 0.5s forwards 0.5s ease-in, fadeOut 0.5s forwards 6s ease-out;
+  /*   animation: fadeIn 0.5s forwards 0.5s ease-in; */
 }
 
 .text {
@@ -168,42 +169,61 @@ a:hover {
           animation: stroke 6s infinite linear;
 }
 
-/* .gravatar {
-  @include bounceInUp();
-  animation-delay: 6.5s;
+.gravatar {
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 6.5s;
+          animation-delay: 6.5s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-name: bounceInUp;
+          animation-name: bounceInUp;
+  -webkit-animation-delay: 6.5s;
+          animation-delay: 6.5s;
 }
 
 .name {
-  animation: fadeIn 0.5s forwards 6.75s ease-in;
+  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
+          animation: fadeIn 0.5s forwards 6.75s ease-in;
 }
 
 .occupation {
-  animation: fadeIn 0.5s forwards 6.75s ease-in;
+  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
+          animation: fadeIn 0.5s forwards 6.75s ease-in;
 }
 
 .biography {
-  animation: fadeIn 0.5s forwards 6.75s ease-in;
+  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
+          animation: fadeIn 0.5s forwards 6.75s ease-in;
 }
 
 .twitter {
-  animation: fadeIn 0.5s forwards 6.75s ease-in;
+  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
+          animation: fadeIn 0.5s forwards 6.75s ease-in;
 }
 
 .medium {
-  animation: fadeIn 0.5s forwards 6.75s ease-in;
+  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
+          animation: fadeIn 0.5s forwards 6.75s ease-in;
 }
 
 .codepen {
-  animation: fadeIn 0.5s forwards 6.75s ease-in;
+  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
+          animation: fadeIn 0.5s forwards 6.75s ease-in;
 }
 
 .github {
-  animation: fadeIn 0.5s forwards 6.75s ease-in;
+  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
+          animation: fadeIn 0.5s forwards 6.75s ease-in;
 }
 
 .email {
-  animation: fadeIn 0.5s forwards 6.75s ease-in;
-} */
+  -webkit-animation: fadeIn 0.5s forwards 6.75s ease-in;
+          animation: fadeIn 0.5s forwards 6.75s ease-in;
+}
+
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
@@ -212,6 +232,7 @@ a:hover {
     opacity: 1;
   }
 }
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -341,7 +362,7 @@ a:hover {
 }
 
 .main-header .text:nth-child(5n + 1) {
-  stroke: #deb56e;
+  stroke: #fb8d6f;
   -webkit-animation-delay: -1.2s;
           animation-delay: -1.2s;
 }
@@ -365,7 +386,7 @@ a:hover {
 }
 
 .main-header .text:nth-child(5n + 5) {
-  stroke: #4e4e56;
+  stroke: #d3124c;
   -webkit-animation-delay: -6s;
           animation-delay: -6s;
 }

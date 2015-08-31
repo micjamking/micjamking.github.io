@@ -15,16 +15,16 @@
 }
 
 .main-header {
-/*   animation: fadeIn 0.5s forwards 0.5s ease-in, 
-             fadeOut 0.5s forwards 6s ease-out; */
-  animation: fadeIn 0.5s forwards 0.5s ease-in;
+  animation: fadeIn 0.5s forwards 0.5s ease-in, 
+             fadeOut 0.5s forwards 6s ease-out;
+/*   animation: fadeIn 0.5s forwards 0.5s ease-in; */
 }
 
 .text {
   animation: stroke $time infinite linear;
 }
 
-/* .gravatar {
+.gravatar {
   @include bounceInUp();
   animation-delay: 6.5s;
 }
@@ -59,7 +59,7 @@
 
 .email {
   animation: fadeIn 0.5s forwards 6.75s ease-in;
-} */
+}
 
 @keyframes fadeIn {
   0% {

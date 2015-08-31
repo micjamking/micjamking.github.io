@@ -19,7 +19,9 @@ $dark-sea-green: hsl(120, 32%, 68%);
 $patina: hsl(149, 21%, 51%);
 $abbey: hsl(247, 5%, 32%);
 
-$colors: $harvest-gold, $dark-sea-green, $zombie, $patina, $abbey;
+$colors: hsl(13, 95%, 71%), $dark-sea-green, $zombie, $patina, hsl(342, 84%, 45%);
+/* $colors: hsl(171, 63%, 56%), hsl(171, 63%, 56%), hsl(54, 99%, 71%), hsl(13, 95%, 71%), hsl(340, 95%, 64%);  */
+/* $colors: hsl(64, 62%, 64%), hsl(87, 48%, 64%),hsl(126, 35%, 62%), hsl(355, 26%, 53%), hsl(342, 84%, 45%); */
 
 /**
  * @section Greeting settings
