@@ -12,7 +12,7 @@ I'm Mike King, a designer & developer residing in Honolulu, Hawaii. My passion i
 - [Writing on Medium](https://medium.com/@micjamking)
 
 ## Experience
-For the past decade, I've worked on a wide variety of digital projects from a diverse clientele with various technical challenges; WordPress-driven marketing and eCommerce sites, hospitality kiosks running Windows Presentation Foundation (WPF), data-driven HTML5 / JavaScript applications with custom interactive data-visualizations and charting, native (Android - XML / Java; iOS - Objective-C / Swift) as well as hybrid (HTML5 / Cordova) mobile applications for the Hawaii travel and tourism industry. I love learning new, cutting edge technologies and providing solutions for clients that span a variety of touchpoints, across web, mobile and desktop environments.
+For the past decade, I've worked on a wide variety of digital projects from a diverse clientele with various technical challenges; WordPress-driven marketing and eCommerce sites, hospitality kiosks running Windows Presentation Foundation (WPF), data-driven HTML5 / JavaScript applications with custom interactive data-visualizations and charting, native (Android / iOS) as well as hybrid (HTML5 / Cordova) mobile applications for the Hawaii travel and tourism industry. I love learning new, cutting edge technologies and providing solutions for clients that span a variety of touchpoints, across web, mobile and desktop environments.
 
 ### Ikayzo
 [http://ikayzo.com](http://ikayzo.com) | Honolulu, HI
