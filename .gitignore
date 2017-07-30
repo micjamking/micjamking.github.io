@@ -1,0 +1,14 @@
+# Ignored file pattern for personal site
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+error.log
+
+# Node
+node_modules
