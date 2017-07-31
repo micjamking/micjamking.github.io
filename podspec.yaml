@@ -1,0 +1,30 @@
+grow_version: ">=0.0.60"
+home: /content/pages/home.yaml
+root: ""
+
+title: "Mike King | Interactive Designer & Developer"
+meta:
+  google_analytics_id: ""
+  google_site_verification: ""
+  image_path: /static/images/social_image.jpg
+  favicon_path: /static/images/favicon.png
+  social:
+    twitter: micjamking
+    facebook: micjamking
+
+static_dirs:
+- static_dir: /static/
+  serve_at: /
+
+localization:
+  default_locale: en
+
+sitemap:
+  enabled: true
+
+# preprocessors:
+# - kind: sass
+#   name: sass
+#   sass_dir: /source/scss/
+#   out_dir: /static/css/
+#   suffix: .css

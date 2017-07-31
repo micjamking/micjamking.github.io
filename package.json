@@ -1,0 +1,19 @@
+{
+  "name": "mikeking.io",
+  "version": "2.0.0",
+  "description": "Personal website",
+  "author": "Mike King",
+  "private": true,
+  "scripts": {
+    "start": "/Users/zion/bin/grow run"
+  },
+  "devDependencies": {
+    
+  },
+  "dependencies": {
+    
+  },
+  "engines": {
+    
+  }
+}

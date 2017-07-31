@@ -12,3 +12,10 @@ error.log
 
 # Node
 node_modules
+
+# Grow Project
+dist/
+*.zip
+build
+bower_components
+**.mo
