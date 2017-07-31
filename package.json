@@ -18,7 +18,8 @@
     "prebuild": "npm run lint",
     "build": "NODE_ENV=production ~/bin/grow build && webpack --progress",
     "postbuild": "echo $npm_package_config_res_complete",
-    "backup": "git add . && git commit -m \"$MESSAGE\" && git push",
+    "backup:auto": "MSG='Saving progress...' npm run backup",
+    "backup": "git add . && git commit -m \"$MSG\" && git push",
     "deploy": "~/bin/grow deploy"
   },
   "devDependencies": {
