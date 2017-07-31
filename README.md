@@ -1,6 +1,5 @@
 # mikeking.io
-
-A short introduction to your project could go here. This README outlines the details of collaborating on this Grow website.
+> Portfolio Website of Mike King
 
 ## Prerequisites
 
