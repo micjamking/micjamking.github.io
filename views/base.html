@@ -22,7 +22,7 @@
     {% if podspec.meta.favicon_path %}
     <link rel="shortcut icon" href="{{g.static(podspec.meta.favicon_path).url.path}}">
     {% endif %}
-    <link rel="stylesheet" href="{{g.static('/static/css/style.css').url.path}}">
+    <link rel="stylesheet" href="{{g.static('/static/style.css').url.path}}">
     {% if podspec.meta.google_analytics_id %}
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -49,5 +49,6 @@
       {% endblock %}
     </div>
     {% include "/views/_footer.html" %}
+    <script src="{{g.static('/static/script.js').url.path}}"></script>
   </body>
 </html>

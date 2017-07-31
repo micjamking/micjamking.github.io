@@ -5,17 +5,20 @@
   "author": "Mike King",
   "private": true,
   "config": {
-    "es_files": "./source/js/**/*.js"
+    "es_files": "./source/js/**",
+    "grow_sdk_url": "https://install.growsdk.org",
+    "res_complete": "$(tput setaf 148)'Production build complete!'$(tput sgr0)"
   },
   "scripts": {
-    "setup": "curl https://install.growsdk.org | bash && npm i",
+    "setup": "curl $npm_package_config_grow_sdk_url | bash && npm i",
     "start": "NODE_ENV=development ~/bin/grow run & npm run serve",
-    "serve": "webpack --progress",
-    "lint": "eshint $npm_package_config_es_files",
+    "preserve": "npm run lint",
+    "serve": "webpack --watch --progress",
+    "lint": "eslint \"$npm_package_config_es_files\"",
     "prebuild": "npm run lint",
     "build": "NODE_ENV=production ~/bin/grow build && webpack --progress",
-    "postbuild": "echo $(tput setaf 148)'Production build complete!'$(tput sgr0)",
-    "backup": "git add . && git commit -m $MESSAGE && git push",
+    "postbuild": "echo $npm_package_config_res_complete",
+    "backup": "git add . && git commit -m \"$MESSAGE\" && git push",
     "deploy": "~/bin/grow deploy"
   },
   "devDependencies": {
