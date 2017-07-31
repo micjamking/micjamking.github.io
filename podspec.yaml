@@ -22,9 +22,9 @@ localization:
 sitemap:
   enabled: true
 
-# preprocessors:
-# - kind: sass
-#   name: sass
-#   sass_dir: /source/scss/
-#   out_dir: /static/css/
-#   suffix: .css
+deployments:
+  default:
+    destination: git
+    repo: https://github.com/micjamking/micjamking.github.io.git
+    branch: gh-pages
+    root_dir: /build/
