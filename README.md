@@ -16,7 +16,7 @@ If you do not have Grow, you can install it using:
 $ npm run setup
 ```
 
-## Running the development server\
+## Running the development server
 
 ```
 $ npm start
