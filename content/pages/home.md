@@ -1,12 +1,14 @@
-$title: Home
-$path: /{root}/
+---
+$title: ""
+$path: ""
 $order: -1
 description: A basic Grow demo website.
+$hidden: true
 
 partials:
 - partial: /views/partials/hero.html
-  title: Welcome to your website
-  subtitle: >-
+  title: Welcome to my website
+  subtitle:
       This is a basic demonstration that shows how to use Grow to build a few
       pages. What you see on this site is entirely controlled by the union of
       content files and template files. Content is kept separate from
@@ -15,3 +17,4 @@ partials:
   cta:
     title: Learn about us 
     url: !g.url "/content/pages/about.md"
+---

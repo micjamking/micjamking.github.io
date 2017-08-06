@@ -1,30 +1,53 @@
 grow_version: ">=0.0.60"
-home: /content/pages/home.yaml
+home: "/content/pages/home.md"
 root: ""
 
 title: "Mike King | Interactive Designer & Developer"
 meta:
-  google_analytics_id: ""
-  google_site_verification: ""
-  image_path: /static/images/social_image.jpg
-  favicon_path: /static/images/favicon.png
+  search:
+    author: "Mike King"
+    description: ""
+    keywords: ""
+    google_site_verification: ""
+  open_graph:
+    image_path: "/static/images/social_image.jpg"
+    image_type: "image/png"
+    image_width: ""
+    image_height: ""
+    facebook_app_id: ""
+  twitter:
+    username: "@micjamking"
+  google:
+    plus_id: "112398162809101288990"
+    analytics_id: ""
+  favicon_path: "/static/favicon.png"
+  icon_path: "/static/apple-touch-icon-precomposed.png"
   social:
-    twitter: micjamking
-    facebook: micjamking
+    twitter: "micjamking"
+    facebook: "micjamking"
 
 static_dirs:
-- static_dir: /static/
-  serve_at: /
+- static_dir: "/static/"
+  serve_at: "/"
 
 localization:
-  default_locale: en
+  default_locale: "en"
 
 sitemap:
   enabled: true
 
+preprocessors:
+- kind: google_docs
+  autorun: false
+  path: /content/pages/casestudy_gohawaii.md
+  id: 14piYL8Ybf52fEtaNkB9zZprXgDWsN6MYkWqSUxR28lY
+  convert: true
+
 deployments:
   default:
-    destination: git
-    repo: https://github.com/micjamking/micjamking.github.io.git
-    branch: gh-pages
-    root_dir: /build/
+    destination: "git"
+    repo: "https://github.com/micjamking/micjamking.github.io.git"
+    branch: "gh-pages"
+    root_dir: "/build/"
+  env:
+    host: mikeking.io

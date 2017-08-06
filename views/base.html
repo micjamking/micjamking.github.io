@@ -1,54 +1,114 @@
 <!DOCTYPE html>
 <html lang="{{doc.locale}}">
-  <head>
-    <meta charset="utf-8">
-    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-    {% if podspec.meta.google_site_verification %}
-    <meta name="google-site-verification" content="{{podspec.meta.google_site_verification}}">
-    {% endif %}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, height=device-height">
-    <title>{% if doc.title %}{{doc.title}} – {% endif %}{{podspec.title}}</title>
-    {% if podspec.meta.image %}
-      <meta property="og:image" content="{{g.static(podspec.meta.image).url}}">
-    {% endif %}
-    <meta property="og:title" content="{% if doc.title %}{{doc.title}} – {% endif %}{{podspec.title}}">
-    <meta property="og:site_name" content="{{podspec.title}}">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{doc.url}}">
-    {% if doc.description %}
-    <meta name="description" content="{{doc.description}}">
-    <meta property="og:description" content="{{doc.description}}">
-    {% endif %}
-    {% if podspec.meta.favicon_path %}
-    <link rel="shortcut icon" href="{{g.static(podspec.meta.favicon_path).url.path}}">
-    {% endif %}
-    <link rel="stylesheet" href="{{g.static('/static/style.css').url.path}}">
-    {% if podspec.meta.google_analytics_id %}
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', '{{podspec.meta.google_analytics_id}}', 'auto');
-      ga('send', 'pageview');
-    </script>
-    {% endif %}
-  </head>
-  <body>
-    {% include "/views/_header.html" %}
-    <div class="main">
-      {% block main %}
-        {% if doc.partials %}
-          {% for partial in doc.partials %}
-            {% if not partial.partial %}{% continue %}{% endif %}
-            {% include partial.partial with context %}
-          {% endfor %}
-        {% else %}
-          {{doc.html|safe}}
-        {% endif %}
-      {% endblock %}
-    </div>
-    {% include "/views/_footer.html" %}
-    <script src="{{g.static('/static/script.js').url.path}}"></script>
-  </body>
+<head>
+  <!-- Settings -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, height=device-height" />
+
+  <!-- Search -->
+  <meta name="author" content="{{ podspec.meta.search.author }}" />
+  {% if doc.description %}
+  <meta name="description" content="{{ doc.description }}" />
+  {% else %}
+  <meta name="description" content="{{ podspec.meta.search.description }}" />
+  {% endif %}
+  {% if doc.keywords %}
+  <meta name="keywords" content="{{ doc.keywords }}" />
+  {% else %}
+  <meta name="keywords" content="{{ podspec.meta.search.keywords }}" />
+  {% endif %}
+  {% if podspec.meta.search.google_site_verification %}
+  <meta name="google-site-verification" content="{{ podspec.meta.search.google_site_verification }}" />
+  {% endif %}
+  
+  <!-- Open Graph (Facebook) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="{{ podspec.title }}" />
+  <meta property="og:url" content="{{ doc.url }}" />
+  <meta property="og:title" content="{% if doc.title %}{{ doc.title }} | {% endif %}{{ podspec.title }}" />
+  {% if doc.description %}
+  <meta property="og:description" content="{{ doc.description }}" />
+  {% else %}
+  <meta property="og:description" content="{{ podspec.meta.open_graph.description }}" />
+  {% endif %}
+  {% if podspec.meta.open_graph.image_path %}
+  <meta property="og:image" content="{{ g.static(podspec.meta.open_graph.image_path).url }}" />
+  {% endif %}
+  {% if podspec.meta.open_graph.image_type %}
+  <meta property="og:image:type" content="{{ podspec.meta.open_graph.image_type }}" />
+  {% endif %}
+  {% if podspec.meta.open_graph.image_width %}
+  <meta property="og:image:width" content="{{ podspec.meta.open_graph.image_width }}" />
+  {% endif %}
+  {% if podspec.meta.open_graph.image_height %}
+  <meta property="og:image:height" content="{{ podspec.meta.open_graph.image_height }}" />
+  {% endif %}
+  {% if podspec.meta.open_graph.facebook_app_id %}
+  <meta property="fb:app_id" content="{{ podspec.meta.open_graph.facebook_app_id }}" />
+  {% endif %}
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  {% if podspec.meta.twitter.username %}
+  <meta name="twitter:site" content="{{ podspec.meta.twitter.username }}">
+  <meta name="twitter:creator" content="{{ podspec.meta.twitter.username }}">
+  {% endif %}
+  <meta name="twitter:title" content="{% if doc.title %}{{ doc.title }} | {% endif %}{{ podspec.title }}">
+  {% if doc.description %}
+  <meta name="twitter:description" content="{{ doc.description }}">
+  {% else %}
+  <meta name="twitter:description" content="{{ podspec.meta.open_graph.description }}">
+  {% endif %}
+
+  <!-- Google+ -->
+  {% if podspec.meta.google.plus_id %}
+  <link rel="author" href="//plus.google.com/{{ podspec.meta.google.plus_id }}/posts" />
+  <link rel="publisher" href="//plus.google.com/{{ podspec.meta.google.plus_id }}/about" />
+  {% endif %}
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="{{ g.static('/static/style.css').url.path }}" />
+
+  {% if podspec.meta.favicon_path %}
+  <!-- Icons -->
+  <link rel="sicon" type="image/x-icon" href="{{ g.static(podspec.meta.favicon_path).url.path }}" />
+  {% endif %}
+  {% if podspec.meta.icon_path %}
+  <link rel="apple-touch-icon" href="{{ g.static(podspec.meta.icon_path).url.path }}" />
+  {% endif %}
+  
+  <title>{% if doc.title %}{{ doc.title }} – {% endif %}{{ podspec.title }}</title>
+
+  {% if podspec.meta.google.analytics_id %}
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{{ podspec.meta.google.analytics_id }}', 'auto');
+    ga('send', 'pageview');
+  </script>
+  {% endif %}
+</head>
+<body>
+  {% include "/views/_header.html" %}
+  
+  <div class="main">
+    {% block main %}
+      {% if doc.partials %}
+        {% for partial in doc.partials %}
+          {% if not partial.partial %}{% continue %}{% endif %}
+          {% include partial.partial with context %}
+        {% endfor %}
+      {% else %}
+        {{doc.html|safe}}
+      {% endif %}
+    {% endblock %}
+  </div>
+  {% include "/views/_footer.html" %}
+
+  <script src="{{ g.static('/static/script.js').url.path }}"></script>
+</body>
 </html>

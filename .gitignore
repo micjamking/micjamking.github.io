@@ -14,7 +14,6 @@ error.log
 node_modules
 
 # Grow Project
-dist/
 *.zip
 build
 bower_components

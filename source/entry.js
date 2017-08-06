@@ -6,5 +6,5 @@
 import './scss/style.scss';
 
 // Application Scripts
-import './js/vendor';
+// import './js/vendor';
 import './js/app';
