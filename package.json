@@ -5,23 +5,21 @@
   "author": "Mike King",
   "private": true,
   "config": {
-    "js_dir": "./source/js/**",
     "lr_options": "-w 600 -e 'html,yaml,md,css,js'",
     "lr_watch_dir": "./content, ./static, ./views",
     "grow_sdk_url": "https://install.growsdk.org"
   },
   "scripts": {
     "setup": "curl $npm_package_config_grow_sdk_url | bash && npm i",
-    "start": "NODE_ENV=development ~/bin/grow run --port=3000 & npm run serve",
-    "preserve": "npm run lint",
-    "serve": "npm run livereload & webpack --watch --progress",
+    "start": "NODE_ENV=development concurrently --kill-others \"~/bin/grow run --port=3000\" \"npm run livereload\" \"webpack --watch\"",
+    "import:content": "~/bin/grow preprocess --tag content",
+    "postimport:content": "npm run echo:complete",
+    "echo:complete": "echo \"$(tput setaf 148)Complete!$(tput sgr0)\"",
     "clean": "rm -rf node_modules package-lock.json",
-    "postclean": "echo \"$(tput setaf 148)Complete!$(tput sgr0)\"",
-    "lint": "eslint \"$npm_package_config_js_dir\"",
+    "postclean": "npm run echo:complete",
     "livereload": "livereload \"$npm_package_config_lr_watch_dir\" $npm_package_config_lr_options",
-    "prebuild": "npm run lint",
-    "build": "NODE_ENV=production webpack --progress && ~/bin/grow build",
-    "postbuild": "echo \"$(tput setaf 148)Complete!$(tput sgr0)\"",
+    "build": "NODE_ENV=production webpack && ~/bin/grow build",
+    "postbuild": "npm run echo:complete",
     "backup": "git add . && git commit -m \"$msg\" && git push",
     "backup:auto": "msg='Saving progress...' npm run backup",
     "deploy": "~/bin/grow deploy",
@@ -33,8 +31,10 @@
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.6.0",
+    "concurrently": "^3.5.0",
     "css-loader": "^0.28.4",
-    "eslint": "^4.3.0",
+    "eslint": "^4.4.0",
+    "eslint-loader": "^1.9.0",
     "extract-loader": "^1.0.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "livereload": "^0.6.2",
@@ -51,28 +51,7 @@
     "vue-router": "^2.7.0"
   },
   "engines": {
-    "node": "7.10.0",
-    "npm": "4.2.0"
-  },
-  "eslintConfig": {
-    "extends": [
-      "eslint:recommended"
-    ],
-    "env": {
-      "node": true,
-      "browser": true,
-      "es6": true
-    },
-    "parser": "babel-eslint",
-    "rules": {
-      "strict": 0,
-      "quotes": [
-        2,
-        "single"
-      ],
-      "no-unused-vars": 1,
-      "no-console": 0
-    },
-    "globals": {}
+    "node": "^8.2.1",
+    "npm": "^5.3.0"
   }
 }

@@ -1,20 +1,19 @@
 ---
 $title: ""
-$path: ""
+$path: "/{root}/"
 $order: -1
-description: A basic Grow demo website.
 $hidden: true
 
 partials:
-- partial: /views/partials/hero.html
-  title: Welcome to my website
+- partial: "/views/partials/hero.html"
+  title: "Welcome to my website"
   subtitle:
-      This is a basic demonstration that shows how to use Grow to build a few
+      "This is a basic demonstration that shows how to use Grow to build a few
       pages. What you see on this site is entirely controlled by the union of
       content files and template files. Content is kept separate from
       presentation. Some of the pages use YAML and partial templates, other
-      pages just use Markdown. Try exploring.
+      pages just use Markdown. Try exploring."
   cta:
-    title: Learn about us 
+    title: "Learn about us"
     url: !g.url "/content/pages/about.md"
 ---

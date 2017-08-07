@@ -57,16 +57,47 @@ let webpackConfig = (function(){
          * Script Transformations - Output ES/TS to JS files
          */
         test: /\.js$|\.es$|\.ts$/,
-        use: {
-          /**
-           * Babel - Compiles next-gen JavaScript (ES6+) to browser-compatible JS
-           * @see https://babeljs.io/docs/setup/#installation
-           */
-          loader: 'babel-loader',
-          query: {
-            presets: ['env']
+        use: [
+          {
+            /**
+             * Babel - Compiles next-gen JavaScript (ES6+) to browser-compatible JS
+             * @see https://babeljs.io/docs/setup/#installation
+             */
+            loader: 'babel-loader',
+            query: {
+              presets: ['env']
+            }
+          },
+          {
+            /**
+             * ESLint - The pluggable linting utility for JavaScript and JSX
+             * @see https://github.com/MoOx/eslint-loader
+             */
+            loader: 'eslint-loader',
+            options: {
+              baseConfig: {
+                extends: [
+                  'eslint:recommended'
+                ]
+              },
+              parser: 'babel-eslint',
+              envs: [
+                'browser',
+                'es6',
+                'node'
+              ],
+              rules: {
+                strict: 0,
+                quotes: [
+                  2,
+                  'single'
+                ],
+                'no-unused-vars': 1,
+                'no-console': 0
+              }
+            }
           }
-        }
+        ]
       },
       {
         /**
@@ -156,8 +187,7 @@ let webpackConfig = (function(){
   /**
    * Profiler stats during compilation
    */
-  config.profile = true;
-  config.stats   = {
+  config.stats = {
     colors: true,
     errors: true,
     errorDetails: true,

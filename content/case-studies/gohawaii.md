@@ -1,6 +1,8 @@
 ---
-$hidden: true
+$title: GoHawaii
+$order: 2
 ---
+
 Mike King - Case Study: GoHawaii
 
 URL:

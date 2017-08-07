@@ -21,7 +21,7 @@
   {% if podspec.meta.search.google_site_verification %}
   <meta name="google-site-verification" content="{{ podspec.meta.search.google_site_verification }}" />
   {% endif %}
-  
+
   <!-- Open Graph (Facebook) -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="{{ podspec.title }}" />
@@ -77,7 +77,7 @@
   {% if podspec.meta.icon_path %}
   <link rel="apple-touch-icon" href="{{ g.static(podspec.meta.icon_path).url.path }}" />
   {% endif %}
-  
+
   <title>{% if doc.title %}{{ doc.title }} – {% endif %}{{ podspec.title }}</title>
 
   {% if podspec.meta.google.analytics_id %}
@@ -93,22 +93,24 @@
   {% endif %}
 </head>
 <body>
-  {% include "/views/_header.html" %}
-  
-  <div class="main">
-    {% block main %}
-      {% if doc.partials %}
-        {% for partial in doc.partials %}
-          {% if not partial.partial %}{% continue %}{% endif %}
-          {% include partial.partial with context %}
-        {% endfor %}
-      {% else %}
-        {{doc.html|safe}}
-      {% endif %}
-    {% endblock %}
-  </div>
-  {% include "/views/_footer.html" %}
+  <div class="container">
+    {% include "/views/_header.html" %}
 
+    <section class="main">
+      {% block main %}
+        {% if doc.partials %}
+          {% for partial in doc.partials %}
+            {% if not partial.partial %}{% continue %}{% endif %}
+            {% include partial.partial with context %}
+          {% endfor %}
+        {% else %}
+          {{doc.html|safe}}
+        {% endif %}
+      {% endblock %}
+    </section>
+    {% include "/views/_footer.html" %}
+  
+  </div>
   <script src="{{ g.static('/static/script.js').url.path }}"></script>
 </body>
 </html>

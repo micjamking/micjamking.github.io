@@ -37,11 +37,46 @@ sitemap:
   enabled: true
 
 preprocessors:
-- kind: google_docs
+- name: "gohawaii"
+  kind: "google_docs"
   autorun: false
-  path: /content/pages/casestudy_gohawaii.md
-  id: 14piYL8Ybf52fEtaNkB9zZprXgDWsN6MYkWqSUxR28lY
+  path: "/content/case-studies/gohawaii.md"
+  id: "14piYL8Ybf52fEtaNkB9zZprXgDWsN6MYkWqSUxR28lY"
   convert: true
+  tags:
+  - content
+- name: "touraloha"
+  kind: "google_docs"
+  autorun: false
+  path: "/content/case-studies/touraloha.md"
+  id: "1_nw9V0iZN0awvXstPnf5yWvYWtyF8th955z5mOrp_EE"
+  convert: true
+  tags:
+  - content
+- name: "teacupanalytics"
+  kind: "google_docs"
+  autorun: false
+  path: "/content/case-studies/teacupanalytics.md"
+  id: "1RtlU-bLYtdRpGJp32Ji0wPwu0qLm8R_qbwVKRE_BHwE"
+  convert: true
+  tags:
+  - content
+- name: "mobipcs"
+  kind: "google_docs"
+  autorun: false
+  path: "/content/case-studies/mobipcs.md"
+  id: "1sqHpmhFG3_kl9IwfEYiRL8iT7gCOKon63uNwFbTOVfA"
+  convert: true
+  tags:
+  - content
+- name: "clearstream"
+  kind: "google_docs"
+  autorun: false
+  path: "/content/case-studies/clearstream.md"
+  id: "1TLXC4xAYf76yn2dcv0IWA1y-7vSljBPhVojtvAtjpUg"
+  convert: true
+  tags:
+  - content
 
 deployments:
   default:
