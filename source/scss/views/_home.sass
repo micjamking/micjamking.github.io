@@ -1,0 +1,84 @@
+/* ==========================================================================
+   Home Page
+   ========================================================================== */
+
+.home
+
+  .main,
+  .case-study
+    display: flex
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 1
+
+  .case-study
+    justify-content: center
+    align-items: center
+    display: none
+
+    &:first-child
+      display: flex
+
+    &__container
+      width: 600px
+      height: 400px
+      position: relative
+      flex: 0 1 auto
+
+      &::after
+        content: ''
+        display: flex
+        position: absolute
+        width: 100%
+        height: 100%
+        z-index: -1
+        top: 30px
+        left: 30px
+        background-color: $global-color-light-blue
+
+    &__background-images
+      z-index: 0
+
+    &__content
+      width: 100%
+      height: 100%
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 1
+
+    &__title,
+    &__subtitle
+      position: absolute
+      left: -50px
+
+    &__title
+      top: 50px
+      font-size: 48px
+
+    &__subtitle
+      top: 122px
+      font-size: 24px
+
+    &__cta
+      position: absolute
+      bottom: 50px
+      right: -50px
+      font-size: 18px
+      text-align: right
+
+      &::before
+        content: ''
+        display: block
+        height: 1px
+        width: 30px
+        background-color: $global-color-dark-blue
+        position: absolute
+        bottom: -#{$global-spacing-xs}

@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+
+
+.nav
+  width: 100%
+  display: flex
+  position: absolute
+
+  &--main
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    padding: 0 em-calc(40px)
+    z-index: 2
+
+    +lg
+      padding: 0 em-calc($global-spacing-lg)
+
+    +xl
+      padding: 0 em-calc($global-spacing-xl)
+
+  &__items
+    position: relative
+    list-style: none
+    width: 100%
+
+    &__item
+      position: absolute
+
+      a
+        display: inline-block
+        color: $global-color-dark-blue
+        transform: rotate(-90deg)
+
+      &:last-child
+        right: 0
+
+  &--pagination
+    bottom: $global-spacing-lg
+    z-index: 2
+    justify-content: center
+
+  &__down-arrow
+    display: flex
+    width: 29px
+    height: 51px
+    background-image: url('/images/icons/down-arrow.svg')
+    background-repeat: no-repeat
+    background-size: contain
+
+    &:hover
+      cursor: pointer

@@ -16,7 +16,7 @@ const UGLIFYJS     = require('uglifyjs-webpack-plugin');
 const APP           = './static';
 const VENDOR        = './node_modules';
 const ENTRY         = './source/entry.js';
-const IS_PRODUCTION = (process.env.NODE_ENV === 'production') ? true : false;
+const IS_PRODUCTION = ( process.env.NODE_ENV === 'production' ) ? true : false;
 
 
 let webpackConfig = (function(){
@@ -32,7 +32,7 @@ let webpackConfig = (function(){
    * Entry Point - JS root file
    * @see https://webpack.js.org/configuration/entry-context/
    */
-  config.entry = PATH.resolve(__dirname, ENTRY);
+  config.entry = PATH.resolve( __dirname, ENTRY );
 
 
   /**
@@ -40,7 +40,7 @@ let webpackConfig = (function(){
    * @see https://webpack.js.org/configuration/output/
    */
   config.output = {
-    path: PATH.resolve(__dirname, APP),
+    path: PATH.resolve( __dirname, APP ),
     publicPath: APP + '/',
     filename: 'script.js',
   };

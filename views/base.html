@@ -67,12 +67,16 @@
   <link rel="publisher" href="//plus.google.com/{{ podspec.meta.google.plus_id }}/about" />
   {% endif %}
 
+  <!-- DNS Prefetch -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+
   <!-- Stylesheets -->
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,700|Playfair+Display:400,400i,900,900i">
   <link rel="stylesheet" href="{{ g.static('/static/style.css').url.path }}" />
 
   {% if podspec.meta.favicon_path %}
   <!-- Icons -->
-  <link rel="sicon" type="image/x-icon" href="{{ g.static(podspec.meta.favicon_path).url.path }}" />
+  <link rel="icon" type="image/png" href="{{ g.static(podspec.meta.favicon_path).url.path }}" />
   {% endif %}
   {% if podspec.meta.icon_path %}
   <link rel="apple-touch-icon" href="{{ g.static(podspec.meta.icon_path).url.path }}" />
@@ -92,24 +96,42 @@
   </script>
   {% endif %}
 </head>
-<body>
+{#
+ # Set a class on the body
+ #}
+{% if doc.url.path == '/' %}
+  {% set body_class = 'home' %}
+{% else %}
+  {% set body_class = doc.url.path|replace("/", "") %}
+{% endif %}
+<body class="{{ body_class }}">
   <div class="container">
-    {% include "/views/_header.html" %}
+    {% include "/views/components/_preloader.html" %}
+
+    {% include "/views/components/_header.html" %}
+
+    {% if doc.custom_header %}
+    {% include "/views/components/_custom-header.html" %}
+    {% endif %}
+
+    {% include "/views/components/_navigation.html" %}
 
     <section class="main">
       {% block main %}
-        {% if doc.partials %}
-          {% for partial in doc.partials %}
-            {% if not partial.partial %}{% continue %}{% endif %}
-            {% include partial.partial with context %}
+        {% if doc.components %}
+          {% for component in doc.components if component.component and component.enabled is not sameas false  %}
+            {% include '/views/components/_' ~ component.component ~ '.html' with context %}
           {% endfor %}
         {% else %}
           {{doc.html|safe}}
         {% endif %}
       {% endblock %}
     </section>
-    {% include "/views/_footer.html" %}
-  
+
+    {% if doc.page_footer %}
+    {% include "/views/components/_page-footer.html" %}
+    {% endif %}
+
   </div>
   <script src="{{ g.static('/static/script.js').url.path }}"></script>
 </body>

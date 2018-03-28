@@ -1,0 +1,35 @@
+{
+  "/content/case-studies/gohawaii.md": [
+    "/content/pages/about.yaml",
+    "/content/pages/contact.yaml",
+    "/static/apple-touch-icon-precomposed.png",
+    "/static/favicon.png",
+    "/static/images/social_image.jpg",
+    "/static/script.js",
+    "/static/style.css",
+    "/views/components/_footer.html",
+    "/views/components/_header.html",
+    "/views/components/_navigation.html",
+    "/views/components/_preloader.html"
+  ],
+  "/content/pages/home.yaml": [
+    "/content/pages/about.yaml",
+    "/content/pages/contact.yaml",
+    "/static/apple-touch-icon-precomposed.png",
+    "/static/favicon.png",
+    "/static/images/case-studies/case-study-tile__clearstream.png",
+    "/static/images/case-studies/case-study-tile__gohawaii.png",
+    "/static/images/case-studies/case-study-tile__mobipcs.png",
+    "/static/images/case-studies/case-study-tile__teacup-analytics.png",
+    "/static/images/case-studies/case-study-tile__tour-aloha.png",
+    "/static/images/social_image.jpg",
+    "/static/script.js",
+    "/static/style.css",
+    "/views/components/_case-study.html",
+    "/views/components/_custom-header.html",
+    "/views/components/_footer.html",
+    "/views/components/_header.html",
+    "/views/components/_navigation.html",
+    "/views/components/_preloader.html"
+  ]
+}

@@ -1,0 +1,29 @@
+/* ==========================================================================
+   Button
+   ========================================================================== */
+
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"]
+  appearance: none
+  background-color: transparent
+
+  display: inline-block // Make display properties consistent across the board
+  text-decoration: none // Remove underline for anchor buttons
+  color: inherit        // Inherit the default color (ie. black)
+
+  padding: 1em
+  margin-bottom: $global-margin
+  border: 1px solid $global-color-black
+  border-radius: $global-border-radius
+  text-align: center
+
+  &:hover
+    background-color: $global-color-black
+    color: white
+
+  &:focus,
+  &:active
+    outline: none

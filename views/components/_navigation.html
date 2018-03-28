@@ -1,0 +1,13 @@
+        <nav class="nav nav--main">
+          <ul class="nav__items">
+            {% for item in g.docs('pages') %}
+              <li class="nav__items__item {{"nav__items__item--active" if doc == item}}">
+                <a href="{{item.url.path}}">{{item.title}}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+
+        <nav class="nav nav--pagination">
+          <a class="nav__down-arrow"></a>
+        </nav>

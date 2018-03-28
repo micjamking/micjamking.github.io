@@ -3,8 +3,8 @@
  */
 
 // Application Styles
-import './scss/style.scss';
+import './scss/style.sass';
 
 // Application Scripts
-// import './js/vendor';
+import './js/vendor';
 import './js/app';

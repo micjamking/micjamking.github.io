@@ -1,0 +1,80 @@
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+html
+  font-size: $global-mobile-font
+
+  @media #{$medium-screen}
+    font-size: $global-base-font
+
+body
+  font: normal normal 300 #{type-scale(0)}/#{$global-line-height} $global-sans-serif
+  color: $global-color-dark-blue
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  font-family: $global-serif
+
+
+h1,
+h2,
+h3,
+h4,
+  font-weight: bold
+  margin: 0 0 $global-margin
+
+
+h1
+  font-size: type-scale(4)
+
+
+h2
+  font-size: type-scale(3)
+
+
+h3
+  font-size: type-scale(2)
+
+
+h4
+  font-size: type-scale(1)
+
+
+h5,
+h6
+  font-size: type-scale(-1)
+
+
+h5
+  font-weight: bold
+  font-weight: 400
+
+
+h6
+  font-style: italic
+
+
+
+ul,
+ol,
+p
+  margin: 0 0 1em
+
+
+a[href]
+  color: $global-color-dark-blue
+  text-decoration: none
+  word-wrap: break-word
+  transition: all 0.25s ease
+
+  &:link:not(.button)
+    &:hover,
+    &:active,
+    &:focus
+      outline: none

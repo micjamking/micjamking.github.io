@@ -5,9 +5,9 @@
   "author": "Mike King",
   "private": true,
   "config": {
-    "lr_options": "-w 600 -e 'html,yaml,md,css,js'",
-    "lr_watch_dir": "./content, ./static, ./views",
-    "grow_sdk_url": "https://install.growsdk.org"
+    "grow_sdk_url": "https://install.growsdk.org",
+    "lr_options": "-w 600 -e 'html,yaml,md,css,js,png,gif,jpg,svg'",
+    "lr_watch_dir": "./content, ./static, ./views"
   },
   "scripts": {
     "setup": "curl $npm_package_config_grow_sdk_url | bash && npm i",

@@ -2,7 +2,7 @@ grow_version: ">=0.0.60"
 home: "/content/pages/home.md"
 root: ""
 
-title: "Mike King | Interactive Designer & Developer"
+title: "Mike King | Interactive Developer"
 meta:
   search:
     author: "Mike King"

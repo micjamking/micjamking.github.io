@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+// Typography
+$global-base-font: 16px;
+$global-mobile-font: 12px;
+$global-line-height: 1.5;
+$global-serif: 'Playfair Display', serif;
+$global-sans-serif: 'Fira Sans', sans-serif;
+
+// Colors
+$global-color-light-blue: #E6F4FA;
+$global-color-medium-blue: #95C4E8;
+$global-color-dark-blue: #374650;
+$global-color-red: #F14A52;
+$global-color-white: #FFFFFF;
+$global-color-black: #121212;
+
+// Sizes
+$global-border-radius: 3px;
+
+// Spacing
+$global-padding: 1.25em;
+$global-margin: 1.25em;
+$global-spacing-xs: 10px;
+$global-spacing-sm: 15px;
+$global-spacing-md: 20px;
+$global-spacing-lg: 40px;
+$global-spacing-xl: 60px;
+
+// General screen sizes
+$global-screen-size-medium: 640px;
+$global-screen-size-large: 1024px;
+$global-screen-size-xlarge: 1440px;
+
+// Device resolutions
+$global-min-dpr: 1.25;
+$global-min-dpi: 200;
+
+// Media Queries
+$small-screen:  'only screen';
+$medium-screen: '#{$small-screen} and (min-width: #{$global-screen-size-medium})';
+$large-screen:  '#{$small-screen} and (min-width: #{$global-screen-size-large})';
+$xlarge-screen: '#{$small-screen} and (min-width: #{$global-screen-size-xlarge})';
+$retina: (
+ '#{$small-screen} and (-webkit-min-device-pixel-ratio: #{$global-min-dpr})',
+ '#{$small-screen} and (min--moz-device-pixel-ratio: #{$global-min-dpr})',
+ '#{$small-screen} and (-o-min-device-pixel-ratio: #{$global-min-dpr}/1)',
+ '#{$small-screen} and (min-device-pixel-ratio: #{$global-min-dpr})',
+ '#{$small-screen} and (min-resolution: #{$global-min-dpi}dpi)',
+ '#{$small-screen} and (min-resolution: #{$global-min-dpr}dppx)'
+);
+
+// Easing functions
+$ease: (
+ in-out-quad:  cubic-bezier(0.455,  0.030, 0.515, 0.955),
+ in-out-cubic: cubic-bezier(0.645,  0.045, 0.355, 1.000),
+ in-out-quart: cubic-bezier(0.770,  0.000, 0.175, 1.000),
+ in-out-quint: cubic-bezier(0.860,  0.000, 0.070, 1.000),
+ in-out-circ:  cubic-bezier(0.785,  0.135, 0.150, 0.860),
+ swift-out:    cubic-bezier(0.550,  0.000, 0.100, 1.000),
+ material:     cubic-bezier(0.400,  0.000, 0.200, 1.000),
+ in-back:      cubic-bezier(0.600, -0.280, 0.740, 0.050)
+);
