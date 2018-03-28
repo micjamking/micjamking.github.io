@@ -80,6 +80,9 @@ preprocessors:
 
 deployments:
   default:
+    destination: local
+    out_dir: "/dist/"
+  github:
     destination: "git"
     repo: "https://github.com/micjamking/micjamking.github.io.git"
     branch: "gh-pages"
