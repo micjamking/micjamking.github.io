@@ -2,6 +2,8 @@
    Background Images
    ========================================================================== */
 
+$max-background-images: 5
+
 .background-images
   position: absolute
   width: 100%
@@ -16,9 +18,14 @@
     left: 0
     right: 0
     bottom: 0
-    background-position: center bottom
+    background-position: center
     background-repeat: no-repeat
     background-size: contain
+    z-index: 0
+
+    @for $i from 1 through $max-background-images
+      &:nth-child(#{$i})
+        z-index: $max-background-images - $i
 
     &--mobile
       display: block

@@ -1,0 +1,19 @@
+{% extends "/views/base.html" %}
+
+{% block header %}
+{% include "/views/components/_header-case-study.html" %}
+{% endblock %}
+
+{% block main %}
+  {% if doc.components %}
+    {% for component in doc.components if component.component and component.enabled is not sameas false  %}
+      {% include '/views/components/_' ~ component.component ~ '.html' with context %}
+    {% endfor %}
+  {% else %}
+    {{doc.html|safe}}
+  {% endif %}
+{% endblock %}
+
+{% block footer %}
+{% include "/views/components/_page-footer.html" %}
+{% endblock %}

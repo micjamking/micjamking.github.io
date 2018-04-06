@@ -7,13 +7,13 @@
   width: 100%
   display: flex
   position: absolute
+  z-index: 2
 
   &--main
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
     padding: 0 em-calc(40px)
-    z-index: 2
 
     +lg
       padding: 0 em-calc($global-spacing-lg)
@@ -22,12 +22,15 @@
       padding: 0 em-calc($global-spacing-xl)
 
   &__items
+    user-select: none
     position: relative
     list-style: none
     width: 100%
 
     &__item
       position: absolute
+      +fade-in-up
+      animation-delay: 900ms
 
       a
         display: inline-block
@@ -36,10 +39,11 @@
 
       &:last-child
         right: 0
+        +fade-in-down
+        animation-delay: 900ms
 
   &--pagination
     bottom: $global-spacing-lg
-    z-index: 2
     justify-content: center
 
   &__down-arrow
@@ -49,6 +53,8 @@
     background-image: url('/images/icons/down-arrow.svg')
     background-repeat: no-repeat
     background-size: contain
+    +fade-in-down
+    animation-delay: 1100ms
 
     &:hover
       cursor: pointer

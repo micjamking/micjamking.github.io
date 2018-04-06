@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Canvas
+   Header
    ========================================================================== */
 
 .header
@@ -54,14 +54,24 @@
     transform: translateY(-50%)
     text-align: center
 
+  &--mike-king
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+  &--case-study
+    position: relative
+
   &__title,
   &__subtitle
     color: $global-color-dark-blue
-
+    +fade-in-up
 
   &__title
     font-size: em-calc(64px)
     margin-bottom: 0
+    animation-delay: 300ms
 
     @media #{$medium-screen}
       font-size: em-calc(64px)
@@ -71,6 +81,7 @@
     font-size: em-calc(36px)
     font-family: $global-sans-serif
     font-weight: 300
+    animation-delay: 500ms
 
 .canvas
   width: 100%
@@ -80,3 +91,4 @@
   left: 0
   z-index: 0
   background-color: #FFF
+  +fade-in

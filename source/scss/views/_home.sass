@@ -3,6 +3,7 @@
    ========================================================================== */
 
 .home
+  overflow: hidden
 
   .main,
   .case-study
@@ -19,10 +20,6 @@
   .case-study
     justify-content: center
     align-items: center
-    display: none
-
-    &:first-child
-      display: flex
 
     &__container
       width: 600px
@@ -30,19 +27,24 @@
       position: relative
       flex: 0 1 auto
 
-      &::after
-        content: ''
-        display: flex
-        position: absolute
-        width: 100%
-        height: 100%
+    &__background-images
+      z-index: 0
+
+      .background-images__image--offset
         z-index: -1
         top: 30px
         left: 30px
-        background-color: $global-color-light-blue
 
-    &__background-images
-      z-index: 0
+        &::after
+          content: ''
+          display: flex
+          position: absolute
+          width: 100%
+          height: 100%
+          z-index: -1
+          top: 0
+          left: 0
+          background-color: $global-color-light-blue
 
     &__content
       width: 100%
@@ -56,6 +58,7 @@
 
     &__title,
     &__subtitle
+      user-select: none
       position: absolute
       left: -50px
 
@@ -68,6 +71,7 @@
       font-size: 24px
 
     &__cta
+      user-select: none
       position: absolute
       bottom: 50px
       right: -50px

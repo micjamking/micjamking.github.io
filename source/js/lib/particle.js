@@ -33,12 +33,12 @@ export default class Particle {
     context.rotate(this.rotation);
     context.scale(this.scaleX, this.scaleY);
     context.lineWidth = this.lineWidth;
+    context.globalAlpha = this.opacity;
 
     // If image was passed in
     if (this.image) {
       var ballWidth = this.radius * 2;
       var imageHeight = ballWidth * (this.image.height / this.image.width);
-      context.globalAlpha = this.opacity;
       context.drawImage(this.image, 0 - (this.radius), 0 - (imageHeight / 2), this.radius * 2, imageHeight);
       context.fillStyle = 'rgba(255, 255, 255, 0)';
     } else {

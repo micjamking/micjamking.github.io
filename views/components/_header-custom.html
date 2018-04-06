@@ -1,0 +1,16 @@
+    <transition name="header-intro-animation" :duration="{ enter: 3900, leave: 1000 }" mode="out-in">
+      <header {%if doc.id %}
+              id="{{ doc.id }}"
+              class="header header--custom header--{{ doc.id }}"
+              v-init="() => { stateService.addItemModel( { 'name': '{{ doc.id }}' } ) }"
+              v-show="stateService.getCurrentItem() === '{{ doc.id }}'"
+              key="{{ doc.id }}"
+              {% else %}
+              class="header header--custom"
+              {% endif %}>
+        <h1 class="header__title">{% if doc.title %}{{ doc.title }}{% else %}{{ podspec.title }}{% endif %}</h1>
+        {% if doc.subtitle %}<h1 class="header__subtitle">{{ doc.subtitle }}</h1>{% endif %}
+      </header>
+    </transition>
+
+    <canvas class="canvas"></canvas>

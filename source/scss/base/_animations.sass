@@ -2,6 +2,10 @@
    Animations
    ========================================================================== */
 
+$base-animation: 300ms
+$animation-increment: 250ms
+$extra-delay: $base-animation + ($animation-increment * 5)
+
 // Animation properties
 $duration:        0.25s
 $timing-function: ease('material')
@@ -12,7 +16,7 @@ $fill-mode:       both
 $play-state:      running
 
 // Animation mixin
-@mixin animation($name, $duration: $duration, $timing-function: $timing-function, $delay: $delay, $iteration-count: $iteration-count, $direction: $direction, $fill-mode: $fill-mode, $play-state: $play-state)
+=animation($name, $duration: $duration, $timing-function: $timing-function, $delay: $delay, $iteration-count: $iteration-count, $direction: $direction, $fill-mode: $fill-mode, $play-state: $play-state)
   animation-name: $name
   animation-duration: $duration
   animation-timing-function: $timing-function
@@ -43,6 +47,14 @@ $play-state:      running
     opacity: 1
     transform: none
 
+@keyframes fade-in-down
+  0%
+    opacity: 0
+    transform: translateY(-20px)
+  100%
+    opacity: 1
+    transform: none
+
 @keyframes fade-out-up
   0%
     opacity: 1
@@ -51,15 +63,176 @@ $play-state:      running
     opacity: 0
     transform: translateY(-20px)
 
-// Classes
-.fade-in
+@keyframes fade-out-down
+  0%
+    opacity: 1
+    transform: none
+  100%
+    opacity: 0
+    transform: translateY(20px)
+
+// Mixins
+=fade-in
   @include animation('fade-in', $duration: 0.75s, $iteration-count: 1)
 
-.fade-out
+=fade-out
   @include animation('fade-out', $duration: 0.75s, $iteration-count: 1)
 
+=fade-in-up
+  @include animation('fade-in-up', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
+
+=fade-in-down
+  @include animation('fade-in-down', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
+
+=fade-out-up
+  @include animation('fade-out-up', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
+
+=fade-out-down
+  @include animation('fade-out-down', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
+
+// Classes
+.fade-in
+  +fade-in
+
+.fade-out
+  +fade-out
+
 .fade-in-up
-  @include animation('fade-in-up', $duration: 0.5s, $iteration-count: 1)
+  +fade-in-up
+  &.delayed
+    animation-delay: 1000ms
+
+.fade-in-down
+  +fade-in-down
 
 .fade-out-up
-  @include animation('fade-out-up', $duration: 0.5s, $iteration-count: 1)
+  +fade-out-up
+
+.fade-out-down
+  +fade-out-down
+
+
+.fade-enter-active,
+.fade-leave-active
+  transition: opacity $base-animation + ($animation-increment * 1)
+
+.fade-enter-active
+  transition-delay: $base-animation + ($animation-increment * 1)
+
+.fade-enter,
+.fade-leave-to
+  opacity: 0
+
+.header-intro-animation,
+.header-main-animation,
+.case-study-transition
+  &-enter-active,
+  &-leave-active
+    transition: all 2s
+
+.header-intro-animation
+  &-enter-active
+    .header__title,
+    .header__subtitle
+      +fade-in-up
+
+    .header__title
+      animation-delay: $base-animation
+
+    .header__subtitle
+      animation-delay: $base-animation + ($animation-increment * 1)
+
+  &-leave-active
+    .header__title,
+    .header__subtitle
+      +fade-out-up
+
+    .header__title
+      animation-delay: $base-animation
+
+    .header__subtitle
+      animation-delay: $base-animation + ($animation-increment * 1)
+
+.header-main-animation
+  &-enter-active
+    .header__logo,
+    .header__tagline
+      +fade-in-up
+
+    .header__logo
+      animation-delay: $base-animation + ($animation-increment * 3)
+
+    .header__tagline
+      animation-delay: $base-animation + ($animation-increment * 4)
+
+  &-leave-active
+    .header__logo,
+    .header__tagline
+      +fade-out-up
+
+    .header__logo
+      animation-delay: $base-animation + ($animation-increment * 4)
+    .header__tagline
+      animation-delay: $base-animation + ($animation-increment * 3)
+
+    + .header-intro-animation
+        &-enter-active
+          .header__title
+            animation-delay: $base-animation + $extra-delay
+
+          .header__subtitle
+            animation-delay: $base-animation + ($animation-increment * 1) + $extra-delay
+
+.case-study-transition
+  &-enter-active
+    .background-images__image,
+    .background-images__image--offset::after,
+    .case-study__title,
+    .case-study__subtitle,
+    .case-study__cta
+      +fade-in-up
+
+    .background-images__image
+      animation-delay: $base-animation + ($animation-increment * 1) + $extra-delay
+
+    .background-images__image--offset
+      animation: none
+
+    .background-images__image--offset::after
+      animation-delay: $base-animation + $extra-delay
+
+    .case-study__title
+      animation-delay: $base-animation + ($animation-increment * 2) + $extra-delay
+
+    .case-study__subtitle
+      animation-delay: $base-animation + ($animation-increment * 3) + $extra-delay
+
+    .case-study__cta
+      animation-delay: $base-animation + ($animation-increment * 4) + $extra-delay
+
+.case-study-transition
+  &-leave-active
+    .background-images__image,
+    .background-images__image--offset::after,
+    .case-study__title,
+    .case-study__subtitle,
+    .case-study__cta
+      +fade-out-up
+
+    .background-images__image
+      animation-delay: $base-animation + ($animation-increment * 3)
+
+    .background-images__image--offset
+      animation: none
+
+    .background-images__image--offset::after
+      animation-delay: $base-animation + ($animation-increment * 4)
+
+    .case-study__title
+      animation-delay: $base-animation
+
+    .case-study__subtitle
+      animation-delay: $base-animation + ($animation-increment * 1)
+
+    .case-study__cta
+      animation-delay: $base-animation + ($animation-increment * 2)

@@ -4,7 +4,7 @@
 
 /**
  * Vue.js
- * 
+ *
  * @desc Explicitly install router
  * @see https://router.vuejs.org/en/installation.html
  */

@@ -81,6 +81,22 @@ body,
   position: relative;
 }
 
+.container {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container.active {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 /* ==========================================================================
    Typography
    @mixin ========================================================================= */
@@ -228,6 +244,32 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
   }
 }
 
+@-webkit-keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
 @-webkit-keyframes fade-out-up {
   0% {
     opacity: 1;
@@ -251,6 +293,32 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
     opacity: 0;
     -webkit-transform: translateY(-20px);
             transform: translateY(-20px);
+  }
+}
+
+@-webkit-keyframes fade-out-down {
+  0% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+}
+
+@keyframes fade-out-down {
+  0% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
   }
 }
 
@@ -295,8 +363,32 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
 .fade-in-up {
   -webkit-animation-name: "fade-in-up";
           animation-name: "fade-in-up";
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
+  -webkit-animation-duration: 550ms;
+          animation-duration: 550ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.fade-in-up.delayed {
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+}
+
+.fade-in-down {
+  -webkit-animation-name: "fade-in-down";
+          animation-name: "fade-in-down";
+  -webkit-animation-duration: 550ms;
+          animation-duration: 550ms;
   -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-animation-delay: 0s;
@@ -314,8 +406,8 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
 .fade-out-up {
   -webkit-animation-name: "fade-out-up";
           animation-name: "fade-out-up";
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
+  -webkit-animation-duration: 550ms;
+          animation-duration: 550ms;
   -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-animation-delay: 0s;
@@ -328,6 +420,286 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
           animation-fill-mode: both;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+}
+
+.fade-out-down {
+  -webkit-animation-name: "fade-out-down";
+          animation-name: "fade-out-down";
+  -webkit-animation-duration: 550ms;
+          animation-duration: 550ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  -webkit-transition: opacity 550ms;
+  transition: opacity 550ms;
+}
+
+.fade-enter-active {
+  -webkit-transition-delay: 550ms;
+          transition-delay: 550ms;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.header-intro-animation-enter-active, .header-intro-animation-leave-active,
+.header-main-animation-enter-active,
+.header-main-animation-leave-active,
+.case-study-transition-enter-active,
+.case-study-transition-leave-active {
+  -webkit-transition: all 2s;
+  transition: all 2s;
+}
+
+.header-intro-animation-enter-active .header__title,
+.header-intro-animation-enter-active .header__subtitle {
+  -webkit-animation-name: "fade-in-up";
+          animation-name: "fade-in-up";
+  -webkit-animation-duration: 550ms;
+          animation-duration: 550ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.header-intro-animation-enter-active .header__title {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+}
+
+.header-intro-animation-enter-active .header__subtitle {
+  -webkit-animation-delay: 550ms;
+          animation-delay: 550ms;
+}
+
+.header-intro-animation-leave-active .header__title,
+.header-intro-animation-leave-active .header__subtitle {
+  -webkit-animation-name: "fade-out-up";
+          animation-name: "fade-out-up";
+  -webkit-animation-duration: 550ms;
+          animation-duration: 550ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.header-intro-animation-leave-active .header__title {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+}
+
+.header-intro-animation-leave-active .header__subtitle {
+  -webkit-animation-delay: 550ms;
+          animation-delay: 550ms;
+}
+
+.header-main-animation-enter-active .header__logo,
+.header-main-animation-enter-active .header__tagline {
+  -webkit-animation-name: "fade-in-up";
+          animation-name: "fade-in-up";
+  -webkit-animation-duration: 550ms;
+          animation-duration: 550ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.header-main-animation-enter-active .header__logo {
+  -webkit-animation-delay: 1050ms;
+          animation-delay: 1050ms;
+}
+
+.header-main-animation-enter-active .header__tagline {
+  -webkit-animation-delay: 1300ms;
+          animation-delay: 1300ms;
+}
+
+.header-main-animation-leave-active .header__logo,
+.header-main-animation-leave-active .header__tagline {
+  -webkit-animation-name: "fade-out-up";
+          animation-name: "fade-out-up";
+  -webkit-animation-duration: 550ms;
+          animation-duration: 550ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.header-main-animation-leave-active .header__logo {
+  -webkit-animation-delay: 1300ms;
+          animation-delay: 1300ms;
+}
+
+.header-main-animation-leave-active .header__tagline {
+  -webkit-animation-delay: 1050ms;
+          animation-delay: 1050ms;
+}
+
+.header-main-animation-leave-active + .header-intro-animation-enter-active .header__title {
+  -webkit-animation-delay: 1850ms;
+          animation-delay: 1850ms;
+}
+
+.header-main-animation-leave-active + .header-intro-animation-enter-active .header__subtitle {
+  -webkit-animation-delay: 2100ms;
+          animation-delay: 2100ms;
+}
+
+.case-study-transition-enter-active .background-images__image,
+.case-study-transition-enter-active .background-images__image--offset::after,
+.case-study-transition-enter-active .case-study__title,
+.case-study-transition-enter-active .case-study__subtitle,
+.case-study-transition-enter-active .case-study__cta {
+  -webkit-animation-name: "fade-in-up";
+          animation-name: "fade-in-up";
+  -webkit-animation-duration: 550ms;
+          animation-duration: 550ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.case-study-transition-enter-active .background-images__image {
+  -webkit-animation-delay: 2100ms;
+          animation-delay: 2100ms;
+}
+
+.case-study-transition-enter-active .background-images__image--offset {
+  -webkit-animation: none;
+          animation: none;
+}
+
+.case-study-transition-enter-active .background-images__image--offset::after {
+  -webkit-animation-delay: 1850ms;
+          animation-delay: 1850ms;
+}
+
+.case-study-transition-enter-active .case-study__title {
+  -webkit-animation-delay: 2350ms;
+          animation-delay: 2350ms;
+}
+
+.case-study-transition-enter-active .case-study__subtitle {
+  -webkit-animation-delay: 2600ms;
+          animation-delay: 2600ms;
+}
+
+.case-study-transition-enter-active .case-study__cta {
+  -webkit-animation-delay: 2850ms;
+          animation-delay: 2850ms;
+}
+
+.case-study-transition-leave-active .background-images__image,
+.case-study-transition-leave-active .background-images__image--offset::after,
+.case-study-transition-leave-active .case-study__title,
+.case-study-transition-leave-active .case-study__subtitle,
+.case-study-transition-leave-active .case-study__cta {
+  -webkit-animation-name: "fade-out-up";
+          animation-name: "fade-out-up";
+  -webkit-animation-duration: 550ms;
+          animation-duration: 550ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.case-study-transition-leave-active .background-images__image {
+  -webkit-animation-delay: 1050ms;
+          animation-delay: 1050ms;
+}
+
+.case-study-transition-leave-active .background-images__image--offset {
+  -webkit-animation: none;
+          animation: none;
+}
+
+.case-study-transition-leave-active .background-images__image--offset::after {
+  -webkit-animation-delay: 1300ms;
+          animation-delay: 1300ms;
+}
+
+.case-study-transition-leave-active .case-study__title {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+}
+
+.case-study-transition-leave-active .case-study__subtitle {
+  -webkit-animation-delay: 550ms;
+          animation-delay: 550ms;
+}
+
+.case-study-transition-leave-active .case-study__cta {
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
 }
 
 /* ==========================================================================
@@ -348,9 +720,30 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
   left: 0;
   right: 0;
   bottom: 0;
-  background-position: center bottom;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  z-index: 0;
+}
+
+.background-images__image:nth-child(1) {
+  z-index: 4;
+}
+
+.background-images__image:nth-child(2) {
+  z-index: 3;
+}
+
+.background-images__image:nth-child(3) {
+  z-index: 2;
+}
+
+.background-images__image:nth-child(4) {
+  z-index: 1;
+}
+
+.background-images__image:nth-child(5) {
+  z-index: 0;
 }
 
 .background-images__image--mobile {
@@ -417,10 +810,10 @@ input[type="button"]:active {
 }
 
 /* ==========================================================================
-   Hero
+   Footer
    @mixin ========================================================================= */
 /* ==========================================================================
-   Canvas
+   Header
    @mixin ========================================================================= */
 .header {
   width: 100%;
@@ -503,13 +896,55 @@ input[type="button"]:active {
   text-align: center;
 }
 
+.header--mike-king {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header--case-study {
+  position: relative;
+}
+
 .header__title, .header__subtitle {
   color: #374650;
+  -webkit-animation-name: "fade-in-up";
+          animation-name: "fade-in-up";
+  -webkit-animation-duration: 550ms;
+          animation-duration: 550ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
 
 .header__title {
   font-size: 4rem;
   margin-bottom: 0;
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
 }
 
 @media only screen and (min-width: 640px) {
@@ -522,6 +957,8 @@ input[type="button"]:active {
   font-size: 2.25rem;
   font-family: "Fira Sans", sans-serif;
   font-weight: 300;
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
 }
 
 .canvas {
@@ -532,8 +969,27 @@ input[type="button"]:active {
   left: 0;
   z-index: 0;
   background-color: #FFF;
+  -webkit-animation-name: "fade-in";
+          animation-name: "fade-in";
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
 
+/* ==========================================================================
+   Hero
+   @mixin ========================================================================= */
 /* ==========================================================================
    Navigation
    @mixin ========================================================================= */
@@ -544,6 +1000,7 @@ input[type="button"]:active {
   display: -ms-flexbox;
   display: flex;
   position: absolute;
+  z-index: 2;
 }
 
 .nav--main {
@@ -553,7 +1010,6 @@ input[type="button"]:active {
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   padding: 0 2.5rem;
-  z-index: 2;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -569,6 +1025,10 @@ input[type="button"]:active {
 }
 
 .nav__items {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   position: relative;
   list-style: none;
   width: 100%;
@@ -576,6 +1036,24 @@ input[type="button"]:active {
 
 .nav__items__item {
   position: absolute;
+  -webkit-animation-name: "fade-in-up";
+          animation-name: "fade-in-up";
+  -webkit-animation-duration: 550ms;
+          animation-duration: 550ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms;
 }
 
 .nav__items__item a {
@@ -588,11 +1066,28 @@ input[type="button"]:active {
 
 .nav__items__item:last-child {
   right: 0;
+  -webkit-animation-name: "fade-in-down";
+          animation-name: "fade-in-down";
+  -webkit-animation-duration: 550ms;
+          animation-duration: 550ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms;
 }
 
 .nav--pagination {
   bottom: 40px;
-  z-index: 2;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
@@ -609,6 +1104,24 @@ input[type="button"]:active {
   background-image: url("/images/icons/down-arrow.svg");
   background-repeat: no-repeat;
   background-size: contain;
+  -webkit-animation-name: "fade-in-down";
+          animation-name: "fade-in-down";
+  -webkit-animation-duration: 550ms;
+          animation-duration: 550ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-delay: 1100ms;
+          animation-delay: 1100ms;
 }
 
 .nav__down-arrow:hover {
@@ -619,12 +1132,19 @@ input[type="button"]:active {
    Preloader
    @mixin ========================================================================= */
 .preloader {
-  display: block;
+  display: none;
   position: fixed;
   background-color: #FFFFFF;
   width: 100%;
   height: 100%;
   z-index: 3;
+}
+
+.preloader.active {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .preloader .preloader__container {
@@ -637,7 +1157,10 @@ input[type="button"]:active {
 }
 
 .preloader .mikeking-logo {
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   width: 9.375rem;
   height: 7.04339rem;
 }
@@ -650,8 +1173,15 @@ input[type="button"]:active {
 }
 
 /* ==========================================================================
+   Section
+   @mixin ========================================================================= */
+/* ==========================================================================
    Home Page
    @mixin ========================================================================= */
+.home {
+  overflow: hidden;
+}
+
 .home .main,
 .home .case-study {
   display: -webkit-box;
@@ -677,14 +1207,6 @@ input[type="button"]:active {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  display: none;
-}
-
-.home .case-study:first-child {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .home .case-study__container {
@@ -697,7 +1219,17 @@ input[type="button"]:active {
           flex: 0 1 auto;
 }
 
-.home .case-study__container::after {
+.home .case-study__background-images {
+  z-index: 0;
+}
+
+.home .case-study__background-images .background-images__image--offset {
+  z-index: -1;
+  top: 30px;
+  left: 30px;
+}
+
+.home .case-study__background-images .background-images__image--offset::after {
   content: '';
   display: -webkit-box;
   display: -webkit-flex;
@@ -707,13 +1239,9 @@ input[type="button"]:active {
   width: 100%;
   height: 100%;
   z-index: -1;
-  top: 30px;
-  left: 30px;
+  top: 0;
+  left: 0;
   background-color: #E6F4FA;
-}
-
-.home .case-study__background-images {
-  z-index: 0;
 }
 
 .home .case-study__content {
@@ -728,6 +1256,10 @@ input[type="button"]:active {
 }
 
 .home .case-study__title, .home .case-study__subtitle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   position: absolute;
   left: -50px;
 }
@@ -743,6 +1275,10 @@ input[type="button"]:active {
 }
 
 .home .case-study__cta {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   position: absolute;
   bottom: 50px;
   right: -50px;
@@ -759,3 +1295,7 @@ input[type="button"]:active {
   position: absolute;
   bottom: -10px;
 }
+
+/* ==========================================================================
+   GoHawaii Page
+   @mixin ========================================================================= */

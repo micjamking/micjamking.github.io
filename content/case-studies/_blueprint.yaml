@@ -1,3 +1,3 @@
 title: Case Studies
 path: /{root}/case-study/{slug}/
-view: /views/base.html
+view: /views/case-study.html

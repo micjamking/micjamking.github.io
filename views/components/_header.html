@@ -1,21 +1,26 @@
-    <header class="header header--main">
-      <a href="/" class="header__logo">
-        <svg class="header__logo-icon" viewBox="0 0 33 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <g class="logo" transform="translate(1.000000, 1.000000)" stroke="#374650" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-            <g class="rim" transform="translate(0.000000, 22.630137)" stroke-width="1.53424658">
-              <polyline class="stroke-1" points="0.267573917 4.81209159 15.781389 4.81209159 30.8301926 4.81209159"></polyline>
-              <polyline class="stroke-2" points="0.267573917 0.240663014 15.781389 0.240663014 30.8301926 0.240663014"></polyline>
+  {% if doc.header == 'header--main' %}
+  <transition name="header-main-animation" :duration="{ enter: 2900, leave: 3900 }">
+    <header class="header header--main"
+            v-show="stateService.getIndex() !== 0">
+        <a href="/" class="header__logo">
+          <svg class="header__logo-icon" viewBox="0 0 33 30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g class="logo" transform="translate(1.000000, 1.000000)" stroke="#374650" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+              <g class="rim" transform="translate(0.000000, 22.630137)" stroke-width="1.53424658">
+                <polyline class="stroke-1" points="0.267573917 4.81209159 15.781389 4.81209159 30.8301926 4.81209159"></polyline>
+                <polyline class="stroke-2" points="0.267573917 0.240663014 15.781389 0.240663014 30.8301926 0.240663014"></polyline>
+              </g>
+              <g class="m-initial" transform="translate(0.473611, 0.013714)" stroke-width="1.53424658">
+                <polyline class="stroke-3" points="30.1241048 18.1302571 30.1241048 0.271971429 15.0753011 18.1302571"></polyline>
+                <polyline class="stroke-4" points="0.0263815741 18.1302571 0.0263815741 0.271971429 15.0751852 18.1302571"></polyline>
+              </g>
+              <g class="horn" transform="translate(9.871204, 0.013714)" stroke-width="1.53424658">
+                <path class="stroke-5" d="M11.1502327,6.76628571 L5.67765057,0.272"></path>
+                <path class="stroke-6" d="M0.204807528,6.76628571 L5.67767956,0.272"></path>
+              </g>
             </g>
-            <g class="m-initial" transform="translate(0.473611, 0.013714)" stroke-width="1.53424658">
-              <polyline class="stroke-3" points="30.1241048 18.1302571 30.1241048 0.271971429 15.0753011 18.1302571"></polyline>
-              <polyline class="stroke-4" points="0.0263815741 18.1302571 0.0263815741 0.271971429 15.0751852 18.1302571"></polyline>
-            </g>
-            <g class="horn" transform="translate(9.871204, 0.013714)" stroke-width="1.53424658">
-              <path class="stroke-5" d="M11.1502327,6.76628571 L5.67765057,0.272"></path>
-              <path class="stroke-6" d="M0.204807528,6.76628571 L5.67767956,0.272"></path>
-            </g>
-          </g>
-        </svg>
-      </a>
-      <span class="header__tagline">{{_(doc.tagline)}}</span>
+          </svg>
+        </a>
+        <span class="header__tagline">{{_(doc.tagline)}}</span>
     </header>
+  </transition>
+  {% endif %}

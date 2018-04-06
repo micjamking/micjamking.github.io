@@ -158,7 +158,10 @@ let webpackConfig = (function(){
   config.resolve = {
     modules: [
       PATH.resolve( VENDOR )
-    ]
+    ],
+    alias: {
+      'vue': 'vue/dist/vue.js'
+    }
   };
 
 

@@ -3,10 +3,13 @@ $path: "/{root}/"
 $order: -1
 $hidden: true
 
+id: "mike-king"
 subtitle: "Creative Developer"
 tagline: "Elevating digital experiences through creative technology"
+header: 'header--main'
 custom_header: true
-page_footer: false
+navigation: true
+pagination_arrow: true
 
 components:
 # GoHawaii
@@ -17,6 +20,7 @@ components:
   award: 2017
   background_images:
   - url: "/static/images/case-studies/case-study-tile__gohawaii.png"
+  - class: 'background-images__image--offset'
   cta:
     url: "/case-study/gohawaii"
     label: "View Case Study"
@@ -30,6 +34,7 @@ components:
   background_images:
   - url: "/static/images/case-studies/case-study-tile__gohawaii.png"
   # - url: "/static/images/case-studies/case-study-tile__tour-aloha.png"
+  - class: 'background-images__image--offset'
   cta:
     url: "/case-study/tour-aloha"
     label: "View Case Study"
@@ -42,6 +47,7 @@ components:
   background_images:
   - url: "/static/images/case-studies/case-study-tile__gohawaii.png"
   # - url: "/static/images/case-studies/case-study-tile__teacup-analytics.png"
+  - class: 'background-images__image--offset'
   cta:
     url: "/case-study/teacup-analytics"
     label: "View Case Study"
@@ -54,6 +60,7 @@ components:
   background_images:
   - url: "/static/images/case-studies/case-study-tile__gohawaii.png"
   # - url: "/static/images/case-studies/case-study-tile__clearstream.png"
+  - class: 'background-images__image--offset'
   cta:
     url: "/case-study/clearstream"
     label: "View Case Study"
@@ -66,6 +73,7 @@ components:
   background_images:
   - url: "/static/images/case-studies/case-study-tile__gohawaii.png"
   # - url: "/static/images/case-studies/case-study-tile__mobipcs.png"
+  - class: 'background-images__image--offset'
   cta:
     url: "/case-study/mobipcs"
     label: "View Case Study"

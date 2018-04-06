@@ -59,15 +59,25 @@ export default class utils {
    */
   captureMouse (el) {
 
+    let utils = this;
+
     let mouse = {
       x: 0,
-      y: 0
+      y: 0,
+      percentageX: 0,
+      percentageY: 0
     };
 
     function mouseListener(e) {
 
+      el.offsetLeft = el.offsetLeft || 0;
+      el.offsetTop = el.offsetTop || 0;
+
       mouse.x = e.pageX - el.offsetLeft;
       mouse.y = e.pageY - el.offsetTop;
+
+      mouse.percentageX = (mouse.x - utils.screenSize().width / 2) / (utils.screenSize().width) * 100;
+      mouse.percentageY = (mouse.y - utils.screenSize().height / 2) / (utils.screenSize().height) * 100;
 
     }
 
@@ -109,6 +119,9 @@ export default class utils {
     }
 
     function touchMoveListener(e) {
+
+      el.offsetLeft = el.offsetLeft || 0;
+      el.offsetTop = el.offsetTop || 0;
 
       touch.x = e.touches[0].pageX - el.offsetLeft;
       touch.y = e.touches[0].pageY - el.offsetTop;
@@ -318,7 +331,7 @@ export default class utils {
       if (mouse.current){
         console.log('current mouse position: ', 'x: ' + mouse.current.x + ', y: ' + mouse.current.y);
       } else {
-        console.log('current mouse position: ', 'x: ' + mouse.x + ', y: ' + mouse.y);
+        console.log('current mouse position: ', 'x: ' + mouse.x + ', y: ' + mouse.y + ', percentageX: ' + mouse.percentageX + ', percentageY: ' + mouse.percentageY);
       }
 
     }
@@ -449,6 +462,12 @@ export default class utils {
     }
 
     return false;
+  }
+
+  clamp(number, min, max) {
+
+    return Math.min(Math.max(number, min), max);
+
   }
 
 }

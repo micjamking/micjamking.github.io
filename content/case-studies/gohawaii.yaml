@@ -1,0 +1,241 @@
+$title: GoHawaii
+$order: 2
+
+page_footer: true
+
+header:
+  title: 'GoHawaii'
+  subtitle: 'Travel Safety Mobile App'
+  services:
+  - label: 'Creative Direction'
+  - label: 'User Experience Design'
+  - label: 'Software Development'
+  project_links:
+  - label: 'iTunes App Store'
+    url: 'https://itunes.apple.com/us/app/gohawaii/id1100071565?mt=8'
+  - label: 'Google Play Store'
+    url: 'https://play.google.com/store/apps/details?id=com.gohawaii.htamobile'
+  background_images:
+  - url: '/static/images/case-studies/gohawaii/gohawaii_header-background.png'
+
+footer:
+  next_project:
+    url: '/case-study/tour-aloha'
+    label: 'Tour Aloha'
+
+components:
+- component: 'section-columns'
+  columns:
+  - class: 'body--large'
+    chapter:
+      body: 'Launched in June of 2016, GoHawaiʻi is the state of Hawaii’s first official mobile app for travel tips and safety information for visitors from the US mainland, China, Japan, Korea and Germany, developed in partnership with Hawaiʻi Tourism Authority.'
+      inline_images:
+      - url: '/static/images/case-studies/gohawaii/gohawaii_graphic.png'
+
+- component: 'section-columns'
+  columns:
+  - chapter:
+      background_images:
+      - url: '/static/images/case-studies/gohawaii/gohawaii_full-background.png'
+
+- component: 'section-columns'
+  columns:
+  - order: 1
+    class: 'columns--offset'
+    chapter:
+      title: 'Illustrated,  storytelling  in <span class="italicize">your</span> language.'
+      background_images:
+      - class: 'monsterra-leaf'
+        url: '/static/images/case-studies/gohawaii/gohawaii_monsterra-leaf.svg'
+  - order: 2
+    chapter:
+      body: 'We implemented a multilingual mobile content management system that delivers fresh tips to Android and iOS users dynamically with information presented in an interactive, illustrated storytelling experience using characters and scenes created just for GoHawaiʻi.'
+
+- component: 'section-columns'
+  class: 'padded'
+  columns:
+  - chapter:
+      theme: 'dark'
+      title: "Hawaii's State Tourism Agency"
+      body: "As Hawaii's state tourism agency, the <span class='bold'>Hawaii Tourism Authority</span> (HTA) uses its research, industry and marketing expertise to develop and implement the state's strategic tourism marketing plan. Equally important, the HTA is responsible for supporting programs that enhance and showcase Hawaii's people, place and culture in order to deliver an incomparable visitor experience."
+      background_images:
+      - url: '/static/images/case-studies/gohawaii/gohawaii_full-background.png'
+
+- component: 'section-columns'
+  columns:
+  - order: 1
+    mobile_order: 2
+    chapter:
+      body: 'While Hawaii continues to serve as one of the world’s most popular tourist destinations, it is also unfortunately home to one of the highest rates of visitor drownings in the country.  As the state’s official tourism agency, HTA is responsible for administering and promoting the state’s visitor safety guidelines.  HTA wanted to take advantage of mobile technology to provide visitors direct access to safety information from their smartphones.'
+  - order: 2
+    mobile_order: 1
+    class: 'columns--offset'
+    chapter:
+      title: 'Safety tips  at your <span class="italicize"> fingertips</span>.'
+      background_images:
+      - class: 'monsterra-leaf'
+        url: '/static/images/case-studies/gohawaii/gohawaii_monsterra-leaf.svg'
+
+- component: 'section-custom-animation'
+  class: 'light-grey-bg'
+  elements:
+  - class: 'alert-1'
+    background_images:
+    - url: ''
+  - class: 'alert-2'
+    background_images:
+    - url: ''
+  - class: 'alert-3'
+    background_images:
+    - url: ''
+
+- component: 'section-columns'
+  columns:
+  - chapter:
+      title: 'All-access safety & travel info'
+      body: 'Hawaii Tourism Authority’s primary objective was to increase awareness and accessibility of publicly available safety and travel information, while also provide a single resource for travel destination information across the major Hawaiian Islands. HTA wanted to provide “all-access” safety and travel destination information to users in the most convenient means as possible, using the latest forms of mobile technology.'
+      inline_images:
+      - url: '/static/images/case-studies/gohawaii/gohawaii_badge-airport.png'
+      - url: '/static/images/case-studies/gohawaii/gohawaii_badge-ocean.png'
+      - url: '/static/images/case-studies/gohawaii/gohawaii_badge-marine.png'
+
+- component: 'section-process'
+  theme: 'dark'
+  process:
+  - phase: 'discovery'
+    work:
+      class: 'left'
+      background_images:
+        - id: ''
+          url: ''
+    details:
+      class: 'right'
+      chapter:
+        title: 'Discovery'
+        title_icon: ''
+        body:
+          - "I lead multiple rounds of <span class='bold'>stakeholder interviews</span> with the international marketing teams for HTA, including their Japanese, Korean, Chinese & Taiwanese teams, to identify overarching concerns in regards to end customers motivations and technology habits."
+          - "We performed a <span class='bold'>competitor analysis</span> across 9 different local and national competitors in the travel and tourism space. Additionally, we created <span class='bold'>user profiles</span> to define the audience of the application, extrapolated from market research performed by the client."
+
+  - phase: 'insights'
+    class: 'insights'
+    chapter:
+      body:
+        - "Through the Discovery process, we learned the majority of visitors to the Hawaiian Islands today come from Asian countries, ie. China, Japan, and Korea."
+        - "This finding influenced our creative strategy and subsequently, the branding and visual design for the application."
+        - "In Japanese culture, the concept of “cute” or “cuteness” permeates many products, and is used as design strategy to create an emotional impact with customers."
+        - "Leaning on this discovery, we created a set of “cute” character guides for the mobile application to help guide users safely on their journey through the islands."
+
+  - phase: 'information-architecture'
+    work:
+      class: 'right'
+      background_images:
+        - id: ''
+          url: ''
+    details:
+      class: 'left'
+      chapter:
+        title: 'Information Architecture'
+        title_icon: ''
+        body:
+          - "Once we had a clear understanding of the requirements, business goals, and user motivations, we began designing <span class='bold'>user task-flow diagrams</span> to outline the experience for users navigating through the app to discover safety information and recommended attractions, events, and island tips."
+          - "Once the user-flows had been defined and agreed upon, we created <span class='bold'>wireframe schematics</span> to outline the introductory flow, safety “travel smart” experience, destination experience, and menu interactions."
+
+  - phase: 'creative-direction'
+    work:
+      class: 'left'
+      background_images:
+        - id: ''
+          url: ''
+    details:
+      class: 'right'
+      chapter:
+        title: 'Creative Direction'
+        title_icon: ''
+        body:
+          - "One of the primary challenges for the project was defining a <span class='bold'>creative strategy</span> that could make safety information exciting and interesting for visitors to the islands."
+          - "Based on the business requirements and potential motivations of the target audience, I presented two creative design strategies for the mobile experience: a conservative, content-centric brochure experience that used animations and transitions as supporting elements of the design, and an interactive narrative experience that uses storytelling and illustrations to escort users through the content, using animated characters as friendly guides."
+          - "As the client’s concern was making the safety content more accessible and digestible, they chose to pursue the interactive storytelling direction. From here, I collaborated with our art director and visual designers to ensure the brand and user interface designs created the right narrative experience for first time visitors to the islands."
+
+  - phase: 'software-development'
+    work:
+      class: 'right'
+      background_images:
+        - id: ''
+          url: ''
+    details:
+      class: 'left'
+      chapter:
+        title: 'Software Development'
+        title_icon: ''
+        body:
+          - "Once the information architecture had been agreed upon, I shifted my focus to the <span class='bold'>technical architecture</span> of the system. Based on the requirements of the project, we needed to develop a system that would allow for managing and serving content from 6 different locales while allowing the user to dynamically switch languages within the mobile app and the client to update the content in any language on the fly. "
+          - "We decided to use a Headless WordPress CMS as the backend, and through a combined usage of localization plugins, custom fields / custom post type development, and WordPress’ new built-in REST API, we were able to develop a seamless editorial workflow that allowed HTA’s local and international marketing teams to add and update content within the mobile app without pushing new versions to the app store."
+
+- component: 'section-columns'
+  columns:
+  - device_slider:
+    - id: 'slide-1'
+      background_images:
+      - url: ''
+    - id: 'slide-2'
+      background_images:
+      - url: ''
+    - id: 'slide-3'
+      background_images:
+      - url: ''
+  - chapter:
+      title: 'All-access safety & travel info'
+      body:
+      - "Given the broad demographics of the target user base, we recommended a “hybrid” mobile application solution for mobile development, allowing us to write in one codebase and deploy to multiple platforms (iOS and Android)."
+      - "As previously mentioned, we developed a custom backend and API server using a headless WordPress solution, allowing the client to manage safety and travel destination content across 6 different locales and perform content updates in the app without the need to deploy new versions to the native app stores."
+
+- component: 'section-columns'
+  class: 'light-grey-bg padded'
+  columns:
+  - chapter:
+      title: 'Hawaii’s Official Travel & Tourism App'
+      body: 'In the end, we successfully created the state of Hawaii’s first official travel and tourism app; a fun and interactive way to learn both safety and historical information about the Hawaiian Islands. The client had a goal of achieving 10,000 downloads by the annual Hawaii Tourism Conference, 3 months after launch. We were happily surprised when we had reached more than 15,000 downloads several weeks ahead of the conference. Additionally, the mobile application design won a 2017 Pele Gold award for best mobile app. The annual competition, formerly known as the ADDYs, recognizes the best advertising and design work in Hawaii.'
+      ctas:
+        - class: 'itunes'
+          url: 'https://itunes.apple.com/us/app/gohawaii/id1100071565?mt=8'
+          label: 'Download on the  iTunes App Store'
+        - class: 'play'
+          url: 'https://play.google.com/store/apps/details?id=com.gohawaii.htamobile'
+          label: 'Download on the  Google Play Store'
+
+- component: 'section-columns'
+  columns:
+  - chapter:
+      title: 'Credits'
+      body_list:
+        - name: 'Client'
+          value: 'Hawaii Tourism Authority'
+        - name: 'Agency'
+          value: 'Ikayzo, Inc.'
+        - name: 'Engagement'
+          value: 'January 2016 — March 2017'
+        - name: 'Technology'
+          list:
+          - value: 'Mobile App: Ionic (AngularJS + Cordova)'
+          - value: 'Backend CMS / API: WordPress'
+        - name: 'Awards'
+          value: 'Best Mobile App—2017 Pele Awards'
+        - name: 'Concept, Creative Direction'
+          value: 'Mike King'
+        - name: 'UX Design, Software Architecture'
+          value: 'Mike King'
+        - name: 'Branding, Art Direction'
+          value: 'Arlyn Ramos'
+        - name: 'Character Design'
+          value: 'Arlyn Ramos'
+        - name: 'UI Design'
+          value: 'Jen Zheng'
+        - name: 'Animation'
+          value: 'Nainoa Shizuru'
+        - name: 'Animation'
+          value: 'Nainoa Shizuru'
+        - name: 'Mobile Development'
+          value: 'Scott Yano'
+        - name: 'CMS / API Development'
+          value: 'Mike King'

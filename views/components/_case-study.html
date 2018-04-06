@@ -1,24 +1,31 @@
 {% import "/views/macros/_cta-button.html" as cta_button with context %}
 
-<section class="case-study{% if component.id %} case-study--{{component.id}}{% endif %}">
-  <div class="case-study__container">
-    <div class="case-study__background-images background-images">
-    {% for image in component.background_images %}
-      <div class="case-study__background-images__image background-images__image{% if image.class %} {{image.class}}{% endif %}" {% if image.url %}style="background-image: url({{g.static(image.url).url.path}})"{% endif %}></div>
-    {% endfor %}
-    </div>
-    <div class="case-study__content">
-      {% if component.title %}
-      <h1 class="case-study__title">{{_(component.title)}}</h1>
-      {% endif %}
-      {% if component.subtitle %}
-      <span class="case-study__subtitle">{{_(component.subtitle)}}</span>
-      {% endif %}
-      {% if component.cta %}
-      <div class="case-study__cta cta">
-        {{cta_button.cta_button(component.cta)}}
+<transition name="case-study-transition" :duration="{ enter: 3900, leave: 1800 }">
+  <section {% if component.id %}id="{{component.id}}"{% endif %}
+           class="case-study{% if component.id %} case-study--{{component.id}}{% endif %}"
+           v-init="() => { stateService.addItemModel( { 'name': '{{ component.id }}' } ) }"
+           v-show="stateService.getCurrentItem() === '{{ component.id }}'"
+           key="{{ component.id }}">
+    <div class="case-study__container">
+      <div class="case-study__background-images background-images">
+      {% for image in component.background_images %}
+        <div class="case-study__background-images__image background-images__image{% if image.class %} {{image.class}}{% endif %}"
+        style="{% if image.url %}background-image: url({{g.static(image.url).url.path}}){% endif %}"></div>
+      {% endfor %}
       </div>
-      {% endif %}
+      <div class="case-study__content">
+        {% if component.title %}
+        <h1 class="case-study__title">{{_(component.title)}}</h1>
+        {% endif %}
+        {% if component.subtitle %}
+        <span class="case-study__subtitle">{{_(component.subtitle)}}</span>
+        {% endif %}
+        {% if component.cta %}
+        <div class="case-study__cta cta">
+          {{cta_button.cta_button(component.cta)}}
+        </div>
+        {% endif %}
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</transition>

@@ -102,19 +102,22 @@
 {% if doc.url.path == '/' %}
   {% set body_class = 'home' %}
 {% else %}
-  {% set body_class = doc.url.path|replace("/", "") %}
+  {% set body_class = doc.url.path|replace("/", "")|replace("case-study", "") %}
 {% endif %}
 <body class="{{ body_class }}">
-  <div class="container">
-    {% include "/views/components/_preloader.html" %}
 
-    {% include "/views/components/_header.html" %}
+  {% include "/views/components/_preloader.html" %}
 
-    {% if doc.custom_header %}
-    {% include "/views/components/_custom-header.html" %}
-    {% endif %}
+  <div class="container" :class="{ active: isActive }">
+    {% block header %}
+      {% include "/views/components/_header.html" %}
 
-    {% include "/views/components/_navigation.html" %}
+      {% if doc.custom_header %}
+      {% include "/views/components/_header-custom.html" %}
+      {% endif %}
+
+      {% include "/views/components/_navigation.html" %}
+    {% endblock %}
 
     <section class="main">
       {% block main %}
@@ -128,9 +131,8 @@
       {% endblock %}
     </section>
 
-    {% if doc.page_footer %}
-    {% include "/views/components/_page-footer.html" %}
-    {% endif %}
+    {% block footer %}
+    {% endblock %}
 
   </div>
   <script src="{{ g.static('/static/script.js').url.path }}"></script>

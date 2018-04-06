@@ -1,3 +1,4 @@
+        {% if doc.navigation %}
         <nav class="nav nav--main">
           <ul class="nav__items">
             {% for item in g.docs('pages') %}
@@ -7,7 +8,11 @@
             {% endfor %}
           </ul>
         </nav>
-
+        {% endif %}
+        
+        {% if doc.pagination_arrow %}
         <nav class="nav nav--pagination">
-          <a class="nav__down-arrow"></a>
+          <a class="nav__down-arrow"
+             @click="stateService.getNextItem()"></a>
         </nav>
+        {% endif %}

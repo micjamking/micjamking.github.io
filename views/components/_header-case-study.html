@@ -1,0 +1,29 @@
+{% import "/views/macros/_background-images.html" as background_images with context %}
+
+<header class="header header--case-study">
+  {% if doc.header.background_images %}
+  {{background_images.background_images('header__background-images background-images--case-study', doc.header.background_images)}}
+  {% endif %}
+  <div class="header__container">
+    <h1 class="header__title">{{ doc.header.title }}</h1>
+    <div class="header__subtitle">{{ doc.header.subtitle }}</div>
+
+    {% if doc.header.services %}
+    <ul class="header__services">
+        {% for service in doc.header.services %}
+        <li class="header__service">{{ service.label }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if doc.header.project_links %}
+    <ul class="header__project-links">
+        {% for link in doc.header.project_links %}
+        <li class="header__service">
+          <a class="link link--header" href="{{ link.url }}">{{ link.label }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</header>
