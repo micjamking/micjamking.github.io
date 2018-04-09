@@ -2,14 +2,19 @@
         <nav class="nav nav--main">
           <ul class="nav__items">
             {% for item in g.docs('pages') %}
-              <li class="nav__items__item {{"nav__items__item--active" if doc == item}}">
+              {% if item.url.path == '/' %}
+                {% set item_class = 'home' %}
+              {% else %}
+                {% set item_class = item.url.path|replace("/", "")|replace("case-study", "") %}
+              {% endif %}
+              <li class="nav__items__item nav__items__item--{{item_class}}{% if doc == item %} nav__items__item--active{% endif %}">
                 <a href="{{item.url.path}}">{{item.title}}</a>
               </li>
             {% endfor %}
           </ul>
         </nav>
         {% endif %}
-        
+
         {% if doc.pagination_arrow %}
         <nav class="nav nav--pagination">
           <a class="nav__down-arrow"

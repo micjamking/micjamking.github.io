@@ -1,42 +1,4 @@
 {
-  "/content/case-studies/gohawaii.md": [
-    "/content/pages/about.yaml",
-    "/content/pages/contact.yaml",
-    "/static/apple-touch-icon-precomposed.png",
-    "/static/favicon.png",
-    "/static/images/social_image.jpg",
-    "/static/script.js",
-    "/static/style.css",
-    "/views/components/_header.html",
-    "/views/components/_navigation.html",
-    "/views/components/_preloader.html"
-  ],
-  "/content/case-studies/gohawaii.yaml": [
-    "/static/apple-touch-icon-precomposed.png",
-    "/static/favicon.png",
-    "/static/images/case-studies/gohawaii/gohawaii_header-background.png",
-    "/static/images/social_image.jpg",
-    "/static/script.js",
-    "/static/style.css",
-    "/views/components/_header-case-study.html",
-    "/views/components/_header.html",
-    "/views/components/_navigation.html",
-    "/views/components/_page-footer.html",
-    "/views/components/_preloader.html",
-    "/views/components/_section-columns.html",
-    "/views/components/_section-custom-animation.html",
-    "/views/components/_section-process.html"
-  ],
-  "/content/pages/about.yaml": [
-    "/static/apple-touch-icon-precomposed.png",
-    "/static/favicon.png",
-    "/static/images/social_image.jpg",
-    "/static/script.js",
-    "/static/style.css",
-    "/views/components/_header.html",
-    "/views/components/_navigation.html",
-    "/views/components/_preloader.html"
-  ],
   "/content/pages/home.yaml": [
     "/content/pages/about.yaml",
     "/content/pages/contact.yaml",
@@ -47,7 +9,6 @@
     "/static/script.js",
     "/static/style.css",
     "/views/components/_case-study.html",
-    "/views/components/_custom-header.html",
     "/views/components/_header-custom.html",
     "/views/components/_header.html",
     "/views/components/_navigation.html",

@@ -38,39 +38,33 @@ export default class UI extends Vue {
     let introState = function(){
       new ParticleCanvas();
 
+      new MouseScroller({
+        debounceTime: 1000,
+        scrollThreshold: 0.4,
+        scrollDownCallback: () => _stateService.getNextItem(),
+        scrollUpCallback:   () => _stateService.getPreviousItem()
+      });
+
       // On desktop-only...
       if (!_utils.allowDeviceOrientation()){
 
-        // Instantiate new MouseScroller
-        new MouseScroller({
-          debounceTime: 1000,
-          scrollThreshold: 0.4,
-          scrollDownCallback: () => _stateService.getNextItem(),
-          scrollUpCallback:   () => _stateService.getPreviousItem()
-        });
-
         if(!parallaxers_.length) {
           parallaxers_ = [
+            // Case study wrapper element
             new Parallaxer(
               $('.main'),
               { x: 0.1, y: 0.1}, { x: 0.25, y: 0.25}
             ),
+            // Case study background offset
             new Parallaxer(
               $('.background-images__image--offset'),
               { x: 0.1, y: 0.1}, { x: 1.5, y: 1.25}
             ),
-            // new Parallaxer(
-            //   $('.case-study__title'),
-            //   { x: 0.1, y: 0.1}, { x: 0.1, y: 0.1}
-            // ),
-            // new Parallaxer(
-            //   $('.case-study__subtitle'),
-            //   { x: 0.1, y: 0.1}, { x: 0.1, y: 0.1}
-            // ),
-            // new Parallaxer(
-            //   $('.case-study__cta'),
-            //   { x: 0.1, y: 0.1}, { x: 0.1, y: 0.1}
-            // )
+            // Case study title, subtitle, and cta button
+            new Parallaxer(
+              $('.case-study__inner-content'),
+              { x: 0.1, y: 0.1}, { x: 0.2, y: 0.2}
+            )
           ];
 
           // Run parallaxers.

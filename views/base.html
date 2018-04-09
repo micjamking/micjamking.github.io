@@ -26,7 +26,11 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="{{ podspec.title }}" />
   <meta property="og:url" content="{{ doc.url }}" />
+  {% if doc.url.path == '/' %}
+  <meta property="og:title" content="{{ podspec.title }}" />
+  {% else %}
   <meta property="og:title" content="{% if doc.title %}{{ doc.title }} | {% endif %}{{ podspec.title }}" />
+  {% endif %}
   {% if doc.description %}
   <meta property="og:description" content="{{ doc.description }}" />
   {% else %}
@@ -54,7 +58,11 @@
   <meta name="twitter:site" content="{{ podspec.meta.twitter.username }}">
   <meta name="twitter:creator" content="{{ podspec.meta.twitter.username }}">
   {% endif %}
-  <meta name="twitter:title" content="{% if doc.title %}{{ doc.title }} | {% endif %}{{ podspec.title }}">
+  {% if doc.url.path == '/' %}
+  <meta name="twitter:title" content="{{ podspec.title }}" />
+  {% else %}
+  <meta name="twitter:title" content="{% if doc.title %}{{ doc.title }} | {% endif %}{{ podspec.title }}" />
+  {% endif %}
   {% if doc.description %}
   <meta name="twitter:description" content="{{ doc.description }}">
   {% else %}
@@ -82,7 +90,11 @@
   <link rel="apple-touch-icon" href="{{ g.static(podspec.meta.icon_path).url.path }}" />
   {% endif %}
 
-  <title>{% if doc.title %}{{ doc.title }} – {% endif %}{{ podspec.title }}</title>
+  {% if doc.url.path == '/' %}
+  <title>{{ podspec.title }}</title>
+  {% else %}
+  <title>{% if doc.title %}{{ doc.title }} | {% endif %}{{ podspec.title }}</title>
+  {% endif %}
 
   {% if podspec.meta.google.analytics_id %}
   <!-- Google Analytics -->

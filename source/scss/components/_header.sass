@@ -10,17 +10,28 @@
 
   &--main
     top: 0
-    height: 150px
+    height: auto
     display: flex
-    padding: $global-spacing-xl
+    padding: $global-spacing-lg
+    flex-direction: column
     justify-content: center
+    align-items: center
+
+    +md
+      height: 150px
+      flex-direction: row
+      padding: $global-spacing-xl
 
   &__logo
-    position: absolute
-    top: $global-spacing-xl
-    left: $global-spacing-xl
     width: 33px
     height: 30px
+    margin-bottom: $global-spacing-md
+
+    +md
+      position: absolute
+      top: $global-spacing-xl
+      left: $global-spacing-xl
+      margin-bottom: 0
 
   &__tagline
     display: flex
@@ -31,6 +42,7 @@
     font-size: 12px
     text-align: center
     position: relative
+    max-width: 180px
 
     &::before,
     &::after
@@ -44,10 +56,23 @@
       transform: translateY(-50%)
 
     &::before
-      left: -45px
+      left: -30px
 
     &::after
-      right: -45px
+      right: -30px
+
+    +md
+      max-width: none
+
+      &::before,
+      &::after
+        width: 30px
+
+      &::before
+        left: -45px
+
+      &::after
+        right: -45px
 
   &--custom
     top: 50%

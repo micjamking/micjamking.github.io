@@ -15,14 +15,18 @@
       </div>
       <div class="case-study__content">
         {% if component.title %}
-        <h1 class="case-study__title">{{_(component.title)}}</h1>
+        <h1 class="case-study__title">
+          <span class="case-study__inner-content">{{_(component.title)}}</span>
+        </h1>
         {% endif %}
         {% if component.subtitle %}
-        <span class="case-study__subtitle">{{_(component.subtitle)}}</span>
+        <span class="case-study__subtitle">
+          <span class="case-study__inner-content">{{_(component.subtitle)}}</span>
+        </span>
         {% endif %}
         {% if component.cta %}
         <div class="case-study__cta cta">
-          {{cta_button.cta_button(component.cta)}}
+          <span class="case-study__inner-content">{{cta_button.cta_button(component.cta)}}</span>
         </div>
         {% endif %}
       </div>

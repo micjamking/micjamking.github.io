@@ -17,12 +17,12 @@ export default class utils {
     if (!w['requestAnimationFrame']) {
 
       w['requestAnimationFrame'] = ( w['webkitRequestAnimationFrame'] ||
-                                          w['mozRequestAnimationFrame'] ||
-                                          w['oRequestAnimationFrame'] ||
-                                          w['msRequestAnimationFrame'] ||
-                                          function(callback) {
-                                            return w['setTimeout'](callback, 1000 / 60);
-                                          });
+                                     w['mozRequestAnimationFrame'] ||
+                                     w['oRequestAnimationFrame'] ||
+                                     w['msRequestAnimationFrame'] ||
+                                     function(callback) {
+                                       return w['setTimeout'](callback, 1000 / 60);
+                                     });
 
     }
 
@@ -32,15 +32,15 @@ export default class utils {
     if (!w['cancelAnimationFrame']) {
 
       w['cancelAnimationFrame'] = ( w['cancelRequestAnimationFrame'] ||
-                                         w['webkitCancelAnimationFrame'] ||
-                                         w['webkitCancelRequestAnimationFrame'] ||
-                                         w['mozCancelAnimationFrame'] ||
-                                         w['mozCancelRequestAnimationFrame'] ||
-                                         w['oCancelAnimationFrame'] ||
-                                         w['oCancelRequestAnimationFrame'] ||
-                                         w['msCancelAnimationFrame'] ||
-                                         w['msCancelRequestAnimationFrame'] ||
-                                         w.clearTimeout );
+                                    w['webkitCancelAnimationFrame'] ||
+                                    w['webkitCancelRequestAnimationFrame'] ||
+                                    w['mozCancelAnimationFrame'] ||
+                                    w['mozCancelRequestAnimationFrame'] ||
+                                    w['oCancelAnimationFrame'] ||
+                                    w['oCancelRequestAnimationFrame'] ||
+                                    w['msCancelAnimationFrame'] ||
+                                    w['msCancelRequestAnimationFrame'] ||
+                                    w.clearTimeout );
 
     }
 
@@ -133,6 +133,57 @@ export default class utils {
     el.addEventListener('touchmove', touchMoveListener);
 
     return touch;
+
+  }
+
+
+  /**
+   * Capture device tilt / roatation movement
+   *
+   * @return {Object} touch - object containing touch coordinates
+   * @return {Object} touch.x - x-axis touch coordinates
+   * @return {Object} touch.y - y-axis touch coordinates
+   * @return {Boolean} touch.isPressed - true|false if user is currently touching screen
+   */
+  captureTilt () {
+
+    let tilt = {
+      x: 0,
+      y: 0
+    };
+
+    /**
+     * Handle Device Orientation
+     *  - Tilt 90º > 0º to increase gravity on mobile
+     */
+    function handleOrientation (e) {
+
+      var x = e.gamma;
+      var y = e.beta;
+
+      if (x > 90) { x = 90 }
+      if (x < 45) { x = 45 }
+
+      if (y > 90) { y = 90 }
+      if (y < 0) { y = 0 }
+
+      var rangeX = (90 - Math.floor( Math.abs(x) ) ) / 45;
+      var rangeY = (90 - Math.floor( Math.abs(y) ) ) / 90;
+
+      // Do stuff with the new orientation data
+      if (Math.floor( rangeY * 10 ) > 0) {
+        this.gravity = rangeY;
+      }
+
+      if (Math.floor( rangeX * 10 ) > 0) {
+        this.speed = rangeX;
+      }
+
+    }
+
+    w.addEventListener('deviceorientation', (e) => handleOrientation(e), true);
+
+    return tilt;
 
   }
 

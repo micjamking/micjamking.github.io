@@ -1,0 +1,82 @@
+{% import "/views/macros/_background-images.html" as background_images with context %}
+{% import "/views/macros/_cta-button.html" as cta_button with context %}
+
+{#
+ # Renders a chapter.
+ #
+ # theme (string) Dark or light theme.
+ #
+ # chapter:
+ # - class? (string) Optional classes to pass
+ # - theme? (string) Overrides the main theme.
+ # - inline_images (Array<object>) path to static image
+ # - title
+ # - body
+ # - body_list
+ # - ctas
+ #}
+{% macro chapter(theme, chapter) %}
+<div class="chapter chapter--{{ chapter.theme or theme }}{% if chapter.class %} {{ chapter.class }}{% endif %}">
+
+  {% if chapter.inline_images %}
+  <div class="chapter__images">
+    {% for image in chapter.inline_images %}
+    <div class="image chapter__image{% if image.class %} chapter__image--{{ image.class }}{% endif %}">
+      <img src="{{ g.static(image.url).url.path }}" />
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if chapter.title %}
+  <div class="chapter__title{% if chapter.title_class %} {{chapter.title_class}}{% endif %}">{{ chapter.title }}</div>
+  {% endif %}
+
+  {% if chapter.body %}
+  <div class="chapter__body">{{ chapter.body }}</div>
+  {% endif %}
+
+  {% if chapter.body_list %}
+  {{ body_list('chapter__body-list--nested', chapter.body_list)}}
+  {% endif %}
+
+  {% if chapter.background_images %}
+  {{background_images.background_images('chapter__background-images', chapter.background_images)}}
+  {% endif %}
+
+  {% if chapter.ctas %}
+  <div class="chapter__ctas{% if chapter.ctas_class %} {{chapter.ctas_class}}{% endif %}">
+    {% for cta in chapter.ctas %}
+      <div class="chapter__cta">
+        {{cta_button.cta_button(cta)}}
+      </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+</div>
+{% endmacro %}
+
+
+{#
+ # Renders an unordered list
+ #
+ # list:
+ # - class? (string) Optional classes to pass
+ # - items (Array<object>) list items
+ #}
+{% macro body_list(class, items) %}
+<ul class="chapter__body-list{% if class %} {{ class }}{% endif %}">
+  {% for item in items %}
+  <li class="chapter__body-list__item">
+    {% if item.name %}<span class="chapter__body-list__item__name">{{item.name}}: </span>{% endif %}
+    {% if item.value %}<span class="chapter__body-list__item__value">{{item.value}}</span>{% endif %}
+
+    {% if item.list %}
+    {{ body_list('chapter__body-list--nested', item.list)}}
+    {% endif %}
+
+  </li>
+  {% endfor %}
+</ul>
+{% endmacro %}

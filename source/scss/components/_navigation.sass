@@ -13,7 +13,11 @@
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
-    padding: 0 em-calc(40px)
+    padding: 0 em-calc($global-spacing-lg)
+    display: none
+
+    +md
+      display: initial
 
     +lg
       padding: 0 em-calc($global-spacing-lg)
@@ -28,19 +32,26 @@
     width: 100%
 
     &__item
-      position: absolute
-      +fade-in-up
-      animation-delay: 900ms
 
       a
         display: inline-block
         color: $global-color-dark-blue
-        transform: rotate(-90deg)
 
-      &:last-child
-        right: 0
+      &--about,
+      &--contact
+        position: absolute
+
+        a
+          transform: rotate(-90deg)
+
+      &--about
+        +fade-in-up
+        animation-delay: 900ms
+
+      &--contact
         +fade-in-down
         animation-delay: 900ms
+        right: 0
 
   &--pagination
     bottom: $global-spacing-lg

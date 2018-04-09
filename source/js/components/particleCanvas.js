@@ -37,8 +37,8 @@ export default class ParticleCanvas {
 
     // Particle settings
     this.particles         = [];
-    this.numOfParticles    = 150;
-    this.particleDistance  = 150;
+    this.numOfParticles    = 150 / this.devicePixelRatio;
+    this.particleDistance  = 150 / this.devicePixelRatio;
     this.particleOpacity   = 0.5;
     this.particleSpring    = 0.00001;
     this.particleSize      = 3;
@@ -47,9 +47,8 @@ export default class ParticleCanvas {
       // '#E6F4FA', // light blue
       '#D6E9F1' // slightly darker light blue
       // '#BBDAE7' // even more darker light blue
-      // '#95C4E8',
-      // '#52859F',
       // '#D1D4D9' // grey
+      // '#D29E2F' // gold
     ];
 
     // Set mouse/touch coordinates to variable
@@ -70,16 +69,14 @@ export default class ParticleCanvas {
 
 
   /**
-   * Initialize canvas and image
+   * Initialize canvas
    */
   _init() {
     // Set initial mouse ball position
     this.mouseBall.x = this.centerX;
     this.mouseBall.y = this.centerY;
 
-    // Environment events
-
-    // Kick off main events
+    // Kick off main functions
     this._upscaleCanvas();
     this._setupListeners();
     this._generateParticles();
@@ -127,8 +124,6 @@ export default class ParticleCanvas {
     if (this.utils.allowDeviceOrientation()){
 
       w.addEventListener('deviceorientation', (e) => this._handleOrientation(e), true);
-      // document.addEventListener('touchend', (e) => this._mouseUpCallback(e));
-      // document.addEventListener('touchstart', (e) => this._mouseDownCallback(e));
 
     } else {
 
@@ -231,16 +226,6 @@ export default class ParticleCanvas {
     particle.x = pos.x;
     particle.y = pos.y;
 
-    // if (dist < min_dist){
-    //   let angle = Math.atan2( dy, dx ),
-    //       tx    = this.mouseBall.x + Math.cos(angle) * min_dist,
-    //       ty    = this.mouseBall.y + Math.sin(angle) * min_dist;
-    //
-    //   particle.vx += (tx - particle.x) * this.spring;
-    //   particle.vy += (ty - particle.y) * this.spring;
-    //
-    // }
-
     return particle;
   }
 
@@ -300,8 +285,11 @@ export default class ParticleCanvas {
 
         this._motion(particle, i);
         this._boundaryDetection(particle, i);
-        this._mouseCollision(particle, i);
         this._collisionCheck(particle, i);
+
+        if (!this.utils.allowDeviceOrientation()){
+          this._mouseCollision(particle, i);
+        }
 
         particle.draw(this.context);
       }

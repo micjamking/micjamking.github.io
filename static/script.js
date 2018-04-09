@@ -202,6 +202,67 @@ var utils = function () {
     }
 
     /**
+     * Capture device tilt / roatation movement
+     *
+     * @return {Object} touch - object containing touch coordinates
+     * @return {Object} touch.x - x-axis touch coordinates
+     * @return {Object} touch.y - y-axis touch coordinates
+     * @return {Boolean} touch.isPressed - true|false if user is currently touching screen
+     */
+
+  }, {
+    key: 'captureTilt',
+    value: function captureTilt() {
+
+      var tilt = {
+        x: 0,
+        y: 0
+      };
+
+      /**
+       * Handle Device Orientation
+       *  - Tilt 90º > 0º to increase gravity on mobile
+       */
+      function handleOrientation(e) {
+
+        var x = e.gamma;
+        var y = e.beta;
+
+        if (x > 90) {
+          x = 90;
+        }
+        if (x < 45) {
+          x = 45;
+        }
+
+        if (y > 90) {
+          y = 90;
+        }
+        if (y < 0) {
+          y = 0;
+        }
+
+        var rangeX = (90 - Math.floor(Math.abs(x))) / 45;
+        var rangeY = (90 - Math.floor(Math.abs(y))) / 90;
+
+        // Do stuff with the new orientation data
+        if (Math.floor(rangeY * 10) > 0) {
+          this.gravity = rangeY;
+        }
+
+        if (Math.floor(rangeX * 10) > 0) {
+          this.speed = rangeX;
+        }
+      }
+
+      w.addEventListener('deviceorientation', function (e) {
+        return handleOrientation(e);
+      }, true);
+
+      return tilt;
+    }
+
+    /**
      * Check if rectangle contains x/y coordinates
      *
      * @param {Object} rect - object containing a rectangle
@@ -12511,23 +12572,28 @@ var UI = function (_Vue) {
     var introState = function introState() {
       new _particleCanvas2.default();
 
+      new _mouseScroller2.default({
+        debounceTime: 1000,
+        scrollThreshold: 0.4,
+        scrollDownCallback: function scrollDownCallback() {
+          return _stateService.getNextItem();
+        },
+        scrollUpCallback: function scrollUpCallback() {
+          return _stateService.getPreviousItem();
+        }
+      });
+
       // On desktop-only...
       if (!_utils.allowDeviceOrientation()) {
 
-        // Instantiate new MouseScroller
-        new _mouseScroller2.default({
-          debounceTime: 1000,
-          scrollThreshold: 0.4,
-          scrollDownCallback: function scrollDownCallback() {
-            return _stateService.getNextItem();
-          },
-          scrollUpCallback: function scrollUpCallback() {
-            return _stateService.getPreviousItem();
-          }
-        });
-
         if (!parallaxers_.length) {
-          parallaxers_ = [new _parallaxer2.default((0, _utils2.$)('.main'), { x: 0.1, y: 0.1 }, { x: 0.25, y: 0.25 }), new _parallaxer2.default((0, _utils2.$)('.background-images__image--offset'), { x: 0.1, y: 0.1 }, { x: 1.5, y: 1.25 })];
+          parallaxers_ = [
+          // Case study wrapper element
+          new _parallaxer2.default((0, _utils2.$)('.main'), { x: 0.1, y: 0.1 }, { x: 0.25, y: 0.25 }),
+          // Case study background offset
+          new _parallaxer2.default((0, _utils2.$)('.background-images__image--offset'), { x: 0.1, y: 0.1 }, { x: 1.5, y: 1.25 }),
+          // Case study title, subtitle, and cta button
+          new _parallaxer2.default((0, _utils2.$)('.case-study__inner-content'), { x: 0.1, y: 0.1 }, { x: 0.2, y: 0.2 })];
 
           // Run parallaxers.
           parallaxers_.forEach(function (parallaxer) {
@@ -13227,8 +13293,8 @@ var ParticleCanvas = function () {
 
     // Particle settings
     this.particles = [];
-    this.numOfParticles = 150;
-    this.particleDistance = 150;
+    this.numOfParticles = 150 / this.devicePixelRatio;
+    this.particleDistance = 150 / this.devicePixelRatio;
     this.particleOpacity = 0.5;
     this.particleSpring = 0.00001;
     this.particleSize = 3;
@@ -13237,9 +13303,8 @@ var ParticleCanvas = function () {
     // '#E6F4FA', // light blue
     '#D6E9F1' // slightly darker light blue
     // '#BBDAE7' // even more darker light blue
-    // '#95C4E8',
-    // '#52859F',
     // '#D1D4D9' // grey
+    // '#D29E2F' // gold
     ];
 
     // Set mouse/touch coordinates to variable
@@ -13258,7 +13323,7 @@ var ParticleCanvas = function () {
   }
 
   /**
-   * Initialize canvas and image
+   * Initialize canvas
    */
 
 
@@ -13269,9 +13334,7 @@ var ParticleCanvas = function () {
       this.mouseBall.x = this.centerX;
       this.mouseBall.y = this.centerY;
 
-      // Environment events
-
-      // Kick off main events
+      // Kick off main functions
       this._upscaleCanvas();
       this._setupListeners();
       this._generateParticles();
@@ -13329,8 +13392,6 @@ var ParticleCanvas = function () {
         _utils.w.addEventListener('deviceorientation', function (e) {
           return _this._handleOrientation(e);
         }, true);
-        // document.addEventListener('touchend', (e) => this._mouseUpCallback(e));
-        // document.addEventListener('touchstart', (e) => this._mouseDownCallback(e));
       } else {
 
         document.addEventListener('mousemove', function (e) {
@@ -13442,16 +13503,6 @@ var ParticleCanvas = function () {
       particle.x = pos.x;
       particle.y = pos.y;
 
-      // if (dist < min_dist){
-      //   let angle = Math.atan2( dy, dx ),
-      //       tx    = this.mouseBall.x + Math.cos(angle) * min_dist,
-      //       ty    = this.mouseBall.y + Math.sin(angle) * min_dist;
-      //
-      //   particle.vx += (tx - particle.x) * this.spring;
-      //   particle.vy += (ty - particle.y) * this.spring;
-      //
-      // }
-
       return particle;
     }
 
@@ -13514,8 +13565,11 @@ var ParticleCanvas = function () {
 
           this._motion(particle, i);
           this._boundaryDetection(particle, i);
-          this._mouseCollision(particle, i);
           this._collisionCheck(particle, i);
+
+          if (!this.utils.allowDeviceOrientation()) {
+            this._mouseCollision(particle, i);
+          }
 
           particle.draw(this.context);
         }

@@ -1,2 +1,23 @@
-<section class="section section--columns">
+{% import "/views/macros/_background-images.html" as background_images with context %}
+{% import "/views/macros/_chapter.html" as chapter with context %}
+
+<section class="section section--columns{% if component.class %} {{ component.class }}{% endif %}{% if component.theme %} section--{{ component.theme }}{% endif %}">
+  {% if component.background_images %}
+  {{background_images.background_images('section__background-images{% if component.class %} background-images--{{ component.class }}{% endif %}', component.background_images)}}
+  {% endif %}
+  <div class="section__container">
+    {% if component.columns %}
+    <div class="section__columns">
+      {% for column in component.columns %}
+      <div class="section__columns__column{% if column.class %} {{ column.class }}{% endif %}
+                  {% if column.order %} column--order--{{ column.order }}{% endif %}
+                  {% if column.mobile_order %} column--mobile-order--{{ column.mobile_order }}{% endif %}">
+        {% if column.chapter %}
+        {{chapter.chapter(column.theme or 'light', column.chapter)}}
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
 </section>

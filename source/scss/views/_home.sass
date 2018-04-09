@@ -22,18 +22,26 @@
     align-items: center
 
     &__container
-      width: 600px
-      height: 400px
+      width: 75vw
+      height: 50vw
       position: relative
       flex: 0 1 auto
+
+      +md
+        width: 600px
+        height: 400px
 
     &__background-images
       z-index: 0
 
       .background-images__image--offset
         z-index: -1
-        top: 30px
-        left: 30px
+        top: 15px
+        left: 15px
+
+        +md
+          top: 30px
+          left: 30px
 
         &::after
           content: ''
@@ -55,34 +63,64 @@
       right: 0
       bottom: 0
       z-index: 1
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-direction: column
+
+    &__inner-content
+      display: flex
 
     &__title,
     &__subtitle
       user-select: none
-      position: absolute
-      left: -50px
+      margin-bottom: 0
+      text-align: center
+
+      +md
+        position: absolute
+        left: -50px
+        text-align: left
 
     &__title
-      top: 50px
-      font-size: 48px
+      font-size: em-calc(37px)
+      line-height: 1.25
+      margin-bottom: em-calc($global-spacing-xs)
+
+      +md
+        font-size: em-calc(48px)
+        line-height: $global-line-height
+        top: 50px
 
     &__subtitle
-      top: 122px
-      font-size: 24px
+      font-size: em-calc(20px)
+      padding-left: 30px
+      padding-right: 30px
+
+      +md
+        font-size: em-calc(24px)
+        padding-left: 0
+        padding-right: 0
+        top: 122px
 
     &__cta
       user-select: none
-      position: absolute
-      bottom: 50px
-      right: -50px
-      font-size: 18px
-      text-align: right
+      display: none
 
-      &::before
-        content: ''
-        display: block
-        height: 1px
-        width: 30px
-        background-color: $global-color-dark-blue
+      +md
+        display: initial
         position: absolute
-        bottom: -#{$global-spacing-xs}
+        bottom: 50px
+        right: -50px
+        font-size: 18px
+        text-align: right
+
+      .case-study__inner-content
+        &::before
+          content: ''
+          display: block
+          height: 1px
+          width: 30px
+          background-color: $global-color-dark-blue
+          position: absolute
+          bottom: -#{$global-spacing-xs}

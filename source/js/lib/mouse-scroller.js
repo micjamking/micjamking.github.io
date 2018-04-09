@@ -1,7 +1,7 @@
 /**
  * A UI util class to detect mouse scrolling.
  */
-class MouseScroller {
+export default class MouseScroller {
 
   /**
    * @param config Configuration options for mouse scroller.
@@ -101,4 +101,3 @@ class MouseScroller {
     window.removeEventListener('DOMMouseScroll', this.mouseListener);
   }
 }
-export default MouseScroller;
