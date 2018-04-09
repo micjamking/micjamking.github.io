@@ -11,6 +11,7 @@
     "/views/components/_case-study.html",
     "/views/components/_header-custom.html",
     "/views/components/_header.html",
+    "/views/components/_hero.html",
     "/views/components/_navigation.html",
     "/views/components/_preloader.html"
   ]

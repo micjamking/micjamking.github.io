@@ -12570,7 +12570,13 @@ var UI = function (_Vue) {
     };
 
     var introState = function introState() {
-      new _particleCanvas2.default();
+      var $canvas = (0, _utils2.$)('.canvas')[0];
+
+      if ($canvas) {
+        new _particleCanvas2.default({
+          canvasEL: $canvas
+        });
+      }
 
       new _mouseScroller2.default({
         debounceTime: 1000,
@@ -13262,7 +13268,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var ParticleCanvas = function () {
-  function ParticleCanvas() {
+
+  /**
+   * @param {HTMLElement} settings.canvasEL - HTMLElement of canvas
+   */
+  function ParticleCanvas(settings) {
     _classCallCheck(this, ParticleCanvas);
 
     // External utilities
@@ -13271,7 +13281,7 @@ var ParticleCanvas = function () {
     this.devicePixelRatio = _utils.w.devicePixelRatio;
 
     // DOM & Canvas object references
-    this.$canvas = (0, _utils.$)('.canvas')[0];
+    this.$canvas = settings.canvasEL;
     this.context = this.$canvas.getContext('2d');
     this.left = 0;
     this.top = 0;

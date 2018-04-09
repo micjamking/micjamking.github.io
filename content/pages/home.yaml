@@ -7,7 +7,7 @@ id: "mike-king"
 subtitle: "Creative Developer"
 tagline: "Elevating digital experiences through creative technology"
 header: 'header--main'
-custom_header: true
+hero: true
 navigation: true
 pagination_arrow: true
 

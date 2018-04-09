@@ -36,7 +36,13 @@ export default class UI extends Vue {
     };
 
     let introState = function(){
-      new ParticleCanvas();
+      let $canvas = $('.canvas')[0];
+
+      if ($canvas){
+        new ParticleCanvas({
+          canvasEL: $canvas
+        });
+      }
 
       new MouseScroller({
         debounceTime: 1000,
@@ -110,7 +116,7 @@ export default class UI extends Vue {
         this.isActive = true;
 
         if ($body.classList.contains('home')) {
-          introState()
+          introState();
         }
       }, 500)
       .delay(() => {

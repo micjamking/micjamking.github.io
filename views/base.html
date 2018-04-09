@@ -124,11 +124,11 @@
     {% block header %}
       {% include "/views/components/_header.html" %}
 
-      {% if doc.custom_header %}
-      {% include "/views/components/_header-custom.html" %}
-      {% endif %}
-
       {% include "/views/components/_navigation.html" %}
+
+      {% if doc.hero %}
+        {% include "/views/components/_hero.html" %}
+      {% endif %}
     {% endblock %}
 
     <section class="main">

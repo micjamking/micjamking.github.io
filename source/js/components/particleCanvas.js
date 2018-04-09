@@ -2,12 +2,15 @@
  *  Particle Canvas
  */
 
-import utils, { w, $ } from './../lib/utils';
+import utils, { w } from './../lib/utils';
 import Particle from './../lib/particle';
 
 export default class ParticleCanvas {
 
-  constructor(){
+  /**
+   * @param {HTMLElement} settings.canvasEL - HTMLElement of canvas
+   */
+  constructor(settings){
 
     // External utilities
     this.utils                 = new utils();
@@ -15,7 +18,7 @@ export default class ParticleCanvas {
     this.devicePixelRatio      = w.devicePixelRatio;
 
     // DOM & Canvas object references
-    this.$canvas = $('.canvas')[0];
+    this.$canvas = settings.canvasEL;
     this.context = this.$canvas.getContext('2d');
     this.left    = 0;
     this.top     = 0;
