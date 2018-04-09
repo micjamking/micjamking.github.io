@@ -132,25 +132,25 @@ $play-state:      running
 
 .hero-intro-animation
   &-enter-active
-    .header__title,
-    .header__subtitle
+    .hero__title,
+    .hero__subtitle
       +fade-in-up
 
-    .header__title
+    .hero__title
       animation-delay: $base-animation
 
-    .header__subtitle
+    .hero__subtitle
       animation-delay: $base-animation + ($animation-increment * 1)
 
   &-leave-active
-    .header__title,
-    .header__subtitle
+    .hero__title,
+    .hero__subtitle
       +fade-out-up
 
-    .header__title
+    .hero__title
       animation-delay: $base-animation
 
-    .header__subtitle
+    .hero__subtitle
       animation-delay: $base-animation + ($animation-increment * 1)
 
 .header-main-animation
@@ -175,12 +175,12 @@ $play-state:      running
     .header__tagline
       animation-delay: $base-animation + ($animation-increment * 3)
 
-    + .hero-intro-animation
+    ~ .hero-intro-animation
         &-enter-active
-          .header__title
+          .hero__title
             animation-delay: $base-animation + $extra-delay
 
-          .header__subtitle
+          .hero__subtitle
             animation-delay: $base-animation + ($animation-increment * 1) + $extra-delay
 
 .case-study-transition

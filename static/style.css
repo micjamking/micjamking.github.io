@@ -466,8 +466,8 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
   transition: all 2s;
 }
 
-.hero-intro-animation-enter-active .header__title,
-.hero-intro-animation-enter-active .header__subtitle {
+.hero-intro-animation-enter-active .hero__title,
+.hero-intro-animation-enter-active .hero__subtitle {
   -webkit-animation-name: "fade-in-up";
           animation-name: "fade-in-up";
   -webkit-animation-duration: 550ms;
@@ -486,18 +486,18 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
           animation-play-state: running;
 }
 
-.hero-intro-animation-enter-active .header__title {
+.hero-intro-animation-enter-active .hero__title {
   -webkit-animation-delay: 300ms;
           animation-delay: 300ms;
 }
 
-.hero-intro-animation-enter-active .header__subtitle {
+.hero-intro-animation-enter-active .hero__subtitle {
   -webkit-animation-delay: 550ms;
           animation-delay: 550ms;
 }
 
-.hero-intro-animation-leave-active .header__title,
-.hero-intro-animation-leave-active .header__subtitle {
+.hero-intro-animation-leave-active .hero__title,
+.hero-intro-animation-leave-active .hero__subtitle {
   -webkit-animation-name: "fade-out-up";
           animation-name: "fade-out-up";
   -webkit-animation-duration: 550ms;
@@ -516,12 +516,12 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
           animation-play-state: running;
 }
 
-.hero-intro-animation-leave-active .header__title {
+.hero-intro-animation-leave-active .hero__title {
   -webkit-animation-delay: 300ms;
           animation-delay: 300ms;
 }
 
-.hero-intro-animation-leave-active .header__subtitle {
+.hero-intro-animation-leave-active .hero__subtitle {
   -webkit-animation-delay: 550ms;
           animation-delay: 550ms;
 }
@@ -586,12 +586,12 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
           animation-delay: 1050ms;
 }
 
-.header-main-animation-leave-active + .hero-intro-animation-enter-active .header__title {
+.header-main-animation-leave-active ~ .hero-intro-animation-enter-active .hero__title {
   -webkit-animation-delay: 1850ms;
           animation-delay: 1850ms;
 }
 
-.header-main-animation-leave-active + .hero-intro-animation-enter-active .header__subtitle {
+.header-main-animation-leave-active ~ .hero-intro-animation-enter-active .hero__subtitle {
   -webkit-animation-delay: 2100ms;
           animation-delay: 2100ms;
 }
