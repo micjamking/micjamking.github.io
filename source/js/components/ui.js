@@ -18,7 +18,7 @@ export default class UI extends Vue {
 
   constructor (){
 
-    console.log('initialized user interface');
+    // console.log('initialized user interface');
 
     /** External utilities */
     const _utils        = new utils();
@@ -27,7 +27,9 @@ export default class UI extends Vue {
     /** DOM References */
     let $preloader = $('.preloader')[0];
     let $body = $('body')[0];
-    let parallaxers_ = [];
+    let $canvas_color_lightblue = '#D6E9F1';
+    let $canvas_color_darkblue = '#2C4050';
+    let $canvas_color_darkblue2 = '#374650';
 
     /** Options */
     let _options = {
@@ -39,12 +41,47 @@ export default class UI extends Vue {
       }
     };
 
-    let introState = function(){
+    let caseStudyState = () => {
+      let $footer__canvas = $('.footer__canvas')[0];
+      let $process__canvas = $('.section--process__canvas')[0];
+      let parallaxers_ = [];
+
+      // console.log($process__canvas.offsetHeight);
+
+      if ($process__canvas){
+        new ParticleCanvas({
+          canvasEL: $process__canvas,
+          canvasBackground: $canvas_color_darkblue2,
+          particleColors: [$canvas_color_darkblue],
+          particleLineWidth: 4,
+          maxHeight: $process__canvas.parentNode.offsetHeight,
+          numOfParticles: 300,
+          particleOpacity: 1.0
+        });
+      }
+
+      if ($footer__canvas){
+        new ParticleCanvas({
+          canvasEL: $footer__canvas,
+          canvasBackground: $canvas_color_darkblue2,
+          particleColors: [$canvas_color_darkblue],
+          particleLineWidth: 4,
+          maxHeight: 400,
+          respondToMouse: false,
+          numOfParticles: 75,
+          particleOpacity: 1.0
+        });
+      }
+    };
+
+    let introState = () => {
       let $canvas = $('.canvas')[0];
+      let parallaxers_ = [];
 
       if ($canvas){
         new ParticleCanvas({
-          canvasEL: $canvas
+          canvasEL: $canvas,
+          particleColors: [$canvas_color_lightblue]
         });
       }
 
@@ -118,9 +155,15 @@ export default class UI extends Vue {
       .delay(() => {
         this.isActive = true;
         $preloader.classList.add('fade-out');
-        if ($body.classList.contains('home')) {
-          introState();
-        }
+
+        setTimeout(() => {
+          if ($body.classList.contains('home')) {
+            introState();
+          }
+          else if ($body.classList.contains('case-study')) {
+            caseStudyState();
+          }
+        }, 0);
       }, 500)
       .delay(() => {
         $preloader.classList.remove('active');

@@ -12,6 +12,11 @@ export default class ParticleCanvas {
    */
   constructor(settings){
 
+    // Internal Settings
+    this.maxWidth = settings.maxWidth;
+    this.maxHeight = settings.maxHeight;
+    this.canvasBackground = settings.canvasBackground;
+
     // External utilities
     this.utils                 = new utils();
     this.requestAnimationFrame = w.requestAnimationFrame.bind(w);
@@ -22,12 +27,12 @@ export default class ParticleCanvas {
     this.context = this.$canvas.getContext('2d');
     this.left    = 0;
     this.top     = 0;
-    this.right   = this.utils.screenSize().width;
-    this.bottom  = this.utils.screenSize().height;
+    this.right   = this.maxWidth || this.utils.screenSize().width;
+    this.bottom  = this.maxHeight || this.utils.screenSize().height;
 
     // Set canvas size to fullscreen
-    this.$canvas.width  = this.utils.screenSize().width;
-    this.$canvas.height = this.utils.screenSize().height;
+    this.$canvas.width  = this.maxWidth || this.utils.screenSize().width;
+    this.$canvas.height = this.maxHeight || this.utils.screenSize().height;
     this.centerX = this.$canvas.width / 2;
     this.centerY = this.$canvas.height / 2;
 
@@ -58,22 +63,20 @@ export default class ParticleCanvas {
 
     // Particle settings
     this.particles         = [];
-    this.numOfParticles    = particleCount;
+    this.numOfParticles    = settings.numOfParticles || particleCount;
     this.particleDistance  = 150;
-    this.particleOpacity   = 0.5;
+    this.particleOpacity   = settings.particleOpacity || 0.5;
     this.particleSpring    = 0.000005;
     this.particleSize      = 3;
-    this.particleLineWidth = 1;
+    this.particleLineWidth = settings.particleLineWidth || 1;
     this.particleColors    = [
-      // '#E6F4FA', // light blue
       '#D6E9F1' // slightly darker light blue
-      // '#BBDAE7' // even more darker light blue
-      // '#D1D4D9' // grey
-      // '#D29E2F' // gold
     ];
+    this.particleColors    = settings.particleColors || this.particleColors;
 
     // Set mouse/touch coordinates to variable
     this.isTouching         = false;
+    this.respondToMouse     = settings.respondToMouse !== false;
     this.touch              = this.utils.captureTouch(w);
     this.mouse              = this.utils.captureMouse(w);
     this.mouseBallThreshold = 150;
@@ -84,7 +87,7 @@ export default class ParticleCanvas {
     // Start animation
     this._init();
 
-    console.log('instantiated particle canvas', this.numOfParticles);
+    // console.log('instantiated particle canvas', this);
 
   }
 
@@ -103,7 +106,7 @@ export default class ParticleCanvas {
     this._generateParticles();
     this._animate();
 
-    console.log('initialized particle animation');
+    // console.log('initialized particle animation');
   }
 
   /**
@@ -297,7 +300,12 @@ export default class ParticleCanvas {
     this.requestAnimationFrame(this._animate.bind(this), this.$canvas);
 
 		// Clear canvas every frame
-    this.context.clearRect(0, 0, this.$canvas.width, this.$canvas.height);
+    if (this.canvasBackground){
+      this.context.fillStyle = this.canvasBackground;
+      this.context.fillRect(0, 0, this.$canvas.width, this.$canvas.height);
+    } else {
+      this.context.clearRect(0, 0, this.$canvas.width, this.$canvas.height);
+    }
 
     // Animate stuff...
     if (this.particles){
@@ -308,7 +316,7 @@ export default class ParticleCanvas {
         this._boundaryDetection(particle, i);
         this._collisionCheck(particle, i);
 
-        if (!this.utils.allowDeviceOrientation()){
+        if (!this.utils.allowDeviceOrientation() && this.respondToMouse){
           this._mouseCollision(particle, i);
         }
 
@@ -394,8 +402,8 @@ export default class ParticleCanvas {
 	 * Window resize callback
 	 */
   _onWindowResize() {
-		this.right   = this.$canvas.width  = this.utils.screenSize().width;
-		this.bottom  = this.$canvas.height = this.utils.screenSize().height;
+		this.right   = this.$canvas.width  = this.maxWidth || this.utils.screenSize().width;
+		this.bottom  = this.$canvas.height = this.maxHeight || this.utils.screenSize().height;
     this.centerX = this.$canvas.width / 2;
     this.centerY = this.$canvas.height / 2;
     this._upscaleCanvas();

@@ -35,3 +35,44 @@
 
 =case-study__header-mask
   clip-path: polygon(100% 0%, 0% 0%, 0% 86.956522%, 50% 100%, 100% 86.956522%)
+
+=case-study__process-mask
+  clip-path: polygon(100% 0%, 50% 1.583554%, 0% 0%, 0% 98.391852%, 50% 100%, 100% 98.391852%)
+
+=chapter__button
+  background: $global-color-dark-blue
+  box-shadow: 0 3px 9px 0 rgba(0,0,0,0.15)
+  color: $global-color-white
+  max-width: 200px
+  text-transform: uppercase
+  font-weight: 400
+
+=process__title
+  font-family: $global-sans-serif
+  font-size: em-calc(24px)
+  color: $global-color-white
+  text-align: center
+
+=process__phase__marker
+  display: flex
+  background-color: $global-color-gold
+  width: 11px
+  height: 11px
+  border-radius: 11px
+
+=process__phase__marker__top
+  +process__phase__marker
+  height: 5.5px
+  border-radius: 11px 11px 0 0
+
+=process__phase__marker__bottom
+  +process__phase__marker
+  height: 5.5px
+  border-radius: 0 0 11px 11px
+
+=footer__title
+  font-family: $global-serif
+  font-weight: $global-serif-weight-bold
+  font-style: italic
+  font-size: em-calc(36px)
+  color: $global-color-gold

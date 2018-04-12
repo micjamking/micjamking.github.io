@@ -114,7 +114,7 @@
 {% if doc.url.path == '/' %}
   {% set body_class = 'home' %}
 {% else %}
-  {% set body_class = doc.url.path|replace("/", "")|replace("case-study", "") %}
+  {% set body_class = doc.url.path|replace("/", "")|replace("case-study", "case-study ") %}
 {% endif %}
 <body class="{{ body_class }}">
 

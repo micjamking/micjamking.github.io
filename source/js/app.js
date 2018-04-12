@@ -16,7 +16,7 @@ export default class App {
     /** Setup event listeners */
     this._registerListeners();
 
-    console.log('instantiated app');
+    // console.log('instantiated app');
 
   }
 

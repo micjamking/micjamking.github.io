@@ -35,15 +35,40 @@
     font-family: $global-serif
     font-weight: 700
     font-size: em-calc(36px)
-    margin-bottom: $global-spacing-md
     order: 1
+    margin-bottom: $global-spacing-md
 
     .italicize
       font-style: italic
 
-  &__body
+  &__body,
+  &__body-list
     font-size: em-calc(18px)
     order: 3
+    margin-bottom: $global-spacing-lg
 
     .bold
       font-weight: 700
+
+  &__body-list
+    list-style: none
+    line-height: 2
+
+    &--nested
+      margin-left: $global-spacing-md
+      margin-bottom: 0
+      list-style: circle
+      list-style-position: inside
+
+    &__item__name
+      font-weight: 700
+
+    &--2-column
+      columns: 2 auto
+
+  &__ctas
+    order: 4
+
+  &__cta
+    .button
+      +chapter__button

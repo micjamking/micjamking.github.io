@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="3731px" viewBox="0 0 1440 3731" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>background</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="3.78653235e-29 0 720 59.0823878 1440 0 1440 3671 720 3731 -1.13686838e-13 3671"></polygon>
+    </defs>
+    <g id="Designs-(Light)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mike-King---Work---Case-Study---GoHawaii" transform="translate(0.000000, -4456.000000)">
+            <g id="section--process" transform="translate(0.000000, 4456.000000)">
+                <g id="background--canvas-animation">
+                    <g id="background">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use fill="#374650" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

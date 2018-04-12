@@ -4,6 +4,63 @@
 
 .footer
 
+  &__container
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    position: relative
+    height: 400px
+    background-color: $global-color-dark-blue
+    padding: 80px 0 60px
+    color: $global-color-white
+    text-align: center
+    overflow: hidden
+
+  &__next-project,
+  &__content
+    position: relative
+    z-index: 2
+
+  &__next-project
+    &__headline
+      font-size: em-calc(14px)
+      text-transform: uppercase
+
+    &__project
+      a
+        position: relative
+        +footer__title
+
+        &::after
+          content: ''
+          display: flex
+          position: absolute
+          width: 16px
+          height: 30px
+          top: 50%
+          right: -30px
+          transform: translateY(-40%)
+          background-image: url('/images/icons/gold-arrow.svg')
+          background-repeat: no-repeat
+          background-position: center
+          background-size: contain
+
+
+  &__location,
+  &__email
+    font-size: em-calc(12px)
+    line-height: 30px
+
+  &__email
+    margin-bottom: $global-spacing-md
+
+    a
+      color: $global-color-white
+
   &__logo-icon
     width: 33px
     height: 30px
+
+  &__canvas
+    background-color: transparent

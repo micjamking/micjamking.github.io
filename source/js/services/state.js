@@ -7,7 +7,7 @@ export default class StateService {
 
   constructor(){
 
-    console.log('instantiate state service');
+    // console.log('instantiate state service');
 
     /** @private */
     this._$location         = w.location;

@@ -1,2 +1,47 @@
+{% import "/views/macros/_background-images.html" as background_images with context %}
+{% import "/views/macros/_chapter.html" as chapter with context %}
+
 <section class="section section--process{% if component.class %} {{ component.class }}{% endif %}{% if component.theme %} section--{{ component.theme }}{% endif %}">
+  <div class="section__container">
+    {% if component.phases %}
+    <div class="section__phases">
+      <h1 class="section__title">{{_(component.title)}}</h1>
+      {% for phase in component.phases %}
+      <div class="section__phases__phase{% if phase.phase %} section__phases__phase--{{ phase.phase }}{% endif %}">
+        {% if phase.phase == 'insights' %}
+        <div class="section__phase__insights">
+          {% if phase.chapter %}
+          {{chapter.chapter('light', phase.chapter)}}
+          {% endif %}
+        </div>
+        {% endif %}
+
+        {% if phase.work %}
+        <div class="section__phase__work{% if phase.work.class %} {{ phase.work.class }}{% endif %}">
+          {% if phase.work.background_images %}
+          {{background_images.background_images('section__phase__background-images', phase.work.background_images)}}
+          {% endif %}
+          {% if phase.work.chapter %}
+          {{chapter.chapter('light', phase.work.chapter)}}
+          {% endif %}
+        </div>
+        {% endif %}
+
+        {% if phase.details %}
+        <div class="section__phase__details{% if phase.details.class %} {{ phase.details.class }}{% endif %}">
+          {% if phase.details.background_images %}
+          {{background_images.background_images('section__phase__background-images', phase.details.background_images)}}
+          {% endif %}
+          {% if phase.details.chapter %}
+          {{chapter.chapter('light', phase.details.chapter)}}
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+      <div class="section__phases__timeline"></div>
+    </div>
+    {% endif %}
+    <canvas class="section--process__canvas canvas"></canvas>
+  </div>
 </section>

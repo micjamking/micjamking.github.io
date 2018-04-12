@@ -109,13 +109,14 @@ components:
 
 - component: 'section-process'
   theme: 'dark'
-  process:
+  title: 'The Process'
+  phases:
   - phase: 'discovery'
     work:
       class: 'left'
-      background_images:
-        - id: ''
-          url: ''
+      # background_images:
+      #   - id: ''
+      #     url: ''
     details:
       class: 'right'
       chapter:
@@ -126,8 +127,8 @@ components:
           - "We performed a <span class='bold'>competitor analysis</span> across 9 different local and national competitors in the travel and tourism space. Additionally, we created <span class='bold'>user profiles</span> to define the audience of the application, extrapolated from market research performed by the client."
 
   - phase: 'insights'
-    class: 'insights'
     chapter:
+      title: "Insights"
       body:
         - "Through the Discovery process, we learned the majority of visitors to the Hawaiian Islands today come from Asian countries, ie. China, Japan, and Korea."
         - "This finding influenced our creative strategy and subsequently, the branding and visual design for the application."
@@ -137,9 +138,9 @@ components:
   - phase: 'information-architecture'
     work:
       class: 'right'
-      background_images:
-        - id: ''
-          url: ''
+      # background_images:
+      #   - id: ''
+      #     url: ''
     details:
       class: 'left'
       chapter:
@@ -152,9 +153,9 @@ components:
   - phase: 'creative-direction'
     work:
       class: 'left'
-      background_images:
-        - id: ''
-          url: ''
+      # background_images:
+      #   - id: ''
+      #     url: ''
     details:
       class: 'right'
       chapter:
@@ -168,9 +169,9 @@ components:
   - phase: 'software-development'
     work:
       class: 'right'
-      background_images:
-        - id: ''
-          url: ''
+      # background_images:
+      #   - id: ''
+      #     url: ''
     details:
       class: 'left'
       chapter:
@@ -198,23 +199,27 @@ components:
       - "As previously mentioned, we developed a custom backend and API server using a headless WordPress solution, allowing the client to manage safety and travel destination content across 6 different locales and perform content updates in the app without the need to deploy new versions to the native app stores."
 
 - component: 'section-columns'
-  class: 'section--light-grey-bg section--padded'
+  class: 'section--light-grey-bg section--min-height-600'
   columns:
-  - chapter:
+  - class: "section__columns__column--single-column"
+    chapter:
       title: 'Hawaii’s Official Travel & Tourism App'
       body: 'In the end, we successfully created the state of Hawaii’s first official travel and tourism app; a fun and interactive way to learn both safety and historical information about the Hawaiian Islands. The client had a goal of achieving 10,000 downloads by the annual Hawaii Tourism Conference, 3 months after launch. We were happily surprised when we had reached more than 15,000 downloads several weeks ahead of the conference. Additionally, the mobile application design won a 2017 Pele Gold award for best mobile app. The annual competition, formerly known as the ADDYs, recognizes the best advertising and design work in Hawaii.'
       ctas:
-        - class: 'itunes'
+        - class: 'button itunes'
           url: 'https://itunes.apple.com/us/app/gohawaii/id1100071565?mt=8'
           label: 'Download on the iTunes App Store'
-        - class: 'play'
+        - class: 'button play'
           url: 'https://play.google.com/store/apps/details?id=com.gohawaii.htamobile'
           label: 'Download on the Google Play Store'
 
 - component: 'section-columns'
+  class: 'section--min-height-600'
   columns:
-  - chapter:
+  - class: "section__columns__column--single-column"
+    chapter:
       title: 'Credits'
+      body_list_class: 'chapter__body-list--2-column'
       body_list:
         - name: 'Client'
           value: 'Hawaii Tourism Authority'
@@ -224,8 +229,10 @@ components:
           value: 'January 2016 — March 2017'
         - name: 'Technology'
           list:
-          - value: 'Mobile App: Ionic (AngularJS + Cordova)'
-          - value: 'Backend CMS / API: WordPress'
+          - name: 'Mobile App'
+            value: 'Ionic (AngularJS + Cordova)'
+          - name: 'Backend CMS / API'
+            value: 'WordPress'
         - name: 'Awards'
           value: 'Best Mobile App—2017 Pele Awards'
         - name: 'Concept, Creative Direction'

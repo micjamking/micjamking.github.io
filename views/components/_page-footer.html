@@ -2,7 +2,7 @@
   <div class="footer__container">
     {% if doc.footer.next_project %}
     <div class="footer__next-project">
-      <div class="footer__next-project__headline">Next Project</div>
+      <div class="footer__next-project__headline">Next Project:</div>
       <div class="footer__next-project__project">
         <a href="{{ doc.footer.next_project.url }}">{{ doc.footer.next_project.label }}</a>
       </div>
@@ -41,5 +41,6 @@
         </g>
       </svg>
     </div>
+    <canvas class="footer__canvas canvas"></canvas>
   </div>
 </footer>

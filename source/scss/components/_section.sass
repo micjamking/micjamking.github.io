@@ -7,7 +7,7 @@
 
   &__container
     height: 100%
-    padding: em-calc(90px) em-calc(180px)
+    padding: em-calc(100px) em-calc(180px)
 
   &__columns
     display: flex
@@ -47,9 +47,15 @@
       &--single-column
         margin: 0 auto
 
-        .chapter__body
-          max-width: 700px
-          text-align: center
+        .chapter
+          &__title,
+          &__body,
+          &__images,
+          &__ctas
+            text-align: center
+
+          &__body
+            max-width: 700px
 
     .column
       @for $i from 1 through 8
@@ -78,6 +84,8 @@
       padding: 0 $global-spacing-xl
 
   &--dark
+    &.section--process
+      background-color: $global-color-dark-blue
     .chapter
       &__title,
       &__body
@@ -88,3 +96,214 @@
 
   &--light-grey-bg
     background-color: $global-color-light-blue
+
+  &--process
+    +case-study__process-mask
+
+    .section
+      &__container
+        padding: em-calc(160px) em-calc(60px)
+
+      &__title
+        +footer__title
+        font-style: normal
+        margin-bottom: 100px
+
+      &__phases
+        position: relative
+        z-index: 1
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+        &__timeline
+          display: flex
+          width: 2px
+          height: calc(100% - 150px)
+          position: absolute
+          bottom: 0
+          left: 50%
+          transform: translateX(-50%)
+          background-color: $global-color-white
+          z-index: 0
+
+          &::before,
+          &::after
+            content: ''
+            +process__phase__marker
+            position: absolute
+            left: 50%
+            transform: translateX(-50%)
+
+          &::before
+            top: 0
+
+          &::after
+            bottom: 0
+
+        &__phase
+          position: relative
+          flex: 1
+          width: 100%
+          display: flex
+          flex-direction: row
+          justify-content: center
+          align-items: center
+          padding: em-calc(100px) 0
+          z-index: 1
+
+          &::after
+            content: ''
+            +process__phase__marker
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+
+          &--insights
+            position: relative
+            padding: em-calc(50px) 0
+            margin-top: em-calc(50px)
+            margin-bottom: em-calc(50px)
+
+            &::before
+              content: ''
+              display: flex
+              width: 4px
+              height: 100%
+              position: absolute
+              top: 0
+              left: 50%
+              background-color: $global-color-dark-blue
+              transform: translateX(-50%)
+
+            &::after
+              display: none
+
+            .section__phase__insights
+              &::before,
+              &::after
+                content: ''
+                display: flex
+                position: absolute
+                left: 50%
+                transform: translateX(-50%)
+
+              &::before
+                +process__phase__marker__top
+                top: 0
+
+              &::after
+                +process__phase__marker__bottom
+                bottom: 0
+
+            .chapter
+              &__title
+                font-size: em-calc(24px)
+                font-style: italic
+              &__body
+                max-width: 900px
+                font-size: em-calc(14px)
+                columns: 2 auto
+                margin-bottom: 0
+                &__paragraph
+                  margin-bottom: 0
+
+          &--discovery,
+          &--information-architecture,
+          &--creative-direction,
+          &--software-development
+
+            .chapter__title
+              position: relative
+
+              &::before,
+              &::after
+                content: ''
+                display: flex
+                position: absolute
+                background-position: center
+                background-repeat: no-repeat
+                background-size: contain
+                top: 50%
+                transform: translate(0,-50%)
+
+          &--discovery,
+          &--creative-direction
+            .chapter__title
+              margin-left: 60px
+              &::before
+                left: -60px
+
+          &--information-architecture,
+          &--software-development
+            .chapter__title
+              margin-right: 60px
+              &::before
+                right: -60px
+
+          &--discovery
+            .chapter__title
+              &::before
+                width: 50px
+                height: 49px
+                background-image: url('/images/icons/magnifying-glass.svg')
+
+          &--creative-direction
+            .chapter__title
+              &::before
+                width: 49px
+                height: 42px
+                background-image: url('/images/icons/strategy.svg')
+
+          &--information-architecture
+            .chapter__title
+              &::before
+                width: 50px
+                height: 60px
+                background-image: url('/images/icons/wireframe.svg')
+
+          &--software-development
+            .chapter__title
+              &::before
+                width: 48px
+                height: 43px
+                background-image: url('/images/icons/engineering.svg')
+
+          .left
+            order: 1
+            margin-right: $global-spacing-lg
+
+            .chapter
+              align-items: flex-end
+
+              &__title,
+              &__body
+                text-align: right
+
+          .right
+            order: 2
+            margin-left: $global-spacing-lg
+
+            .chapter
+              align-items: flex-start
+
+              &__title,
+              &__body
+                text-align: left
+
+      &__phase__work,
+      &__phase__details
+        flex: 1
+        width: 100%
+
+      &__phase__details
+        .chapter
+          &__title
+            +process__title
+
+          &__body
+
+    &__canvas
+      background-color: transparent

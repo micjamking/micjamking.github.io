@@ -12454,7 +12454,7 @@ var App = function () {
     /** Setup event listeners */
     this._registerListeners();
 
-    console.log('instantiated app');
+    // console.log('instantiated app');
   }
 
   /**
@@ -12557,7 +12557,7 @@ var UI = function (_Vue) {
   function UI() {
     _classCallCheck(this, UI);
 
-    console.log('initialized user interface');
+    // console.log('initialized user interface');
 
     /** External utilities */
     var _utils = new _utils3.default();
@@ -12566,7 +12566,9 @@ var UI = function (_Vue) {
     /** DOM References */
     var $preloader = (0, _utils2.$)('.preloader')[0];
     var $body = (0, _utils2.$)('body')[0];
-    var parallaxers_ = [];
+    var $canvas_color_lightblue = '#D6E9F1';
+    var $canvas_color_darkblue = '#2C4050';
+    var $canvas_color_darkblue2 = '#374650';
 
     /** Options */
     var _options = {
@@ -12578,12 +12580,47 @@ var UI = function (_Vue) {
       }
     };
 
+    var caseStudyState = function caseStudyState() {
+      var $footer__canvas = (0, _utils2.$)('.footer__canvas')[0];
+      var $process__canvas = (0, _utils2.$)('.section--process__canvas')[0];
+      var parallaxers_ = [];
+
+      // console.log($process__canvas.offsetHeight);
+
+      if ($process__canvas) {
+        new _particleCanvas2.default({
+          canvasEL: $process__canvas,
+          canvasBackground: $canvas_color_darkblue2,
+          particleColors: [$canvas_color_darkblue],
+          particleLineWidth: 4,
+          maxHeight: $process__canvas.parentNode.offsetHeight,
+          numOfParticles: 300,
+          particleOpacity: 1.0
+        });
+      }
+
+      if ($footer__canvas) {
+        new _particleCanvas2.default({
+          canvasEL: $footer__canvas,
+          canvasBackground: $canvas_color_darkblue2,
+          particleColors: [$canvas_color_darkblue],
+          particleLineWidth: 4,
+          maxHeight: 400,
+          respondToMouse: false,
+          numOfParticles: 75,
+          particleOpacity: 1.0
+        });
+      }
+    };
+
     var introState = function introState() {
       var $canvas = (0, _utils2.$)('.canvas')[0];
+      var parallaxers_ = [];
 
       if ($canvas) {
         new _particleCanvas2.default({
-          canvasEL: $canvas
+          canvasEL: $canvas,
+          particleColors: [$canvas_color_lightblue]
         });
       }
 
@@ -12646,9 +12683,14 @@ var UI = function (_Vue) {
       }, 1000).delay(function () {
         _this2.isActive = true;
         $preloader.classList.add('fade-out');
-        if ($body.classList.contains('home')) {
-          introState();
-        }
+
+        setTimeout(function () {
+          if ($body.classList.contains('home')) {
+            introState();
+          } else if ($body.classList.contains('case-study')) {
+            caseStudyState();
+          }
+        }, 0);
       }, 500).delay(function () {
         $preloader.classList.remove('active');
       }, 0);
@@ -13011,7 +13053,7 @@ var StateService = function () {
   function StateService() {
     _classCallCheck(this, StateService);
 
-    console.log('instantiate state service');
+    // console.log('instantiate state service');
 
     /** @private */
     this._$location = _utils.w.location;
@@ -13289,6 +13331,11 @@ var ParticleCanvas = function () {
   function ParticleCanvas(settings) {
     _classCallCheck(this, ParticleCanvas);
 
+    // Internal Settings
+    this.maxWidth = settings.maxWidth;
+    this.maxHeight = settings.maxHeight;
+    this.canvasBackground = settings.canvasBackground;
+
     // External utilities
     this.utils = new _utils2.default();
     this.requestAnimationFrame = _utils.w.requestAnimationFrame.bind(_utils.w);
@@ -13299,12 +13346,12 @@ var ParticleCanvas = function () {
     this.context = this.$canvas.getContext('2d');
     this.left = 0;
     this.top = 0;
-    this.right = this.utils.screenSize().width;
-    this.bottom = this.utils.screenSize().height;
+    this.right = this.maxWidth || this.utils.screenSize().width;
+    this.bottom = this.maxHeight || this.utils.screenSize().height;
 
     // Set canvas size to fullscreen
-    this.$canvas.width = this.utils.screenSize().width;
-    this.$canvas.height = this.utils.screenSize().height;
+    this.$canvas.width = this.maxWidth || this.utils.screenSize().width;
+    this.$canvas.height = this.maxHeight || this.utils.screenSize().height;
     this.centerX = this.$canvas.width / 2;
     this.centerY = this.$canvas.height / 2;
 
@@ -13329,22 +13376,19 @@ var ParticleCanvas = function () {
 
     // Particle settings
     this.particles = [];
-    this.numOfParticles = particleCount;
+    this.numOfParticles = settings.numOfParticles || particleCount;
     this.particleDistance = 150;
-    this.particleOpacity = 0.5;
+    this.particleOpacity = settings.particleOpacity || 0.5;
     this.particleSpring = 0.000005;
     this.particleSize = 3;
-    this.particleLineWidth = 1;
-    this.particleColors = [
-    // '#E6F4FA', // light blue
-    '#D6E9F1' // slightly darker light blue
-    // '#BBDAE7' // even more darker light blue
-    // '#D1D4D9' // grey
-    // '#D29E2F' // gold
+    this.particleLineWidth = settings.particleLineWidth || 1;
+    this.particleColors = ['#D6E9F1' // slightly darker light blue
     ];
+    this.particleColors = settings.particleColors || this.particleColors;
 
     // Set mouse/touch coordinates to variable
     this.isTouching = false;
+    this.respondToMouse = settings.respondToMouse !== false;
     this.touch = this.utils.captureTouch(_utils.w);
     this.mouse = this.utils.captureMouse(_utils.w);
     this.mouseBallThreshold = 150;
@@ -13355,7 +13399,7 @@ var ParticleCanvas = function () {
     // Start animation
     this._init();
 
-    console.log('instantiated particle canvas', this.numOfParticles);
+    // console.log('instantiated particle canvas', this);
   }
 
   /**
@@ -13376,7 +13420,7 @@ var ParticleCanvas = function () {
       this._generateParticles();
       this._animate();
 
-      console.log('initialized particle animation');
+      // console.log('initialized particle animation');
     }
 
     /**
@@ -13592,7 +13636,12 @@ var ParticleCanvas = function () {
       this.requestAnimationFrame(this._animate.bind(this), this.$canvas);
 
       // Clear canvas every frame
-      this.context.clearRect(0, 0, this.$canvas.width, this.$canvas.height);
+      if (this.canvasBackground) {
+        this.context.fillStyle = this.canvasBackground;
+        this.context.fillRect(0, 0, this.$canvas.width, this.$canvas.height);
+      } else {
+        this.context.clearRect(0, 0, this.$canvas.width, this.$canvas.height);
+      }
 
       // Animate stuff...
       if (this.particles) {
@@ -13603,7 +13652,7 @@ var ParticleCanvas = function () {
           this._boundaryDetection(particle, i);
           this._collisionCheck(particle, i);
 
-          if (!this.utils.allowDeviceOrientation()) {
+          if (!this.utils.allowDeviceOrientation() && this.respondToMouse) {
             this._mouseCollision(particle, i);
           }
 
@@ -13705,8 +13754,8 @@ var ParticleCanvas = function () {
   }, {
     key: '_onWindowResize',
     value: function _onWindowResize() {
-      this.right = this.$canvas.width = this.utils.screenSize().width;
-      this.bottom = this.$canvas.height = this.utils.screenSize().height;
+      this.right = this.$canvas.width = this.maxWidth || this.utils.screenSize().width;
+      this.bottom = this.$canvas.height = this.maxHeight || this.utils.screenSize().height;
       this.centerX = this.$canvas.width / 2;
       this.centerY = this.$canvas.height / 2;
       this._upscaleCanvas();

@@ -9,11 +9,9 @@ input[type="reset"],
 input[type="button"]
   appearance: none
   background-color: transparent
-
-  display: inline-block // Make display properties consistent across the board
-  text-decoration: none // Remove underline for anchor buttons
-  color: inherit        // Inherit the default color (ie. black)
-
+  display: flex
+  text-decoration: none
+  color: inherit
   padding: 1em
   margin-bottom: $global-margin
   border: 1px solid $global-color-black
@@ -27,3 +25,15 @@ input[type="button"]
   &:focus,
   &:active
     outline: none
+
+.ctas
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+
+  &__cta
+    margin-right: em-calc(48px)
+
+    &:last-child
+      margin-right: 0

@@ -49,7 +49,7 @@
   {% endif %}
 
   {% if chapter.body_list %}
-  {{ body_list('chapter__body-list--nested', chapter.body_list)}}
+  {{ body_list(chapter.body_list_class or '', chapter.body_list)}}
   {% endif %}
 
   {% if chapter.background_images %}
@@ -57,9 +57,9 @@
   {% endif %}
 
   {% if chapter.ctas %}
-  <div class="chapter__ctas{% if chapter.ctas_class %} {{chapter.ctas_class}}{% endif %}">
+  <div class="chapter__ctas{% if chapter.ctas_class %} {{chapter.ctas_class}}{% endif %} ctas">
     {% for cta in chapter.ctas %}
-      <div class="chapter__cta">
+      <div class="chapter__cta ctas__cta">
         {{cta_button.cta_button(cta)}}
       </div>
     {% endfor %}
@@ -81,7 +81,7 @@
 <ul class="chapter__body-list{% if class %} {{ class }}{% endif %}">
   {% for item in items %}
   <li class="chapter__body-list__item">
-    {% if item.name %}<span class="chapter__body-list__item__name">{{_(item.name)}}: </span>{% endif %}
+    {% if item.name %}<span class="chapter__body-list__item__name">{{_(item.name)}}{% if item.value %}{{_(': ')}}{% endif %}</span>{% endif %}
     {% if item.value %}<span class="chapter__body-list__item__value">{{_(item.value)}}</span>{% endif %}
 
     {% if item.list %}
