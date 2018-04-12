@@ -26,52 +26,59 @@ footer:
 components:
 - component: 'section-columns'
   columns:
-  - class: 'section__columns__column--body-large'
+  - class: 'section__columns__column--single-column section__columns__column--body-large'
     chapter:
       body: 'Launched in June of 2016, GoHawaiʻi is the state of Hawaii’s first official mobile app for travel tips and safety information for visitors from the US mainland, China, Japan, Korea and Germany, developed in partnership with Hawaiʻi Tourism Authority.'
       inline_images:
       - url: '/static/images/case-studies/gohawaii/gohawaii_graphic.png'
 
 - component: 'section-columns'
+  class: 'section--bg-image'
   columns:
   - chapter:
       background_images:
       - url: '/static/images/case-studies/gohawaii/gohawaii_full-background.png'
 
 - component: 'section-columns'
+  class: 'section--min-height-600'
   columns:
   - order: 1
-    class: 'section__columns__column--columns-offset'
     chapter:
-      title: 'Illustrated,  storytelling  in <span class="italicize">your</span> language.'
+      title: "Illustrated,<br/>storytelling<br/>in <span class='italicize'>your</span><br/>language."
       background_images:
       - class: 'monsterra-leaf'
         url: '/static/images/case-studies/gohawaii/gohawaii_monsterra-leaf.svg'
   - order: 2
+    class: 'section__columns__column--columns-offset'
     chapter:
       body: 'We implemented a multilingual mobile content management system that delivers fresh tips to Android and iOS users dynamically with information presented in an interactive, illustrated storytelling experience using characters and scenes created just for GoHawaiʻi.'
 
 - component: 'section-columns'
-  class: 'section--padded'
+  class: 'section--bg-image section--padded'
   theme: 'dark'
   columns:
-  - chapter:
+  - class: 'section__columns__column--single-column'
+    chapter:
       title: "Hawaii's State Tourism Agency"
       body: "As Hawaii's state tourism agency, the <span class='bold'>Hawaii Tourism Authority</span> (HTA) uses its research, industry and marketing expertise to develop and implement the state's strategic tourism marketing plan. Equally important, the HTA is responsible for supporting programs that enhance and showcase Hawaii's people, place and culture in order to deliver an incomparable visitor experience."
       background_images:
-      - url: '/static/images/case-studies/gohawaii/gohawaii_full-background.png'
+      - url: '/static/images/case-studies/gohawaii/gohawaii_contained-background.png'
 
 - component: 'section-columns'
+  class: 'section--min-height-600'
   columns:
   - order: 1
     mobile_order: 2
-    chapter:
-      body: 'While Hawaii continues to serve as one of the world’s most popular tourist destinations, it is also unfortunately home to one of the highest rates of visitor drownings in the country.  As the state’s official tourism agency, HTA is responsible for administering and promoting the state’s visitor safety guidelines.  HTA wanted to take advantage of mobile technology to provide visitors direct access to safety information from their smartphones.'
-  - order: 2
-    mobile_order: 1
     class: 'section__columns__column--columns-offset'
     chapter:
-      title: 'Safety tips  at your <span class="italicize"> fingertips</span>.'
+      body:
+      - 'While Hawaii continues to serve as one of the world’s most popular tourist destinations, it is also unfortunately home to one of the highest rates of visitor drownings in the country.'
+      - 'As the state’s official tourism agency, HTA is responsible for administering and promoting the state’s visitor safety guidelines.'
+      - 'HTA wanted to take advantage of mobile technology to provide visitors direct access to safety information from their smartphones.'
+  - order: 2
+    mobile_order: 1
+    chapter:
+      title: "Safety tips<br/>at your<br/><span class='italicize'>fingertips</span>."
       background_images:
       - class: 'monsterra-leaf'
         url: '/static/images/case-studies/gohawaii/gohawaii_monsterra-leaf.svg'
@@ -91,7 +98,8 @@ components:
 
 - component: 'section-columns'
   columns:
-  - chapter:
+  - class: "section__columns__column--single-column"
+    chapter:
       title: 'All-access safety & travel info'
       body: 'Hawaii Tourism Authority’s primary objective was to increase awareness and accessibility of publicly available safety and travel information, while also provide a single resource for travel destination information across the major Hawaiian Islands. HTA wanted to provide “all-access” safety and travel destination information to users in the most convenient means as possible, using the latest forms of mobile technology.'
       inline_images:
@@ -185,7 +193,6 @@ components:
       background_images:
       - url: ''
   - chapter:
-      title: 'All-access safety & travel info'
       body:
       - "Given the broad demographics of the target user base, we recommended a “hybrid” mobile application solution for mobile development, allowing us to write in one codebase and deploy to multiple platforms (iOS and Android)."
       - "As previously mentioned, we developed a custom backend and API server using a headless WordPress solution, allowing the client to manage safety and travel destination content across 6 different locales and perform content updates in the app without the need to deploy new versions to the native app stores."
@@ -199,10 +206,10 @@ components:
       ctas:
         - class: 'itunes'
           url: 'https://itunes.apple.com/us/app/gohawaii/id1100071565?mt=8'
-          label: 'Download on the  iTunes App Store'
+          label: 'Download on the iTunes App Store'
         - class: 'play'
           url: 'https://play.google.com/store/apps/details?id=com.gohawaii.htamobile'
-          label: 'Download on the  Google Play Store'
+          label: 'Download on the Google Play Store'
 
 - component: 'section-columns'
   columns:

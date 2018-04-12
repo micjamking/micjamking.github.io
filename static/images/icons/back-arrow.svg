@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="19px" viewBox="0 0 32 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>back-arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Designs-(Light)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Mike-King---Work---Case-Study---GoHawaii" transform="translate(-60.000000, -60.000000)" stroke="#FFFFFF">
+            <g id="header">
+                <g id="Group-25" transform="translate(60.000000, 60.000000)">
+                    <g id="icons/down-arrow-(white)" transform="translate(16.000000, 9.500000) rotate(90.000000) translate(-16.000000, -9.500000) translate(7.000000, -6.000000)">
+                        <g id="icons/down-arrow">
+                            <path d="M9,0.303921569 L9,30.6960784" id="Line"></path>
+                            <path d="M9,30.6960784 L17.7778773,22.0998783" id="Line"></path>
+                            <path d="M0.310344828,30.6960784 L9.08822211,22.0998783" id="Line" transform="translate(4.699283, 26.397978) scale(-1, 1) translate(-4.699283, -26.397978) "></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -29,11 +29,23 @@
   {% endif %}
 
   {% if chapter.title %}
-  <div class="chapter__title{% if chapter.title_class %} {{chapter.title_class}}{% endif %}">{{ chapter.title }}</div>
+  <div class="chapter__title{% if chapter.title_class %} {{chapter.title_class}}{% endif %}">{{ _(chapter.title) }}</div>
   {% endif %}
 
   {% if chapter.body %}
-  <div class="chapter__body">{{ chapter.body }}</div>
+    {# Permit lists of strings or single strings for chapter.body. #}
+    {% if chapter.body is string %}
+       {% set body = _(chapter.body) %}
+    {% elif chapter.body is sequence %}
+       {% set body = [] %}
+       {% for item in chapter.body %}
+          {% do body.append('<p class="chapter__body__paragraph">') %}
+          {% do body.append(_(item)) %}
+          {% do body.append('</p>') %}
+       {% endfor %}
+       {% set body = ''.join(body) %}
+    {% endif %}
+  <div class="chapter__body">{{ _(body) }}</div>
   {% endif %}
 
   {% if chapter.body_list %}
@@ -69,8 +81,8 @@
 <ul class="chapter__body-list{% if class %} {{ class }}{% endif %}">
   {% for item in items %}
   <li class="chapter__body-list__item">
-    {% if item.name %}<span class="chapter__body-list__item__name">{{item.name}}: </span>{% endif %}
-    {% if item.value %}<span class="chapter__body-list__item__value">{{item.value}}</span>{% endif %}
+    {% if item.name %}<span class="chapter__body-list__item__name">{{_(item.name)}}: </span>{% endif %}
+    {% if item.value %}<span class="chapter__body-list__item__value">{{_(item.value)}}</span>{% endif %}
 
     {% if item.list %}
     {{ body_list('chapter__body-list--nested', item.list)}}

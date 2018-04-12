@@ -2,13 +2,17 @@
  *  User Interface
  */
 
-
+// Libs
+import Vue from 'vue';
 import utils, { $ } from './../lib/utils';
 import MouseScroller from './../lib/mouse-scroller';
 import Parallaxer from './../lib/parallaxer';
+
+// Services
 import StateService from './../services/state';
+
+// Components
 import ParticleCanvas from './particleCanvas';
-import Vue from 'vue';
 
 export default class UI extends Vue {
 
@@ -112,9 +116,8 @@ export default class UI extends Vue {
         $logo.classList.add('fade-out-up');
       }, 1000)
       .delay(() => {
-        $preloader.classList.add('fade-out');
         this.isActive = true;
-
+        $preloader.classList.add('fade-out');
         if ($body.classList.contains('home')) {
           introState();
         }

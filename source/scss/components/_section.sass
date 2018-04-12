@@ -3,3 +3,88 @@
    ========================================================================== */
 
 .section
+  position: relative
+
+  &__container
+    height: 100%
+    padding: em-calc(90px) em-calc(180px)
+
+  &__columns
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+
+    &__column
+      width: 100%
+      flex: 1
+
+      &--columns-offset
+        flex: 2
+
+        &.column--order--1,
+        &.column--order--2
+          .chapter
+            &__body
+              max-width: 430px
+
+        &.column--order--1
+          .chapter
+            align-items: flex-end
+            &__body
+              padding-right: 50px
+
+        &.column--order--2
+          .chapter
+            align-items: flex-start
+            &__body
+              padding-left: 50px
+
+      &--body-large
+        .chapter__body
+          font-size: em-calc(24px)
+
+      &--single-column
+        margin: 0 auto
+
+        .chapter__body
+          max-width: 700px
+          text-align: center
+
+    .column
+      @for $i from 1 through 8
+        &--order--#{$i}
+          order: $i
+
+  &--bg-image
+    .section__container
+      padding: 0
+
+    .chapter
+      height: (600px / 1440px) * 100vw
+
+      .background-images__image
+        background-size: cover
+
+      +lg
+        min-height: 600px
+
+  &--min-height-600
+    .section__columns
+      min-height: 420px // Account for container padding
+
+  &--padded
+    .section__container
+      padding: 0 $global-spacing-xl
+
+  &--dark
+    .chapter
+      &__title,
+      &__body
+        color: $global-color-white
+
+  &--custom-animation
+    min-height: 600px
+
+  &--light-grey-bg
+    background-color: $global-color-light-blue

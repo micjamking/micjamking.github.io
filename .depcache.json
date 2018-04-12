@@ -1,4 +1,25 @@
 {
+  "/content/case-studies/gohawaii.yaml": [
+    "/static/apple-touch-icon-precomposed.png",
+    "/static/favicon.png",
+    "/static/images/case-studies/gohawaii/gohawaii_badge-airport.png",
+    "/static/images/case-studies/gohawaii/gohawaii_badge-marine.png",
+    "/static/images/case-studies/gohawaii/gohawaii_badge-ocean.png",
+    "/static/images/case-studies/gohawaii/gohawaii_contained-background.png",
+    "/static/images/case-studies/gohawaii/gohawaii_full-background.png",
+    "/static/images/case-studies/gohawaii/gohawaii_graphic.png",
+    "/static/images/case-studies/gohawaii/gohawaii_header-background.png",
+    "/static/images/case-studies/gohawaii/gohawaii_monsterra-leaf.svg",
+    "/static/images/social_image.jpg",
+    "/static/script.js",
+    "/static/style.css",
+    "/views/components/_header-case-study.html",
+    "/views/components/_page-footer.html",
+    "/views/components/_preloader.html",
+    "/views/components/_section-columns.html",
+    "/views/components/_section-custom-animation.html",
+    "/views/components/_section-process.html"
+  ],
   "/content/pages/home.yaml": [
     "/content/pages/about.yaml",
     "/content/pages/contact.yaml",

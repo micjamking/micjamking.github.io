@@ -24,8 +24,8 @@ export default class Parallaxer {
 
      this.$body.style.transformStyle       = 'preserve-3d';
      this.$body.style.webkitTransformStyle = 'preserve-3d';
-     this.$body.style.perspective          = window.innerHeight / 2 + 'px';
-     this.$body.style.webkitPerspective    = window.innerHeight / 2 + 'px';
+     this.$body.style.perspective          = `${window.innerHeight / 2}px`;
+     this.$body.style.webkitPerspective    = `${window.innerHeight / 2}px`;
 
      /**
       * Flag to allow animation.
@@ -126,11 +126,13 @@ export default class Parallaxer {
      this.transformValues.xTrans += (xTrans - this.transformValues.xTrans) * 0.05;
      this.transformValues.yTrans += (yTrans - this.transformValues.yTrans) * 0.05;
 
-     let transformString =
-        'rotateX(' + this.transformValues.yDeg + 'deg) rotateY(' +
-            -this.transformValues.xDeg + 'deg) rotateZ(0deg)' +
-            ' translate(' + -this.transformValues.xTrans +'px, ' +
-            -this.transformValues.yTrans + 'px)';
+     let rotateXstring = `rotateX( ${this.transformValues.yDeg}deg )`;
+     let rotateYstring = `rotateY( ${-this.transformValues.xDeg}deg )`;
+     let rotateZstring = 'rotateZ(0deg)';
+     let translateXstring = `translateX( ${-this.transformValues.xTrans}px )`;
+     let translateYstring = `translateY( ${-this.transformValues.yTrans}px )`;
+
+     let transformString = `${rotateXstring} ${rotateYstring} ${rotateZstring} ${translateXstring} ${translateYstring}`;
 
      this.$rootElement_.forEach(($rootElement) => {
        $rootElement.style.perspectiveOrigin = '50%, 50%';

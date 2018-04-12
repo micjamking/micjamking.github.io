@@ -17,7 +17,7 @@
     justify-content: center
     align-items: center
 
-    +md
+    +lg
       height: 150px
       flex-direction: row
       padding: $global-spacing-xl
@@ -27,7 +27,7 @@
     height: 30px
     margin-bottom: $global-spacing-md
 
-    +md
+    +lg
       position: absolute
       top: $global-spacing-xl
       left: $global-spacing-xl
@@ -76,3 +76,128 @@
 
   &--case-study
     position: relative
+    +md
+      height: 50vh
+    +lg
+      min-height: 460px
+
+    .header
+      &__container
+        display: flex
+        height: 100%
+        flex-direction: column
+        justify-content: center
+        align-items: flex-start
+        position: relative
+        z-index: 2
+        +md
+          padding: 0 100px
+          margin: 0 auto
+
+        +lg
+          padding: 0
+          max-width: 750px
+
+      &__title,
+      &__subtitle,
+      &__services li,
+      &__project-links li,
+      &__project-links li a
+        color: $global-color-white
+
+      &__title
+        +md
+          font-size: em-calc(48px)
+          margin-bottom: 10px
+
+      &__subtitle
+        +md
+          font-size: em-calc(24px)
+
+      &__services,
+      &__project-links
+        display: flex
+        width: 100%
+        position: absolute
+        top: 60px
+        list-style: none
+        flex-direction: row
+        justify-content: center
+        align-items: center
+
+        li
+          position: relative
+          font-size: em-calc(12px)
+
+      &__services
+        justify-content: flex-start
+        +md
+          left: 100px
+        +lg
+          left: 0
+
+        li
+          margin-right: 12px
+
+          &::after
+            content: '•'
+            display: flex
+            position: absolute
+            top: 50%
+            right: -8px
+            transform: translate(0, -50%)
+            color: inherit
+
+          &:last-child
+            margin-right: 0
+
+            &::after
+              display: none
+
+      &__project-links
+        right: 0
+        justify-content: flex-end
+        +md
+          right: 100px
+        +lg
+          right: 0
+
+        li
+          margin-left: 12px
+
+          &::before
+            content: '|'
+            display: flex
+            position: absolute
+            top: 50%
+            left: -9px
+            transform: translate(0, -50%)
+            color: inherit
+
+          &:first-child
+            margin-left: 0
+
+            &::before
+              display: none
+
+      &__back-home
+        position: absolute
+        top: 60px
+        left: 60px
+        z-index: 2
+
+        &__link
+          display: flex
+          width: 32px
+          height: 19px
+          background-image: url('/images/icons/back-arrow.svg')
+          background-repeat: no-repeat
+          background-position: center
+          background-size: contain
+
+    .background-images
+      &--case-study
+        +case-study__header-mask
+
+      &__image
+        background-size: cover

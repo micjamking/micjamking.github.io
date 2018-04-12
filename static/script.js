@@ -12508,6 +12508,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _vue = __webpack_require__(1);
+
+var _vue2 = _interopRequireDefault(_vue);
+
 var _utils2 = __webpack_require__(0);
 
 var _utils3 = _interopRequireDefault(_utils2);
@@ -12528,10 +12532,6 @@ var _particleCanvas = __webpack_require__(13);
 
 var _particleCanvas2 = _interopRequireDefault(_particleCanvas);
 
-var _vue = __webpack_require__(1);
-
-var _vue2 = _interopRequireDefault(_vue);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12541,6 +12541,15 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 *  User Interface
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 */
+
+// Libs
+
+
+// Services
+
+
+// Components
+
 
 var UI = function (_Vue) {
   _inherits(UI, _Vue);
@@ -12635,9 +12644,8 @@ var UI = function (_Vue) {
         $logo.classList.remove('fade-in-up');
         $logo.classList.add('fade-out-up');
       }, 1000).delay(function () {
-        $preloader.classList.add('fade-out');
         _this2.isActive = true;
-
+        $preloader.classList.add('fade-out');
         if ($body.classList.contains('home')) {
           introState();
         }
@@ -12950,7 +12958,13 @@ var Parallaxer = function () {
       this.transformValues.xTrans += (xTrans - this.transformValues.xTrans) * 0.05;
       this.transformValues.yTrans += (yTrans - this.transformValues.yTrans) * 0.05;
 
-      var transformString = 'rotateX(' + this.transformValues.yDeg + 'deg) rotateY(' + -this.transformValues.xDeg + 'deg) rotateZ(0deg)' + ' translate(' + -this.transformValues.xTrans + 'px, ' + -this.transformValues.yTrans + 'px)';
+      var rotateXstring = 'rotateX( ' + this.transformValues.yDeg + 'deg )';
+      var rotateYstring = 'rotateY( ' + -this.transformValues.xDeg + 'deg )';
+      var rotateZstring = 'rotateZ(0deg)';
+      var translateXstring = 'translateX( ' + -this.transformValues.xTrans + 'px )';
+      var translateYstring = 'translateY( ' + -this.transformValues.yTrans + 'px )';
+
+      var transformString = rotateXstring + ' ' + rotateYstring + ' ' + rotateZstring + ' ' + translateXstring + ' ' + translateYstring;
 
       this.$rootElement_.forEach(function ($rootElement) {
         $rootElement.style.perspectiveOrigin = '50%, 50%';
@@ -13301,12 +13315,24 @@ var ParticleCanvas = function () {
     this.speed = 0.25;
     this.friction = 1;
 
+    var particleCount = void 0;
+
+    if (this.utils.screenSize().width > 1440) {
+      particleCount = 150;
+    } else if (this.utils.screenSize().width > 1024) {
+      particleCount = 125;
+    } else if (this.utils.screenSize().width > 640) {
+      particleCount = 100;
+    } else {
+      particleCount = 75;
+    }
+
     // Particle settings
     this.particles = [];
-    this.numOfParticles = 150 / this.devicePixelRatio;
-    this.particleDistance = 150 / this.devicePixelRatio;
+    this.numOfParticles = particleCount;
+    this.particleDistance = 150;
     this.particleOpacity = 0.5;
-    this.particleSpring = 0.00001;
+    this.particleSpring = 0.000005;
     this.particleSize = 3;
     this.particleLineWidth = 1;
     this.particleColors = [
@@ -13329,7 +13355,7 @@ var ParticleCanvas = function () {
     // Start animation
     this._init();
 
-    // console.log('instantiated particle canvas');
+    console.log('instantiated particle canvas', this.numOfParticles);
   }
 
   /**
@@ -13654,8 +13680,6 @@ var ParticleCanvas = function () {
     key: '_mouseDownCallback',
     value: function _mouseDownCallback() {
       this.isTouching = true;
-      // this.gravity = 1;
-      // this.friction = 0.95;
       this.mouseBall.radius = 0;
     }
 
@@ -13671,8 +13695,6 @@ var ParticleCanvas = function () {
     key: '_mouseUpCallback',
     value: function _mouseUpCallback() {
       this.isTouching = false;
-      // this.friction = 0.99;
-      // this.gravity  = 0;
       this.mouseBall.radius = this.mouseBallThreshold;
     }
 

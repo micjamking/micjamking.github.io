@@ -4,9 +4,14 @@
   {% if doc.header.background_images %}
   {{background_images.background_images('header__background-images background-images--case-study', doc.header.background_images)}}
   {% endif %}
+  <div class="header__back-home">
+    <a href="/" class="header__back-home__link"></a>
+  </div>
   <div class="header__container">
-    <h1 class="header__title">{{ doc.header.title }}</h1>
-    <div class="header__subtitle">{{ doc.header.subtitle }}</div>
+    <div class="header__headings">
+      <h1 class="header__title">{{ doc.header.title }}</h1>
+      <div class="header__subtitle">{{ doc.header.subtitle }}</div>
+    </div>
 
     {% if doc.header.services %}
     <ul class="header__services">

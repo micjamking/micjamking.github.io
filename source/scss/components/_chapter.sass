@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Chapter
+   ========================================================================== */
+
+.chapter
+  position: relative
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+  &__images
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    margin-bottom: $global-spacing-xl
+    order: 2
+
+    ~ .chapter__title
+      margin-bottom: 70px
+
+  &__image
+    margin-right: 60px
+
+    &:last-child
+      margin-right: 0
+
+  &__title,
+  &__body
+    z-index: 2
+
+  &__title
+    position: relative
+    font-family: $global-serif
+    font-weight: 700
+    font-size: em-calc(36px)
+    margin-bottom: $global-spacing-md
+    order: 1
+
+    .italicize
+      font-style: italic
+
+  &__body
+    font-size: em-calc(18px)
+    order: 3
+
+    .bold
+      font-weight: 700

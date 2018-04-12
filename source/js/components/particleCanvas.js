@@ -38,12 +38,30 @@ export default class ParticleCanvas {
     this.speed    = 0.25;
     this.friction = 1;
 
+    let particleCount;
+
+    if (this.utils.screenSize().width > 1440) {
+      particleCount = 150;
+    }
+
+    else if (this.utils.screenSize().width > 1024) {
+      particleCount = 125;
+    }
+
+    else if (this.utils.screenSize().width > 640) {
+      particleCount = 100;
+    }
+
+    else {
+      particleCount = 75;
+    }
+
     // Particle settings
     this.particles         = [];
-    this.numOfParticles    = 150 / this.devicePixelRatio;
-    this.particleDistance  = 150 / this.devicePixelRatio;
+    this.numOfParticles    = particleCount;
+    this.particleDistance  = 150;
     this.particleOpacity   = 0.5;
-    this.particleSpring    = 0.00001;
+    this.particleSpring    = 0.000005;
     this.particleSize      = 3;
     this.particleLineWidth = 1;
     this.particleColors    = [
@@ -66,7 +84,7 @@ export default class ParticleCanvas {
     // Start animation
     this._init();
 
-    // console.log('instantiated particle canvas');
+    console.log('instantiated particle canvas', this.numOfParticles);
 
   }
 
@@ -355,8 +373,6 @@ export default class ParticleCanvas {
 	 */
 	_mouseDownCallback(){
     this.isTouching = true;
-    // this.gravity = 1;
-    // this.friction = 0.95;
     this.mouseBall.radius = 0;
 	}
 
@@ -370,8 +386,6 @@ export default class ParticleCanvas {
 	 */
 	_mouseUpCallback(){
     this.isTouching = false;
-    // this.friction = 0.99;
-    // this.gravity  = 0;
     this.mouseBall.radius = this.mouseBallThreshold;
 	}
 
