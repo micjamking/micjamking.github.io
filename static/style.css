@@ -2004,7 +2004,7 @@ input[type="button"]:active {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 6.25rem 0;
+  padding: 9.375rem 0;
   z-index: 1;
 }
 
@@ -2029,8 +2029,8 @@ input[type="button"]:active {
 .section--process .section__phases__phase--insights {
   position: relative;
   padding: 3.125rem 0;
-  margin-top: 3.125rem;
-  margin-bottom: 3.125rem;
+  margin-top: 6.25rem;
+  margin-bottom: 6.25rem;
 }
 
 .section--process .section__phases__phase--insights::before {
@@ -2108,7 +2108,7 @@ input[type="button"]:active {
   margin-bottom: 0;
 }
 
-.section--process .section__phases__phase--insights .chapter__body__paragraph {
+.section--process .section__phases__phase--insights .chapter__body__paragraph:last-child {
   margin-bottom: 0;
 }
 
@@ -2223,6 +2223,15 @@ input[type="button"]:active {
   font-size: 1.5rem;
   color: #FFFFFF;
   text-align: center;
+}
+
+.section--process .section__phase__details .chapter__body {
+  max-width: 500px;
+  margin-bottom: 0;
+}
+
+.section--process .section__phase__details .chapter__body__paragraph:last-child {
+  margin-bottom: 0;
 }
 
 .section--process__canvas {

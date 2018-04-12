@@ -150,7 +150,7 @@
           flex-direction: row
           justify-content: center
           align-items: center
-          padding: em-calc(100px) 0
+          padding: em-calc(150px) 0
           z-index: 1
 
           &::after
@@ -164,8 +164,8 @@
           &--insights
             position: relative
             padding: em-calc(50px) 0
-            margin-top: em-calc(50px)
-            margin-bottom: em-calc(50px)
+            margin-top: em-calc(100px)
+            margin-bottom: em-calc(100px)
 
             &::before
               content: ''
@@ -207,7 +207,7 @@
                 font-size: em-calc(14px)
                 columns: 2 auto
                 margin-bottom: 0
-                &__paragraph
+                &__paragraph:last-child
                   margin-bottom: 0
 
           &--discovery,
@@ -304,6 +304,10 @@
             +process__title
 
           &__body
+            max-width: 500px
+            margin-bottom: 0
+            &__paragraph:last-child
+              margin-bottom: 0
 
     &__canvas
       background-color: transparent
