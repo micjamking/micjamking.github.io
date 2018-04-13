@@ -25,6 +25,7 @@ footer:
 
 components:
 - component: 'section-columns'
+  class: 'section--intro'
   columns:
   - class: 'section__columns__column--single-column section__columns__column--body-large'
     chapter:
@@ -40,7 +41,7 @@ components:
       - url: '/static/images/case-studies/gohawaii/gohawaii_full-background.png'
 
 - component: 'section-columns'
-  class: 'section--min-height-600'
+  class: 'section--min-height-600 section--offset-max-width'
   columns:
   - order: 1
     chapter:
@@ -65,7 +66,7 @@ components:
       - url: '/static/images/case-studies/gohawaii/gohawaii_contained-background.png'
 
 - component: 'section-columns'
-  class: 'section--min-height-600'
+  class: 'section--min-height-600 section--offset-max-width'
   columns:
   - order: 1
     mobile_order: 2
@@ -86,15 +87,15 @@ components:
 - component: 'section-custom-animation'
   class: 'section--light-grey-bg'
   elements:
-  - class: 'alert-1'
+  - id: 'alert-1'
     background_images:
-    - url: ''
-  - class: 'alert-2'
+    - url: '/static/images/case-studies/gohawaii/gohawaii_animation_item-1.png'
+  - id: 'alert-2'
     background_images:
-    - url: ''
-  - class: 'alert-3'
+    - url: '/static/images/case-studies/gohawaii/gohawaii_animation_item-2.png'
+  - id: 'alert-3'
     background_images:
-    - url: ''
+    - url: '/static/images/case-studies/gohawaii/gohawaii_animation_item-3.png'
 
 - component: 'section-columns'
   columns:
@@ -114,14 +115,17 @@ components:
   - phase: 'discovery'
     work:
       class: 'left'
-      # background_images:
-      #   - id: ''
-      #     url: ''
+      background_images:
+        - id: 'discovery-1'
+          url: '/static/images/case-studies/gohawaii/gohawaii_process_discovery_1.png'
+        - id: 'discovery-2'
+          url: '/static/images/case-studies/gohawaii/gohawaii_process_discovery_2.png'
+        - id: 'discovery-3'
+          url: '/static/images/case-studies/gohawaii/gohawaii_process_discovery_3.png'
     details:
       class: 'right'
       chapter:
         title: 'Discovery'
-        title_icon: ''
         body:
           - "I lead multiple rounds of <span class='bold'>stakeholder interviews</span> with the international marketing teams for HTA, including their Japanese, Korean, Chinese & Taiwanese teams, to identify overarching concerns in regards to end customers motivations and technology habits."
           - "We performed a <span class='bold'>competitor analysis</span> across 9 different local and national competitors in the travel and tourism space. Additionally, we created <span class='bold'>user profiles</span> to define the audience of the application, extrapolated from market research performed by the client."
@@ -138,14 +142,15 @@ components:
   - phase: 'information-architecture'
     work:
       class: 'right'
-      # background_images:
-      #   - id: ''
-      #     url: ''
+      background_images:
+        - id: 'ia-1'
+          url: '/static/images/case-studies/gohawaii/gohawaii_process_ia_1.png'
+        - id: 'ia-2'
+          url: '/static/images/case-studies/gohawaii/gohawaii_process_ia_2.png'
     details:
       class: 'left'
       chapter:
         title: 'Information Architecture'
-        title_icon: ''
         body:
           - "Once we had a clear understanding of the requirements, business goals, and user motivations, we began designing <span class='bold'>user task-flow diagrams</span> to outline the experience for users navigating through the app to discover safety information and recommended attractions, events, and island tips."
           - "Once the user-flows had been defined and agreed upon, we created <span class='bold'>wireframe schematics</span> to outline the introductory flow, safety “travel smart” experience, destination experience, and menu interactions."
@@ -153,14 +158,17 @@ components:
   - phase: 'creative-direction'
     work:
       class: 'left'
-      # background_images:
-      #   - id: ''
-      #     url: ''
+      background_images:
+        - id: 'creative-1'
+          url: '/static/images/case-studies/gohawaii/gohawaii_process_creative_1.png'
+        - id: 'creative-2'
+          url: '/static/images/case-studies/gohawaii/gohawaii_process_creative_2.png'
+        - id: 'creative-3'
+          url: '/static/images/case-studies/gohawaii/gohawaii_process_creative_3.png'
     details:
       class: 'right'
       chapter:
         title: 'Creative Direction'
-        title_icon: ''
         body:
           - "One of the primary challenges for the project was defining a <span class='bold'>creative strategy</span> that could make safety information exciting and interesting for visitors to the islands."
           - "Based on the business requirements and potential motivations of the target audience, I presented two creative design strategies for the mobile experience: a conservative, content-centric brochure experience that used animations and transitions as supporting elements of the design, and an interactive narrative experience that uses storytelling and illustrations to escort users through the content, using animated characters as friendly guides."
@@ -169,30 +177,34 @@ components:
   - phase: 'software-development'
     work:
       class: 'right'
-      # background_images:
-      #   - id: ''
-      #     url: ''
+      background_images:
+        - id: 'engineering'
+          url: '/static/images/case-studies/gohawaii/gohawaii_process_engineering.png'
     details:
       class: 'left'
       chapter:
         title: 'Software Development'
-        title_icon: ''
         body:
           - "Once the information architecture had been agreed upon, I shifted my focus to the <span class='bold'>technical architecture</span> of the system. Based on the requirements of the project, we needed to develop a system that would allow for managing and serving content from 6 different locales while allowing the user to dynamically switch languages within the mobile app and the client to update the content in any language on the fly. "
           - "We decided to use a Headless WordPress CMS as the backend, and through a combined usage of localization plugins, custom fields / custom post type development, and WordPress’ new built-in REST API, we were able to develop a seamless editorial workflow that allowed HTA’s local and international marketing teams to add and update content within the mobile app without pushing new versions to the app store."
 
 - component: 'section-columns'
+  class: 'section--min-height-600 section--two-column-carousel'
   columns:
-  - device_slider:
-    - id: 'slide-1'
-      background_images:
-      - url: ''
-    - id: 'slide-2'
-      background_images:
-      - url: ''
-    - id: 'slide-3'
-      background_images:
-      - url: ''
+  - class: "section__columns__column--single-column"
+    chapter:
+      inline_images:
+        - url: '/static/images/case-studies/gohawaii/gohawaii_slideshow--mobile-bg.png'
+  # - device_slider:
+  #   - id: 'slide-1'
+  #     background_images:
+  #     - url: ''
+  #   - id: 'slide-2'
+  #     background_images:
+  #     - url: ''
+  #   - id: 'slide-3'
+  #     background_images:
+  #     - url: ''
   - chapter:
       body:
       - "Given the broad demographics of the target user base, we recommended a “hybrid” mobile application solution for mobile development, allowing us to write in one codebase and deploy to multiple platforms (iOS and Android)."

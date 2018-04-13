@@ -79,6 +79,11 @@
     .section__columns
       min-height: 420px // Account for container padding
 
+  &--offset-max-width
+    .section__columns
+      max-width: 750px
+      margin: 0 auto
+
   &--padded
     .section__container
       padding: 0 $global-spacing-xl
@@ -93,6 +98,35 @@
 
   &--custom-animation
     min-height: 600px
+    height: (600px / 1440px) * 100vw
+
+    .section__container,
+    .section__elements
+      position: relative
+      width: 100%
+      height: 100%
+      padding: 0
+
+  &--two-column-carousel
+    .section__columns__column
+      .chapter
+        &__images
+          margin-bottom: 0
+
+        &__body
+          max-width: 430px
+
+      &:first-child
+        margin-right: $global-spacing-lg
+
+        .chapter
+          align-items: flex-end
+
+      &:last-child
+        margin-left: $global-spacing-lg
+
+        .chapter
+          align-items: flex-start
 
   &--light-grey-bg
     background-color: $global-color-light-blue
@@ -108,6 +142,7 @@
         +footer__title
         font-style: normal
         margin-bottom: 100px
+        user-select: none
 
       &__phases
         position: relative
@@ -150,7 +185,7 @@
           flex-direction: row
           justify-content: center
           align-items: center
-          padding: em-calc(150px) 0
+          padding: em-calc(100px) 0
           z-index: 1
 
           &::after
@@ -229,6 +264,17 @@
                 top: 50%
                 transform: translate(0,-50%)
 
+            .background-images
+              &__image
+                max-width: 450px
+                max-height: 275px
+                background-size: contain
+                background-position: center top
+                +process__image--box-shadow
+
+                +lt(1280px)
+                  max-width: 80%
+
           &--discovery,
           &--creative-direction
             .chapter__title
@@ -249,6 +295,7 @@
                 width: 50px
                 height: 49px
                 background-image: url('/images/icons/magnifying-glass.svg')
+
 
           &--creative-direction
             .chapter__title
@@ -295,8 +342,43 @@
 
       &__phase__work,
       &__phase__details
+        position: relative
         flex: 1
         width: 100%
+        height: 100%
+
+      &__phase__work
+        height: 395px
+
+        .background-images
+          height: 395px
+
+          &__image
+            top: unset
+            right: unset
+            bottom: unset
+            left: unset
+
+        &.left
+          .background-images
+            right: 0
+            &__image
+              @for $i from 1 through 3
+                $increment: 3 - ($i - 1)
+                &:nth-child(#{$increment})
+                  bottom: (60px * ($i - 1))
+                  right: (60px * ($i - 1))
+                  z-index: 3 - ($i + 1)
+
+        &.right
+          .background-images
+            left: 0
+            &__image
+              @for $i from 1 through 3
+                &:nth-child(#{$i})
+                  bottom: (60px * ($i - 1))
+                  left: (60px * ($i - 1))
+                  z-index: $i
 
       &__phase__details
         .chapter

@@ -42,11 +42,17 @@ export default class UI extends Vue {
     };
 
     let caseStudyState = () => {
+      let $sections = $('.section:not(.section--process):not(.section--intro), .section__phases__header, .section__phases__phase');
       let $footer__canvas = $('.footer__canvas')[0];
       let $process__canvas = $('.section--process__canvas')[0];
-      let parallaxers_ = [];
+      // let parallaxers_ = [];
 
-      // console.log($process__canvas.offsetHeight);
+      // Add class when element enters viewport
+      _utils.addClassOnScrollInToView({
+        elements: $sections,
+        threshold: 0.25,
+        removeClassOnExit: false
+      });
 
       if ($process__canvas){
         new ParticleCanvas({
@@ -72,6 +78,36 @@ export default class UI extends Vue {
           particleOpacity: 1.0
         });
       }
+
+      // On desktop-only...
+      // if (!_utils.allowDeviceOrientation()){
+      //
+      //   if(!parallaxers_.length) {
+      //     parallaxers_ = [
+      //       new Parallaxer(
+      //         $('.section--custom-animation')[0],
+      //         $('.section__element--alert-1'),
+      //         { x: 0.1, y: 0.1}, { x: 0.15, y: 0.15}
+      //       ),
+      //       new Parallaxer(
+      //         $('.section--custom-animation')[0],
+      //         $('.section__element--alert-2'),
+      //         { x: 0.1, y: 0.1}, { x: 0.25, y: 0.25}
+      //       ),
+      //       new Parallaxer(
+      //         $('.section--custom-animation')[0],
+      //         $('.section__element--alert-3'),
+      //         { x: 0.1, y: 0.1}, { x: 0.35, y: 0.35}
+      //       )
+      //     ];
+      //
+      //     // Run parallaxers.
+      //     parallaxers_.forEach((parallaxer) => {
+      //       parallaxer.run();
+      //     });
+      //   }
+      //
+      // }
     };
 
     let introState = () => {

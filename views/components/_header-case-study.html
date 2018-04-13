@@ -24,7 +24,7 @@
     {% if doc.header.project_links %}
     <ul class="header__project-links">
         {% for link in doc.header.project_links %}
-        <li class="header__service">
+        <li class="header__project-link">
           <a class="link link--header" href="{{ link.url }}">{{ link.label }}</a>
         </li>
         {% endfor %}

@@ -1,2 +1,17 @@
+{% import "/views/macros/_background-images.html" as background_images with context %}
+
 <section class="section section--custom-animation{% if component.class %} {{ component.class }}{% endif %}{% if component.theme %} section--{{ component.theme }}{% endif %}">
+  <div class="section__container">
+    {% if component.elements %}
+    <div class="section__elements">
+      {% for element in component.elements %}
+      <div class="section__element{% if element.class %} {{ element.class }}{% endif %}{% if element.id %} section__element--{{ element.id }}{% endif %}">
+        {% if element.background_images %}
+        {{background_images.background_images('section__element__background-images', element.background_images)}}
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
 </section>

@@ -5,7 +5,9 @@
   <div class="section__container">
     {% if component.phases %}
     <div class="section__phases">
-      <h1 class="section__title">{{_(component.title)}}</h1>
+      <div class="section__phases__header">
+        <h1 class="section__title">{{_(component.title)}}</h1>
+      </div>
       {% for phase in component.phases %}
       <div class="section__phases__phase{% if phase.phase %} section__phases__phase--{{ phase.phase }}{% endif %}">
         {% if phase.phase == 'insights' %}

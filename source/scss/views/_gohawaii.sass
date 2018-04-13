@@ -11,3 +11,53 @@
       top: 50%
       left: 50%
       transform: translate(-50%,-50%)
+
+  .section
+    &--custom-animation
+      .section
+        &__elements
+          height: 100%
+
+        &__element
+          position: absolute
+          top: 0
+          left: 0
+          width: 333px
+          height: 320px
+
+          .background-images__image
+            background-size: cover
+            +process__image--box-shadow
+
+          &--alert
+            &-1
+              top: 25.5%
+              left: 27.777778%
+              z-index: 1
+              +md
+                width: 200px
+                height: 147px
+            &-2
+              top: 39.833333%
+              left: 34.027778%
+              z-index: 2
+              +md
+                width: 267px
+                height: 256px
+            &-3
+              top: 17.5%
+              left: 48.958333%
+              z-index: 3
+
+    &--process
+      .section__phase__work.right
+        .background-images__image--ia-2
+          bottom: 90px
+          left: 90px
+
+        .background-images__image--engineering
+          background-position: center
+          max-width: 100%
+          max-height: 100%
+          +md
+            background-position: left center

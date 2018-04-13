@@ -8,7 +8,7 @@
 {% macro background_images(container_class, images) %}
 <div class="{% if container_class %}{{container_class}} {% endif %}background-images">
   {% for image in images %}
-  <div class="background-images__image{% if image.class %} {{image.class}}{% endif %}"
+  <div class="background-images__image{% if image.class %} {{image.class}}{% endif %}{% if image.id %} background-images__image--{{image.id}}{% endif %}"
        style="background-image: url({{g.static(image.url).url.path}})"></div>
   {% endfor %}
 </div>

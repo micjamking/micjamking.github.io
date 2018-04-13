@@ -55,6 +55,22 @@ $play-state:      running
     opacity: 1
     transform: none
 
+@keyframes fade-in-left
+  0%
+    opacity: 0
+    transform: translateX(20px)
+  100%
+    opacity: 1
+    transform: none
+
+@keyframes fade-in-right
+  0%
+    opacity: 0
+    transform: translateX(-20px)
+  100%
+    opacity: 1
+    transform: none
+
 @keyframes fade-out-up
   0%
     opacity: 1
@@ -84,6 +100,12 @@ $play-state:      running
 =fade-in-down
   @include animation('fade-in-down', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
 
+=fade-in-left
+  @include animation('fade-in-left', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
+
+=fade-in-right
+  @include animation('fade-in-right', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
+
 =fade-out-up
   @include animation('fade-out-up', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
 
@@ -111,6 +133,102 @@ $play-state:      running
 .fade-out-down
   +fade-out-down
 
+
+.header
+  &--case-study
+    .header
+      &__title,
+      &__subtitle,
+      &__service,
+      &__project-link
+        opacity: 0
+        +fade-in-up
+
+      &__title
+        animation-delay: 150ms * 1
+      &__subtitle
+        animation-delay: 150ms * 2
+      &__service,
+      &__project-link
+        @for $i from 1 through 3
+          &:nth-child(#{$i})
+            animation-delay: 150ms * (2 + $i)
+
+      &__back-home
+        opacity: 0
+        +fade-in-left
+        animation-delay: 150ms * 6
+
+.section--intro
+  .chapter
+    &__images .image,
+    &__body
+      opacity: 0
+      +fade-in-up
+
+    &__images .image
+      animation-delay: 150ms * 9
+
+    &__body
+      animation-delay: 150ms * 10
+
+.section:not(.section--intro)
+  .section,
+  .chapter
+    &__title,
+    &__body,
+    &__body-list,
+    &__cta,
+    &__images .image,
+    &__background-images
+      opacity: 0
+
+.section--custom-animation,
+.section__phases__phase .background-images__image
+  opacity: 0
+
+.inview
+  &.section--custom-animation
+    +fade-in
+
+  .section,
+  .chapter
+    &__title,
+    &__body,
+    &__body-list,
+    &__cta,
+    &__images .image
+      +fade-in-up
+
+    &__background-images
+      +fade-in
+
+    &__title
+      animation-delay: $base-animation * 1
+    &__images .image
+      @for $i from 1 through 3
+        &:nth-child(#{$i})
+          animation-delay: $base-animation * (2 + ($i - 1))
+
+    &__body,
+    &__body-list
+      animation-delay: $base-animation * 3
+
+    &__cta
+      @for $i from 1 through 2
+        &:nth-child(#{$i})
+          animation-delay: $base-animation * (4 + ($i - 1))
+
+    &__body-list--nested
+      animation-delay: 0ms
+
+  &.section__phases__phase
+    .background-images__image
+      +fade-in-up
+
+      @for $i from 1 through 3
+        &:nth-child(#{$i})
+          animation-delay: ($base-animation * $i) + ($base-animation * 3)
 
 .fade-enter-active,
 .fade-leave-active

@@ -7,12 +7,13 @@ import utils, { w, $ } from './../lib/utils';
 export default class Parallaxer {
 
   /**
+   * @param {Element} baseElement - The base element to use for mouseEffects
    * @param {Element} rootElement - The root element to apply parallax effects to.
    * @param {Object} rotationSentivity - x,y object with rotation sensitivity.
    * @param {Object} translateSentitivy - x,y object with translate senstiivity.
    * @constructor
    */
-   constructor(rootElement, rotationSensitivity, translateSensitity) {
+   constructor(baseElement, rootElement, rotationSensitivity, translateSensitity) {
 
      // External utilities
      this.utils = new utils();
@@ -72,8 +73,9 @@ export default class Parallaxer {
       * @type {Element}
       */
      this.$rootElement_ = rootElement;
+     this.baseElement = baseElement || w;
 
-     this.mousePosition_ = this.utils.captureMouse(w);
+     this.mousePosition_ = this.utils.captureMouse(this.baseElement);
    }
 
    /**

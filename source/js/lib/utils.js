@@ -70,11 +70,11 @@ export default class utils {
 
     function mouseListener(e) {
 
-      el.offsetLeft = el.offsetLeft || 0;
-      el.offsetTop = el.offsetTop || 0;
+      let offsetLeft = el.offsetLeft || 0;
+      let offsetTop = el.offsetTop || 0;
 
-      mouse.x = e.pageX - el.offsetLeft;
-      mouse.y = e.pageY - el.offsetTop;
+      mouse.x = e.pageX - offsetLeft;
+      mouse.y = e.pageY -offsetTop;
 
       mouse.percentageX = (mouse.x - utils.screenSize().width / 2) / (utils.screenSize().width) * 100;
       mouse.percentageY = (mouse.y - utils.screenSize().height / 2) / (utils.screenSize().height) * 100;
@@ -410,109 +410,104 @@ export default class utils {
 
   }
 
+
   /**
-   * @author Joseph Lenton - PlayMyCode.com
-   *
-   * @param first An ImageData object from the first image we are colliding with.
-   * @param x The x location of 'first'.
-   * @param y The y location of 'first'.
-   * @param other An ImageData object from the second image involved in the collision check.
-   * @param x2 The x location of 'other'.
-   * @param y2 The y location of 'other'.
-   * @param isCentered True if the locations refer to the centre of 'first' and 'other', false to specify the top left corner.
+   * Throttle an event and provide custom event for callback
+   * @see https://developer.mozilla.org/en-US/docs/Web/Events/scroll
+   * @param {String} type - Type of event to throttle
+   * @param {String} name - Name of new CustomEvent to dispatch
+   * @param {Object} obj - Object to attach event to and dispatch the custom event from
+   * @listens {type} Listen for event to throttle and dispatch custom event for
+   * @emits {name} Custom event to dispatch on object
    */
-  isPixelCollision ( first, x, y, other, x2, y2, isCentered ){
-    // we need to avoid using floats, as were doing array lookups
-    x  = Math.round( x );
-    y  = Math.round( y );
-    x2 = Math.round( x2 );
-    y2 = Math.round( y2 );
+  throttleEvent(type, name, obj) {
 
-    let w  = first.width,
-        h  = first.height,
-        w2 = other.width,
-        h2 = other.height,
-        pixelY, pixelX;
+      obj = obj || w;
+      var running = false;
 
-    // deal with the image being centred
-    if ( isCentered ) {
-        // fast rounding, but positive only
-        x  -= ( w/2 + 0.5) << 0
-        y  -= ( h/2 + 0.5) << 0
-        x2 -= (w2/2 + 0.5) << 0
-        y2 -= (h2/2 + 0.5) << 0
-    }
+      var func = function() {
+          if (running) { return; }
+          running = true;
+          requestAnimationFrame(() => {
+              obj.dispatchEvent(new CustomEvent(name));
+              running = false;
+          });
+      };
 
-    // find the top left and bottom right corners of overlapping area
-    let xMin = Math.max( x, x2 ),
-        yMin = Math.max( y, y2 ),
-        xMax = Math.min( x+w, x2+w2 ),
-        yMax = Math.min( y+h, y2+h2 );
+      obj.addEventListener(type, func);
 
-    // Sanity collision check, we ensure that the top-left corner is both
-    // above and to the left of the bottom-right corner.
-    if ( xMin >= xMax || yMin >= yMax ) {
-        return false;
-    }
+  }
 
-    let xDiff = xMax - xMin,
-        yDiff = yMax - yMin;
 
-    // get the pixels out from the images
-    let pixels  = first.data,
-        pixels2 = other.data;
+  /**
+   * Check if element is currently visible in viewport
+   * @see https://developer.mozilla.org/en-US/docs/Web/Events/scroll
+   * @param {HTMLElement} element - DOM element to check if currently visible
+   * @param {Number} percentage - The percentage of screen threshold the element must be within
+   * @return {Boolean} true|false - Returns true if bottom and right property of element is greater
+   * than 0, and top and left property of element is less than the window height and width respectively,
+   * taking in to account a threshold percentage of the screen.
+   */
+  isElementInViewport(element, percentage) {
 
-    // if the area is really small,
-    // then just perform a normal image collision check
-    if ( xDiff < 4 && yDiff < 4 ) {
-        for ( pixelX = xMin; pixelX < xMax; pixelX++ ) {
-            for ( pixelY = yMin; pixelY < yMax; pixelY++ ) {
-                if (
-                        ( pixels [ ((pixelX-x ) + (pixelY-y )*w )*4 + 3 ] !== 0 ) &&
-                        ( pixels2[ ((pixelX-x2) + (pixelY-y2)*w2)*4 + 3 ] !== 0 )
-                ) {
-                    return true;
-                }
-            }
+    var rect = element.getBoundingClientRect();
+
+    percentage = percentage || 1;
+
+    return (
+        rect.bottom >= 0 &&
+        rect.right  >= 0 &&
+        rect.top  <= ( ( window.innerHeight || document.documentElement.clientHeight ) * percentage ) &&
+        rect.left <= ( ( window.innerWidth || document.documentElement.clientWidth ) * percentage )
+    );
+
+  }
+
+
+  /**
+   * Add class to element when it is scrolled in to view
+   * @param {Object} settings - Settings object
+   * @param {String} settings.activeClass - Name of class to add
+   * @param {Array} settings.elements - Array of HTML elements to watch
+   * @param {Number} settings.threshold - Percentage threshold the element needs to come into view before class is added
+   * @param {Boolean} settings.removeClassOnExit - Whether to remove the active class on exit of viewport
+   *
+   * @listens {scroll} Listen for scroll event on window (default)
+   * @listens {optimizedScroll} Listen for optimizedScroll event on window and fire callback function
+   * @emits {optimizedScroll} Dispatch custom scroll event after throttling default scroll event
+   */
+  addClassOnScrollInToView(settings) {
+
+    let _utils = this;
+
+    settings.activeClass = settings.activeClass || 'inview';
+    settings.threshold = settings.threshold || 0.25;
+    settings.removeClassOnExit = settings.removeClassOnExit !== false;
+
+    /** Scroll event callback  */
+    function _scrollCallback(){
+
+      function toggleActiveClass(el){
+        if (_utils.isElementInViewport(el, 1 - settings.threshold)) {
+          el.classList.add(settings.activeClass);
         }
-    } else {
-        /* What is this doing?
-         * It is iterating over the overlapping area,
-         * across the x then y the,
-         * checking if the pixels are on top of this.
-         *
-         * What is special is that it increments by incX or incY,
-         * allowing it to quickly jump across the image in large increments
-         * rather then slowly going pixel by pixel.
-         *
-         * This makes it more likely to find a colliding pixel early.
-         */
-
-        // Work out the increments,
-        // it's a third, but ensure we don't get a tiny
-        // slither of an area for the last iteration (using fast ceil).
-        let incX = xDiff / 3.0,
-            incY = yDiff / 3.0;
-        incX = (~~incX === incX) ? incX : (incX+1 | 0);
-        incY = (~~incY === incY) ? incY : (incY+1 | 0);
-
-        for ( let offsetY = 0; offsetY < incY; offsetY++ ) {
-            for ( let offsetX = 0; offsetX < incX; offsetX++ ) {
-                for ( pixelY = yMin+offsetY; pixelY < yMax; pixelY += incY ) {
-                    for ( pixelX = xMin+offsetX; pixelX < xMax; pixelX += incX ) {
-                        if (
-                                ( pixels [ ((pixelX-x ) + (pixelY-y )*w )*4 + 3 ] !== 0 ) &&
-                                ( pixels2[ ((pixelX-x2) + (pixelY-y2)*w2)*4 + 3 ] !== 0 )
-                        ) {
-                            return true;
-                        }
-                    }
-                }
-            }
+        if (settings.removeClassOnExit){
+          if (!_utils.isElementInViewport(el, 1 - settings.threshold)){
+            el.classList.remove(settings.activeClass);
+          }
         }
+      }
+
+      Array.prototype.forEach.call(settings.elements, (el) => {
+        toggleActiveClass(el);
+      });
+
     }
 
-    return false;
+    /** Throttle default scroll event and listen for optimizedScroll event */
+    this.throttleEvent('scroll', 'optimizedScroll');
+    w.addEventListener('optimizedScroll', () => { _scrollCallback(); } );
+
   }
 
   clamp(number, min, max) {

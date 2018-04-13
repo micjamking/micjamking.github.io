@@ -19,6 +19,14 @@
   @media #{$xlarge-screen}
     @content
 
+=lt($width)
+  @media #{$small-screen} and (max-width: $width)
+    @content
+
+=gt($width)
+  @media #{$small-screen} and (min-width: $width)
+    @content
+
 =rt
   @media #{$retina}
     @content
@@ -35,9 +43,11 @@
 
 =case-study__header-mask
   clip-path: polygon(100% 0%, 0% 0%, 0% 86.956522%, 50% 100%, 100% 86.956522%)
+  overflow: hidden
 
 =case-study__process-mask
   clip-path: polygon(100% 0%, 50% 1.583554%, 0% 0%, 0% 98.391852%, 50% 100%, 100% 98.391852%)
+  overflow: hidden
 
 =chapter__button
   background: $global-color-dark-blue
@@ -69,6 +79,10 @@
   +process__phase__marker
   height: 5.5px
   border-radius: 0 0 11px 11px
+
+=process__image--box-shadow
+  // box-shadow: 0px 24px 32px 0 rgba(0,0,0,0.1)
+  filter: drop-shadow(0px 24px 32px rgba(0,0,0,0.1))
 
 =footer__title
   font-family: $global-serif
