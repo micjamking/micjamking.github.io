@@ -49,6 +49,10 @@
   clip-path: polygon(100% 0%, 50% 1.583554%, 0% 0%, 0% 98.391852%, 50% 100%, 100% 98.391852%)
   overflow: hidden
 
+=case-study__process-mask--mobile
+  clip-path: polygon(100% 0%, 50% 0.7%, 0% 0%, 0% 99.3%, 50% 100%, 100% 99.3%)
+  overflow: hidden
+
 =chapter__button
   background: $global-color-dark-blue
   box-shadow: 0 3px 9px 0 rgba(0,0,0,0.15)
@@ -79,6 +83,35 @@
   +process__phase__marker
   height: 5.5px
   border-radius: 0 0 11px 11px
+
+=process__phase__timeline__caps
+  &::before,
+  &::after
+    content: ''
+    display: flex
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+
+  &::before
+    +process__phase__marker__top
+    top: 0
+
+  &::after
+    +process__phase__marker__bottom
+    bottom: 0
+
+=process__phase__hide_timeline
+  &::before
+    content: ''
+    display: flex
+    width: 4px
+    height: 100%
+    position: absolute
+    top: 0
+    left: 50%
+    background-color: $global-color-dark-blue
+    transform: translateX(-50%)
 
 =process__image--box-shadow
   // box-shadow: 0px 24px 32px 0 rgba(0,0,0,0.1)

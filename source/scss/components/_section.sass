@@ -7,13 +7,19 @@
 
   &__container
     height: 100%
-    padding: em-calc(100px) em-calc(180px)
+    padding: em-calc(50px) em-calc(40px)
+
+    +md
+      padding: em-calc(100px) em-calc(180px)
 
   &__columns
     display: flex
-    flex-direction: row
+    flex-direction: column
     justify-content: center
     align-items: center
+
+    +md
+      flex-direction: row
 
     &__column
       width: 100%
@@ -21,24 +27,34 @@
 
       &--columns-offset
         flex: 2
+        +lt($global-screen-size-medium)
+          display: flex
+          justify-content: center
+          align-items: center
 
         &.column--order--1,
         &.column--order--2
           .chapter
             &__body
               max-width: 430px
+              +lt($global-screen-size-medium)
+                font-size: 16px
+                margin-top: 100px
+                margin-bottom: 0
 
         &.column--order--1
           .chapter
             align-items: flex-end
             &__body
-              padding-right: 50px
+              +md
+                padding-right: 50px
 
         &.column--order--2
           .chapter
             align-items: flex-start
             &__body
-              padding-left: 50px
+              +md
+                padding-left: 50px
 
       &--body-large
         .chapter__body
@@ -62,31 +78,57 @@
         &--order--#{$i}
           order: $i
 
+        &--mobile-order--#{$i}.section__columns__column
+          +lt($global-screen-size-medium)
+            order: $i
+
   &--bg-image
     .section__container
       padding: 0
 
     .chapter
-      height: (600px / 1440px) * 100vw
+      min-height: 50vh
+      +lt($global-screen-size-medium)
+        padding: $global-spacing-xl $global-spacing-md
 
-      .background-images__image
-        background-size: cover
+      +md
+        height: (600px / 1440px) * 100vw
 
       +lg
         min-height: 600px
+
+      &__title
+        +lt($global-screen-size-medium)
+          max-width: 90%
+          margin-bottom: $global-spacing-lg
+
+      &__body
+        +lt($global-screen-size-medium)
+          margin-bottom: 0px
+
+      .background-images__image
+        background-size: cover
 
   &--min-height-600
     .section__columns
       min-height: 420px // Account for container padding
 
   &--offset-max-width
-    .section__columns
-      max-width: 750px
-      margin: 0 auto
+    .section
+      &__container
+        +lt($global-screen-size-medium)
+          padding-top: em-calc(150px)
+          padding-bottom: em-calc(120px)
+
+      &__columns
+        max-width: 750px
+        margin: 0 auto
 
   &--padded
     .section__container
-      padding: 0 $global-spacing-xl
+      padding: 0 $global-spacing-md
+      +md
+        padding: 0 $global-spacing-xl
 
   &--dark
     &.section--process
@@ -97,8 +139,11 @@
         color: $global-color-white
 
   &--custom-animation
-    min-height: 600px
-    height: (600px / 1440px) * 100vw
+    height: 50vh
+    overflow: hidden
+    +md
+      min-height: 600px
+      height: (600px / 1440px) * 100vw
 
     .section__container,
     .section__elements
@@ -132,7 +177,9 @@
     background-color: $global-color-light-blue
 
   &--process
-    +case-study__process-mask
+    +case-study__process-mask--mobile
+    +md
+      +case-study__process-mask
 
     .section
       &__container
@@ -182,11 +229,21 @@
           flex: 1
           width: 100%
           display: flex
-          flex-direction: row
+          flex-direction: column
           justify-content: center
           align-items: center
-          padding: em-calc(100px) 0
+          padding: em-calc($global-spacing-lg) 0
           z-index: 1
+
+          +lt($global-screen-size-medium)
+            +process__phase__hide_timeline
+
+            &:nth-child(2)
+              margin-top: 100px
+
+          +md
+            padding: em-calc(100px) 0
+            flex-direction: row
 
           &::after
             content: ''
@@ -195,43 +252,21 @@
             top: 50%
             left: 50%
             transform: translate(-50%, -50%)
+            +lt($global-screen-size-medium)
+              display: none
 
           &--insights
             position: relative
             padding: em-calc(50px) 0
             margin-top: em-calc(100px)
             margin-bottom: em-calc(100px)
-
-            &::before
-              content: ''
-              display: flex
-              width: 4px
-              height: 100%
-              position: absolute
-              top: 0
-              left: 50%
-              background-color: $global-color-dark-blue
-              transform: translateX(-50%)
+            +process__phase__hide_timeline
 
             &::after
               display: none
 
             .section__phase__insights
-              &::before,
-              &::after
-                content: ''
-                display: flex
-                position: absolute
-                left: 50%
-                transform: translateX(-50%)
-
-              &::before
-                +process__phase__marker__top
-                top: 0
-
-              &::after
-                +process__phase__marker__bottom
-                bottom: 0
+              +process__phase__timeline__caps
 
             .chapter
               &__title
@@ -271,9 +306,9 @@
                 background-size: contain
                 background-position: center top
                 +process__image--box-shadow
-
                 +lt(1280px)
                   max-width: 80%
+                  max-height: 139px
 
           &--discovery,
           &--creative-direction
@@ -319,8 +354,9 @@
                 background-image: url('/images/icons/engineering.svg')
 
           .left
-            order: 1
-            margin-right: $global-spacing-lg
+            +md
+              order: 1
+              margin-right: $global-spacing-lg
 
             .chapter
               align-items: flex-end
@@ -330,8 +366,9 @@
                 text-align: right
 
           .right
-            order: 2
-            margin-left: $global-spacing-lg
+            +md
+              order: 2
+              margin-left: $global-spacing-lg
 
             .chapter
               align-items: flex-start
@@ -349,6 +386,8 @@
 
       &__phase__work
         height: 395px
+        +lt($global-screen-size-medium)
+          order: 2
 
         .background-images
           height: 395px
@@ -381,6 +420,10 @@
                   z-index: $i
 
       &__phase__details
+        +lt($global-screen-size-medium)
+          order: 1
+          margin-bottom: $global-spacing-lg
+
         .chapter
           &__title
             +process__title

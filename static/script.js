@@ -12582,7 +12582,7 @@ var UI = function (_Vue) {
       var $sections = (0, _utils2.$)('.section:not(.section--process):not(.section--intro), .section__phases__header, .section__phases__phase');
       var $footer__canvas = (0, _utils2.$)('.footer__canvas')[0];
       var $process__canvas = (0, _utils2.$)('.section--process__canvas')[0];
-      // let parallaxers_ = [];
+      var parallaxers_ = [];
 
       // Add class when element enters viewport
       _utils.addClassOnScrollInToView({
@@ -12617,34 +12617,17 @@ var UI = function (_Vue) {
       }
 
       // On desktop-only...
-      // if (!_utils.allowDeviceOrientation()){
-      //
-      //   if(!parallaxers_.length) {
-      //     parallaxers_ = [
-      //       new Parallaxer(
-      //         $('.section--custom-animation')[0],
-      //         $('.section__element--alert-1'),
-      //         { x: 0.1, y: 0.1}, { x: 0.15, y: 0.15}
-      //       ),
-      //       new Parallaxer(
-      //         $('.section--custom-animation')[0],
-      //         $('.section__element--alert-2'),
-      //         { x: 0.1, y: 0.1}, { x: 0.25, y: 0.25}
-      //       ),
-      //       new Parallaxer(
-      //         $('.section--custom-animation')[0],
-      //         $('.section__element--alert-3'),
-      //         { x: 0.1, y: 0.1}, { x: 0.35, y: 0.35}
-      //       )
-      //     ];
-      //
-      //     // Run parallaxers.
-      //     parallaxers_.forEach((parallaxer) => {
-      //       parallaxer.run();
-      //     });
-      //   }
-      //
-      // }
+      if (!_utils.allowDeviceOrientation()) {
+
+        if (!parallaxers_.length) {
+          parallaxers_ = [new _parallaxer2.default((0, _utils2.$)('.section--custom-animation')[0], (0, _utils2.$)('.section__element--alert-1'), { x: 0, y: 0 }, { x: 0.15, y: 0.15 }), new _parallaxer2.default((0, _utils2.$)('.section--custom-animation')[0], (0, _utils2.$)('.section__element--alert-2'), { x: 0, y: 0 }, { x: 0.25, y: 0.25 }), new _parallaxer2.default((0, _utils2.$)('.section--custom-animation')[0], (0, _utils2.$)('.section__element--alert-3'), { x: 0, y: 0 }, { x: 0.35, y: 0.35 })];
+
+          // Run parallaxers.
+          parallaxers_.forEach(function (parallaxer) {
+            parallaxer.run();
+          });
+        }
+      }
     };
 
     var introState = function introState() {
@@ -12675,11 +12658,11 @@ var UI = function (_Vue) {
         if (!parallaxers_.length) {
           parallaxers_ = [
           // Case study wrapper element
-          new _parallaxer2.default((0, _utils2.$)('.main'), { x: 0.1, y: 0.1 }, { x: 0.25, y: 0.25 }),
+          new _parallaxer2.default(window, (0, _utils2.$)('.main'), { x: 0.1, y: 0.1 }, { x: 0.25, y: 0.25 }),
           // Case study background offset
-          new _parallaxer2.default((0, _utils2.$)('.background-images__image--offset'), { x: 0.1, y: 0.1 }, { x: 1.5, y: 1.25 }),
+          new _parallaxer2.default(window, (0, _utils2.$)('.background-images__image--offset'), { x: 0.1, y: 0.1 }, { x: 1.5, y: 1.25 }),
           // Case study title, subtitle, and cta button
-          new _parallaxer2.default((0, _utils2.$)('.case-study__inner-content'), { x: 0.1, y: 0.1 }, { x: 0.2, y: 0.2 })];
+          new _parallaxer2.default(window, (0, _utils2.$)('.case-study__inner-content'), { x: 0.1, y: 0.1 }, { x: 0.2, y: 0.2 })];
 
           // Run parallaxers.
           parallaxers_.forEach(function (parallaxer) {

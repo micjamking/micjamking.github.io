@@ -12,17 +12,24 @@
 
   &__images
     display: flex
-    flex-direction: row
+    flex-direction: column
     justify-content: center
     align-items: center
     margin-bottom: $global-spacing-xl
     order: 2
+    +md
+      flex-direction: row
+
 
     ~ .chapter__title
       margin-bottom: 70px
 
   &__image
-    margin-right: 60px
+    +lt($global-screen-size-medium)
+      margin-bottom: $global-spacing-lg
+      width: 100%
+    +md
+      margin-right: 60px
 
     img
       width: 100%
@@ -34,6 +41,10 @@
   &__title,
   &__body
     z-index: 2
+    text-align: center
+
+    +md
+      text-align: left
 
   &__title
     position: relative
@@ -48,9 +59,11 @@
 
   &__body,
   &__body-list
-    font-size: em-calc(18px)
+    font-size: em-calc(24px)
     order: 3
     margin-bottom: $global-spacing-lg
+    +md
+      font-size: em-calc(18px)
 
     .bold
       font-weight: 700

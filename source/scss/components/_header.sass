@@ -76,8 +76,7 @@
 
   &--case-study
     position: relative
-    +md
-      height: 50vh
+    height: 50vh
     +lg
       min-height: 460px
 
@@ -87,16 +86,20 @@
         height: 100%
         flex-direction: column
         justify-content: center
-        align-items: flex-start
+        align-items: center
         position: relative
         z-index: 2
         +md
           padding: 0 100px
           margin: 0 auto
+          align-items: flex-start
 
         +lg
           padding: 0
           max-width: 750px
+
+      &__headings
+        margin-bottom: 10px
 
       &__title,
       &__subtitle,
@@ -105,54 +108,69 @@
       &__project-links li a
         color: $global-color-white
 
-      &__title
+      &__title,
+      &__subtitle
+        text-align: center
         +md
-          font-size: em-calc(48px)
-          margin-bottom: 10px
+          text-align: left
+
+      &__title
+        font-size: em-calc(48px)
+        margin-bottom: 10px
 
       &__subtitle
-        +md
-          font-size: em-calc(24px)
+        font-size: em-calc(24px)
 
       &__services,
       &__project-links
-        display: flex
-        width: 100%
-        position: absolute
-        top: 60px
+        display: none
+        width: auto
         list-style: none
-        flex-direction: row
+        flex-direction: column
         justify-content: center
         align-items: center
+        +md
+          display: flex
+          flex-direction: row
+          position: absolute
+          top: 60px
 
         li
           position: relative
-          font-size: em-calc(12px)
+          font-size: em-calc(16px)
+          +md
+            font-size: em-calc(12px)
 
       &__services
         justify-content: flex-start
+        padding: 0 em-calc(40px)
         +md
           left: 100px
+          padding: 0
         +lg
           left: 0
 
         li
-          margin-right: 12px
+          text-align: center
 
-          &::after
-            content: '•'
-            display: flex
-            position: absolute
-            top: 50%
-            right: -8px
-            transform: translate(0, -50%)
-            color: inherit
-
-          &:last-child
-            margin-right: 0
+          +md
+            margin-right: 12px
+            text-align: left
 
             &::after
-              display: none
+              content: '•'
+              display: flex
+              position: absolute
+              top: 50%
+              right: -8px
+              transform: translate(0, -50%)
+              color: inherit
+
+            &:last-child
+              margin-right: 0
+
+              &::after
+                display: none
 
       &__project-links
         right: 0
@@ -182,9 +200,15 @@
 
       &__back-home
         position: absolute
-        top: 60px
-        left: 60px
+        top: 5vh
+        left: 50%
         z-index: 2
+        margin-left: -16px
+
+        +md
+          top: 60px
+          left: 60px
+
 
         &__link
           display: flex
