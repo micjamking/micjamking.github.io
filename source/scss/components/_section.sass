@@ -10,6 +10,9 @@
     padding: em-calc(50px) em-calc(40px)
 
     +md
+      padding: em-calc(100px)
+
+    +lg
       padding: em-calc(100px) em-calc(180px)
 
   &__columns
@@ -168,13 +171,15 @@
           max-width: 430px
 
       &:first-child
-        margin-right: $global-spacing-lg
+        +md
+          margin-right: $global-spacing-lg
 
         .chapter
           align-items: flex-end
 
       &:last-child
-        margin-left: $global-spacing-lg
+        +md
+          margin-left: $global-spacing-lg
 
         .chapter
           align-items: flex-start

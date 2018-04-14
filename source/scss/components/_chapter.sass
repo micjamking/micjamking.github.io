@@ -79,11 +79,14 @@
       +md
         list-style: circle
 
-    &__item__name
-      font-weight: 700
+    &__item
+      +lt($global-screen-size-medium)
+        font-size: 14px
+      &__name
+        font-weight: 700
 
     &--2-column
-      text-align: center
+      text-align: left
       +md
         text-align: left
         columns: 2 auto
