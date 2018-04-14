@@ -75,14 +75,18 @@
     &--nested
       margin-left: $global-spacing-md
       margin-bottom: 0
-      list-style: circle
       list-style-position: inside
+      +md
+        list-style: circle
 
     &__item__name
       font-weight: 700
 
     &--2-column
-      columns: 2 auto
+      text-align: center
+      +md
+        text-align: left
+        columns: 2 auto
 
   &__ctas
     order: 4

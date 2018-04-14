@@ -82,6 +82,12 @@
           +lt($global-screen-size-medium)
             order: $i
 
+  &--intro
+    .chapter__images
+      +lt($global-screen-size-medium)
+        margin-top: $global-spacing-md
+        margin-bottom: 0
+
   &--bg-image
     .section__container
       padding: 0
@@ -99,7 +105,7 @@
 
       &__title
         +lt($global-screen-size-medium)
-          max-width: 90%
+          max-width: 80%
           margin-bottom: $global-spacing-lg
 
       &__body
@@ -126,7 +132,7 @@
 
   &--padded
     .section__container
-      padding: 0 $global-spacing-md
+      padding: 0
       +md
         padding: 0 $global-spacing-xl
 
@@ -188,8 +194,10 @@
       &__title
         +footer__title
         font-style: normal
-        margin-bottom: 100px
         user-select: none
+        margin-bottom: 80px
+        +md
+          margin-bottom: 100px
 
       &__phases
         position: relative
@@ -202,13 +210,15 @@
         &__timeline
           display: flex
           width: 2px
-          height: calc(100% - 150px)
+          height: calc(100% - 100px)
           position: absolute
           bottom: 0
           left: 50%
           transform: translateX(-50%)
           background-color: $global-color-white
           z-index: 0
+          +md
+            height: calc(100% - 150px)
 
           &::before,
           &::after
@@ -232,28 +242,24 @@
           flex-direction: column
           justify-content: center
           align-items: center
-          padding: em-calc($global-spacing-lg) 0
+          padding: em-calc($global-spacing-xl) 0
           z-index: 1
 
           +lt($global-screen-size-medium)
             +process__phase__hide_timeline
-
-            &:nth-child(2)
-              margin-top: 100px
+            margin-top: 80px
+            margin-bottom: 80px
 
           +md
             padding: em-calc(100px) 0
             flex-direction: row
-
-          &::after
-            content: ''
-            +process__phase__marker
-            position: absolute
-            top: 50%
-            left: 50%
-            transform: translate(-50%, -50%)
-            +lt($global-screen-size-medium)
-              display: none
+            &::after
+              content: ''
+              +process__phase__marker
+              position: absolute
+              top: 50%
+              left: 50%
+              transform: translate(-50%, -50%)
 
           &--insights
             position: relative
@@ -270,15 +276,19 @@
 
             .chapter
               &__title
-                font-size: em-calc(24px)
+                font-size: 24px
                 font-style: italic
+
               &__body
                 max-width: 900px
-                font-size: em-calc(14px)
-                columns: 2 auto
+                font-size: 14px
                 margin-bottom: 0
+
                 &__paragraph:last-child
                   margin-bottom: 0
+
+                +md
+                  columns: 2 auto
 
           &--discovery,
           &--information-architecture,
@@ -292,12 +302,20 @@
               &::after
                 content: ''
                 display: flex
-                position: absolute
+                position: relative
                 background-position: center
                 background-repeat: no-repeat
                 background-size: contain
-                top: 50%
-                transform: translate(0,-50%)
+                left: 50%
+                transform: translateX(-50%)
+                margin-bottom: 20px
+                +md
+                  position: absolute
+                  top: 50%
+                  left: unset
+                  transform: translate(0,-50%)
+                  margin-bottom: 0px
+
 
             .background-images
               &__image
@@ -308,21 +326,28 @@
                 +process__image--box-shadow
                 +lt(1280px)
                   max-width: 80%
-                  max-height: 139px
+                  max-height: 26vh
+                +lt($global-screen-size-medium)
+                  width: 100%
+                  height: 46.666666666666664vw
+                  max-width: 100%
+                  max-height: 100%
 
           &--discovery,
           &--creative-direction
             .chapter__title
-              margin-left: 60px
-              &::before
-                left: -60px
+              +md
+                margin-left: 60px
+                &::before
+                  left: -60px
 
           &--information-architecture,
           &--software-development
             .chapter__title
-              margin-right: 60px
-              &::before
-                right: -60px
+              +md
+                margin-right: 60px
+                &::before
+                  right: -60px
 
           &--discovery
             .chapter__title
@@ -353,17 +378,28 @@
                 height: 43px
                 background-image: url('/images/icons/engineering.svg')
 
+          .left,
+          .right
+            .chapter
+              align-items: center
+
+              &__title,
+              &__body
+                text-align: center
+
           .left
             +md
               order: 1
               margin-right: $global-spacing-lg
 
             .chapter
-              align-items: flex-end
+              +md
+                align-items: flex-end
 
               &__title,
               &__body
-                text-align: right
+                +md
+                  text-align: right
 
           .right
             +md
@@ -371,11 +407,13 @@
               margin-left: $global-spacing-lg
 
             .chapter
-              align-items: flex-start
+              +md
+                align-items: flex-start
 
               &__title,
               &__body
-                text-align: left
+                +md
+                  text-align: left
 
       &__phase__work,
       &__phase__details
@@ -385,12 +423,26 @@
         height: 100%
 
       &__phase__work
-        height: 395px
+        +md
+          min-height: 395px
         +lt($global-screen-size-medium)
           order: 2
+          +process__phase__timeline__caps
+          &::after
+            bottom: -50.5px
+          &::before
+            display: none
 
         .background-images
-          height: 395px
+          +md
+            min-height: 395px
+
+          +lt($global-screen-size-medium)
+            position: relative
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            align-items: center
 
           &__image
             top: unset
@@ -398,35 +450,55 @@
             bottom: unset
             left: unset
 
+            +lt($global-screen-size-medium)
+              position: relative
+              margin-bottom: $global-spacing-md
+
+              &:last-child
+                margin-bottom: 0
+
         &.left
           .background-images
-            right: 0
+            +md
+              right: 0
             &__image
               @for $i from 1 through 3
                 $increment: 3 - ($i - 1)
                 &:nth-child(#{$increment})
-                  bottom: (60px * ($i - 1))
-                  right: (60px * ($i - 1))
-                  z-index: 3 - ($i + 1)
+                  +md
+                    bottom: (60px * ($i - 1))
+                    right: (60px * ($i - 1))
+                    z-index: 3 - ($i + 1)
 
         &.right
           .background-images
-            left: 0
+            +md
+              left: 0
             &__image
               @for $i from 1 through 3
                 &:nth-child(#{$i})
-                  bottom: (60px * ($i - 1))
-                  left: (60px * ($i - 1))
-                  z-index: $i
+                  +md
+                    bottom: (60px * ($i - 1))
+                    left: (60px * ($i - 1))
+                    z-index: $i
 
       &__phase__details
         +lt($global-screen-size-medium)
           order: 1
-          margin-bottom: $global-spacing-lg
+          margin-bottom: $global-spacing-xl
+          +process__phase__timeline__caps
+          &::before
+            top: -50.5px
+          &::after
+            display: none
 
         .chapter
           &__title
             +process__title
+            font-size: 24px
+
+            +lt($global-screen-size-medium)
+              margin-bottom: 0
 
           &__body
             max-width: 500px
