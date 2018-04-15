@@ -1,0 +1,218 @@
+$title: Tour Aloha
+$path: '/case-study/tour-aloha'
+$order: 5
+
+page_footer: true
+
+header:
+  title: 'Tour Aloha'
+  subtitle: 'Historical Travel Guide Mobile App'
+  services:
+  - label: 'User Experience Design'
+  - label: 'Project Management'
+  project_links:
+  - label: 'iTunes App Store'
+    url: 'https://itunes.apple.com/us/app/tour-aloha/id1032587135?mt=8'
+  - label: 'Google Play Store'
+    url: 'https://play.google.com/store/apps/details?id=com.robertshawaii.digitaltours'
+  background_images:
+  - url: '/static/images/case-studies/touraloha/touraloha_header-background.png'
+  delayExit: 3000
+
+footer:
+  next_project:
+    delayExit: 3000
+    url: '/case-study/teacupanalytics'
+    label: 'Teacup Analytics'
+
+components:
+- component: 'section-columns'
+  class: 'section--intro'
+  columns:
+  - class: 'section__columns__column--single-column section__columns__column--body-large'
+    chapter:
+      body: 'Launched in September of 2015, Tour Aloha is a travel companion mobile app for visitors to the islands  created in partnership with Roberts Hawaii.'
+      inline_images:
+      - url: '/static/images/case-studies/touraloha/touraloha_graphic.svg'
+
+- component: 'section-columns'
+  class: 'section--bg-image'
+  columns:
+  - chapter:
+      background_images:
+      - url: '/static/images/case-studies/touraloha/touraloha_full-background.png'
+
+# - component: 'section-columns'
+#   class: 'section--min-height-600 section--offset-max-width'
+#   columns:
+#   - order: 1
+#     chapter:
+#       title: ""
+#       background_images:
+#       - class: ''
+#         url: ''
+#   - order: 2
+#     class: 'section__columns__column--columns-offset'
+#     chapter:
+#       body: ''
+#
+# - component: 'section-columns'
+#   class: 'section--bg-image section--padded'
+#   theme: 'dark'
+#   columns:
+#   - class: 'section__columns__column--single-column'
+#     chapter:
+#       title: ""
+#       body: ""
+#       background_images:
+#       - url: ''
+#
+# - component: 'section-columns'
+#   class: 'section--min-height-600 section--offset-max-width'
+#   columns:
+#   - order: 1
+#     mobile_order: 2
+#     class: 'section__columns__column--columns-offset'
+#     chapter:
+#       body: ''
+#   - order: 2
+#     mobile_order: 1
+#     chapter:
+#       title: ""
+#       background_images:
+#       - class: ''
+#         url: ''
+#
+# - component: 'section-custom-animation'
+#   class: 'section--light-grey-bg'
+#   elements:
+#   - id: ''
+#     background_images:
+#     - url: ''
+#
+# - component: 'section-columns'
+#   columns:
+#   - class: "section__columns__column--single-column"
+#     chapter:
+#       title: ''
+#       body: ''
+#       inline_images:
+#       - url: ''
+#
+# - component: 'section-process'
+#   theme: 'dark'
+#   title: 'The Process'
+#   phases:
+#   - phase: 'discovery'
+#     work:
+#       class: 'left'
+#       background_images:
+#         - id: 'discovery-1'
+#           url: ''
+#     details:
+#       class: 'right'
+#       chapter:
+#         title: 'Discovery'
+#         body:
+#           - ""
+#
+#   - phase: 'insights'
+#     chapter:
+#       title: "Insights"
+#       body:
+#         - ""
+#
+#   - phase: 'information-architecture'
+#     work:
+#       class: 'right'
+#       background_images:
+#         - id: 'ia-1'
+#           url: ''
+#     details:
+#       class: 'left'
+#       chapter:
+#         title: 'Information Architecture'
+#         body:
+#           - ""
+#
+#   - phase: 'creative-direction'
+#     work:
+#       class: 'left'
+#       background_images:
+#         - id: 'creative-1'
+#           url: ''
+#     details:
+#       class: 'right'
+#       chapter:
+#         title: 'Creative Direction'
+#         body:
+#           - ""
+#
+#   - phase: 'software-development'
+#     work:
+#       class: 'right'
+#       background_images:
+#         - id: 'engineering'
+#           url: ''
+#     details:
+#       class: 'left'
+#       chapter:
+#         title: 'Software Development'
+#         body:
+#           - ""
+#
+# - component: 'section-columns'
+#   class: 'section--min-height-600 section--two-column-carousel'
+#   columns:
+#   - class: "section__columns__column--single-column"
+#     chapter:
+#       inline_images:
+#         - url: ''
+#   # - device_slider:
+#   #   - id: 'slide-1'
+#   #     background_images:
+#   #     - url: ''
+#   #   - id: 'slide-2'
+#   #     background_images:
+#   #     - url: ''
+#   #   - id: 'slide-3'
+#   #     background_images:
+#   #     - url: ''
+#   - chapter:
+#       body:
+#       - ""
+#
+# - component: 'section-columns'
+#   class: 'section--light-grey-bg section--min-height-600'
+#   columns:
+#   - class: "section__columns__column--single-column"
+#     chapter:
+#       title: ''
+#       body: ''
+#       ctas:
+#         - class: 'button'
+#           url: ''
+#           label: ''
+#
+# - component: 'section-columns'
+#   class: 'section--min-height-600'
+#   columns:
+#   - class: "section__columns__column--single-column"
+#     chapter:
+#       title: 'Credits'
+#       body_list_class: 'chapter__body-list--2-column'
+#       body_list:
+#         - name: 'Client'
+#           value: ''
+#         - name: 'Agency'
+#           value: 'Ikayzo, Inc.'
+#         - name: 'Engagement'
+#           value: ''
+#         - name: 'Technology'
+#           list:
+#           - name: ''
+#             value: ''
+#         # - name: 'Awards'
+#         #   value: ''
+#         - name: 'Role'
+#           value: 'Person'
