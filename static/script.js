@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "./static/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -685,6 +685,930 @@ exports.default = utils;
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _utils = __webpack_require__(0);
+
+var _utils2 = _interopRequireDefault(_utils);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * Parallaxer
+ * A class that creates a parallax effect based on the mouse position
+ */
+var Parallaxer = function () {
+
+  /**
+   * @param {Element} baseElement - The base element to use for mouseEffects
+   * @param {Element} rootElement - The root element to apply parallax effects to.
+   * @param {Object} rotationSentivity - x,y object with rotation sensitivity.
+   * @param {Object} translateSentitivy - x,y object with translate senstiivity.
+   * @constructor
+   */
+  function Parallaxer(baseElement, rootElement, rotationSensitivity, translateSensitity) {
+    _classCallCheck(this, Parallaxer);
+
+    // External utilities
+    this.utils = new _utils2.default();
+
+    /**
+     * Add required styles to body.
+     */
+    this.$body = (0, _utils.$)('body')[0];
+
+    this.$body.style.transformStyle = 'preserve-3d';
+    this.$body.style.webkitTransformStyle = 'preserve-3d';
+    this.$body.style.perspective = window.innerHeight / 2 + 'px';
+    this.$body.style.webkitPerspective = window.innerHeight / 2 + 'px';
+
+    /**
+     * Flag to allow animation.
+     * @type {boolean}
+     */
+    this.animate_ = false;
+
+    /**
+     * The current mouse position data acquired from the mouse tracker.
+     * @type {Object}
+     */
+    this.mousePosition_ = null;
+
+    /**
+     * The rotation sensitivity of the parallax effect.
+     */
+    this.rotationSensitivity = rotationSensitivity || {
+      x: 0.2,
+      y: 0.2
+    };
+
+    /**
+     * The translate sensitivity of the parallax effect.
+     */
+    this.translateSensitivity = translateSensitity || {
+      x: 1,
+      y: 1
+    };
+
+    /**
+     * The current transform values.
+     */
+    this.transformValues = {
+      xDeg: 0,
+      yDeg: 0,
+      zDeg: 0,
+      xTrans: 0,
+      yTrans: 0
+
+      /**
+       * The root element to manipulate.
+       * @type {Element}
+       */
+    };this.$rootElement_ = rootElement;
+    this.baseElement = baseElement || _utils.w;
+
+    this.mousePosition_ = this.utils.captureMouse(this.baseElement);
+  }
+
+  /**
+   * Runs the animation.
+   */
+
+
+  _createClass(Parallaxer, [{
+    key: 'run',
+    value: function run() {
+      this.animate_ = true;
+      this.rafLoop_();
+    }
+
+    /**
+     * Stops the animation.
+     */
+
+  }, {
+    key: 'stop',
+    value: function stop() {
+      this.animate_ = false;
+    }
+
+    /**
+     * Internal animation cycle.
+     */
+
+  }, {
+    key: 'rafLoop_',
+    value: function rafLoop_() {
+      var _this = this;
+
+      if (!this.animate_) {
+        return;
+      }
+
+      window.requestAnimationFrame(function () {
+        _this.rafLoop_();
+      });
+
+      this.render_();
+    }
+
+    /**
+     * Internal render cycle.
+     */
+
+  }, {
+    key: 'render_',
+    value: function render_() {
+
+      if (!this.mousePosition_) {
+        return;
+      }
+
+      var xDegree = this.mousePosition_.percentageX * this.rotationSensitivity.x;
+      var yDegree = this.mousePosition_.percentageY * this.rotationSensitivity.y;
+
+      var xTrans = -this.mousePosition_.percentageX * this.translateSensitivity.x;
+      var yTrans = -this.mousePosition_.percentageY * this.translateSensitivity.y;
+
+      this.transformValues.xDeg += (xDegree - this.transformValues.xDeg) * 0.05;
+      this.transformValues.yDeg += (yDegree - this.transformValues.yDeg) * 0.05;
+      this.transformValues.xTrans += (xTrans - this.transformValues.xTrans) * 0.05;
+      this.transformValues.yTrans += (yTrans - this.transformValues.yTrans) * 0.05;
+
+      var rotateXstring = 'rotateX( ' + this.transformValues.yDeg + 'deg )';
+      var rotateYstring = 'rotateY( ' + -this.transformValues.xDeg + 'deg )';
+      var rotateZstring = 'rotateZ(0deg)';
+      var translateXstring = 'translateX( ' + -this.transformValues.xTrans + 'px )';
+      var translateYstring = 'translateY( ' + -this.transformValues.yTrans + 'px )';
+
+      var transformString = rotateXstring + ' ' + rotateYstring + ' ' + rotateZstring + ' ' + translateXstring + ' ' + translateYstring;
+
+      this.$rootElement_.forEach(function ($rootElement) {
+        $rootElement.style.perspectiveOrigin = '50%, 50%';
+        $rootElement.style.webkitPerspectiveOrigin = '50%, 50%';
+
+        $rootElement.style.transform = transformString;
+        $rootElement.style.webkitTransform = transformString;
+
+        $rootElement.style.transformOrigin = '50% 50%';
+        $rootElement.style.webkitTransformOrigin = '50% 50%';
+      });
+    }
+  }]);
+
+  return Parallaxer;
+}();
+
+exports.default = Parallaxer;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *  Particle Canvas
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+
+var _utils = __webpack_require__(0);
+
+var _utils2 = _interopRequireDefault(_utils);
+
+var _particle = __webpack_require__(14);
+
+var _particle2 = _interopRequireDefault(_particle);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var ParticleCanvas = function () {
+
+  /**
+   * @param {HTMLElement} settings.canvasEL - HTMLElement of canvas
+   */
+  function ParticleCanvas(settings) {
+    _classCallCheck(this, ParticleCanvas);
+
+    // Internal Settings
+    this.maxWidth = settings.maxWidth;
+    this.maxHeight = settings.maxHeight;
+    this.canvasBackground = settings.canvasBackground;
+
+    // External utilities
+    this.utils = new _utils2.default();
+    this.requestAnimationFrame = _utils.w.requestAnimationFrame.bind(_utils.w);
+    this.devicePixelRatio = _utils.w.devicePixelRatio;
+
+    // DOM & Canvas object references
+    this.$canvas = settings.canvasEL;
+    this.context = this.$canvas.getContext('2d');
+    this.left = 0;
+    this.top = 0;
+    this.right = this.maxWidth || this.utils.screenSize().width;
+    this.bottom = this.maxHeight || this.utils.screenSize().height;
+
+    // Set canvas size to fullscreen
+    this.$canvas.width = this.maxWidth || this.utils.screenSize().width;
+    this.$canvas.height = this.maxHeight || this.utils.screenSize().height;
+    this.centerX = this.$canvas.width / 2;
+    this.centerY = this.$canvas.height / 2;
+
+    // Environment physics
+    this.spring = 0.05;
+    this.bounce = -1;
+    this.gravity = 0;
+    this.speed = 0.25;
+    this.friction = 1;
+
+    var particleCount = void 0;
+
+    if (this.utils.screenSize().width > 1440) {
+      particleCount = 150;
+    } else if (this.utils.screenSize().width > 1024) {
+      particleCount = 125;
+    } else if (this.utils.screenSize().width > 640) {
+      particleCount = 100;
+    } else {
+      particleCount = 75;
+    }
+
+    // Particle settings
+    this.particles = [];
+    this.numOfParticles = settings.numOfParticles || particleCount;
+    this.particleDistance = 150;
+    this.particleOpacity = settings.particleOpacity || 0.5;
+    this.particleSpring = 0.000005;
+    this.particleSize = 3;
+    this.particleLineWidth = settings.particleLineWidth || 1;
+    this.particleColors = ['#D6E9F1' // slightly darker light blue
+    ];
+    this.particleColors = settings.particleColors || this.particleColors;
+
+    // Set mouse/touch coordinates to variable
+    this.isTouching = false;
+    this.respondToMouse = settings.respondToMouse !== false;
+    this.touch = this.utils.captureTouch(_utils.w);
+    this.mouse = this.utils.captureMouse(_utils.w);
+    this.mouseBallThreshold = 150;
+    this.mouseBall = new _particle2.default(this.mouseBallThreshold, 'transparent');
+
+    // this.utils.setupHelpers(w, this.mouse, this.touch);
+
+    // Start animation
+    this._init();
+
+    // console.log('instantiated particle canvas', this);
+  }
+
+  /**
+   * Initialize canvas
+   */
+
+
+  _createClass(ParticleCanvas, [{
+    key: '_init',
+    value: function _init() {
+      // Set initial mouse ball position
+      this.mouseBall.x = this.centerX;
+      this.mouseBall.y = this.centerY;
+
+      // Kick off main functions
+      this._upscaleCanvas();
+      this._setupListeners();
+      this._generateParticles();
+      this._animate();
+
+      // console.log('initialized particle animation');
+    }
+
+    /**
+     * Upscale canvas if device pixel ratio doesnt match
+     * @see https://www.html5rocks.com/en/tutorials/canvas/hidpi/
+     */
+
+  }, {
+    key: '_upscaleCanvas',
+    value: function _upscaleCanvas() {
+      // console.log('device pixel ratio =', this.devicePixelRatio);
+
+      var _oldWidth = this.$canvas.width,
+          _oldHeight = this.$canvas.height;
+
+      // Upscale canvas element by devicePixelRatio
+      this.$canvas.width *= this.devicePixelRatio;
+      this.$canvas.height *= this.devicePixelRatio;
+
+      // Set canvas center
+      this.centerX = _oldWidth / 2;
+      this.centerY = _oldHeight / 2;
+
+      // Downscale canvas style (CSS) to original size
+      this.$canvas.style.width = _oldWidth + 'px';
+      this.$canvas.style.height = _oldHeight + 'px';
+
+      // Scale canvas context to counter manually scaled canvas
+      this.context.scale(this.devicePixelRatio, this.devicePixelRatio);
+
+      return false;
+    }
+
+    /**
+    * Setup event listeners
+    */
+
+  }, {
+    key: '_setupListeners',
+    value: function _setupListeners() {
+      var _this = this;
+
+      _utils.w.addEventListener('resize', function () {
+        return _this._onWindowResize();
+      });
+
+      if (this.utils.allowDeviceOrientation()) {
+
+        _utils.w.addEventListener('deviceorientation', function (e) {
+          return _this._handleOrientation(e);
+        }, true);
+      } else {
+
+        document.addEventListener('mousemove', function (e) {
+          return _this._mouseMoveCallback(e);
+        });
+        document.addEventListener('mousedown', function (e) {
+          return _this._mouseDownCallback(e);
+        });
+        document.addEventListener('mouseup', function (e) {
+          return _this._mouseUpCallback(e);
+        });
+      }
+    }
+
+    /**
+    * Generate particles
+    */
+
+  }, {
+    key: '_generateParticles',
+    value: function _generateParticles() {
+      for (var i = 0; i < this.numOfParticles; i++) {
+        var particle = new _particle2.default(this.utils.rand(0, this.particleSize), this.particleColors[this.utils.randInt(0, this.particleColors.length)]);
+
+        particle.x = this.utils.randInt(1, this.$canvas.width / this.devicePixelRatio);
+        particle.y = this.utils.randInt(1, this.$canvas.height / this.devicePixelRatio);
+        particle.vx = this.utils.randInt(-this.speed, this.speed);
+        particle.vy = this.utils.randInt(-this.speed, this.speed);
+        particle.opacity = this.particleOpacity;
+
+        if (particle.vx === 0) {
+          particle.vx = this.utils.coinFlip() ? this.speed : -this.speed;
+        }
+
+        if (particle.vy === 0) {
+          particle.vy = this.utils.coinFlip() ? this.speed : -this.speed;
+        }
+
+        this.particles.push(particle);
+      }
+    }
+
+    /**
+    * Motion animation
+    */
+
+  }, {
+    key: '_motion',
+    value: function _motion(particle) {
+
+      // Add gravity
+      particle.vy += this.gravity;
+
+      // Increment velocity
+      particle.x += particle.vx;
+      particle.y += particle.vy;
+    }
+
+    /**
+    * Detection against top/right/bottom/left boundaries
+    */
+
+  }, {
+    key: '_boundaryDetection',
+    value: function _boundaryDetection(particle) {
+      if (particle.x + particle.radius > this.right) {
+        particle.x = this.right - particle.radius;
+        particle.vx *= this.bounce;
+      } else if (particle.x - particle.radius < this.left) {
+        particle.x = this.left + particle.radius;
+        particle.vx *= this.bounce;
+      }
+
+      if (particle.y + particle.radius > this.bottom) {
+        particle.y = this.bottom - particle.radius;
+        particle.vy *= this.bounce;
+      } else if (particle.y - particle.radius < this.top) {
+        particle.y = this.top + particle.radius;
+        particle.vy *= this.bounce;
+      }
+    }
+
+    /**
+     * Collision detection between mouse and particles
+     *
+     * @param {Object} particle - Instance 2D Ball context
+     */
+
+  }, {
+    key: '_mouseCollision',
+    value: function _mouseCollision(particle) {
+      var dx = particle.x - this.mouseBall.x,
+          dy = particle.y - this.mouseBall.y,
+          dist = Math.sqrt(dx * dx + dy * dy),
+          min_dist = particle.radius + this.mouseBall.radius;
+
+      var normVec = {
+        x: dx / dist,
+        y: dy / dist
+      },
+          velocity = 100,
+          repulseFactor = this.utils.clamp(1 / min_dist * (-1 * Math.pow(dist / min_dist, 2) + 1) * min_dist * velocity, 0, 50);
+
+      var pos = {
+        x: particle.x + normVec.x * repulseFactor,
+        y: particle.y + normVec.y * repulseFactor
+      };
+
+      particle.x = pos.x;
+      particle.y = pos.y;
+
+      return particle;
+    }
+
+    /**
+    * Collision detection between particles
+    */
+
+  }, {
+    key: '_collisionCheck',
+    value: function _collisionCheck(particleA, i) {
+      for (var j = i + 1; j < this.numOfParticles; j++) {
+        var particleB = this.particles[j],
+            dx = particleB.x - particleA.x,
+            dy = particleB.y - particleA.y,
+            dist = Math.sqrt(dx * dx + dy * dy),
+            min_dist = this.particleDistance;
+
+        // If particle is within range of another
+        if (dist < min_dist) {
+          var tx = particleA.x + dx / dist * min_dist,
+              ty = particleA.y + dy / dist * min_dist,
+              ax = (tx - particleB.x) * this.particleSpring,
+              ay = (ty - particleB.y) * this.particleSpring;
+
+          // Draw connection from particleA
+          // to particleB coordinates
+          this.context.lineWidth = this.particleLineWidth / 4;
+          this.context.strokeStyle = particleA.color;
+          this.context.beginPath();
+          this.context.moveTo(particleA.x, particleA.y);
+          this.context.lineTo(particleB.x, particleB.y);
+          this.context.stroke();
+
+          particleA.vx -= ax;
+          particleA.vy -= ay;
+          particleB.vx += ax;
+          particleB.vy += ay;
+        }
+      }
+    }
+
+    /**
+    * Animation loop
+    */
+
+  }, {
+    key: '_animate',
+    value: function _animate() {
+
+      // Call request animation frame recursively
+      this.requestAnimationFrame(this._animate.bind(this), this.$canvas);
+
+      // Clear canvas every frame
+      if (this.canvasBackground) {
+        this.context.fillStyle = this.canvasBackground;
+        this.context.fillRect(0, 0, this.$canvas.width, this.$canvas.height);
+      } else {
+        this.context.clearRect(0, 0, this.$canvas.width, this.$canvas.height);
+      }
+
+      // Animate stuff...
+      if (this.particles) {
+        for (var i = 0; i < this.particles.length; i++) {
+          var particle = this.particles[i];
+
+          this._motion(particle, i);
+          this._boundaryDetection(particle, i);
+          this._collisionCheck(particle, i);
+
+          if (!this.utils.allowDeviceOrientation() && this.respondToMouse) {
+            this._mouseCollision(particle, i);
+          }
+
+          particle.draw(this.context);
+        }
+      }
+
+      this.mouseBall.draw(this.context);
+    }
+
+    /**
+     * Handle Device Orientation
+     *  - Tilt 90º > 0º to increase gravity on mobile
+     */
+
+  }, {
+    key: '_handleOrientation',
+    value: function _handleOrientation(event) {
+
+      var x = event.gamma;
+      var y = event.beta;
+
+      if (x > 90) {
+        x = 90;
+      }
+      if (x < 45) {
+        x = 45;
+      }
+
+      if (y > 90) {
+        y = 90;
+      }
+      if (y < 0) {
+        y = 0;
+      }
+
+      var rangeX = (90 - Math.floor(Math.abs(x))) / 45;
+      var rangeY = (90 - Math.floor(Math.abs(y))) / 90;
+
+      // Do stuff with the new orientation data
+      if (Math.floor(rangeY * 10) > 0) {
+        this.gravity = rangeY;
+      }
+
+      if (Math.floor(rangeX * 10) > 0) {
+        this.speed = rangeX;
+      }
+    }
+
+    /**
+     * Mouse move callback
+     *
+     * @param {Event} e - Event Object
+     *
+     */
+
+  }, {
+    key: '_mouseMoveCallback',
+    value: function _mouseMoveCallback() {
+      // Set mouseBall to mouse coordinates
+      this.mouseBall.x = this.mouse.x;
+      this.mouseBall.y = this.mouse.y;
+    }
+
+    /**
+     * Mouse Down callback:
+     * - Increment particles on press and hold
+     *
+     * @param {Event} e - Event Object
+     *
+     */
+
+  }, {
+    key: '_mouseDownCallback',
+    value: function _mouseDownCallback() {
+      this.isTouching = true;
+      this.mouseBall.radius = 0;
+    }
+
+    /**
+     * Mouse Up callback:
+     * - Reset particle count on press release
+     *
+     * @param {Event} e - Event Object
+     *
+     */
+
+  }, {
+    key: '_mouseUpCallback',
+    value: function _mouseUpCallback() {
+      this.isTouching = false;
+      this.mouseBall.radius = this.mouseBallThreshold;
+    }
+
+    /**
+    * Window resize callback
+    */
+
+  }, {
+    key: '_onWindowResize',
+    value: function _onWindowResize() {
+      this.right = this.$canvas.width = this.maxWidth || this.utils.screenSize().width;
+      this.bottom = this.$canvas.height = this.maxHeight || this.utils.screenSize().height;
+      this.centerX = this.$canvas.width / 2;
+      this.centerY = this.$canvas.height / 2;
+      this._upscaleCanvas();
+    }
+  }]);
+
+  return ParticleCanvas;
+}();
+
+exports.default = ParticleCanvas;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(4);
+
+__webpack_require__(5);
+
+__webpack_require__(6);
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ *  Third-party vendor entry point
+ */
+
+/**
+ * Vue.js
+ *
+ * @desc Explicitly install router
+ * @see https://router.vuejs.org/en/installation.html
+ */
+// import Vue from 'vue';
+// import VueRouter from 'vue-router';
+// Vue.config.devtools = false;
+// Vue.use( VueRouter );
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *  Main application
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+
+var _utils = __webpack_require__(0);
+
+var _ui = __webpack_require__(7);
+
+var _ui2 = _interopRequireDefault(_ui);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var App = function () {
+
+  /**
+   * Setup variables and event listeners
+   */
+  function App() {
+    _classCallCheck(this, App);
+
+    /** Setup event listeners */
+    this._registerListeners();
+
+    // console.log('instantiated app');
+  }
+
+  /**
+   * Setup UI
+   * @private
+   */
+
+
+  _createClass(App, [{
+    key: '_initUI',
+    value: function _initUI() {
+
+      _utils.w.vm = new _ui2.default();
+    }
+
+    /**
+     * Setup Event Listeners
+     * @listens {DOMContentLoaded} Initialize UI
+     * @listens {load} Initialize Social Media API
+     * @private
+     */
+
+  }, {
+    key: '_registerListeners',
+    value: function _registerListeners() {
+      var _this = this;
+
+      _utils.w.addEventListener('load', function (e) {
+        return _this._initUI(e);
+      });
+    }
+  }]);
+
+  return App;
+}();
+
+/** hello.world */
+
+
+exports.default = App;
+new App();
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _vue = __webpack_require__(8);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _utils2 = __webpack_require__(0);
+
+var _utils3 = _interopRequireDefault(_utils2);
+
+var _state = __webpack_require__(10);
+
+var _state2 = _interopRequireDefault(_state);
+
+var _pageTransitions = __webpack_require__(11);
+
+var _pageTransitions2 = _interopRequireDefault(_pageTransitions);
+
+var _home = __webpack_require__(12);
+
+var _home2 = _interopRequireDefault(_home);
+
+var _caseStudy = __webpack_require__(15);
+
+var _caseStudy2 = _interopRequireDefault(_caseStudy);
+
+var _gohawaii = __webpack_require__(16);
+
+var _gohawaii2 = _interopRequireDefault(_gohawaii);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *  User Interface
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+// Libs
+
+
+// Services
+
+
+// Components
+
+
+// Pages
+
+
+// Case study page config
+
+
+var _stateService = new _state2.default();
+
+var UI = function (_Vue) {
+  _inherits(UI, _Vue);
+
+  function UI() {
+    _classCallCheck(this, UI);
+
+    var _utils = new _utils3.default();
+
+    /** Options */
+    var _options = {
+      el: '.container',
+      delimiters: ['[[', ']]'],
+      data: {
+        isActive: false,
+        stateService: _stateService
+      }
+    };
+
+    /** Options - Custom Directives */
+    _options.directives = {
+      init: {
+        // directive definition
+        inserted: function inserted(el, binding) {
+          binding.value();
+        }
+      }
+    };
+
+    /** Options - Lifecycle Methods */
+    _options.mounted = function () {
+      var _this2 = this;
+
+      var $preloader = (0, _utils2.$)('.preloader')[0];
+      var $body = (0, _utils2.$)('body')[0];
+      var $logo = $preloader.querySelectorAll('.preloader__logo')[0];
+
+      _utils.delay(function () {
+        $logo.classList.remove('fade-in-up');
+        $logo.classList.add('fade-out-up');
+      }, 1000).delay(function () {
+        _this2.isActive = true;
+        $preloader.classList.add('fade-out');
+
+        _utils.delay(function () {
+          if ($body.classList.contains('home')) {
+            new _home2.default(_this2.stateService);
+          } else if ($body.classList.contains('case-study')) {
+            var caseStudy = $body.classList.item(1);
+            var caseStudySettings = {};
+
+            switch (caseStudy) {
+              case 'gohawaii':
+                caseStudySettings = new _gohawaii2.default();
+                break;
+              case 'touraloha':
+              case 'teacupanalytics':
+              case 'clearstream':
+              case 'mobipcs':
+              default:
+                console.log('Sorry, no settings available for this page!');
+            }
+
+            new _caseStudy2.default(caseStudySettings);
+          }
+        }, 0);
+      }, 500).delay(function () {
+        $preloader.classList.remove('active');
+        new _pageTransitions2.default();
+      }, 0);
+    };
+
+    return _possibleConstructorReturn(this, (UI.__proto__ || Object.getPrototypeOf(UI)).call(this, _options));
+  }
+
+  return UI;
+}(_vue2.default);
+
+exports.default = UI;
+
+/***/ }),
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9856,50 +10780,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
   return Vue$3;
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
 
 /***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(3);
-
-__webpack_require__(4);
-
-__webpack_require__(8);
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- *  Third-party vendor entry point
- */
-
-/**
- * Vue.js
- *
- * @desc Explicitly install router
- * @see https://router.vuejs.org/en/installation.html
- */
-// import Vue from 'vue';
-// import VueRouter from 'vue-router';
-// Vue.config.devtools = false;
-// Vue.use( VueRouter );
-
-
-/***/ }),
-/* 5 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9929,557 +10813,7 @@ try {
 module.exports = g;
 
 /***/ }),
-/* 6 */,
-/* 7 */,
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *  Main application
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
-
-var _utils = __webpack_require__(0);
-
-var _ui = __webpack_require__(9);
-
-var _ui2 = _interopRequireDefault(_ui);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var App = function () {
-
-  /**
-   * Setup variables and event listeners
-   */
-  function App() {
-    _classCallCheck(this, App);
-
-    /** Setup event listeners */
-    this._registerListeners();
-
-    // console.log('instantiated app');
-  }
-
-  /**
-   * Setup UI
-   * @private
-   */
-
-
-  _createClass(App, [{
-    key: '_initUI',
-    value: function _initUI() {
-
-      _utils.w.vm = new _ui2.default();
-    }
-
-    /**
-     * Setup Event Listeners
-     * @listens {DOMContentLoaded} Initialize UI
-     * @listens {load} Initialize Social Media API
-     * @private
-     */
-
-  }, {
-    key: '_registerListeners',
-    value: function _registerListeners() {
-      var _this = this;
-
-      _utils.w.addEventListener('load', function (e) {
-        return _this._initUI(e);
-      });
-    }
-  }]);
-
-  return App;
-}();
-
-/** hello.world */
-
-
-exports.default = App;
-new App();
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _vue = __webpack_require__(1);
-
-var _vue2 = _interopRequireDefault(_vue);
-
-var _utils2 = __webpack_require__(0);
-
-var _utils3 = _interopRequireDefault(_utils2);
-
-var _state = __webpack_require__(12);
-
-var _state2 = _interopRequireDefault(_state);
-
-var _pageTransitions = __webpack_require__(15);
-
-var _pageTransitions2 = _interopRequireDefault(_pageTransitions);
-
-var _home = __webpack_require__(17);
-
-var _home2 = _interopRequireDefault(_home);
-
-var _caseStudy = __webpack_require__(16);
-
-var _caseStudy2 = _interopRequireDefault(_caseStudy);
-
-var _gohawaii = __webpack_require__(19);
-
-var _gohawaii2 = _interopRequireDefault(_gohawaii);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *  User Interface
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
-
-// Libs
-
-
-// Services
-
-
-// Components
-
-
-// Pages
-
-
-// Case study page config
-
-
-var _stateService = new _state2.default();
-
-var UI = function (_Vue) {
-  _inherits(UI, _Vue);
-
-  function UI() {
-    _classCallCheck(this, UI);
-
-    var _utils = new _utils3.default();
-
-    /** Options */
-    var _options = {
-      el: '.container',
-      delimiters: ['[[', ']]'],
-      data: {
-        isActive: false,
-        stateService: _stateService
-      }
-    };
-
-    /** Options - Custom Directives */
-    _options.directives = {
-      init: {
-        // directive definition
-        inserted: function inserted(el, binding) {
-          binding.value();
-        }
-      }
-    };
-
-    /** Options - Lifecycle Methods */
-    _options.mounted = function () {
-      var _this2 = this;
-
-      var $preloader = (0, _utils2.$)('.preloader')[0];
-      var $body = (0, _utils2.$)('body')[0];
-      var $logo = $preloader.querySelectorAll('.preloader__logo')[0];
-
-      _utils.delay(function () {
-        $logo.classList.remove('fade-in-up');
-        $logo.classList.add('fade-out-up');
-      }, 1000).delay(function () {
-        _this2.isActive = true;
-        $preloader.classList.add('fade-out');
-
-        _utils.delay(function () {
-          if ($body.classList.contains('home')) {
-            new _home2.default(_this2.stateService);
-          } else if ($body.classList.contains('case-study')) {
-            var caseStudy = $body.classList.item(1);
-            var caseStudySettings = {};
-
-            switch (caseStudy) {
-              case 'gohawaii':
-                caseStudySettings = new _gohawaii2.default();
-                break;
-              case 'touraloha':
-              case 'teacupanalytics':
-              case 'clearstream':
-              case 'mobipcs':
-              default:
-                console.log('Sorry, no settings available for this page!');
-            }
-
-            new _caseStudy2.default(caseStudySettings);
-          }
-        }, 0);
-      }, 500).delay(function () {
-        $preloader.classList.remove('active');
-        new _pageTransitions2.default();
-      }, 0);
-    };
-
-    return _possibleConstructorReturn(this, (UI.__proto__ || Object.getPrototypeOf(UI)).call(this, _options));
-  }
-
-  return UI;
-}(_vue2.default);
-
-exports.default = UI;
-
-/***/ }),
 /* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * A UI util class to detect mouse scrolling.
- */
-var MouseScroller = function () {
-
-  /**
-   * @param config Configuration options for mouse scroller.
-   *     - scrollUpCallback (function)
-   *     - scrollDownCallback (function)
-   */
-  function MouseScroller(config) {
-    var _this = this;
-
-    _classCallCheck(this, MouseScroller);
-
-    this.config = config;
-
-    /**
-     * Whether if mouse scroll is allowed.
-     * @type {boolean}
-     */
-    this.canScroll = true;
-
-    /**
-     * The callback for scrolling up.
-     * @type {Function}
-     */
-    this.scrollUpCallback = config.scrollUpCallback;
-
-    /**
-     * The callback for scrolling down.
-     * @type {Function}
-     */
-    this.scrollDownCallback = config.scrollDownCallback;
-
-    this.mouseListener = function (e) {
-      _this.onMouseWheel_(e);
-    };
-
-    // Mouse wheel events.
-    window.addEventListener('mousewheel', this.mouseListener);
-
-    // Firefox
-    window.addEventListener('DOMMouseScroll', this.mouseListener);
-  }
-
-  _createClass(MouseScroller, [{
-    key: 'onMouseWheel_',
-    value: function onMouseWheel_(event) {
-      var _this2 = this;
-
-      if (this.config.preventDefault) {
-        event.preventDefault();
-      }
-
-      if (!this.canScroll) {
-        return;
-      }
-
-      // Normalize scroll speed differences between browers.
-      var scrollSpeed;
-      var w = event.wheelDelta;
-      var d = event.detail;
-      if (d) {
-        if (w) {
-          // Opera
-          scrollSpeed = w / d / 40 * d > 0 ? 1 : -1;
-        } else {
-          // Firefox;
-          scrollSpeed = -d / 4;
-        }
-      } else {
-        scrollSpeed = w / 120;
-      }
-
-      // Threshold for scroll motion to be detected in mousewheel.
-      // Edge case: caution with setting this above 0.3 as people remoting into a
-      // linux machine have higher latency and mousewheel events don't fire as
-      // quickly.
-      var scrollThreshold = this.config.scrollThreshold || 0.1;
-
-      // Debounce the next and previous in order to ensure we don't change
-      // more than two pages at once.
-      // Additionally, mousepads gets a little tricker because they can continue
-      // to produce scroll events.  Add enough buffer.
-      var debounceTime = this.config.debounceTime || 810;
-
-      if (Math.abs(scrollSpeed) >= scrollThreshold && this.canScroll) {
-        this.canScroll = false;
-
-        if (scrollSpeed <= 0) {
-          this.scrollDownCallback();
-        } else {
-          this.scrollUpCallback();
-        }
-
-        // Deboucing. Disallow any scrolling for a set period.
-        window.setTimeout(function () {
-          _this2.canScroll = true;
-        }, debounceTime);
-      }
-    }
-
-    /**
-     * Disposes the instance of the mouse scroller.
-     */
-
-  }, {
-    key: 'dispose',
-    value: function dispose() {
-      window.removeEventListener('mousewheel', this.mouseListener);
-      window.removeEventListener('DOMMouseScroll', this.mouseListener);
-    }
-  }]);
-
-  return MouseScroller;
-}();
-
-exports.default = MouseScroller;
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _utils = __webpack_require__(0);
-
-var _utils2 = _interopRequireDefault(_utils);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Parallaxer
- * A class that creates a parallax effect based on the mouse position
- */
-var Parallaxer = function () {
-
-  /**
-   * @param {Element} baseElement - The base element to use for mouseEffects
-   * @param {Element} rootElement - The root element to apply parallax effects to.
-   * @param {Object} rotationSentivity - x,y object with rotation sensitivity.
-   * @param {Object} translateSentitivy - x,y object with translate senstiivity.
-   * @constructor
-   */
-  function Parallaxer(baseElement, rootElement, rotationSensitivity, translateSensitity) {
-    _classCallCheck(this, Parallaxer);
-
-    // External utilities
-    this.utils = new _utils2.default();
-
-    /**
-     * Add required styles to body.
-     */
-    this.$body = (0, _utils.$)('body')[0];
-
-    this.$body.style.transformStyle = 'preserve-3d';
-    this.$body.style.webkitTransformStyle = 'preserve-3d';
-    this.$body.style.perspective = window.innerHeight / 2 + 'px';
-    this.$body.style.webkitPerspective = window.innerHeight / 2 + 'px';
-
-    /**
-     * Flag to allow animation.
-     * @type {boolean}
-     */
-    this.animate_ = false;
-
-    /**
-     * The current mouse position data acquired from the mouse tracker.
-     * @type {Object}
-     */
-    this.mousePosition_ = null;
-
-    /**
-     * The rotation sensitivity of the parallax effect.
-     */
-    this.rotationSensitivity = rotationSensitivity || {
-      x: 0.2,
-      y: 0.2
-    };
-
-    /**
-     * The translate sensitivity of the parallax effect.
-     */
-    this.translateSensitivity = translateSensitity || {
-      x: 1,
-      y: 1
-    };
-
-    /**
-     * The current transform values.
-     */
-    this.transformValues = {
-      xDeg: 0,
-      yDeg: 0,
-      zDeg: 0,
-      xTrans: 0,
-      yTrans: 0
-
-      /**
-       * The root element to manipulate.
-       * @type {Element}
-       */
-    };this.$rootElement_ = rootElement;
-    this.baseElement = baseElement || _utils.w;
-
-    this.mousePosition_ = this.utils.captureMouse(this.baseElement);
-  }
-
-  /**
-   * Runs the animation.
-   */
-
-
-  _createClass(Parallaxer, [{
-    key: 'run',
-    value: function run() {
-      this.animate_ = true;
-      this.rafLoop_();
-    }
-
-    /**
-     * Stops the animation.
-     */
-
-  }, {
-    key: 'stop',
-    value: function stop() {
-      this.animate_ = false;
-    }
-
-    /**
-     * Internal animation cycle.
-     */
-
-  }, {
-    key: 'rafLoop_',
-    value: function rafLoop_() {
-      var _this = this;
-
-      if (!this.animate_) {
-        return;
-      }
-
-      window.requestAnimationFrame(function () {
-        _this.rafLoop_();
-      });
-
-      this.render_();
-    }
-
-    /**
-     * Internal render cycle.
-     */
-
-  }, {
-    key: 'render_',
-    value: function render_() {
-
-      if (!this.mousePosition_) {
-        return;
-      }
-
-      var xDegree = this.mousePosition_.percentageX * this.rotationSensitivity.x;
-      var yDegree = this.mousePosition_.percentageY * this.rotationSensitivity.y;
-
-      var xTrans = -this.mousePosition_.percentageX * this.translateSensitivity.x;
-      var yTrans = -this.mousePosition_.percentageY * this.translateSensitivity.y;
-
-      this.transformValues.xDeg += (xDegree - this.transformValues.xDeg) * 0.05;
-      this.transformValues.yDeg += (yDegree - this.transformValues.yDeg) * 0.05;
-      this.transformValues.xTrans += (xTrans - this.transformValues.xTrans) * 0.05;
-      this.transformValues.yTrans += (yTrans - this.transformValues.yTrans) * 0.05;
-
-      var rotateXstring = 'rotateX( ' + this.transformValues.yDeg + 'deg )';
-      var rotateYstring = 'rotateY( ' + -this.transformValues.xDeg + 'deg )';
-      var rotateZstring = 'rotateZ(0deg)';
-      var translateXstring = 'translateX( ' + -this.transformValues.xTrans + 'px )';
-      var translateYstring = 'translateY( ' + -this.transformValues.yTrans + 'px )';
-
-      var transformString = rotateXstring + ' ' + rotateYstring + ' ' + rotateZstring + ' ' + translateXstring + ' ' + translateYstring;
-
-      this.$rootElement_.forEach(function ($rootElement) {
-        $rootElement.style.perspectiveOrigin = '50%, 50%';
-        $rootElement.style.webkitPerspectiveOrigin = '50%, 50%';
-
-        $rootElement.style.transform = transformString;
-        $rootElement.style.webkitTransform = transformString;
-
-        $rootElement.style.transformOrigin = '50% 50%';
-        $rootElement.style.webkitTransformOrigin = '50% 50%';
-      });
-    }
-  }]);
-
-  return Parallaxer;
-}();
-
-exports.default = Parallaxer;
-
-/***/ }),
-/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10655,7 +10989,7 @@ var StateService = function () {
 exports.default = StateService;
 
 /***/ }),
-/* 13 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10666,464 +11000,372 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *  Particle Canvas
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *  Page Transitions
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       */
+
+// Libs
+
 
 var _utils = __webpack_require__(0);
 
 var _utils2 = _interopRequireDefault(_utils);
 
-var _particle = __webpack_require__(14);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _particle2 = _interopRequireDefault(_particle);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var PageTransitions = function () {
+  function PageTransitions() {
+    _classCallCheck(this, PageTransitions);
+
+    this._utils = new _utils2.default();
+    this._$w = _utils.w;
+    this._$ = _utils.$;
+    this._$ctas = Array.from(this._$('.delay-transition'));
+    this._$body = (0, _utils.$)('body')[0];
+    this._exitTransitionClass = 'exit-page-transition';
+
+    this._setupListeners();
+  }
+
+  /**
+   * Setup listeners for page transitions
+   */
+
+
+  _createClass(PageTransitions, [{
+    key: '_setupListeners',
+    value: function _setupListeners() {
+      var _this = this;
+
+      if (this._$ctas.length > 0) {
+        this._$ctas.forEach(function ($cta) {
+          $cta.addEventListener('click', function (e) {
+            return _this._delayPageTransition(e, $cta);
+          });
+        });
+      }
+    }
+
+    /**
+     * Delay page transitions using utils.delay
+     * @param {Event} e - Event object
+     * @param {HTMLElement} cta - Element clicked
+     */
+
+  }, {
+    key: '_delayPageTransition',
+    value: function _delayPageTransition(e, cta) {
+      var _this2 = this;
+
+      e.preventDefault();
+
+      // console.log('clicked a delayed link!', _linkURL);
+
+      var _linkURL = cta.getAttribute('href');
+      var _delayTimeout = cta.dataset.delay || 3000;
+
+      this._utils.delay(function () {
+        _this2._$body.classList.add(_this2._exitTransitionClass);
+      }, 0).delay(function () {
+        _this2._$w.location = _linkURL;
+      }, _delayTimeout);
+    }
+  }]);
+
+  return PageTransitions;
+}();
+
+exports.default = PageTransitions;
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *  Home Page Component
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+
+// Libs
+
+
+// Components
+
+
+var _utils = __webpack_require__(0);
+
+var _utils2 = _interopRequireDefault(_utils);
+
+var _mouseScroller = __webpack_require__(13);
+
+var _mouseScroller2 = _interopRequireDefault(_mouseScroller);
+
+var _parallaxer = __webpack_require__(1);
+
+var _parallaxer2 = _interopRequireDefault(_parallaxer);
+
+var _particleCanvas = __webpack_require__(2);
+
+var _particleCanvas2 = _interopRequireDefault(_particleCanvas);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ParticleCanvas = function () {
+var HomePage = function () {
 
   /**
-   * @param {HTMLElement} settings.canvasEL - HTMLElement of canvas
+   * @param {Object} stateService - State service
    */
-  function ParticleCanvas(settings) {
-    _classCallCheck(this, ParticleCanvas);
-
-    // Internal Settings
-    this.maxWidth = settings.maxWidth;
-    this.maxHeight = settings.maxHeight;
-    this.canvasBackground = settings.canvasBackground;
+  function HomePage(stateService) {
+    _classCallCheck(this, HomePage);
 
     // External utilities
-    this.utils = new _utils2.default();
-    this.requestAnimationFrame = _utils.w.requestAnimationFrame.bind(_utils.w);
-    this.devicePixelRatio = _utils.w.devicePixelRatio;
+    this._stateService = stateService;
+    this._utils = new _utils2.default();
+    this._$w = _utils.w;
+    this._$ = _utils.$;
 
-    // DOM & Canvas object references
-    this.$canvas = settings.canvasEL;
-    this.context = this.$canvas.getContext('2d');
-    this.left = 0;
-    this.top = 0;
-    this.right = this.maxWidth || this.utils.screenSize().width;
-    this.bottom = this.maxHeight || this.utils.screenSize().height;
+    // DOM element references
+    this._$canvas = (0, _utils.$)('.canvas')[0];
 
-    // Set canvas size to fullscreen
-    this.$canvas.width = this.maxWidth || this.utils.screenSize().width;
-    this.$canvas.height = this.maxHeight || this.utils.screenSize().height;
-    this.centerX = this.$canvas.width / 2;
-    this.centerY = this.$canvas.height / 2;
+    // Particle background settings
+    this._canvasParticleColors = ['#D6E9F1'];
 
-    // Environment physics
-    this.spring = 0.05;
-    this.bounce = -1;
-    this.gravity = 0;
-    this.speed = 0.25;
-    this.friction = 1;
+    // Parallax Settings
+    this._parallaxers = [];
+    this._parallaxBaseEl = this._$w;
+    this._parallaxMainEl = (0, _utils.$)('.main');
+    this._parallaxOffsetEls = (0, _utils.$)('.background-images__image--offset');
+    this._parallaxContentEls = (0, _utils.$)('.case-study__inner-content');
 
-    var particleCount = void 0;
-
-    if (this.utils.screenSize().width > 1440) {
-      particleCount = 150;
-    } else if (this.utils.screenSize().width > 1024) {
-      particleCount = 125;
-    } else if (this.utils.screenSize().width > 640) {
-      particleCount = 100;
-    } else {
-      particleCount = 75;
-    }
-
-    // Particle settings
-    this.particles = [];
-    this.numOfParticles = settings.numOfParticles || particleCount;
-    this.particleDistance = 150;
-    this.particleOpacity = settings.particleOpacity || 0.5;
-    this.particleSpring = 0.000005;
-    this.particleSize = 3;
-    this.particleLineWidth = settings.particleLineWidth || 1;
-    this.particleColors = ['#D6E9F1' // slightly darker light blue
-    ];
-    this.particleColors = settings.particleColors || this.particleColors;
-
-    // Set mouse/touch coordinates to variable
-    this.isTouching = false;
-    this.respondToMouse = settings.respondToMouse !== false;
-    this.touch = this.utils.captureTouch(_utils.w);
-    this.mouse = this.utils.captureMouse(_utils.w);
-    this.mouseBallThreshold = 150;
-    this.mouseBall = new _particle2.default(this.mouseBallThreshold, 'transparent');
-
-    // this.utils.setupHelpers(w, this.mouse, this.touch);
-
-    // Start animation
+    // 3, 2, 1... blastOff!
     this._init();
-
-    // console.log('instantiated particle canvas', this);
   }
 
   /**
-   * Initialize canvas
+   * Kick start page
    */
 
 
-  _createClass(ParticleCanvas, [{
+  _createClass(HomePage, [{
     key: '_init',
     value: function _init() {
-      // Set initial mouse ball position
-      this.mouseBall.x = this.centerX;
-      this.mouseBall.y = this.centerY;
-
-      // Kick off main functions
-      this._upscaleCanvas();
-      this._setupListeners();
-      this._generateParticles();
-      this._animate();
-
-      // console.log('initialized particle animation');
+      this._setupCanvas();
+      this._setupScrollEffect();
+      this._setupParallaxers();
     }
 
     /**
-     * Upscale canvas if device pixel ratio doesnt match
-     * @see https://www.html5rocks.com/en/tutorials/canvas/hidpi/
+     * Sets up particle background
      */
 
   }, {
-    key: '_upscaleCanvas',
-    value: function _upscaleCanvas() {
-      // console.log('device pixel ratio =', this.devicePixelRatio);
-
-      var _oldWidth = this.$canvas.width,
-          _oldHeight = this.$canvas.height;
-
-      // Upscale canvas element by devicePixelRatio
-      this.$canvas.width *= this.devicePixelRatio;
-      this.$canvas.height *= this.devicePixelRatio;
-
-      // Set canvas center
-      this.centerX = _oldWidth / 2;
-      this.centerY = _oldHeight / 2;
-
-      // Downscale canvas style (CSS) to original size
-      this.$canvas.style.width = _oldWidth + 'px';
-      this.$canvas.style.height = _oldHeight + 'px';
-
-      // Scale canvas context to counter manually scaled canvas
-      this.context.scale(this.devicePixelRatio, this.devicePixelRatio);
-
-      return false;
+    key: '_setupCanvas',
+    value: function _setupCanvas() {
+      if (this._$canvas) {
+        new _particleCanvas2.default({
+          canvasEL: this._$canvas,
+          particleColors: this._canvasParticleColors
+        });
+      }
     }
 
     /**
-    * Setup event listeners
-    */
+     * Sets up parallax animations
+     */
 
   }, {
-    key: '_setupListeners',
-    value: function _setupListeners() {
+    key: '_setupParallaxers',
+    value: function _setupParallaxers() {
+      // On desktop-only...
+      if (!this._utils.allowDeviceOrientation()) {
+
+        if (!this._parallaxers.length) {
+          this._parallaxers = [
+          // Case study wrapper element
+          new _parallaxer2.default(this._parallaxBaseEl, this._parallaxMainEl, { x: 0.1, y: 0.1 }, { x: 0.25, y: 0.25 }),
+          // Case study background offset
+          new _parallaxer2.default(this._parallaxBaseEl, this._parallaxOffsetEls, { x: 0.1, y: 0.1 }, { x: 1.5, y: 1.25 }),
+          // Case study title, subtitle, and cta button
+          new _parallaxer2.default(this._parallaxBaseEl, this._parallaxContentEls, { x: 0.1, y: 0.1 }, { x: 0.2, y: 0.2 })];
+
+          // Run parallaxers.
+          this._parallaxers.forEach(function (parallaxer) {
+            parallaxer.run();
+          });
+        }
+      }
+    }
+
+    /**
+     * Adds a class when element enters viewport
+     */
+
+  }, {
+    key: '_setupScrollEffect',
+    value: function _setupScrollEffect() {
       var _this = this;
 
-      _utils.w.addEventListener('resize', function () {
-        return _this._onWindowResize();
+      new _mouseScroller2.default({
+        debounceTime: 1000,
+        scrollThreshold: 0.4,
+        scrollDownCallback: function scrollDownCallback() {
+          return _this._stateService.getNextItem();
+        },
+        scrollUpCallback: function scrollUpCallback() {
+          return _this._stateService.getPreviousItem();
+        }
       });
-
-      if (this.utils.allowDeviceOrientation()) {
-
-        _utils.w.addEventListener('deviceorientation', function (e) {
-          return _this._handleOrientation(e);
-        }, true);
-      } else {
-
-        document.addEventListener('mousemove', function (e) {
-          return _this._mouseMoveCallback(e);
-        });
-        document.addEventListener('mousedown', function (e) {
-          return _this._mouseDownCallback(e);
-        });
-        document.addEventListener('mouseup', function (e) {
-          return _this._mouseUpCallback(e);
-        });
-      }
-    }
-
-    /**
-    * Generate particles
-    */
-
-  }, {
-    key: '_generateParticles',
-    value: function _generateParticles() {
-      for (var i = 0; i < this.numOfParticles; i++) {
-        var particle = new _particle2.default(this.utils.rand(0, this.particleSize), this.particleColors[this.utils.randInt(0, this.particleColors.length)]);
-
-        particle.x = this.utils.randInt(1, this.$canvas.width / this.devicePixelRatio);
-        particle.y = this.utils.randInt(1, this.$canvas.height / this.devicePixelRatio);
-        particle.vx = this.utils.randInt(-this.speed, this.speed);
-        particle.vy = this.utils.randInt(-this.speed, this.speed);
-        particle.opacity = this.particleOpacity;
-
-        if (particle.vx === 0) {
-          particle.vx = this.utils.coinFlip() ? this.speed : -this.speed;
-        }
-
-        if (particle.vy === 0) {
-          particle.vy = this.utils.coinFlip() ? this.speed : -this.speed;
-        }
-
-        this.particles.push(particle);
-      }
-    }
-
-    /**
-    * Motion animation
-    */
-
-  }, {
-    key: '_motion',
-    value: function _motion(particle) {
-
-      // Add gravity
-      particle.vy += this.gravity;
-
-      // Increment velocity
-      particle.x += particle.vx;
-      particle.y += particle.vy;
-    }
-
-    /**
-    * Detection against top/right/bottom/left boundaries
-    */
-
-  }, {
-    key: '_boundaryDetection',
-    value: function _boundaryDetection(particle) {
-      if (particle.x + particle.radius > this.right) {
-        particle.x = this.right - particle.radius;
-        particle.vx *= this.bounce;
-      } else if (particle.x - particle.radius < this.left) {
-        particle.x = this.left + particle.radius;
-        particle.vx *= this.bounce;
-      }
-
-      if (particle.y + particle.radius > this.bottom) {
-        particle.y = this.bottom - particle.radius;
-        particle.vy *= this.bounce;
-      } else if (particle.y - particle.radius < this.top) {
-        particle.y = this.top + particle.radius;
-        particle.vy *= this.bounce;
-      }
-    }
-
-    /**
-     * Collision detection between mouse and particles
-     *
-     * @param {Object} particle - Instance 2D Ball context
-     */
-
-  }, {
-    key: '_mouseCollision',
-    value: function _mouseCollision(particle) {
-      var dx = particle.x - this.mouseBall.x,
-          dy = particle.y - this.mouseBall.y,
-          dist = Math.sqrt(dx * dx + dy * dy),
-          min_dist = particle.radius + this.mouseBall.radius;
-
-      var normVec = {
-        x: dx / dist,
-        y: dy / dist
-      },
-          velocity = 100,
-          repulseFactor = this.utils.clamp(1 / min_dist * (-1 * Math.pow(dist / min_dist, 2) + 1) * min_dist * velocity, 0, 50);
-
-      var pos = {
-        x: particle.x + normVec.x * repulseFactor,
-        y: particle.y + normVec.y * repulseFactor
-      };
-
-      particle.x = pos.x;
-      particle.y = pos.y;
-
-      return particle;
-    }
-
-    /**
-    * Collision detection between particles
-    */
-
-  }, {
-    key: '_collisionCheck',
-    value: function _collisionCheck(particleA, i) {
-      for (var j = i + 1; j < this.numOfParticles; j++) {
-        var particleB = this.particles[j],
-            dx = particleB.x - particleA.x,
-            dy = particleB.y - particleA.y,
-            dist = Math.sqrt(dx * dx + dy * dy),
-            min_dist = this.particleDistance;
-
-        // If particle is within range of another
-        if (dist < min_dist) {
-          var tx = particleA.x + dx / dist * min_dist,
-              ty = particleA.y + dy / dist * min_dist,
-              ax = (tx - particleB.x) * this.particleSpring,
-              ay = (ty - particleB.y) * this.particleSpring;
-
-          // Draw connection from particleA
-          // to particleB coordinates
-          this.context.lineWidth = this.particleLineWidth / 4;
-          this.context.strokeStyle = particleA.color;
-          this.context.beginPath();
-          this.context.moveTo(particleA.x, particleA.y);
-          this.context.lineTo(particleB.x, particleB.y);
-          this.context.stroke();
-
-          particleA.vx -= ax;
-          particleA.vy -= ay;
-          particleB.vx += ax;
-          particleB.vy += ay;
-        }
-      }
-    }
-
-    /**
-    * Animation loop
-    */
-
-  }, {
-    key: '_animate',
-    value: function _animate() {
-
-      // Call request animation frame recursively
-      this.requestAnimationFrame(this._animate.bind(this), this.$canvas);
-
-      // Clear canvas every frame
-      if (this.canvasBackground) {
-        this.context.fillStyle = this.canvasBackground;
-        this.context.fillRect(0, 0, this.$canvas.width, this.$canvas.height);
-      } else {
-        this.context.clearRect(0, 0, this.$canvas.width, this.$canvas.height);
-      }
-
-      // Animate stuff...
-      if (this.particles) {
-        for (var i = 0; i < this.particles.length; i++) {
-          var particle = this.particles[i];
-
-          this._motion(particle, i);
-          this._boundaryDetection(particle, i);
-          this._collisionCheck(particle, i);
-
-          if (!this.utils.allowDeviceOrientation() && this.respondToMouse) {
-            this._mouseCollision(particle, i);
-          }
-
-          particle.draw(this.context);
-        }
-      }
-
-      this.mouseBall.draw(this.context);
-    }
-
-    /**
-     * Handle Device Orientation
-     *  - Tilt 90º > 0º to increase gravity on mobile
-     */
-
-  }, {
-    key: '_handleOrientation',
-    value: function _handleOrientation(event) {
-
-      var x = event.gamma;
-      var y = event.beta;
-
-      if (x > 90) {
-        x = 90;
-      }
-      if (x < 45) {
-        x = 45;
-      }
-
-      if (y > 90) {
-        y = 90;
-      }
-      if (y < 0) {
-        y = 0;
-      }
-
-      var rangeX = (90 - Math.floor(Math.abs(x))) / 45;
-      var rangeY = (90 - Math.floor(Math.abs(y))) / 90;
-
-      // Do stuff with the new orientation data
-      if (Math.floor(rangeY * 10) > 0) {
-        this.gravity = rangeY;
-      }
-
-      if (Math.floor(rangeX * 10) > 0) {
-        this.speed = rangeX;
-      }
-    }
-
-    /**
-     * Mouse move callback
-     *
-     * @param {Event} e - Event Object
-     *
-     */
-
-  }, {
-    key: '_mouseMoveCallback',
-    value: function _mouseMoveCallback() {
-      // Set mouseBall to mouse coordinates
-      this.mouseBall.x = this.mouse.x;
-      this.mouseBall.y = this.mouse.y;
-    }
-
-    /**
-     * Mouse Down callback:
-     * - Increment particles on press and hold
-     *
-     * @param {Event} e - Event Object
-     *
-     */
-
-  }, {
-    key: '_mouseDownCallback',
-    value: function _mouseDownCallback() {
-      this.isTouching = true;
-      this.mouseBall.radius = 0;
-    }
-
-    /**
-     * Mouse Up callback:
-     * - Reset particle count on press release
-     *
-     * @param {Event} e - Event Object
-     *
-     */
-
-  }, {
-    key: '_mouseUpCallback',
-    value: function _mouseUpCallback() {
-      this.isTouching = false;
-      this.mouseBall.radius = this.mouseBallThreshold;
-    }
-
-    /**
-    * Window resize callback
-    */
-
-  }, {
-    key: '_onWindowResize',
-    value: function _onWindowResize() {
-      this.right = this.$canvas.width = this.maxWidth || this.utils.screenSize().width;
-      this.bottom = this.$canvas.height = this.maxHeight || this.utils.screenSize().height;
-      this.centerX = this.$canvas.width / 2;
-      this.centerY = this.$canvas.height / 2;
-      this._upscaleCanvas();
     }
   }]);
 
-  return ParticleCanvas;
+  return HomePage;
 }();
 
-exports.default = ParticleCanvas;
+exports.default = HomePage;
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * A UI util class to detect mouse scrolling.
+ */
+var MouseScroller = function () {
+
+  /**
+   * @param config Configuration options for mouse scroller.
+   *     - scrollUpCallback (function)
+   *     - scrollDownCallback (function)
+   */
+  function MouseScroller(config) {
+    var _this = this;
+
+    _classCallCheck(this, MouseScroller);
+
+    this.config = config;
+
+    /**
+     * Whether if mouse scroll is allowed.
+     * @type {boolean}
+     */
+    this.canScroll = true;
+
+    /**
+     * The callback for scrolling up.
+     * @type {Function}
+     */
+    this.scrollUpCallback = config.scrollUpCallback;
+
+    /**
+     * The callback for scrolling down.
+     * @type {Function}
+     */
+    this.scrollDownCallback = config.scrollDownCallback;
+
+    this.mouseListener = function (e) {
+      _this.onMouseWheel_(e);
+    };
+
+    // Mouse wheel events.
+    window.addEventListener('mousewheel', this.mouseListener);
+
+    // Firefox
+    window.addEventListener('DOMMouseScroll', this.mouseListener);
+  }
+
+  _createClass(MouseScroller, [{
+    key: 'onMouseWheel_',
+    value: function onMouseWheel_(event) {
+      var _this2 = this;
+
+      if (this.config.preventDefault) {
+        event.preventDefault();
+      }
+
+      if (!this.canScroll) {
+        return;
+      }
+
+      // Normalize scroll speed differences between browers.
+      var scrollSpeed;
+      var w = event.wheelDelta;
+      var d = event.detail;
+      if (d) {
+        if (w) {
+          // Opera
+          scrollSpeed = w / d / 40 * d > 0 ? 1 : -1;
+        } else {
+          // Firefox;
+          scrollSpeed = -d / 4;
+        }
+      } else {
+        scrollSpeed = w / 120;
+      }
+
+      // Threshold for scroll motion to be detected in mousewheel.
+      // Edge case: caution with setting this above 0.3 as people remoting into a
+      // linux machine have higher latency and mousewheel events don't fire as
+      // quickly.
+      var scrollThreshold = this.config.scrollThreshold || 0.1;
+
+      // Debounce the next and previous in order to ensure we don't change
+      // more than two pages at once.
+      // Additionally, mousepads gets a little tricker because they can continue
+      // to produce scroll events.  Add enough buffer.
+      var debounceTime = this.config.debounceTime || 810;
+
+      if (Math.abs(scrollSpeed) >= scrollThreshold && this.canScroll) {
+        this.canScroll = false;
+
+        if (scrollSpeed <= 0) {
+          this.scrollDownCallback();
+        } else {
+          this.scrollUpCallback();
+        }
+
+        // Deboucing. Disallow any scrolling for a set period.
+        window.setTimeout(function () {
+          _this2.canScroll = true;
+        }, debounceTime);
+      }
+    }
+
+    /**
+     * Disposes the instance of the mouse scroller.
+     */
+
+  }, {
+    key: 'dispose',
+    value: function dispose() {
+      window.removeEventListener('mousewheel', this.mouseListener);
+      window.removeEventListener('DOMMouseScroll', this.mouseListener);
+    }
+  }]);
+
+  return MouseScroller;
+}();
+
+exports.default = MouseScroller;
 
 /***/ }),
 /* 14 */
@@ -11248,96 +11490,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *  Page Transitions
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
-
-// Libs
-
-
-var _utils = __webpack_require__(0);
-
-var _utils2 = _interopRequireDefault(_utils);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var PageTransitions = function () {
-  function PageTransitions() {
-    _classCallCheck(this, PageTransitions);
-
-    this._utils = new _utils2.default();
-    this._$w = _utils.w;
-    this._$ = _utils.$;
-    this._$ctas = Array.from(this._$('.delay-transition'));
-    this._$body = (0, _utils.$)('body')[0];
-    this._exitTransitionClass = 'exit-page-transition';
-
-    this._setupListeners();
-  }
-
-  /**
-   * Setup listeners for page transitions
-   */
-
-
-  _createClass(PageTransitions, [{
-    key: '_setupListeners',
-    value: function _setupListeners() {
-      var _this = this;
-
-      if (this._$ctas.length > 0) {
-        this._$ctas.forEach(function ($cta) {
-          $cta.addEventListener('click', function (e) {
-            return _this._delayPageTransition(e, $cta);
-          });
-        });
-      }
-    }
-
-    /**
-     * Delay page transitions using utils.delay
-     * @param {Event} e - Event object
-     * @param {HTMLElement} cta - Element clicked
-     */
-
-  }, {
-    key: '_delayPageTransition',
-    value: function _delayPageTransition(e, cta) {
-      var _this2 = this;
-
-      e.preventDefault();
-
-      // console.log('clicked a delayed link!', _linkURL);
-
-      var _linkURL = cta.getAttribute('href');
-      var _delayTimeout = cta.dataset.delay || 3000;
-
-      this._utils.delay(function () {
-        _this2._$body.classList.add(_this2._exitTransitionClass);
-      }, 0).delay(function () {
-        _this2._$w.location = _linkURL;
-      }, _delayTimeout);
-    }
-  }]);
-
-  return PageTransitions;
-}();
-
-exports.default = PageTransitions;
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *  Case Study Page Component
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       */
 
@@ -11351,11 +11503,11 @@ var _utils = __webpack_require__(0);
 
 var _utils2 = _interopRequireDefault(_utils);
 
-var _parallaxer = __webpack_require__(11);
+var _parallaxer = __webpack_require__(1);
 
 var _parallaxer2 = _interopRequireDefault(_parallaxer);
 
-var _particleCanvas = __webpack_require__(13);
+var _particleCanvas = __webpack_require__(2);
 
 var _particleCanvas2 = _interopRequireDefault(_particleCanvas);
 
@@ -11503,162 +11655,7 @@ var CaseStudyPage = function () {
 exports.default = CaseStudyPage;
 
 /***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *  Home Page Component
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
-
-// Libs
-
-
-// Components
-
-
-var _utils = __webpack_require__(0);
-
-var _utils2 = _interopRequireDefault(_utils);
-
-var _mouseScroller = __webpack_require__(10);
-
-var _mouseScroller2 = _interopRequireDefault(_mouseScroller);
-
-var _parallaxer = __webpack_require__(11);
-
-var _parallaxer2 = _interopRequireDefault(_parallaxer);
-
-var _particleCanvas = __webpack_require__(13);
-
-var _particleCanvas2 = _interopRequireDefault(_particleCanvas);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var HomePage = function () {
-
-  /**
-   * @param {Object} stateService - State service
-   */
-  function HomePage(stateService) {
-    _classCallCheck(this, HomePage);
-
-    // External utilities
-    this._stateService = stateService;
-    this._utils = new _utils2.default();
-    this._$w = _utils.w;
-    this._$ = _utils.$;
-
-    // DOM element references
-    this._$canvas = (0, _utils.$)('.canvas')[0];
-
-    // Particle background settings
-    this._canvasParticleColors = ['#D6E9F1'];
-
-    // Parallax Settings
-    this._parallaxers = [];
-    this._parallaxBaseEl = this._$w;
-    this._parallaxMainEl = (0, _utils.$)('.main');
-    this._parallaxOffsetEls = (0, _utils.$)('.background-images__image--offset');
-    this._parallaxContentEls = (0, _utils.$)('.case-study__inner-content');
-
-    // 3, 2, 1... blastOff!
-    this._init();
-  }
-
-  /**
-   * Kick start page
-   */
-
-
-  _createClass(HomePage, [{
-    key: '_init',
-    value: function _init() {
-      this._setupCanvas();
-      this._setupScrollEffect();
-      this._setupParallaxers();
-    }
-
-    /**
-     * Sets up particle background
-     */
-
-  }, {
-    key: '_setupCanvas',
-    value: function _setupCanvas() {
-      if (this._$canvas) {
-        new _particleCanvas2.default({
-          canvasEL: this._$canvas,
-          particleColors: this._canvasParticleColors
-        });
-      }
-    }
-
-    /**
-     * Sets up parallax animations
-     */
-
-  }, {
-    key: '_setupParallaxers',
-    value: function _setupParallaxers() {
-      // On desktop-only...
-      if (!this._utils.allowDeviceOrientation()) {
-
-        if (!this._parallaxers.length) {
-          this._parallaxers = [
-          // Case study wrapper element
-          new _parallaxer2.default(this._parallaxBaseEl, this._parallaxMainEl, { x: 0.1, y: 0.1 }, { x: 0.25, y: 0.25 }),
-          // Case study background offset
-          new _parallaxer2.default(this._parallaxBaseEl, this._parallaxOffsetEls, { x: 0.1, y: 0.1 }, { x: 1.5, y: 1.25 }),
-          // Case study title, subtitle, and cta button
-          new _parallaxer2.default(this._parallaxBaseEl, this._parallaxContentEls, { x: 0.1, y: 0.1 }, { x: 0.2, y: 0.2 })];
-
-          // Run parallaxers.
-          this._parallaxers.forEach(function (parallaxer) {
-            parallaxer.run();
-          });
-        }
-      }
-    }
-
-    /**
-     * Adds a class when element enters viewport
-     */
-
-  }, {
-    key: '_setupScrollEffect',
-    value: function _setupScrollEffect() {
-      var _this = this;
-
-      new _mouseScroller2.default({
-        debounceTime: 1000,
-        scrollThreshold: 0.4,
-        scrollDownCallback: function scrollDownCallback() {
-          return _this._stateService.getNextItem();
-        },
-        scrollUpCallback: function scrollUpCallback() {
-          return _this._stateService.getPreviousItem();
-        }
-      });
-    }
-  }]);
-
-  return HomePage;
-}();
-
-exports.default = HomePage;
-
-/***/ }),
-/* 18 */,
-/* 19 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

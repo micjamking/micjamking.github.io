@@ -21,6 +21,7 @@ header:
 
 footer:
   next_project:
+    delayExit: 3000
     url: '/case-study/tour-aloha'
     label: 'Tour Aloha'
 

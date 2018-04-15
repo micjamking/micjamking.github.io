@@ -91,7 +91,7 @@ $play-state:      running
 @keyframes case-study-mask-animation
   0%
     clip-path: polygon(100% 0%, 0% 0%, 0% 0%, 50% 0%, 100% 0%)
-  60%
+  70%
     clip-path: polygon(100% 0%, 0% 0%, 0% 86.956522%, 50% 86.956522%, 100% 86.956522%)
   100%
     clip-path: polygon(100% 0%, 0% 0%, 0% 86.956522%, 50% 100%, 100% 86.956522%)
@@ -99,7 +99,7 @@ $play-state:      running
 @keyframes case-study-mask-animation--reverse
   0%
     clip-path: polygon(100% 0%, 0% 0%, 0% 86.956522%, 50% 100%, 100% 86.956522%)
-  40%
+  30%
     clip-path: polygon(100% 0%, 0% 0%, 0% 86.956522%, 50% 86.956522%, 100% 86.956522%)
   100%
     clip-path: polygon(100% 0%, 0% 0%, 0% 0%, 50% 0%, 100% 0%)
@@ -436,3 +436,33 @@ $play-state:      running
   .background-images--case-study
     +case-study-mask-animation--reverse
     animation-delay: ($base-animation / 2) * 7
+
+  .footer
+    +fade-out
+    animation-delay: ($base-animation / 2) * 6
+
+    &__next-project
+      &__headline,
+      &__project
+        +fade-out-up
+
+    &__location,
+    &__email,
+    &__logo-icon
+      +fade-out-up
+
+    &__next-project
+      &__headline
+        animation-delay: ($base-animation / 2) * 1
+
+      &__project
+        animation-delay: ($base-animation / 2) * 2
+
+    &__location
+      animation-delay: ($base-animation / 2) * 3
+
+    &__email
+      animation-delay: ($base-animation / 2) * 4
+
+    &__logo-icon
+      animation-delay: ($base-animation / 2) * 5
