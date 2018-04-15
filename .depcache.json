@@ -93,14 +93,6 @@
     "/views/components/_section-custom-animation.html",
     "/views/components/_section-process.html"
   ],
-  "/content/case-studies/teacupanalytics.md": [
-    "/static/apple-touch-icon-precomposed.png",
-    "/static/favicon.png",
-    "/static/images/social_image.jpg",
-    "/static/style.css",
-    "/views/components/_header-case-study.html",
-    "/views/components/_preloader.html"
-  ],
   "/content/case-studies/teacupanalytics.yaml": [
     "/static/apple-touch-icon-precomposed.png",
     "/static/favicon.png",
@@ -132,14 +124,6 @@
     "/views/components/_section-custom-animation.html",
     "/views/components/_section-process.html"
   ],
-  "/content/case-studies/touraloha.md": [
-    "/static/apple-touch-icon-precomposed.png",
-    "/static/favicon.png",
-    "/static/images/social_image.jpg",
-    "/static/style.css",
-    "/views/components/_header-case-study.html",
-    "/views/components/_preloader.html"
-  ],
   "/content/case-studies/touraloha.yaml": [
     "/static/apple-touch-icon-precomposed.png",
     "/static/favicon.png",
@@ -169,10 +153,29 @@
     "/views/components/_section-custom-animation.html",
     "/views/components/_section-process.html"
   ],
+  "/content/pages/about.yaml": [
+    "/static/apple-touch-icon-precomposed.png",
+    "/static/favicon.png",
+    "/static/images/social_image.jpg",
+    "/static/script.js",
+    "/static/style.css",
+    "/views/components/_header.html",
+    "/views/components/_navigation.html",
+    "/views/components/_preloader.html"
+  ],
+  "/content/pages/contact.yaml": [
+    "/static/apple-touch-icon-precomposed.png",
+    "/static/favicon.png",
+    "/static/images/social_image.jpg",
+    "/static/script.js",
+    "/static/style.css",
+    "/views/components/_header.html",
+    "/views/components/_navigation.html",
+    "/views/components/_preloader.html"
+  ],
   "/content/pages/home.yaml": [
     "/content/pages/about.yaml",
     "/content/pages/contact.yaml",
-    "/content/pages/nest.yaml",
     "/static/apple-touch-icon-precomposed.png",
     "/static/favicon.png",
     "/static/images/case-studies/case-study-tile__gohawaii.png",
@@ -180,19 +183,8 @@
     "/static/script.js",
     "/static/style.css",
     "/views/components/_case-study.html",
-    "/views/components/_header-custom.html",
     "/views/components/_header.html",
     "/views/components/_hero.html",
-    "/views/components/_navigation.html",
-    "/views/components/_preloader.html"
-  ],
-  "/content/pages/nest.yaml": [
-    "/static/apple-touch-icon-precomposed.png",
-    "/static/favicon.png",
-    "/static/images/social_image.jpg",
-    "/static/script.js",
-    "/static/style.css",
-    "/views/components/_header.html",
     "/views/components/_navigation.html",
     "/views/components/_preloader.html"
   ]
