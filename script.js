@@ -1079,9 +1079,8 @@ var ParticleCanvas = function () {
 
       if (this.utils.allowDeviceOrientation()) {
 
-        _utils.w.addEventListener('deviceorientation', function (e) {
-          return _this._handleOrientation(e);
-        }, true);
+        // w.addEventListener('deviceorientation', (e) => this._handleOrientation(e), true);
+
       } else {
 
         document.addEventListener('mousemove', function (e) {
