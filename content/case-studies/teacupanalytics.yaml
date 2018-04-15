@@ -1,0 +1,229 @@
+$title: 'Teacup Analytics'
+$path: '/case-study/teacup-analytics'
+$order: 6
+
+page_footer: true
+
+header:
+  title: 'Teacup Analytics'
+  subtitle: 'Web Analytics Reporting App'
+  services:
+  - label: 'User Experience Design'
+  - label: 'Data / Information Design'
+  project_links:
+  - label: 'teacupanalytics.com'
+    url: 'https://www.teacupanalytics.com/'
+  background_images:
+  - url: '/static/images/case-studies/teacup/teacup_header-background.png'
+  delayExit: 3000
+
+footer:
+  next_project:
+    delayExit: 3000
+    url: '/case-study/clearstream'
+    label: 'Clearstream'
+
+components:
+- component: 'section-columns'
+  class: 'section--intro'
+  columns:
+  - class: 'section__columns__column--single-column section__columns__column--body-large'
+    chapter:
+      body: 'Launched in the summer of 2015, Teacup Analytics is a web analytics reporting app that goes beyond simple metrics on website user behavior.'
+      inline_images:
+      - url: '/static/images/case-studies/teacup/teacup_graphic.png'
+
+- component: 'section-columns'
+  class: 'section--bg-image'
+  columns:
+  - chapter:
+      background_images:
+      - url: '/static/images/case-studies/teacup/teacup_full-background.png'
+
+- component: 'section-columns'
+  class: 'section--min-height-600 section--offset-max-width'
+  columns:
+  - order: 1
+    chapter:
+      title: "<span class='italicize'>Actionable</span> insight on your data."
+      background_images:
+      - class: 'teacup-teapot'
+        url: '/static/images/case-studies/teacup/teacup_teapot.svg'
+  - order: 2
+    class: 'section__columns__column--columns-offset'
+    chapter:
+      body: 'Using Google Analytics powerful dataset, Teacup Analytics provides website owners with insight into the behavior behind the numbers. Teacup’s tools automate reporting, collate data, and reduce your reporting workload so you can get back to work.'
+
+- component: 'section-columns'
+  class: 'section--bg-image section--padded'
+  theme: 'dark'
+  columns:
+  - class: 'section__columns__column--single-column'
+    chapter:
+      title: "From Email Marketing<br/>to Web Analytics"
+      body: "Dean Levitt, Founder of Teacup Analytics, realized he had a passion for web analytics while growing his previous company, Mad Mimi an email marketing platform that was acquired by GoDaddy in 2014."
+      background_images:
+      - url: '/static/images/case-studies/teacup/teacup_contained-background.png'
+
+- component: 'section-columns'
+  class: 'section--min-height-600 section--offset-max-width'
+  columns:
+  - order: 1
+    mobile_order: 2
+    class: 'section__columns__column--columns-offset'
+    chapter:
+      body:
+      - 'Google Analytics is a very powerful tool for understanding your website’s user behavior. However, because of the richness and complexity of the data, just understanding the information can be a challenge, let alone finding opportunities and direction for improvement.'
+      - 'Dean realized this fact while growing Mad Mimi, and saw an opportunity to provide the same rich and powerful information, but in a simpler, actionable format that non-technical owners of websites could understand and utilize.'
+  - order: 2
+    mobile_order: 1
+    chapter:
+      title: "Making<br/><span class='italicize'> sense</span> of<br/> rich data."
+      background_images:
+      - class: 'teacup-teapot'
+        url: '/static/images/case-studies/teacup/teacup_teapot.svg'
+
+- component: 'section-custom-animation'
+  class: 'section--light-grey-bg'
+  elements:
+  - background_images:
+    - url: '/static/images/case-studies/teacup/teacup_animation_item-1.png'
+  - background_images:
+    - url: '/static/images/case-studies/teacup/teacup_animation_item-2.png'
+  - background_images:
+    - url: '/static/images/case-studies/teacup/teacup_animation_item-3.png'
+  - background_images:
+    - url: '/static/images/case-studies/teacup/teacup_animation_item-4.png'
+
+- component: 'section-columns'
+  columns:
+  - class: "section__columns__column--single-column"
+    chapter:
+      title: 'Take action on your websites data'
+      body: 'The primary objective of the Teacup Analytics project was to develop a platform based on Google Analytics, that allows website owners to understand and take action with their website’s user data more easily. Teacup Analytics aims to make digital business intelligence accessible to small-to-medium sized businesses with focused, beautifully presented reports, predictive analytics and decision making aids.'
+      inline_images:
+      - url: '/static/images/case-studies/teacup/teacup_badge-1.png'
+      - url: '/static/images/case-studies/teacup/teacup_badge-2.png'
+      - url: '/static/images/case-studies/teacup/teacup_badge-3.png'
+
+- component: 'section-process'
+  theme: 'dark'
+  title: 'The Process'
+  phases:
+  - phase: 'discovery'
+    work:
+      class: 'left'
+      background_images:
+        - id: 'discovery-1'
+          url: '/static/images/case-studies/teacup/teacup_process_discovery_1.png'
+        - id: 'discovery-2'
+          url: '/static/images/case-studies/teacup/teacup_process_discovery_2.png'
+        - id: 'discovery-3'
+          url: '/static/images/case-studies/teacup/teacup_process_discovery_3.png'
+    details:
+      class: 'right'
+      chapter:
+        title: 'Discovery'
+        body:
+        - "For the initial Discovery process, I had several one-on-one meetings with the founder to <span class='bold'>define the goals and scope</span> of the project. Given this was a new startup, we needed to breakdown the scope into multiple phases to make the project more manageable."
+        - "Once we had a clear understanding of the scope, we began diving into the <span class='bold'>user research</span> the founder had collected over time. We defined <span class='bold'>user profiles</span> around their technical web skill level, motivations & goals, and business types, which we later used as guidelines for the types of packaged reports available within the web application."
+        - "Once we had a clear understanding of the user types, we moved on to developing the <span class='bold'>user scenarios</span> that would define the application functionality, within scope. We defined system characters (ie. “Account Management System”, “Notification System”) the user would interact with, as well as defined the primary scenarios in each use case."
+
+  - phase: 'insights'
+    chapter:
+      title: "Insights"
+      body:
+      - "Based on the diversity of users that utilize services like Google Analytics,  we learned through the Discovery process the types of questions and how data should answer those questions varied greatly."
+      - "To create an application that was manageable and simplified the interface and experience of Google Analytics, we had to make some generalizations about the common types of questions website owners have and defined pre-packaged reports around them."
+      - "For example, some of the questions we had were:"
+      - "Simple: Am I getting traffic?"
+      - "Medium: Is my traffic increasing/decreasing?"
+      - "Advanced: How can I control bounce-rate (stop-loss)?"
+
+  - phase: 'information-architecture'
+    work:
+      class: 'right'
+      background_images:
+        - id: 'ia-1'
+          url: '/static/images/case-studies/teacup/teacup_process_ia_1.png'
+        - id: 'ia-2'
+          url: '/static/images/case-studies/teacup/teacup_process_ia_2.png'
+    details:
+      class: 'left'
+      chapter:
+        title: 'Information Architecture'
+        body:
+          - "With the use-cases defined, I then created <span class='bold'>visual schematics for the primary task-flows</span> in the application, ie. creating a new account, purchasing a report, creating a goal, etc. Once we had consensus on the application flows, I moved on to creating wireframe schematics of the web application."
+          - "For an application of this complexity, I followed an <span class='bold'>object-oriented design pattern</span> and designed components that would build up the user interface in layers. This allowed for UI components to be reused across the different areas of the application and established a common language for the interface."
+          - "Given the application’s user interface primary function was to visualize data, we also spent a considerable amount of focus on <span class='bold'>defining how to visualize that data</span>. We worked with a data scientist to help analyze sample data sets from website analytics and based on our defined reports, determine the appropriate visualizations that would present the data correctly and allow for deeper exploration."
+
+- component: 'section-columns'
+  class: 'section--min-height-600 section--two-column-carousel'
+  columns:
+  - class: "section__columns__column--single-column"
+    chapter:
+      inline_images:
+        - url: '/static/images/case-studies/teacup/teacup_slideshow--laptop-bg.png'
+  # - device_slider:
+  #   - id: 'slide-1'
+  #     background_images:
+  #     - url: ''
+  #   - id: 'slide-2'
+  #     background_images:
+  #     - url: ''
+  #   - id: 'slide-3'
+  #     background_images:
+  #     - url: ''
+  - chapter:
+      body:
+      - "The final solution was a simple analytics tool that allows website owners to choose a type of report they want to view, create a goal, define actions to accomplish their goal, and track their performance."
+      - "While not directly involved in the implementation for this project, the technology stack utilized HTML5 technologies on the client-side and a decoupled architecture with Ruby on Rails in the backend."
+
+- component: 'section-columns'
+  class: 'section--light-grey-bg section--min-height-600'
+  columns:
+  - class: "section__columns__column--single-column"
+    chapter:
+      title: 'An Official Partner of Google Analytics'
+      body: 'Since launch, Teacup Analytics has become an official technology partner of Google Analytics and has received amazing reviews from customers from varying backgrounds, from small businesses to web developers utilizing the platform for their clients.'
+      ctas:
+        - class: 'button'
+          url: 'https://www.teacupanalytics.com/'
+          label: 'Visit Website'
+
+- component: 'section-columns'
+  class: 'section--min-height-600'
+  columns:
+  - class: "section__columns__column--single-column"
+    chapter:
+      title: 'Credits'
+      body_list_class: 'chapter__body-list--2-column'
+      body_list:
+        - name: 'Client'
+          value: 'Teacup Analytics'
+        - name: 'Agency'
+          value: 'Ikayzo, Inc.'
+        - name: 'Engagement'
+          value: 'September 2014 — May 2015'
+        - name: 'Technology'
+          list:
+          - name: 'Frontend'
+            value: 'AngularJS'
+          - name: 'Backend'
+            value: 'Ruby on Rails'
+        # - name: 'Awards'
+        #   value: ''
+        # - name: 'Data Science'
+        #   value: ''
+        - name: 'UX Design'
+          value: 'Mike King'
+        - name: 'UI Design'
+          value: 'Arlyn Ramos'
+        - name: 'Branding, Art Direction'
+          value: 'Arlyn Ramos'
+        - name: 'Illustration'
+          value: 'Arlyn Ramos'
+        - name: 'Frontend Development'
+          value: 'Scott Yano'
+        - name: 'Backend Development'
+          value: 'Leo DeCandia'

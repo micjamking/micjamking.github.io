@@ -4064,3 +4064,28 @@ input[type="button"]:active {
     margin-bottom: -40%;
   }
 }
+
+/* ==========================================================================
+   Teacup Analytics Page
+   @mixin ========================================================================= */
+.teacup-analytics .chapter__background-images .teacup-teapot {
+  width: 60%;
+  height: 275px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media only screen and (min-width: 640px) {
+  .teacup-analytics .chapter__background-images .teacup-teapot {
+    width: 292px;
+  }
+}
+
+.teacup-analytics .column--order--2 .chapter__background-images .teacup-teapot {
+  -webkit-transform: scaleX(-1) translate(50%, -50%);
+      -ms-transform: scaleX(-1) translate(50%, -50%);
+          transform: scaleX(-1) translate(50%, -50%);
+}

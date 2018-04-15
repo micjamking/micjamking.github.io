@@ -1,4 +1,4 @@
-$title: Tour Aloha
+$title: 'Tour Aloha'
 $path: '/case-study/tour-aloha'
 $order: 5
 
@@ -22,7 +22,7 @@ header:
 footer:
   next_project:
     delayExit: 2000
-    url: '/case-study/teacupanalytics'
+    url: '/case-study/teacup-analytics'
     label: 'Teacup Analytics'
 
 components:
