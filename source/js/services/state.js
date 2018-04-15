@@ -20,34 +20,6 @@ export default class StateService {
 
 
   /**
-   * Get the window.location.pathname (ie. current item)
-   *
-   * @return current page hash
-   * @private
-   */
-  _getLocationPath(){
-
-    return this._$location.path().replace(/\//g, '');
-
-  }
-
-
-  /**
-   * Set window.location.pathname (ie. current item)
-   *
-   * @param {String} pathname - String of element ID
-   *
-   * @return $location object
-   * @private
-   */
-  _setLocationPath(pathname){
-
-    return this._$location.path(pathname);
-
-  }
-
-
-  /**
    * Store item model
    *
    * @param {Object} item - Item model
@@ -58,7 +30,7 @@ export default class StateService {
    */
   addItemModel(item){
 
-    console.log('added item: ', item);
+    // console.log('added item: ', item);
 
     this._itemListViewModel.push(item);
 
@@ -117,67 +89,9 @@ export default class StateService {
 
     this._activeIndex = index;
 
-    console.log('current index: ', this._activeIndex);
+    // console.log('current index: ', this._activeIndex);
 
     return this._activeIndex;
-
-  }
-
-
-  /**
-   * Get current window.location.pathname
-   *
-   * @param {String} hash - String of element ID
-   *
-   * @return $location object
-   * @private
-   */
-  getCurrentLocation(){
-
-    return this._currentLocation;
-
-  }
-
-
-  /**
-   * Set window.location.pathname (ie. current item)
-   *
-   * @param {String} pathname - String of element ID
-   *
-   * @return $location object
-   * @private
-   */
-  setCurrentLocation(pathname){
-
-    console.log(`set active item: ${ pathname.replace(/\//g, '') }`);
-
-    this._currentLocation = pathname;
-
-    return this._currentLocation;
-
-  }
-
-
-  /**
-   * Checks if the url matches the first item
-   *
-   * @return {Boolean} true|false if current view is first item
-   */
-  isFirstItem(){
-
-    return this._getLocationPath() === '' || this._getLocationPath() === this._itemListViewModel[0].name;
-
-  }
-
-
-  /**
-   * Checks if the url matches the last item
-   *
-   * @return {Boolean} true|false if current view is last item
-   */
-  isLastItem(){
-
-    return this._getLocationPath() === this._itemListViewModel[ this._itemListViewModel.length - 1 ].name;
 
   }
 
@@ -205,7 +119,6 @@ export default class StateService {
 
     if (this._itemListViewModel.length - 1 !== this._activeIndex){
       this.setIndex(this._activeIndex + 1);
-      // return this._setLocationPath(this._itemListViewModel[this._activeIndex].name);
     }
 
     else {
@@ -224,7 +137,6 @@ export default class StateService {
 
     if (this._activeIndex !== 0){
       this.setIndex(this._activeIndex - 1);
-      // return this._setLocationPath(this._itemListViewModel[this._activeIndex].name);
     }
 
   }

@@ -8,6 +8,7 @@
  * @desc Explicitly install router
  * @see https://router.vuejs.org/en/installation.html
  */
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-Vue.use( VueRouter );
+// import Vue from 'vue';
+// import VueRouter from 'vue-router';
+// Vue.config.devtools = false;
+// Vue.use( VueRouter );

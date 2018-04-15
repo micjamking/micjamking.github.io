@@ -5,6 +5,7 @@
 $base-animation: 300ms
 $animation-increment: 250ms
 $extra-delay: $base-animation + ($animation-increment * 5)
+$case-study-header-duration: 1500ms
 
 // Animation properties
 $duration:        0.25s
@@ -87,30 +88,52 @@ $play-state:      running
     opacity: 0
     transform: translateY(20px)
 
+@keyframes case-study-mask-animation
+  0%
+    clip-path: polygon(100% 0%, 0% 0%, 0% 0%, 50% 0%, 100% 0%)
+  60%
+    clip-path: polygon(100% 0%, 0% 0%, 0% 86.956522%, 50% 86.956522%, 100% 86.956522%)
+  100%
+    clip-path: polygon(100% 0%, 0% 0%, 0% 86.956522%, 50% 100%, 100% 86.956522%)
+
+@keyframes case-study-mask-animation--reverse
+  0%
+    clip-path: polygon(100% 0%, 0% 0%, 0% 86.956522%, 50% 100%, 100% 86.956522%)
+  40%
+    clip-path: polygon(100% 0%, 0% 0%, 0% 86.956522%, 50% 86.956522%, 100% 86.956522%)
+  100%
+    clip-path: polygon(100% 0%, 0% 0%, 0% 0%, 50% 0%, 100% 0%)
+
 // Mixins
 =fade-in
-  @include animation('fade-in', $duration: 0.75s, $iteration-count: 1)
+  +animation('fade-in', $duration: 0.75s, $iteration-count: 1)
 
 =fade-out
-  @include animation('fade-out', $duration: 0.75s, $iteration-count: 1)
+  +animation('fade-out', $duration: 0.75s, $iteration-count: 1)
 
 =fade-in-up
-  @include animation('fade-in-up', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
+  +animation('fade-in-up', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
 
 =fade-in-down
-  @include animation('fade-in-down', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
+  +animation('fade-in-down', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
 
 =fade-in-left
-  @include animation('fade-in-left', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
+  +animation('fade-in-left', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
 
 =fade-in-right
-  @include animation('fade-in-right', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
+  +animation('fade-in-right', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
 
 =fade-out-up
-  @include animation('fade-out-up', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
+  +animation('fade-out-up', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
 
 =fade-out-down
-  @include animation('fade-out-down', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
+  +animation('fade-out-down', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
+
+=case-study-mask-animation
+  +animation('case-study-mask-animation', $duration: $case-study-header-duration, $iteration-count: 1)
+
+=case-study-mask-animation--reverse
+  +animation('case-study-mask-animation--reverse', $duration: $case-study-header-duration, $iteration-count: 1)
 
 // Classes
 .fade-in
@@ -133,7 +156,6 @@ $play-state:      running
 .fade-out-down
   +fade-out-down
 
-
 .header
   &--case-study
     .header
@@ -145,19 +167,22 @@ $play-state:      running
         +fade-in-up
 
       &__title
-        animation-delay: 150ms * 1
+        animation-delay: ($base-animation / 2) * 1 + $case-study-header-duration
       &__subtitle
-        animation-delay: 150ms * 2
+        animation-delay: ($base-animation / 2) * 2 + $case-study-header-duration
       &__service,
       &__project-link
         @for $i from 1 through 3
           &:nth-child(#{$i})
-            animation-delay: 150ms * (2 + $i)
+            animation-delay: ($base-animation / 2) * (2 + $i) + $case-study-header-duration
 
       &__back-home
         opacity: 0
         +fade-in-down
-        animation-delay: 150ms * 6
+        animation-delay: ($base-animation / 2) * 6 + $case-study-header-duration
+
+    .background-images--case-study
+      +case-study-mask-animation
 
 .section--intro
   .chapter
@@ -167,10 +192,10 @@ $play-state:      running
       +fade-in-up
 
     &__images .image
-      animation-delay: 150ms * 9
+      animation-delay: ($base-animation / 2) * 9 + $case-study-header-duration
 
     &__body
-      animation-delay: 150ms * 10
+      animation-delay: ($base-animation / 2) * 10 + $case-study-header-duration
 
 .section:not(.section--intro)
   .section,
@@ -301,56 +326,113 @@ $play-state:      running
           .hero__subtitle
             animation-delay: $base-animation + ($animation-increment * 1) + $extra-delay
 
-.case-study-transition
-  &-enter-active
-    .background-images__image,
-    .background-images__image--offset::after,
-    .case-study__title,
-    .case-study__subtitle,
-    .case-study__cta
-      +fade-in-up
+.case-study-transition-enter-active
+  .case-study__background-images__image,
+  .background-images__image--offset::after,
+  .case-study__title,
+  .case-study__subtitle,
+  .case-study__cta
+    +fade-in-up
 
-    .background-images__image
-      animation-delay: $base-animation + ($animation-increment * 1) + $extra-delay
+  .background-images__image
+    animation-delay: $base-animation + ($animation-increment * 1) + $extra-delay
 
-    .background-images__image--offset
-      animation: none
+  .background-images__image--offset
+    animation: none
 
-    .background-images__image--offset::after
-      animation-delay: $base-animation + $extra-delay
+  .background-images__image--offset::after
+    animation-delay: $base-animation + $extra-delay
 
-    .case-study__title
-      animation-delay: $base-animation + ($animation-increment * 2) + $extra-delay
+  .case-study__title
+    animation-delay: $base-animation + ($animation-increment * 2) + $extra-delay
 
-    .case-study__subtitle
-      animation-delay: $base-animation + ($animation-increment * 3) + $extra-delay
+  .case-study__subtitle
+    animation-delay: $base-animation + ($animation-increment * 3) + $extra-delay
 
-    .case-study__cta
-      animation-delay: $base-animation + ($animation-increment * 4) + $extra-delay
+  .case-study__cta
+    animation-delay: $base-animation + ($animation-increment * 4) + $extra-delay
 
-.case-study-transition
-  &-leave-active
-    .background-images__image,
-    .background-images__image--offset::after,
-    .case-study__title,
-    .case-study__subtitle,
-    .case-study__cta
-      +fade-out-up
+.exit-page-transition,
+.case-study-transition-leave-active
+  .case-study__background-images__image,
+  .background-images__image--offset::after,
+  .case-study__title,
+  .case-study__subtitle,
+  .case-study__cta
+    +fade-out-up
 
-    .background-images__image
-      animation-delay: $base-animation + ($animation-increment * 3)
+  .background-images__image
+    animation-delay: $base-animation + ($animation-increment * 3)
 
-    .background-images__image--offset
-      animation: none
+  .background-images__image--offset
+    animation: none
 
-    .background-images__image--offset::after
-      animation-delay: $base-animation + ($animation-increment * 4)
+  .background-images__image--offset::after
+    animation-delay: $base-animation + ($animation-increment * 4)
 
-    .case-study__title
-      animation-delay: $base-animation
+  .case-study__title
+    animation-delay: $base-animation
 
-    .case-study__subtitle
-      animation-delay: $base-animation + ($animation-increment * 1)
+  .case-study__subtitle
+    animation-delay: $base-animation + ($animation-increment * 1)
 
-    .case-study__cta
-      animation-delay: $base-animation + ($animation-increment * 2)
+  .case-study__cta
+    animation-delay: $base-animation + ($animation-increment * 2)
+
+.case-study
+
+
+.exit-page-transition
+  .header__logo,
+  .header__tagline,
+  .nav__down-arrow,
+  .nav__items__item
+    +fade-out-up
+    animation-delay: $base-animation + ($animation-increment * 5)
+
+  .canvas
+    +fade-out
+    animation-delay: $base-animation + ($animation-increment * 7)
+
+  .header
+    &--case-study
+      .header
+        &__title,
+        &__subtitle,
+        &__service,
+        &__project-link,
+        &__back-home
+          +fade-out-up
+
+        &__title
+          animation-delay: ($base-animation / 2) * 1
+        &__subtitle
+          animation-delay: ($base-animation / 2) * 2
+        &__service,
+        &__project-link
+          @for $i from 1 through 3
+            &:nth-child(#{$i})
+              animation-delay: ($base-animation / 2) * (2 + $i)
+
+        &__back-home
+          +fade-out-down
+          animation-delay: ($base-animation / 2) * 5
+
+  .section
+    +fade-out
+    animation-delay: ($base-animation / 2) * 6
+
+    .chapter
+      &__images .image,
+      &__body
+        +fade-out-up
+
+      &__images .image
+        animation-delay: ($base-animation / 2) * 3
+
+      &__body
+        animation-delay: ($base-animation / 2) * 4
+
+  .background-images--case-study
+    +case-study-mask-animation--reverse
+    animation-delay: ($base-animation / 2) * 7

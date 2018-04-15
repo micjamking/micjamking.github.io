@@ -13,7 +13,7 @@
 {% if options.url %}
    {% set url = options.url %}
 {% endif %}
-<a href="{{url}}" class="cta__item cta-button{% if options.class %} {{options.class}}{% endif %}">
+<a href="{{url}}" class="cta__item cta-button{% if options.class %} {{options.class}}{% endif %}"{% if options.delay %} data-delay="{{options.delay}}"{% endif %}>
   <span class="cta-button__label">
    <span class="cta-button__label__label">{{_(options.label)}}</span>
  </span>

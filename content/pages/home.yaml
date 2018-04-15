@@ -22,6 +22,8 @@ components:
   - url: "/static/images/case-studies/case-study-tile__gohawaii.png"
   - class: 'background-images__image--offset'
   cta:
+    delay: 3000
+    class: "delay-transition"
     url: "/case-study/gohawaii"
     label: "View Case Study"
 
@@ -36,6 +38,8 @@ components:
   # - url: "/static/images/case-studies/case-study-tile__tour-aloha.png"
   - class: 'background-images__image--offset'
   cta:
+    delay: 3000
+    class: "delay-transition"
     url: "/case-study/tour-aloha"
     label: "View Case Study"
 
@@ -49,6 +53,8 @@ components:
   # - url: "/static/images/case-studies/case-study-tile__teacup-analytics.png"
   - class: 'background-images__image--offset'
   cta:
+    delay: 3000
+    class: "delay-transition"
     url: "/case-study/teacup-analytics"
     label: "View Case Study"
 
@@ -62,6 +68,8 @@ components:
   # - url: "/static/images/case-studies/case-study-tile__clearstream.png"
   - class: 'background-images__image--offset'
   cta:
+    delay: 3000
+    class: "delay-transition"
     url: "/case-study/clearstream"
     label: "View Case Study"
 
@@ -75,5 +83,7 @@ components:
   # - url: "/static/images/case-studies/case-study-tile__mobipcs.png"
   - class: 'background-images__image--offset'
   cta:
+    delay: 3000
+    class: "delay-transition"
     url: "/case-study/mobipcs"
     label: "View Case Study"

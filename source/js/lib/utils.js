@@ -516,4 +516,58 @@ export default class utils {
 
   }
 
+  /**
+   * Native XMLHttpRequest as Promise
+   * @see https://stackoverflow.com/a/30008115/933951
+   * @param {Object} options - Options object
+   * @param {String} options.method - Type of XHR
+   * @param {String} options.url - URL for XHR
+   * @param {String|Object} options.params - Query parameters for XHR
+   * @param {Object} options.headers - Query parameters for XHR
+   * @return {Promise} Promise object of XHR
+   */
+  xhrPromise (options){
+    return new Promise((resolve, reject) => {
+      let xhr    = new XMLHttpRequest();
+      let params = options.params;
+
+      xhr.open(options.method, options.url);
+
+      xhr.onload = () => {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          resolve(JSON.parse(xhr.response));
+        } else {
+          reject({
+            status: xhr.status,
+            statusText: xhr.statusText
+          });
+        }
+      };
+
+      xhr.onerror = () => {
+        reject({
+          status: xhr.status,
+          statusText: xhr.statusText
+        });
+      };
+
+      // Set headers
+      if (options.headers) {
+        Object.keys(options.headers).forEach((key) => {
+          xhr.setRequestHeader(key, options.headers[key]);
+        });
+      }
+
+      // We'll need to stringify if we've been given an object
+      // If we have a string, this is skipped.
+      if (params && typeof params === 'object') {
+        params = Object.keys(params).map((key) => {
+          return `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`;
+        }).join('&');
+      }
+
+      xhr.send(params);
+    });
+  }
+
 }

@@ -5,7 +5,7 @@
   {{background_images.background_images('header__background-images background-images--case-study', doc.header.background_images)}}
   {% endif %}
   <div class="header__back-home">
-    <a href="/" class="header__back-home__link"></a>
+    <a href="/" class="header__back-home__link{% if doc.header.delayExit %} delay-transition{% endif %}"{% if doc.header.delayExit %} data-delay="{{doc.header.delayExit}}"{% endif %}></a>
   </div>
   <div class="header__container">
     <div class="header__headings">

@@ -17,6 +17,7 @@ header:
     url: 'https://play.google.com/store/apps/details?id=com.gohawaii.htamobile'
   background_images:
   - url: '/static/images/case-studies/gohawaii/gohawaii_header-background.png'
+  delayExit: 3000
 
 footer:
   next_project:
