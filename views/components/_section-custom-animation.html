@@ -4,6 +4,15 @@
   {% if component.background_images %}
   {{background_images.background_images('section__custom-animation__background-images', component.background_images)}}
   {% endif %}
+
+  {% if component.background_video %}
+  <video playsinline muted {% if component.background_video.loop %}loop{% endif %}
+         class="section__custom-animation__background-video{% if component.background_video.class %} {{component.background_video.class}}{% endif %}"
+         {% if component.background_video.video_inview_play %} data-video-inview-play{% endif %}>
+         <source src="{{g.static(component.background_video.url).url.path}}" type="video/mp4">
+   </video>
+  {% endif %}
+
   <div class="section__container">
     {% if component.elements %}
     <div class="section__elements">

@@ -2866,6 +2866,33 @@ input[type="button"]:active {
   background-size: cover;
 }
 
+@media only screen and (min-width: 640px) {
+  .section--custom-animation .section__custom-animation__background-images .background-images__image--mobile-only {
+    display: none;
+  }
+}
+
+.section--custom-animation .section__custom-animation__background-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+
+.section--custom-animation .section__custom-animation__background-video--desktop-only {
+  display: none;
+}
+
+@media only screen and (min-width: 640px) {
+  .section--custom-animation .section__custom-animation__background-video--desktop-only {
+    display: block;
+  }
+}
+
 .section--two-column-carousel .section__columns__column .chapter__images {
   margin-bottom: 0;
 }
@@ -4073,6 +4100,50 @@ input[type="button"]:active {
   -webkit-transform: translateX(-2.5%);
       -ms-transform: translateX(-2.5%);
           transform: translateX(-2.5%);
+}
+
+/* ==========================================================================
+   MobiPCS Page
+   @mixin ========================================================================= */
+.mobipcs .chapter__background-images .large-icon {
+  width: 60%;
+  height: 204px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media only screen and (min-width: 640px) {
+  .mobipcs .chapter__background-images .large-icon {
+    width: 58px;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  .mobipcs .section--process .section__phase__work.right {
+    min-height: 700px;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  .mobipcs .section--process .section__phase__work.right .background-images {
+    min-height: 700px;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  .mobipcs .section--process .section__phases__phase--information-architecture .background-images__image.background-images__image--ia-1 {
+    max-height: 55vh;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .mobipcs .section--process .section__phases__phase--information-architecture .background-images__image.background-images__image--ia-1 {
+    max-width: 453px;
+    max-height: 746px;
+  }
 }
 
 /* ==========================================================================

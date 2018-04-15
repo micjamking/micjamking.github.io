@@ -1,0 +1,220 @@
+$title: 'MobiPCS'
+$order: 8
+
+page_footer: true
+
+header:
+  title: 'MobiPCS'
+  subtitle: 'Wireless Services Management Platform'
+  services:
+  - label: 'User Experience Design'
+  - label: 'Frontend Engineering'
+  background_images:
+  - url: '/static/images/case-studies/mobipcs/mobipcs_header-background.png'
+  delayExit: 3000
+
+footer:
+  next_project:
+    delayExit: 2000
+    url: '/case-study/gohawaii'
+    label: 'GoHawaii'
+
+components:
+- component: 'section-columns'
+  class: 'section--intro'
+  columns:
+  - class: 'section__columns__column--single-column section__columns__column--body-large'
+    chapter:
+      body: 'In the spring of 2013, I had the opportunity to lead the redesign of MobiPCS, a regional wireless service provider in Hawaii.'
+      inline_images:
+      - url: '/static/images/case-studies/mobipcs/mobipcs_graphic.png'
+
+- component: 'section-columns'
+  class: 'section--bg-image'
+  columns:
+  - chapter:
+      background_images:
+      - url: '/static/images/case-studies/mobipcs/mobipcs_full-background.png'
+
+- component: 'section-columns'
+  class: 'section--min-height-600 section--offset-max-width'
+  columns:
+  - order: 1
+    chapter:
+      title: "Wireless<br/>service in a<br/><span class='bold'>mobile-first</span><br/>world."
+      background_images:
+      - class: 'large-icon'
+        url: '/static/images/case-studies/mobipcs/mobipcs_graphic--large.png'
+  - order: 2
+    class: 'section__columns__column--columns-offset'
+    chapter:
+      body:
+      - 'The project involved in-depth stakeholder & customer research which lead to a mobile-first strategy, user experience design exercises to flesh out the task flows through the site, and front-end development to create complex UI interactions for creation and purchase of family phone plans online.'
+      - 'The end result was a highly performant, mobile first web application with increased YOY mobile traffic of ~300&#37; and a significant decrease in calls to customer support.'
+
+- component: 'section-columns'
+  class: 'section--bg-image section--padded'
+  theme: 'dark'
+  columns:
+  - class: 'section__columns__column--single-column'
+    chapter:
+      title: "Hawaii’s Wireless Service Provider"
+      body: "MobiPCS is a Hawaii-based regional wireless service provider, known as a simple, hassle-free, and cost-efficient wireless carrier with great customer service; all phones come with unlimited talk & text and you only pay extra for data, with complete plans ranging from $35–70/mo. (If you’re wondering how they can offer such a great deal, they mostly carry older phone models, and strictly Androids.)"
+      background_images:
+      - url: '/static/images/case-studies/mobipcs/mobipcs_contained-background.png'
+
+- component: 'section-columns'
+  class: 'section--min-height-600 section--offset-max-width'
+  columns:
+  - order: 1
+    mobile_order: 2
+    class: 'section__columns__column--columns-offset'
+    chapter:
+      body:
+      - "Due to their lower than normal pricing, the brand was also actively fighting the stigma of being the “cheap phone guys” and only servicing low income customers. The previous website featured a legacy, fixed-width design (ie. no mobile support) and included multiple pain points in their product purchase and bill-payment user flows."
+      - "Additionally, the client was also interested in expanding the “self-care” portion of the site, allowing users to perform common account-level tasks online (ie. bill payment, upgrade their phone, add a new line/phone number, etc.)."
+  - order: 2
+    mobile_order: 1
+    chapter:
+      title: "Low price<br/>doesn’t mean<br/>low quality."
+      background_images:
+      - class: 'large-icon'
+        url: '/static/images/case-studies/mobipcs/mobipcs_graphic--large.png'
+
+- component: 'section-custom-animation'
+  background_images:
+  - class: 'background-images__image--mobile-only'
+    url: '/static/images/case-studies/mobipcs/mobipcs_animation-background.png'
+  background_video:
+    class: 'section__custom-animation__background-video--desktop-only'
+    loop: true
+    video_inview_play: true
+    url: '/static/videos/mobipcs/mobipcs_ohana-plans-converted-1200.mp4'
+
+- component: 'section-columns'
+  columns:
+  - class: "section__columns__column--single-column"
+    chapter:
+      title: 'Modernize & mobilize'
+      body: 'From a business perspective, the primary goals of the redesign were to bring the site up to date with a responsive web design approach, improve the overall usability & navigation, and provide efficient and adequate tools to aid existing & potential customers. Increasing online sales wasn’t a major concern because they were well known for their in-store customer service and wanted to maintain that human touch in the sales process.'
+      inline_images:
+      - url: '/static/images/case-studies/mobipcs/mobipcs_devices.png'
+
+- component: 'section-process'
+  theme: 'dark'
+  title: 'The Process'
+  phases:
+  - phase: 'discovery'
+    work:
+      class: 'left'
+      background_images:
+        - id: 'discovery-1'
+          url: '/static/images/case-studies/mobipcs/mobipcs_process_discovery_1.png'
+        - id: 'discovery-2'
+          url: '/static/images/case-studies/mobipcs/mobipcs_process_discovery_2.png'
+        - id: 'discovery-3'
+          url: '/static/images/case-studies/mobipcs/mobipcs_process_discovery_3.png'
+    details:
+      class: 'right'
+      chapter:
+        title: 'Discovery'
+        body:
+          - "During the discovery process, I lead several rounds of interviews, including <span class='bold'>stakeholder interviews</span> with executive management, regional managers, store managers, customer care representatives, and store associates, as well as <span class='bold'>interviews with customers on-location</span> (i.e., in-context)."
+          - "I also completed two rounds of <span class='bold'>user surveys</span>, sent via text message to ~5000 customers to gather quantitative data, with ~1000 responses. We then developed <span class='bold'>user personas</span> based on the quality & quantitative information we received directly and indirectly during the interview process."
+
+  - phase: 'insights'
+    chapter:
+      title: "Insights"
+      body:
+        - "As previously noted, the Discovery process uncovered a lot of very valuable information about the MobiPCS customer; below are a few of the insights we were able to pull together:"
+        - "60&#37; of their target audience made above the median-household income for the state of Hawaii, directly contradicting the stigma placed on them for being a cheap carrier for low-income individuals"
+        - "Over 70&#37; of current customers at the time used their smartphone as their primary device for accessing the internet."
+        - "A significant portion of the customer base (up to 30&#37; at some locations) were non-native english speakers."
+
+  - phase: 'information-architecture'
+    work:
+      class: 'right'
+      background_images:
+        - id: 'ia-1'
+          url: '/static/images/case-studies/mobipcs/mobipcs_process_ia_1.png'
+    details:
+      class: 'left'
+      chapter:
+        title: 'Information Architecture'
+        body:
+          - "Once we had consensus from the stakeholders on the business problems we were solving, as well as the motivations of their customers, I proceeded to create user flows, mapping out the current navigational paths across the site and highlighted many pain points along the way."
+          - "After proposing improved user-flows, I then moved into creating mobile-first wireframes based on our insights from Discovery, where we learned their target audiences primary devices for accessing the internet is their mobile phones."
+
+  - phase: 'frontend-engineering'
+    work:
+      class: 'left'
+      background_images:
+        - id: 'fe-1'
+          url: '/static/images/case-studies/mobipcs/mobipcs_process_fe_1.png'
+        - id: 'fe-2'
+          url: '/static/images/case-studies/mobipcs/mobipcs_process_fe_2.png'
+    details:
+      class: 'right'
+      chapter:
+        title: 'Frontend Engineering'
+        body:
+        - "After approval of the site architecture and wireframes, I then began <span class='bold'>rapidly prototyping</span> the more complex parts of the UI design in HTML/CSS/JS. Using <span class='bold'>AngularJS + Foundation Framework</span>, I was able to quickly put together a testable, interactive prototype allowing test users to create Ohana (family) plans with multiple phone lines, plan options and add-ons, and devices, from browse to checkout."
+
+- component: 'section-columns'
+  class: 'section--min-height-600 section--two-column-carousel'
+  columns:
+  - class: "section__columns__column--single-column"
+    chapter:
+      inline_images:
+        - url: '/static/images/case-studies/mobipcs/mobipcs_slideshow--mobile-bg.png'
+  # - device_slider:
+  #   - id: 'slide-1'
+  #     background_images:
+  #     - url: ''
+  #   - id: 'slide-2'
+  #     background_images:
+  #     - url: ''
+  #   - id: 'slide-3'
+  #     background_images:
+  #     - url: ''
+  - chapter:
+      body:
+      - "Based on what we uncovered during the Discovery phase, our solution was based on a mobile first design strategy, with a user experience focused largely around mobile behavior."
+      - "Additionally, to accommodate the large percentage of non-native english speaking customer base, our content strategy focused on simplification as well as using iconography and other universal symbology to help direct users without a lot of text."
+
+- component: 'section-columns'
+  class: 'section--light-grey-bg section--min-height-600'
+  columns:
+  - class: "section__columns__column--single-column"
+    chapter:
+      title: '290&#37; YOY increase in mobile traffic'
+      body: 'In the end, user personas, founded on qualitative research and observation of real people, provided a common design language that lead to a successful redesign and development of the site. Customers enjoyed an enhanced and intuitive mobile experience that was simplified and easy to navigate. The client enjoyed a month-over-month increase in mobile traffic visits of +160&#37; and year-over-year increase of +290&#37;.'
+
+- component: 'section-columns'
+  class: 'section--min-height-600'
+  columns:
+  - class: "section__columns__column--single-column"
+    chapter:
+      title: 'Credits'
+      body_list_class: 'chapter__body-list--2-column'
+      body_list:
+        - name: 'Client'
+          value: 'MobiPCS'
+        - name: 'Agency'
+          value: 'Ikayzo, Inc.'
+        - name: 'Engagement'
+          value: 'January 2013 — October 2013'
+        - name: 'Technology'
+          list:
+          - name: 'Frontend'
+            value: 'AngularJS'
+          - name: 'Backend'
+            value: 'Ruby on Rails'
+        - name: 'UX Design'
+          value: 'Mike King'
+        - name: 'UI Design'
+          value: 'Arlyn Ramos'
+        - name: 'Frontend Development'
+          value: 'Mike King'
+        - name: 'Backend Development'
+          value: 'Chris Kobayashi, George Lee, Leo DeCandia'

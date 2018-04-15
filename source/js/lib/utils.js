@@ -471,6 +471,8 @@ export default class utils {
    * @param {Array} settings.elements - Array of HTML elements to watch
    * @param {Number} settings.threshold - Percentage threshold the element needs to come into view before class is added
    * @param {Boolean} settings.removeClassOnExit - Whether to remove the active class on exit of viewport
+   * @param {Boolean} settings.playVideosInView - Whether to play videos when they enter viewport
+   * @param {Boolean} settings.inviewVideoAttribute - The data-* attribute to check for videos that need to be played
    *
    * @listens {scroll} Listen for scroll event on window (default)
    * @listens {optimizedScroll} Listen for optimizedScroll event on window and fire callback function
@@ -483,14 +485,46 @@ export default class utils {
     settings.activeClass = settings.activeClass || 'inview';
     settings.threshold = settings.threshold || 0.25;
     settings.removeClassOnExit = settings.removeClassOnExit !== false;
+    settings.playVideosInView = settings.playVideosInView !== false;
+    settings.inviewVideoAttribute = settings.inviewVideoAttribute || 'data-video-inview-play';
 
     /** Scroll event callback  */
     function _scrollCallback(){
 
+      function playVideosInView(el){
+        let videos = Array.from(el.querySelectorAll('[data-video-inview-play]'));
+        if (videos.length > 0){
+          videos.forEach((video) => {
+            if (!video.isPlaying){
+              video.play();
+              video.isPlaying = true;
+              // console.log('video started!');
+            }
+          });
+        }
+      }
+
+      function pauseVideosInView(el){
+        let videos = Array.from(el.querySelectorAll('[data-video-inview-play]'));
+        if (videos.length > 0){
+          videos.forEach((video) => {
+            if (video.isPlaying){
+              video.pause();
+              video.isPlaying = false;
+              console.log('video stopped!');
+            }
+          });
+        }
+      }
+
       function toggleActiveClass(el){
         if (_utils.isElementInViewport(el, 1 - settings.threshold)) {
           el.classList.add(settings.activeClass);
+          playVideosInView(el);
+        } else {
+          pauseVideosInView(el);
         }
+
         if (settings.removeClassOnExit){
           if (!_utils.isElementInViewport(el, 1 - settings.threshold)){
             el.classList.remove(settings.activeClass);

@@ -164,6 +164,22 @@
     .section__custom-animation__background-images
       .background-images__image
         background-size: cover
+        &--mobile-only
+          +md
+            display: none
+
+    .section__custom-animation__background-video
+      position: absolute
+      width: 100%
+      height: 100%
+      z-index: 2
+      object-fit: cover
+      object-position: top
+
+      &--desktop-only
+        display: none
+        +md
+          display: block
 
   &--two-column-carousel
     .section__columns__column
