@@ -1,5 +1,5 @@
 grow_version: ">=0.0.60"
-home: "/content/pages/home.md"
+home: "/content/pages/home.yaml"
 root: ""
 
 title: "Mike King | Creative Developer"
