@@ -38,11 +38,13 @@ export default class CaseStudyPage {
     this._canvasParticleColors = (settings.canvas) ? settings.canvas.particleColors : ['#2C4050'];
 
     // Parallax Settings
-    this._parallaxers = [];
-    this._parallaxBaseEl = settings.parallaxer.baseEl;
-    this._parallaxEls = Array.from(settings.parallaxer.els);
-    this._parallaxBaseRotationSensitivity = settings.parallaxer.baseRotationSensitivity || { x: 0.15, y: 0.15, increment: 0.15};
-    this._parallaxBaseTranslateSensitivity = settings.parallaxer.baseTranslateSensitivity || { x: 0.15, y: 0.15, increment: 0.15};
+    if (settings.parallaxer){
+      this._parallaxers = [];
+      this._parallaxBaseEl = settings.parallaxer.baseEl;
+      this._parallaxEls = Array.from(settings.parallaxer.els);
+      this._parallaxBaseRotationSensitivity = settings.parallaxer.baseRotationSensitivity || { x: 0.15, y: 0.15, increment: 0.15};
+      this._parallaxBaseTranslateSensitivity = settings.parallaxer.baseTranslateSensitivity || { x: 0.15, y: 0.15, increment: 0.15};
+    }
 
     // 3, 2, 1... blastOff!
     this._init();
@@ -54,7 +56,9 @@ export default class CaseStudyPage {
   _init() {
     this._setupCanvases();
     this._setupScrollEffect();
-    this._setupParallaxers();
+    if (this._parallaxBaseEl){
+      this._setupParallaxers();
+    }
   }
 
   /**

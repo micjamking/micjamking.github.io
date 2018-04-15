@@ -1587,7 +1587,7 @@ var UI = function (_Vue) {
               case 'clearstream':
               case 'mobipcs':
               default:
-                console.log('Sorry, no settings available for this page!');
+                console.log('No case study settings available for this page!');
             }
 
             new _caseStudy2.default(caseStudySettings);
@@ -11546,11 +11546,13 @@ var CaseStudyPage = function () {
     this._canvasParticleColors = settings.canvas ? settings.canvas.particleColors : ['#2C4050'];
 
     // Parallax Settings
-    this._parallaxers = [];
-    this._parallaxBaseEl = settings.parallaxer.baseEl;
-    this._parallaxEls = Array.from(settings.parallaxer.els);
-    this._parallaxBaseRotationSensitivity = settings.parallaxer.baseRotationSensitivity || { x: 0.15, y: 0.15, increment: 0.15 };
-    this._parallaxBaseTranslateSensitivity = settings.parallaxer.baseTranslateSensitivity || { x: 0.15, y: 0.15, increment: 0.15 };
+    if (settings.parallaxer) {
+      this._parallaxers = [];
+      this._parallaxBaseEl = settings.parallaxer.baseEl;
+      this._parallaxEls = Array.from(settings.parallaxer.els);
+      this._parallaxBaseRotationSensitivity = settings.parallaxer.baseRotationSensitivity || { x: 0.15, y: 0.15, increment: 0.15 };
+      this._parallaxBaseTranslateSensitivity = settings.parallaxer.baseTranslateSensitivity || { x: 0.15, y: 0.15, increment: 0.15 };
+    }
 
     // 3, 2, 1... blastOff!
     this._init();
@@ -11566,7 +11568,9 @@ var CaseStudyPage = function () {
     value: function _init() {
       this._setupCanvases();
       this._setupScrollEffect();
-      this._setupParallaxers();
+      if (this._parallaxBaseEl) {
+        this._setupParallaxers();
+      }
     }
 
     /**

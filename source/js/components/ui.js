@@ -80,7 +80,7 @@ export default class UI extends Vue {
               case 'clearstream':
               case 'mobipcs':
               default:
-                console.log('Sorry, no settings available for this page!');
+                console.log('No case study settings available for this page!');
             }
 
             new CaseStudyPage(caseStudySettings);
