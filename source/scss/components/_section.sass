@@ -161,6 +161,10 @@
       height: 100%
       padding: 0
 
+    .section__custom-animation__background-images
+      .background-images__image
+        background-size: cover
+
   &--two-column-carousel
     .section__columns__column
       .chapter
@@ -298,6 +302,7 @@
           &--discovery,
           &--information-architecture,
           &--creative-direction,
+          &--project-management,
           &--software-development
 
             .chapter__title
@@ -339,7 +344,8 @@
                   max-height: 100%
 
           &--discovery,
-          &--creative-direction
+          &--creative-direction,
+          &--project-management
             .chapter__title
               +md
                 margin-left: 60px
@@ -362,7 +368,8 @@
                 background-image: url('/images/icons/magnifying-glass.svg')
 
 
-          &--creative-direction
+          &--creative-direction,
+          &--project-management
             .chapter__title
               &::before
                 width: 49px

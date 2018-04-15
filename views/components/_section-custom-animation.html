@@ -1,6 +1,9 @@
 {% import "/views/macros/_background-images.html" as background_images with context %}
 
 <section class="section section--custom-animation{% if component.class %} {{ component.class }}{% endif %}{% if component.theme %} section--{{ component.theme }}{% endif %}">
+  {% if component.background_images %}
+  {{background_images.background_images('section__custom-animation__background-images', component.background_images)}}
+  {% endif %}
   <div class="section__container">
     {% if component.elements %}
     <div class="section__elements">

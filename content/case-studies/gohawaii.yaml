@@ -21,7 +21,7 @@ header:
 
 footer:
   next_project:
-    delayExit: 3000
+    delayExit: 2000
     url: '/case-study/tour-aloha'
     label: 'Tour Aloha'
 
@@ -218,7 +218,9 @@ components:
   - class: "section__columns__column--single-column"
     chapter:
       title: 'Hawaii’s Official Travel & Tourism App'
-      body: 'In the end, we successfully created the state of Hawaii’s first official travel and tourism app; a fun and interactive way to learn both safety and historical information about the Hawaiian Islands. The client had a goal of achieving 10,000 downloads by the annual Hawaii Tourism Conference, 3 months after launch. We were happily surprised when we had reached more than 15,000 downloads several weeks ahead of the conference. Additionally, the mobile application design won a 2017 Pele Gold award for best mobile app. The annual competition, formerly known as the ADDYs, recognizes the best advertising and design work in Hawaii.'
+      body:
+      - 'In the end, we successfully created the state of Hawaii’s first official travel and tourism app; a fun and interactive way to learn both safety and historical information about the Hawaiian Islands. The client had a goal of achieving 10,000 downloads by the annual Hawaii Tourism Conference, 3 months after launch.'
+      - 'We were happily surprised when we had reached more than 15,000 downloads several weeks ahead of the conference. Additionally, the mobile application design won a <span class="bold">2017 Pele Gold award</span> for best mobile app. The annual competition, formerly known as the ADDYs, recognizes the best advertising and design work in Hawaii.'
       ctas:
         - class: 'button itunes'
           url: 'https://itunes.apple.com/us/app/gohawaii/id1100071565?mt=8'
