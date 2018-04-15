@@ -1,0 +1,234 @@
+$title: 'Clearstream'
+$order: 7
+
+page_footer: true
+
+header:
+  title: 'Clearstream'
+  subtitle: 'Video Advertising Management Platform'
+  services:
+  - label: 'User Experience Design'
+  - label: 'Data / Information Design'
+  - label: 'Frontend Engineering'
+  project_links:
+  - label: 'clearstream.tv'
+    url: 'https://www.clearstream.tv/'
+  background_images:
+  - url: '/static/images/case-studies/clearstream/clearstream_header-background.png'
+  delayExit: 3000
+
+footer:
+  next_project:
+    delayExit: 3000
+    url: '/case-study/mobipcs'
+    label: 'MobiPCS'
+
+components:
+- component: 'section-columns'
+  class: 'section--intro'
+  columns:
+  - class: 'section__columns__column--single-column section__columns__column--body-large'
+    chapter:
+      body: 'In the summer of 2014, I had the opportunity to redesign one of the largest video advertising campaign management platforms in the industry, which provides retargeting services for hundreds of international brands.'
+      inline_images:
+      - url: '/static/images/case-studies/clearstream/clearstream_graphic.png'
+
+- component: 'section-columns'
+  class: 'section--bg-image'
+  columns:
+  - chapter:
+      background_images:
+      - url: '/static/images/case-studies/clearstream/clearstream_full-background.png'
+
+- component: 'section-columns'
+  class: 'section--min-height-600 section--offset-max-width'
+  columns:
+  - order: 1
+    chapter:
+      title: "Video advertising<br/>on <span class='italicize'>demand</span>."
+      background_images:
+      - class: 'large-arrow'
+        url: '/static/images/case-studies/clearstream/clearstream_arrow.png'
+  - order: 2
+    class: 'section__columns__column--columns-offset'
+    chapter:
+      body:
+      - "If you’ve ever browsed on a website for some kind of product or service, and then switched to a different site, only to see a video advertisement playing in the sidebar for that same product, then you’re familiar with the concept of ‘retargeting’."
+      - "In the summer of 2014, I had the opportunity to redesign one of the largest video advertising campaign management platforms in the industry, which provides this same retargeting service for hundreds of international brands."
+
+- component: 'section-columns'
+  class: 'section--bg-image section--padded'
+  theme: 'dark'
+  columns:
+  - class: 'section__columns__column--single-column'
+    chapter:
+      title: "Market Leaders in<br/> Digital Video Advertising"
+      body: "Clearstream is an advertising technology company whose primary service is video campaign management, built on top of an advertising exchange to provide real-time bidding and serving of ad impressions based on a website visitor’s location, technology and device. In essence, the service Clearstream provides allows brands & marketers to place targeted video ads based on a user’s browsing behavior all in real-time, and receive real-time analytics on the ad’s performance."
+      background_images:
+      - url: '/static/images/case-studies/clearstream/clearstream_contained-background.png'
+
+- component: 'section-columns'
+  class: 'section--min-height-600 section--offset-max-width'
+  columns:
+  - order: 1
+    mobile_order: 2
+    class: 'section__columns__column--columns-offset'
+    chapter:
+      body:
+      - "At the time, the primary service that Clearstream provided for their clients was at the cutting edge of advertising technology. To give their clients an edge, Clearstream’s consultants used two (2) different, yet similar, demand-side advertising platforms for managing bids for video ads and deploying the creative to campaigns."
+      - "Clearstream had reached a point in their business where switching back and forth between the tools was costing them thousands of dollars a day."
+  - order: 2
+    mobile_order: 1
+    chapter:
+      title: "The cost<br/>of context<br/> switching."
+      background_images:
+      - class: 'large-arrow'
+        url: '/static/images/case-studies/clearstream/clearstream_arrow.png'
+
+- component: 'section-custom-animation'
+  class: 'section--light-grey-bg'
+  background_images:
+  - url: '/static/images/case-studies/clearstream/clearstream_animation-background.png'
+  elements:
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-1.png'
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-2.png'
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-3.png'
+
+- component: 'section-columns'
+  columns:
+  - class: "section__columns__column--single-column"
+    chapter:
+      title: 'Unifying & visualizing big data'
+      body: 'The primary objective of the Clearstream project was to provide their clients with a premium, streamlined experience for executing targeted, real-time video advertising. Additionally, the client also wanted to focus on creating a clean and modern user interface that simplified their existing processes and unified data for reporting and visualization.'
+      inline_images:
+      - url: '/static/images/case-studies/clearstream/clearstream_reporting-graph.png'
+
+- component: 'section-process'
+  theme: 'dark'
+  title: 'The Process'
+  phases:
+  - phase: 'discovery'
+    work:
+      class: 'left'
+      background_images:
+        - id: 'discovery-1'
+          url: '/static/images/case-studies/clearstream/clearstream_process_discovery_1.png'
+        - id: 'discovery-2'
+          url: '/static/images/case-studies/clearstream/clearstream_process_discovery_2.png'
+        - id: 'discovery-3'
+          url: '/static/images/case-studies/clearstream/clearstream_process_discovery_3.png'
+    details:
+      class: 'right'
+      chapter:
+        title: 'Discovery'
+        body:
+        - "For the initial Discovery process, I had the opportunity of flying to Chicago, along with an engineering consultant, to lead a <span class='bold'>1-week UX intensive research session</span> with the client and their staff to kick the project off."
+        - "We organized each day into working sessions to cover several distinct areas of user and technical research including <span class='bold'>stakeholder interviews, goal definitions, experience audits, user profile definitions, competitor analyses, branding workshops, and system architecture.</span>"
+
+  - phase: 'insights'
+    chapter:
+      title: "Insights"
+      body:
+      - "Unlike most typical client projects, the Clearstream project was purely an internal tool used by their consultants to assist their clients with video campaign management. As such, the Discovery process yielded some interesting information about the goals and motivations of the people using the product:"
+      - "The current platform(s) provides the business with the most capabilities/flexibility available in video advertising demand side platforms. This in turn allows the company to stay ahead of the curve and provide tailored (“non-cookie-cutter”) solutions for their clients"
+      - "The head of operations relied on accurate and relevant data from the bid management platforms to determine how best to optimize yields and increase margins for the company as a whole."
+      - "At the time, they did not have any accountability within their platforms, i.e. if two people were working on the same campaign, they had no way of tracking who made the changes and when."
+
+  - phase: 'information-architecture'
+    work:
+      class: 'right'
+      background_images:
+        - id: 'ia-1'
+          url: '/static/images/case-studies/clearstream/clearstream_process_ia_1.png'
+        - id: 'ia-2'
+          url: '/static/images/case-studies/clearstream/clearstream_process_ia_2.png'
+        - id: 'ia-3'
+          url: '/static/images/case-studies/clearstream/clearstream_process_ia_3.png'
+    details:
+      class: 'left'
+      chapter:
+        title: 'Information Architecture'
+        body:
+        - "With a project of this nature and domain complexity, the initial step in defining the IA was to <span class='bold'>establish a common vocabulary to represent objects and entities within our system</span>, ie. advertisers vs agencies vs brands, campaigns vs placements vs flights, etc."
+        - "Once we had a consensus on terminology, we were able to start laying out the different components that communicate with each other and make up the system through <span class='bold'>user flows</span> and <span class='bold'>wireframes</span>."
+
+  - phase: 'frontend-engineering'
+    work:
+      class: 'left'
+      background_images:
+        - id: 'fe-1'
+          url: '/static/images/case-studies/clearstream/clearstream_process_fe_1.png'
+        - id: 'fe-2'
+          url: '/static/images/case-studies/clearstream/clearstream_process_fe_2.png'
+    details:
+      class: 'right'
+      chapter:
+        title: 'Frontend Engineering'
+        body:
+        - "Once the visual design had been approved, my focus turned to reporting, where I developed <span class='bold'>custom interactive data-visualizations</span> in the form of charts & graphs. The application interface was developed using <span class='bold'>AngularJS + Foundation Framework</span>, while the charting component was built on top of <span class='bold'>Kendo UI</span>’s charting components."
+        - "Kendo UI provides Angular UI components with built-in data-binding, so all of the pieces worked nicely together, and I could focus on customizing the experience of the charts rather than just getting them to work."
+
+- component: 'section-columns'
+  class: 'section--min-height-600 section--two-column-carousel'
+  columns:
+  - class: "section__columns__column--single-column"
+    chapter:
+      inline_images:
+        - url: '/static/images/case-studies/clearstream/clearstream_slideshow--laptop-bg.png'
+  # - device_slider:
+  #   - id: 'slide-1'
+  #     background_images:
+  #     - url: ''
+  #   - id: 'slide-2'
+  #     background_images:
+  #     - url: ''
+  #   - id: 'slide-3'
+  #     background_images:
+  #     - url: ''
+  - chapter:
+      body:
+      - "Our final solution was an all-inclusive dashboard for managing bids, campaigns & customers (CRM), as well as provided custom, real-time reports and charting using HTML5 technologies and served from the cloud."
+
+- component: 'section-columns'
+  class: 'section--light-grey-bg section--min-height-600'
+  columns:
+  - class: "section__columns__column--single-column"
+    chapter:
+      title: '60 million rows of data every day'
+      body: 'The final results after launching the initial phase of Clearstream’s project was a platform capable of processing more than 60 million rows of data based on user behavior per day and serving video advertisements in milliseconds for multinational brands like McDonald’s, MGM and British Petroleum.'
+      ctas:
+        - class: 'button'
+          url: 'https://www.clearstream.tv/'
+          label: 'Visit Website'
+
+- component: 'section-columns'
+  class: 'section--min-height-600'
+  columns:
+  - class: "section__columns__column--single-column"
+    chapter:
+      title: 'Credits'
+      body_list_class: 'chapter__body-list--2-column'
+      body_list:
+        - name: 'Client'
+          value: 'Clearstream.tv'
+        - name: 'Agency'
+          value: 'Ikayzo, Inc.'
+        - name: 'Engagement'
+          value: 'January 2014 — October 2014'
+        - name: 'Technology'
+          list:
+          - name: 'Frontend'
+            value: 'AngularJS'
+          - name: 'Backend'
+            value: 'Ruby on Rails'
+        # - name: 'Awards'
+        #   value: ''
+        - name: 'UX Design'
+          value: 'Mike King'
+        - name: 'UI Design'
+          value: 'Chris Ota'
+        - name: 'Frontend Development'
+          value: 'Mike King, George Lee'
+        - name: 'Backend Development'
+          value: 'Chris Kobayashi, George Lee, Leo DeCandia'
