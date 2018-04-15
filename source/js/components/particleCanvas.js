@@ -147,7 +147,7 @@ export default class ParticleCanvas {
 
     if (this.utils.allowDeviceOrientation()){
 
-      w.addEventListener('deviceorientation', (e) => this._handleOrientation(e), true);
+      // w.addEventListener('deviceorientation', (e) => this._handleOrientation(e), true);
 
     } else {
 
