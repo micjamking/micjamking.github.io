@@ -10,10 +10,10 @@ meta:
     keywords: ""
     google_site_verification: ""
   open_graph:
-    image_path: "/static/images/social_image.jpg"
+    image_path: "/static/images/mikekingio_screenshot.png"
     image_type: "image/png"
-    image_width: ""
-    image_height: ""
+    image_width: "1200"
+    image_height: "630"
     facebook_app_id: ""
   twitter:
     username: "@micjamking"
