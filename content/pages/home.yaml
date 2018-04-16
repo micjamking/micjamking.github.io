@@ -34,8 +34,7 @@ components:
   subtitle: "Historical Travel Guide Mobile App"
   award: 2016
   background_images:
-  - url: "/static/images/case-studies/case-study-tile__gohawaii.png"
-  # - url: "/static/images/case-studies/case-study-tile__tour-aloha.png"
+  - url: "/static/images/case-studies/case-study-tile__tour-aloha.png"
   - class: 'background-images__image--offset'
   cta:
     delay: 3000
@@ -49,8 +48,7 @@ components:
   title: "Teacup Analytics"
   subtitle: "Web Analytics Reporting App"
   background_images:
-  - url: "/static/images/case-studies/case-study-tile__gohawaii.png"
-  # - url: "/static/images/case-studies/case-study-tile__teacup-analytics.png"
+  - url: "/static/images/case-studies/case-study-tile__teacup-analytics.png"
   - class: 'background-images__image--offset'
   cta:
     delay: 3000
@@ -64,8 +62,7 @@ components:
   title: "Clearstream"
   subtitle: "Video Advertising Management Platform"
   background_images:
-  - url: "/static/images/case-studies/case-study-tile__gohawaii.png"
-  # - url: "/static/images/case-studies/case-study-tile__clearstream.png"
+  - url: "/static/images/case-studies/case-study-tile__clearstream.png"
   - class: 'background-images__image--offset'
   cta:
     delay: 3000
@@ -79,8 +76,7 @@ components:
   title: "MobiPCS"
   subtitle: "Wireless Services Management Platform"
   background_images:
-  - url: "/static/images/case-studies/case-study-tile__gohawaii.png"
-  # - url: "/static/images/case-studies/case-study-tile__mobipcs.png"
+  - url: "/static/images/case-studies/case-study-tile__mobipcs.png"
   - class: 'background-images__image--offset'
   cta:
     delay: 3000

@@ -3564,7 +3564,7 @@ input[type="button"]:active {
   }
 }
 
-.section--process .section__phases__phase--frontend-engineering .chapter__title::before, .section--process .section__phases__phase--software-development .chapter__title::before {
+.section--process .section__phases__phase--software-development .chapter__title::before {
   margin-left: -24px;
 }
 
