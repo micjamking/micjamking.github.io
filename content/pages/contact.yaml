@@ -1,3 +1,12 @@
 $title: Contact
 $order: 2
-description: Contact Page
+
+header:
+  delayExit: 3000
+
+components:
+- component: 'general-content'
+  class: 'general-content--contact'
+  form: true
+  chapter:
+    title: "Lets Chat."

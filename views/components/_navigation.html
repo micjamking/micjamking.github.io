@@ -8,7 +8,7 @@
                 {% set item_class = item.url.path|replace("/", "")|replace("case-study", "") %}
               {% endif %}
               <li class="nav__items__item nav__items__item--{{item_class}}{% if doc == item %} nav__items__item--active{% endif %}">
-                <a href="{{item.url.path}}">{{item.title}}</a>
+                <a href="{{item.url.path}}" class="delay-transition" data-delay="3000">{{item.title}}</a>
               </li>
             {% endfor %}
           </ul>

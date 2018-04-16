@@ -6,6 +6,7 @@ $base-animation: 300ms
 $animation-increment: 250ms
 $extra-delay: $base-animation + ($animation-increment * 5)
 $case-study-header-duration: 1500ms
+$general-mask-duration: 1000ms
 
 // Animation properties
 $duration:        0.25s
@@ -64,6 +65,14 @@ $play-state:      running
     opacity: 1
     transform: none
 
+@keyframes fade-out-left
+  0%
+    opacity: 1
+    transform: none
+  100%
+    opacity: 0
+    transform: translateX(-20px)
+
 @keyframes fade-in-right
   0%
     opacity: 0
@@ -104,6 +113,18 @@ $play-state:      running
   100%
     clip-path: polygon(100% 0%, 0% 0%, 0% 0%, 50% 0%, 100% 0%)
 
+@keyframes general-mask-animation
+  0%
+    clip-path: polygon(100% 0%, 0% 0%, 0% 0%, 100% 0%)
+  100%
+    clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)
+
+@keyframes general-mask-animation--reverse
+  0%
+    clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)
+  100%
+    clip-path: polygon(100% 0%, 0% 0%, 0% 0%, 100% 0%)
+
 // Mixins
 =fade-in
   +animation('fade-in', $duration: 0.75s, $iteration-count: 1)
@@ -120,6 +141,9 @@ $play-state:      running
 =fade-in-left
   +animation('fade-in-left', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
 
+=fade-out-left
+  +animation('fade-out-left', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
+
 =fade-in-right
   +animation('fade-in-right', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
 
@@ -134,6 +158,12 @@ $play-state:      running
 
 =case-study-mask-animation--reverse
   +animation('case-study-mask-animation--reverse', $duration: $case-study-header-duration, $iteration-count: 1)
+
+=general-mask-animation
+  +animation('general-mask-animation', $duration: $general-mask-duration, $iteration-count: 1)
+
+=general-mask-animation--reverse
+  +animation('general-mask-animation--reverse', $duration: $general-mask-duration, $iteration-count: 1)
 
 // Classes
 .fade-in
@@ -155,6 +185,61 @@ $play-state:      running
 
 .fade-out-down
   +fade-out-down
+
+.general-content
+  &__header
+    +general-mask-animation
+
+  &__title,
+  &__back-home
+    +fade-in-down
+
+  &__title
+    animation-delay: ($base-animation / 2) * 1 + $general-mask-duration
+
+  &__back-home
+    animation-delay: ($base-animation / 2) * 2 + $general-mask-duration
+
+  &__container
+    .chapter
+      &__title,
+      &__body,
+      &__cta
+        +fade-in-up
+
+      &__title
+        animation-delay: ($base-animation / 2) * 3 + $general-mask-duration
+
+      &__body
+        animation-delay: ($base-animation / 2) * 4 + $general-mask-duration
+
+        &::after
+          +fade-in-right
+          animation-delay: ($base-animation / 2) * 11 + $general-mask-duration
+
+      &__cta
+        @for $i from 1 through 6
+          &:nth-child(#{$i})
+            animation-delay: ($base-animation / 2) * (4 + $i) + $general-mask-duration
+
+  .contact-form
+    &__text,
+    &__email,
+    &__textarea,
+    &__submit
+      +fade-in-up
+
+    &__text
+      animation-delay: ($base-animation / 2) * 4 + $general-mask-duration
+
+    &__email
+      animation-delay: ($base-animation / 2) * 5 + $general-mask-duration
+
+    &__textarea
+      animation-delay: ($base-animation / 2) * 6 + $general-mask-duration
+
+    &__submit
+      animation-delay: ($base-animation / 2) * 7 + $general-mask-duration
 
 .header
   &--case-study
@@ -493,11 +578,24 @@ $play-state:      running
 
 
 .exit-page-transition
+  .hero__title,
+  .hero__subtitle,
   .header__logo,
   .header__tagline,
   .nav__down-arrow,
   .nav__items__item
     +fade-out-up
+
+  .hero__title
+    animation-delay: $base-animation
+
+  .hero__subtitle
+    animation-delay: $base-animation + ($animation-increment * 1)
+
+  .header__logo,
+  .header__tagline,
+  .nav__down-arrow,
+  .nav__items__item
     animation-delay: $base-animation + ($animation-increment * 5)
 
   .canvas
@@ -547,32 +645,89 @@ $play-state:      running
     +case-study-mask-animation--reverse
     animation-delay: ($base-animation / 2) * 7
 
-  .footer
+  .footer.inview
     +fade-out
     animation-delay: ($base-animation / 2) * 6
 
-    &__next-project
-      &__headline,
-      &__project
+    .footer
+      &__next-project
+        &__headline,
+        &__project
+          +fade-out-up
+
+      &__location,
+      &__email,
+      &__logo-icon
         +fade-out-up
 
-    &__location,
-    &__email,
-    &__logo-icon
-      +fade-out-up
+      &__next-project
+        &__headline
+          animation-delay: ($base-animation / 2) * 1
 
-    &__next-project
-      &__headline
-        animation-delay: ($base-animation / 2) * 1
+        &__project
+          animation-delay: ($base-animation / 2) * 2
 
-      &__project
-        animation-delay: ($base-animation / 2) * 2
+      &__location
+        animation-delay: ($base-animation / 2) * 3
 
-    &__location
-      animation-delay: ($base-animation / 2) * 3
+      &__email
+        animation-delay: ($base-animation / 2) * 4
 
-    &__email
-      animation-delay: ($base-animation / 2) * 4
+      &__logo-icon
+        animation-delay: ($base-animation / 2) * 5
 
-    &__logo-icon
-      animation-delay: ($base-animation / 2) * 5
+  .general-content
+    &__header
+      +general-mask-animation--reverse
+      animation-delay: ($base-animation / 2) * 12
+
+    &__title,
+    &__back-home
+      +fade-out-down
+
+    &__title
+      animation-delay: ($base-animation / 2) * 10
+
+    &__back-home
+      animation-delay: ($base-animation / 2) * 11
+
+    &__container
+      .chapter
+        &__title,
+        &__body,
+        &__cta
+          +fade-out-up
+
+        &__title
+          animation-delay: ($base-animation / 2) * 1
+
+        &__body
+          animation-delay: ($base-animation / 2) * 2
+
+          &::after
+            +fade-out-left
+            animation-delay: ($base-animation / 2) * 9
+
+        &__cta
+          @for $i from 1 through 6
+            &:nth-child(#{$i})
+              animation-delay: ($base-animation / 2) * (2 + $i)
+
+      .contact-form
+        &__text,
+        &__email,
+        &__textarea,
+        &__submit
+          +fade-out-up
+
+        &__text
+          animation-delay: ($base-animation / 2) * 2
+
+        &__email
+          animation-delay: ($base-animation / 2) * 3
+
+        &__textarea
+          animation-delay: ($base-animation / 2) * 4
+
+        &__submit
+          animation-delay: ($base-animation / 2) * 5

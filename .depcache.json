@@ -159,6 +159,7 @@
     "/static/images/social_image.jpg",
     "/static/script.js",
     "/static/style.css",
+    "/views/components/_general-content.html",
     "/views/components/_header.html",
     "/views/components/_navigation.html",
     "/views/components/_preloader.html"
@@ -169,6 +170,8 @@
     "/static/images/social_image.jpg",
     "/static/script.js",
     "/static/style.css",
+    "/views/components/_contact-form.html",
+    "/views/components/_general-content.html",
     "/views/components/_header.html",
     "/views/components/_navigation.html",
     "/views/components/_preloader.html"

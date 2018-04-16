@@ -17,7 +17,7 @@ header:
 
 footer:
   next_project:
-    delayExit: 3000
+    delayExit: 2000
     url: '/case-study/'
     label: ''
 

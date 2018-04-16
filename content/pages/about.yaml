@@ -1,3 +1,25 @@
 $title: About
 $order: 1
-description: Learn about us.
+
+header:
+  delayExit: 3000
+
+components:
+- component: 'general-content'
+  class: 'general-content--about'
+  chapter:
+    title: "Aloha World."
+    body: "I'm Mike King, an interactive designer & developer residing in Honolulu, Hawaii. My passion is assisting brands with telling their story across the digital landscape. For the past decade I've been developing my craft as a user-experience designer and web developer in a high-paced agency environment, operating as a generalist to continually expand my knowledge and skill-set in keeping with the rapid pace and change of technology. My aim is to provide clients with streamlined, end-to-end creative solutions that match their digital & technical challenges."
+    ctas:
+    - url: 'https://dribbble.com/micjamking'
+      label: 'Dribbble'
+    - url: 'https://www.behance.net/micjamking'
+      label: 'Behance'
+    - url: 'https://codepen.io/micjamking/'
+      label: 'Codepen'
+    - url: 'https://github.com/micjamking/'
+      label: 'Github'
+    - url: 'https://medium.com/@micjamking'
+      label: 'Medium'
+    - url: 'https://www.linkedin.com/in/micjamking/'
+      label: 'LinkedIn'

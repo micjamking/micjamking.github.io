@@ -1,0 +1,132 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.general-content
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  +md
+    flex-direction: row
+    justify-content: flex-start
+    height: 100vh
+    width: 100%
+
+  &--contact
+    .general-content__header
+      +md
+        order: 2
+    .general-content__container
+      +md
+        order: 1
+
+    .chapter,
+    .contact-form
+      +md
+        width: 50vw
+
+  &__container
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    flex: auto
+
+  &__header
+    position: relative
+    display: flex
+    width: 100%
+    height: 80px
+    background-color: $global-color-dark-blue
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    margin-bottom: $global-spacing-lg
+    +md
+      width: 142px
+      height: 100%
+      margin-bottom: 0
+
+  &__title
+    display: none
+    color: $global-color-white
+    font-size: em-calc(18px)
+    +md
+      display: block
+
+    &__content
+      +md
+        transform: rotate(-90deg)
+
+  &__back-home
+    position: absolute
+    display: flex
+    width: 33px
+    height: 30px
+    background-image: url('/images/mikeking_logo_icon.white.svg')
+    background-repeat: no-repeat
+    background-size: contain
+    +md
+      top: 60px
+      left: 50%
+      margin-left: -16.5px
+    a
+      display: block
+      width: 100%
+      height: 100%
+
+  &__container
+    +lt($global-screen-size-medium)
+      padding: 0 $global-spacing-md
+
+    .chapter
+      +lt($global-screen-size-medium)
+        margin-bottom: $global-spacing-lg
+      +md
+        max-width: 600px
+        align-items: flex-start
+
+      &__title
+        font-size: em-calc(48px)
+
+      &__body
+        position: relative
+        &::after
+          content: ''
+          display: block
+          position: absolute
+          left: 50%
+          bottom: -15px
+          width: 85px
+          height: 1px
+          background-color: $global-color-dark-blue
+          margin-left: -42.5px
+          +md
+            left: 0
+            margin-left: 0
+
+      &__cta
+        font-family: $global-serif
+        font-weight: $global-serif-weight-bold
+        font-size: 18px
+        position: relative
+        margin-bottom: $global-spacing-xs
+        +md
+          font-size: 14px
+
+        &::before
+          content: ''
+          display: block
+          position: absolute
+          left: 0
+          bottom: -2px
+          width: 0
+          height: 1px
+          background-color: $global-color-dark-blue
+          transition: all 300ms ease
+          transform-origin: center
+
+        &:hover
+          &::before
+            width: 100%

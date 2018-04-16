@@ -4,7 +4,7 @@
     <div class="footer__next-project">
       <div class="footer__next-project__headline">Next Project:</div>
       <div class="footer__next-project__project">
-        <a href="{{ doc.footer.next_project.url }}"{% if doc.header.delayExit %} class="delay-transition"{% endif %}{% if doc.header.delayExit %} data-delay="{{doc.header.delayExit}}"{% endif %}>{{ doc.footer.next_project.label }}</a>
+        <a href="{{ doc.footer.next_project.url }}"{% if doc.footer.next_project.delayExit %} class="delay-transition"{% endif %}{% if doc.footer.next_project.delayExit %} data-delay="{{doc.footer.next_project.delayExit}}"{% endif %}>{{ doc.footer.next_project.label }}</a>
       </div>
     </div>
     {% endif %}
