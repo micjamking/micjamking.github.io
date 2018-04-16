@@ -687,6 +687,10 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
   opacity: 0;
 }
 
+.footer .footer__next-project {
+  display: none;
+}
+
 .section--custom-animation .section__elements {
   display: none;
 }
@@ -712,6 +716,10 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
           animation-fill-mode: both;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+}
+
+.inview.footer .footer__next-project {
+  display: block;
 }
 
 .inview.section--custom-animation .section__elements {
@@ -3556,7 +3564,7 @@ input[type="button"]:active {
   }
 }
 
-.section--process .section__phases__phase--frontend-engineering .chapter__title::before, .section--process .section__phases__phase--software-development .chapter__title::before {
+.section--process .section__phases__phase--software-development .chapter__title::before {
   margin-left: -24px;
 }
 
