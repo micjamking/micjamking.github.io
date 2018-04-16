@@ -19,7 +19,7 @@ meta:
     username: "@micjamking"
   google:
     plus_id: "112398162809101288990"
-    analytics_id: ""
+    analytics_id: "UA-67907671-3"
   favicon_path: "/static/favicon.png"
   icon_path: "/static/apple-touch-icon-precomposed.png"
   social:
@@ -35,6 +35,10 @@ localization:
 
 sitemap:
   enabled: true
+
+extensions:
+  preprocessors:
+  - extensions.google_forms.GoogleFormsPreprocessor
 
 preprocessors:
 - name: "gohawaii"
@@ -77,6 +81,11 @@ preprocessors:
   convert: true
   tags:
   - content
+- name: "contact"
+  kind: "google_forms"
+  id: "1FAIpQLScQzlYZ59CI9mk1QZU6gIjOSeVWB7VpCtQEWg0SX2Po3L6M2w"
+  path: /content/partials/contact-form.yaml
+  autorun: false
 
 deployments:
   default:
