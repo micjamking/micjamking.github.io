@@ -556,7 +556,6 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
 }
 
 .header--case-study .header__title, .header--case-study .header__subtitle, .header--case-study .header__service, .header--case-study .header__project-link {
-  opacity: 0;
   -webkit-animation-name: "fade-in-up";
           animation-name: "fade-in-up";
   -webkit-animation-duration: 550ms;
@@ -601,7 +600,6 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
 }
 
 .header--case-study .header__back-home {
-  opacity: 0;
   -webkit-animation-name: "fade-in-down";
           animation-name: "fade-in-down";
   -webkit-animation-duration: 550ms;
@@ -639,10 +637,11 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
           animation-fill-mode: both;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+  -webkit-animation-delay: 150ms;
+          animation-delay: 150ms;
 }
 
 .section--intro .chapter__images .image, .section--intro .chapter__body {
-  opacity: 0;
   -webkit-animation-name: "fade-in-up";
           animation-name: "fade-in-up";
   -webkit-animation-duration: 550ms;
@@ -679,15 +678,24 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
 .section:not(.section--intro) .chapter__cta,
 .section:not(.section--intro) .chapter__images .image,
 .section:not(.section--intro) .chapter__background-images {
+  display: none;
+}
+
+.section--light-grey-bg,
+.section--process,
+.footer {
   opacity: 0;
 }
 
-.section--custom-animation,
-.section__phases__phase .background-images__image {
-  opacity: 0;
+.section--custom-animation .section__elements {
+  display: none;
 }
 
-.inview.section--custom-animation {
+.section--process .section__phases__phase .section__phase__work .background-images {
+  display: none;
+}
+
+.inview.section--process, .inview.section--light-grey-bg, .inview.footer {
   -webkit-animation-name: "fade-in";
           animation-name: "fade-in";
   -webkit-animation-duration: 0.75s;
@@ -706,13 +714,18 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
           animation-play-state: running;
 }
 
-.inview .section__title, .inview .section__body, .inview .section__body-list, .inview .section__cta,
-.inview .section__images .image,
-.inview .chapter__title,
-.inview .chapter__body,
-.inview .chapter__body-list,
-.inview .chapter__cta,
-.inview .chapter__images .image {
+.inview.section--custom-animation .section__elements {
+  display: block;
+}
+
+.inview.section:not(.section--intro):not(.section--process) .section__title, .inview.section:not(.section--intro):not(.section--process) .section__body, .inview.section:not(.section--intro):not(.section--process) .section__body-list, .inview.section:not(.section--intro):not(.section--process) .section__cta,
+.inview.section:not(.section--intro):not(.section--process) .section__images .image,
+.inview.section:not(.section--intro):not(.section--process) .chapter__title,
+.inview.section:not(.section--intro):not(.section--process) .chapter__body,
+.inview.section:not(.section--intro):not(.section--process) .chapter__body-list,
+.inview.section:not(.section--intro):not(.section--process) .chapter__cta,
+.inview.section:not(.section--intro):not(.section--process) .chapter__images .image {
+  display: block;
   -webkit-animation-name: "fade-in-up";
           animation-name: "fade-in-up";
   -webkit-animation-duration: 550ms;
@@ -731,8 +744,9 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
           animation-play-state: running;
 }
 
-.inview .section__background-images,
-.inview .chapter__background-images {
+.inview.section:not(.section--intro):not(.section--process) .section__background-images,
+.inview.section:not(.section--intro):not(.section--process) .chapter__background-images {
+  display: block;
   -webkit-animation-name: "fade-in";
           animation-name: "fade-in";
   -webkit-animation-duration: 0.75s;
@@ -751,56 +765,80 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
           animation-play-state: running;
 }
 
-.inview .section__title,
-.inview .chapter__title {
+.inview.section:not(.section--intro):not(.section--process) .section__background-images, .inview.section:not(.section--intro):not(.section--process) .section__title,
+.inview.section:not(.section--intro):not(.section--process) .chapter__background-images,
+.inview.section:not(.section--intro):not(.section--process) .chapter__title {
   -webkit-animation-delay: 300ms;
           animation-delay: 300ms;
 }
 
-.inview .section__images .image:nth-child(1),
-.inview .chapter__images .image:nth-child(1) {
+.inview.section:not(.section--intro):not(.section--process) .section__images .image:nth-child(1),
+.inview.section:not(.section--intro):not(.section--process) .chapter__images .image:nth-child(1) {
   -webkit-animation-delay: 600ms;
           animation-delay: 600ms;
 }
 
-.inview .section__images .image:nth-child(2),
-.inview .chapter__images .image:nth-child(2) {
+.inview.section:not(.section--intro):not(.section--process) .section__images .image:nth-child(2),
+.inview.section:not(.section--intro):not(.section--process) .chapter__images .image:nth-child(2) {
   -webkit-animation-delay: 900ms;
           animation-delay: 900ms;
 }
 
-.inview .section__images .image:nth-child(3),
-.inview .chapter__images .image:nth-child(3) {
+.inview.section:not(.section--intro):not(.section--process) .section__images .image:nth-child(3),
+.inview.section:not(.section--intro):not(.section--process) .chapter__images .image:nth-child(3) {
   -webkit-animation-delay: 1200ms;
           animation-delay: 1200ms;
 }
 
-.inview .section__body, .inview .section__body-list,
-.inview .chapter__body,
-.inview .chapter__body-list {
+.inview.section:not(.section--intro):not(.section--process) .section__body, .inview.section:not(.section--intro):not(.section--process) .section__body-list,
+.inview.section:not(.section--intro):not(.section--process) .chapter__body,
+.inview.section:not(.section--intro):not(.section--process) .chapter__body-list {
   -webkit-animation-delay: 900ms;
           animation-delay: 900ms;
 }
 
-.inview .section__cta:nth-child(1),
-.inview .chapter__cta:nth-child(1) {
+.inview.section:not(.section--intro):not(.section--process) .section__cta:nth-child(1),
+.inview.section:not(.section--intro):not(.section--process) .chapter__cta:nth-child(1) {
   -webkit-animation-delay: 1200ms;
           animation-delay: 1200ms;
 }
 
-.inview .section__cta:nth-child(2),
-.inview .chapter__cta:nth-child(2) {
+.inview.section:not(.section--intro):not(.section--process) .section__cta:nth-child(2),
+.inview.section:not(.section--intro):not(.section--process) .chapter__cta:nth-child(2) {
   -webkit-animation-delay: 1500ms;
           animation-delay: 1500ms;
 }
 
-.inview .section__body-list--nested,
-.inview .chapter__body-list--nested {
+.inview.section:not(.section--intro):not(.section--process) .section__body-list--nested,
+.inview.section:not(.section--intro):not(.section--process) .chapter__body-list--nested {
   -webkit-animation-delay: 0ms;
           animation-delay: 0ms;
 }
 
-.inview.section__phases__phase .background-images__image {
+.inview.section.section--columns.section--bg-image .chapter__background-images {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+}
+
+.inview.section.section--columns.section--bg-image .chapter__title {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+}
+
+.inview.section--process .inview.section__phases__phase .section__title, .inview.section--process .inview.section__phases__phase .section__body, .inview.section--process .inview.section__phases__phase .section__body-list, .inview.section--process .inview.section__phases__phase .section__cta,
+.inview.section--process .inview.section__phases__phase .section__images .image,
+.inview.section--process .inview.section__phases__phase .chapter__title,
+.inview.section--process .inview.section__phases__phase .chapter__body,
+.inview.section--process .inview.section__phases__phase .chapter__body-list,
+.inview.section--process .inview.section__phases__phase .chapter__cta,
+.inview.section--process .inview.section__phases__phase .chapter__images .image, .inview.section--process .inview.section__phases__header .section__title, .inview.section--process .inview.section__phases__header .section__body, .inview.section--process .inview.section__phases__header .section__body-list, .inview.section--process .inview.section__phases__header .section__cta,
+.inview.section--process .inview.section__phases__header .section__images .image,
+.inview.section--process .inview.section__phases__header .chapter__title,
+.inview.section--process .inview.section__phases__header .chapter__body,
+.inview.section--process .inview.section__phases__header .chapter__body-list,
+.inview.section--process .inview.section__phases__header .chapter__cta,
+.inview.section--process .inview.section__phases__header .chapter__images .image {
+  display: block;
   -webkit-animation-name: "fade-in-up";
           animation-name: "fade-in-up";
   -webkit-animation-duration: 550ms;
@@ -819,19 +857,206 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
           animation-play-state: running;
 }
 
-.inview.section__phases__phase .background-images__image:nth-child(1) {
+.inview.section--process .inview.section__phases__phase .section__title::before, .inview.section--process .inview.section__phases__phase .section__title::after,
+.inview.section--process .inview.section__phases__phase .chapter__title::before,
+.inview.section--process .inview.section__phases__phase .chapter__title::after, .inview.section--process .inview.section__phases__header .section__title::before, .inview.section--process .inview.section__phases__header .section__title::after,
+.inview.section--process .inview.section__phases__header .chapter__title::before,
+.inview.section--process .inview.section__phases__header .chapter__title::after {
+  -webkit-animation-name: "fade-in-down";
+          animation-name: "fade-in-down";
+  -webkit-animation-duration: 550ms;
+          animation-duration: 550ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.inview.section--process .inview.section__phases__phase .section__background-images,
+.inview.section--process .inview.section__phases__phase .chapter__background-images, .inview.section--process .inview.section__phases__header .section__background-images,
+.inview.section--process .inview.section__phases__header .chapter__background-images {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation-name: "fade-in";
+          animation-name: "fade-in";
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-delay: 75ms;
+          animation-delay: 75ms;
+}
+
+.inview.section--process .inview.section__phases__phase .section__title,
+.inview.section--process .inview.section__phases__phase .chapter__title, .inview.section--process .inview.section__phases__header .section__title,
+.inview.section--process .inview.section__phases__header .chapter__title {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+}
+
+.inview.section--process .inview.section__phases__phase .section__title::before, .inview.section--process .inview.section__phases__phase .section__title::after,
+.inview.section--process .inview.section__phases__phase .chapter__title::before,
+.inview.section--process .inview.section__phases__phase .chapter__title::after, .inview.section--process .inview.section__phases__header .section__title::before, .inview.section--process .inview.section__phases__header .section__title::after,
+.inview.section--process .inview.section__phases__header .chapter__title::before,
+.inview.section--process .inview.section__phases__header .chapter__title::after {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+}
+
+.inview.section--process .inview.section__phases__phase .section__images .image:nth-child(1),
+.inview.section--process .inview.section__phases__phase .chapter__images .image:nth-child(1), .inview.section--process .inview.section__phases__header .section__images .image:nth-child(1),
+.inview.section--process .inview.section__phases__header .chapter__images .image:nth-child(1) {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+}
+
+.inview.section--process .inview.section__phases__phase .section__images .image:nth-child(2),
+.inview.section--process .inview.section__phases__phase .chapter__images .image:nth-child(2), .inview.section--process .inview.section__phases__header .section__images .image:nth-child(2),
+.inview.section--process .inview.section__phases__header .chapter__images .image:nth-child(2) {
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms;
+}
+
+.inview.section--process .inview.section__phases__phase .section__images .image:nth-child(3),
+.inview.section--process .inview.section__phases__phase .chapter__images .image:nth-child(3), .inview.section--process .inview.section__phases__header .section__images .image:nth-child(3),
+.inview.section--process .inview.section__phases__header .chapter__images .image:nth-child(3) {
   -webkit-animation-delay: 1200ms;
           animation-delay: 1200ms;
 }
 
-.inview.section__phases__phase .background-images__image:nth-child(2) {
+.inview.section--process .inview.section__phases__phase .section__body, .inview.section--process .inview.section__phases__phase .section__body-list,
+.inview.section--process .inview.section__phases__phase .chapter__body,
+.inview.section--process .inview.section__phases__phase .chapter__body-list, .inview.section--process .inview.section__phases__header .section__body, .inview.section--process .inview.section__phases__header .section__body-list,
+.inview.section--process .inview.section__phases__header .chapter__body,
+.inview.section--process .inview.section__phases__header .chapter__body-list {
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms;
+}
+
+.inview.section--process .inview.section__phases__phase .background-images {
+  display: block;
+}
+
+.inview.section--process .inview.section__phases__phase .background-images__image {
+  -webkit-animation-name: "fade-in-up";
+          animation-name: "fade-in-up";
+  -webkit-animation-duration: 550ms;
+          animation-duration: 550ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.inview.section--process .inview.section__phases__phase .background-images__image:nth-child(1) {
+  -webkit-animation-delay: 1200ms;
+          animation-delay: 1200ms;
+}
+
+.inview.section--process .inview.section__phases__phase .background-images__image:nth-child(2) {
   -webkit-animation-delay: 1500ms;
           animation-delay: 1500ms;
 }
 
-.inview.section__phases__phase .background-images__image:nth-child(3) {
+.inview.section--process .inview.section__phases__phase .background-images__image:nth-child(3) {
   -webkit-animation-delay: 1800ms;
           animation-delay: 1800ms;
+}
+
+.inview.section--process .inview.section__phases__phase--insights.section__phases__phase {
+  height: auto;
+  max-height: 500px;
+}
+
+.inview.footer .footer__next-project__headline, .inview.footer .footer__next-project__project {
+  -webkit-animation-name: "fade-in-up";
+          animation-name: "fade-in-up";
+  -webkit-animation-duration: 550ms;
+          animation-duration: 550ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.inview.footer .footer__location, .inview.footer .footer__email, .inview.footer .footer__logo-icon {
+  -webkit-animation-name: "fade-in-up";
+          animation-name: "fade-in-up";
+  -webkit-animation-duration: 550ms;
+          animation-duration: 550ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.inview.footer .footer__next-project__headline {
+  -webkit-animation-delay: 150ms;
+          animation-delay: 150ms;
+}
+
+.inview.footer .footer__next-project__project {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+}
+
+.inview.footer .footer__location {
+  -webkit-animation-delay: 450ms;
+          animation-delay: 450ms;
+}
+
+.inview.footer .footer__email {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+}
+
+.inview.footer .footer__logo-icon {
+  -webkit-animation-delay: 750ms;
+          animation-delay: 750ms;
 }
 
 .fade-enter-active,
@@ -2860,6 +3085,7 @@ input[type="button"]:active {
   width: 100%;
   height: 100%;
   padding: 0;
+  z-index: 2;
 }
 
 .section--custom-animation .section__custom-animation__background-images .background-images__image {
@@ -3073,6 +3299,7 @@ input[type="button"]:active {
   .section--process .section__phases__phase {
     margin-top: 80px;
     margin-bottom: 80px;
+    padding: 0;
   }
   .section--process .section__phases__phase::before {
     content: '';
@@ -3122,9 +3349,13 @@ input[type="button"]:active {
 
 .section--process .section__phases__phase--insights {
   position: relative;
-  padding: 3.125rem 0;
   margin-top: 6.25rem;
   margin-bottom: 6.25rem;
+  padding: 0;
+  height: 0;
+  max-height: 0;
+  -webkit-transition: max-height 700ms ease;
+  transition: max-height 700ms ease;
 }
 
 .section--process .section__phases__phase--insights::before {
@@ -3146,6 +3377,10 @@ input[type="button"]:active {
 
 .section--process .section__phases__phase--insights::after {
   display: none;
+}
+
+.section--process .section__phases__phase--insights .section__phase__insights {
+  padding: 3.125rem 0;
 }
 
 .section--process .section__phases__phase--insights .section__phase__insights::before, .section--process .section__phases__phase--insights .section__phase__insights::after {
@@ -3172,7 +3407,7 @@ input[type="button"]:active {
   border-radius: 11px;
   height: 5.5px;
   border-radius: 11px 11px 0 0;
-  top: 0;
+  top: -5.5px;
 }
 
 .section--process .section__phases__phase--insights .section__phase__insights::after {
@@ -3186,7 +3421,7 @@ input[type="button"]:active {
   border-radius: 11px;
   height: 5.5px;
   border-radius: 0 0 11px 11px;
-  bottom: 0;
+  bottom: -5.5px;
 }
 
 .section--process .section__phases__phase--insights .chapter__title {
@@ -3226,9 +3461,6 @@ input[type="button"]:active {
   background-repeat: no-repeat;
   background-size: contain;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
   margin-bottom: 20px;
 }
 
@@ -3237,10 +3469,8 @@ input[type="button"]:active {
     position: absolute;
     top: 50%;
     left: unset;
-    -webkit-transform: translate(0, -50%);
-        -ms-transform: translate(0, -50%);
-            transform: translate(0, -50%);
     margin-bottom: 0px;
+    margin-left: 0px;
   }
 }
 
@@ -3291,24 +3521,55 @@ input[type="button"]:active {
   width: 50px;
   height: 49px;
   background-image: url("/images/icons/magnifying-glass.svg");
+  margin-left: -25px;
+}
+
+@media only screen and (min-width: 640px) {
+  .section--process .section__phases__phase--discovery .chapter__title::before {
+    margin-top: -24.5px;
+  }
 }
 
 .section--process .section__phases__phase--creative-direction .chapter__title::before, .section--process .section__phases__phase--project-management .chapter__title::before {
   width: 49px;
   height: 42px;
   background-image: url("/images/icons/strategy.svg");
+  margin-left: -24.5px;
+}
+
+@media only screen and (min-width: 640px) {
+  .section--process .section__phases__phase--creative-direction .chapter__title::before, .section--process .section__phases__phase--project-management .chapter__title::before {
+    margin-top: -21px;
+  }
 }
 
 .section--process .section__phases__phase--information-architecture .chapter__title::before {
   width: 50px;
   height: 60px;
   background-image: url("/images/icons/wireframe.svg");
+  margin-left: -25px;
+}
+
+@media only screen and (min-width: 640px) {
+  .section--process .section__phases__phase--information-architecture .chapter__title::before {
+    margin-top: -30px;
+  }
+}
+
+.section--process .section__phases__phase--frontend-engineering .chapter__title::before, .section--process .section__phases__phase--software-development .chapter__title::before {
+  margin-left: -24px;
 }
 
 .section--process .section__phases__phase--software-development .chapter__title::before, .section--process .section__phases__phase--frontend-engineering .chapter__title::before {
   width: 48px;
   height: 43px;
   background-image: url("/images/icons/engineering.svg");
+}
+
+@media only screen and (min-width: 640px) {
+  .section--process .section__phases__phase--software-development .chapter__title::before, .section--process .section__phases__phase--frontend-engineering .chapter__title::before {
+    margin-top: -21.5px;
+  }
 }
 
 .section--process .section__phases__phase .left .chapter,
@@ -3421,7 +3682,7 @@ input[type="button"]:active {
     border-radius: 11px;
     height: 5.5px;
     border-radius: 11px 11px 0 0;
-    top: 0;
+    top: -5.5px;
   }
   .section--process .section__phase__work::after {
     display: -webkit-box;
@@ -3434,13 +3695,19 @@ input[type="button"]:active {
     border-radius: 11px;
     height: 5.5px;
     border-radius: 0 0 11px 11px;
-    bottom: 0;
+    bottom: -5.5px;
   }
   .section--process .section__phase__work::after {
-    bottom: -50.5px;
+    bottom: -5.5px;
   }
   .section--process .section__phase__work::before {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .section--process .section__phase__work .background-images {
+    padding-bottom: 3.75rem;
   }
 }
 
@@ -3556,7 +3823,6 @@ input[type="button"]:active {
     -webkit-order: 1;
         -ms-flex-order: 1;
             order: 1;
-    margin-bottom: 60px;
   }
   .section--process .section__phase__details::before, .section--process .section__phase__details::after {
     content: '';
@@ -3581,7 +3847,7 @@ input[type="button"]:active {
     border-radius: 11px;
     height: 5.5px;
     border-radius: 11px 11px 0 0;
-    top: 0;
+    top: -5.5px;
   }
   .section--process .section__phase__details::after {
     display: -webkit-box;
@@ -3594,10 +3860,10 @@ input[type="button"]:active {
     border-radius: 11px;
     height: 5.5px;
     border-radius: 0 0 11px 11px;
-    bottom: 0;
+    bottom: -5.5px;
   }
   .section--process .section__phase__details::before {
-    top: -50.5px;
+    top: -5.5px;
   }
   .section--process .section__phase__details::after {
     display: none;
@@ -3614,13 +3880,19 @@ input[type="button"]:active {
 
 @media only screen and (max-width: 640px) {
   .section--process .section__phase__details .chapter__title {
+    padding-top: 3.75rem;
     margin-bottom: 0;
   }
 }
 
 .section--process .section__phase__details .chapter__body {
   max-width: 500px;
-  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 640px) {
+  .section--process .section__phase__details .chapter__body {
+    margin-bottom: 60px;
+  }
 }
 
 .section--process .section__phase__details .chapter__body__paragraph:last-child {
