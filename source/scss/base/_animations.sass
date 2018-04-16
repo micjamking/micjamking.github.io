@@ -163,7 +163,6 @@ $play-state:      running
       &__subtitle,
       &__service,
       &__project-link
-        opacity: 0
         +fade-in-up
 
       &__title
@@ -177,18 +176,17 @@ $play-state:      running
             animation-delay: ($base-animation / 2) * (2 + $i) + $case-study-header-duration
 
       &__back-home
-        opacity: 0
         +fade-in-down
         animation-delay: ($base-animation / 2) * 6 + $case-study-header-duration
 
     .background-images--case-study
       +case-study-mask-animation
+      animation-delay: ($base-animation / 2) * 1
 
 .section--intro
   .chapter
     &__images .image,
     &__body
-      opacity: 0
       +fade-in-up
 
     &__images .image
@@ -206,54 +204,158 @@ $play-state:      running
     &__cta,
     &__images .image,
     &__background-images
-      opacity: 0
+      display: none
 
-.section--custom-animation,
-.section__phases__phase .background-images__image
+.section--light-grey-bg,
+.section--process,
+.footer
   opacity: 0
 
+.section--custom-animation
+  .section__elements
+    display: none
+
+.section--process
+  .section__phases__phase
+    .section__phase__work
+      .background-images
+        display: none
+
 .inview
-  &.section--custom-animation
+  &.section--process,
+  &.section--light-grey-bg,
+  &.footer
     +fade-in
 
-  .section,
-  .chapter
-    &__title,
-    &__body,
-    &__body-list,
-    &__cta,
-    &__images .image
-      +fade-in-up
+  &.section--custom-animation
+    .section__elements
+      display: block
 
-    &__background-images
-      +fade-in
+  &.section:not(.section--intro):not(.section--process),
+    .section,
+    .chapter
+      &__title,
+      &__body,
+      &__body-list,
+      &__cta,
+      &__images .image
+        display: block
+        +fade-in-up
 
-    &__title
-      animation-delay: $base-animation * 1
-    &__images .image
-      @for $i from 1 through 3
-        &:nth-child(#{$i})
-          animation-delay: $base-animation * (2 + ($i - 1))
+      &__background-images
+        display: block
+        +fade-in
 
-    &__body,
-    &__body-list
-      animation-delay: $base-animation * 3
+      &__background-images,
+      &__title
+        animation-delay: $base-animation * 1
 
-    &__cta
-      @for $i from 1 through 2
-        &:nth-child(#{$i})
-          animation-delay: $base-animation * (4 + ($i - 1))
+      &__images .image
+        @for $i from 1 through 3
+          &:nth-child(#{$i})
+            animation-delay: $base-animation * (2 + ($i - 1))
 
-    &__body-list--nested
-      animation-delay: 0ms
+      &__body,
+      &__body-list
+        animation-delay: $base-animation * 3
 
-  &.section__phases__phase
-    .background-images__image
-      +fade-in-up
+      &__cta
+        @for $i from 1 through 2
+          &:nth-child(#{$i})
+            animation-delay: $base-animation * (4 + ($i - 1))
 
-      @for $i from 1 through 3
-        &:nth-child(#{$i})
-          animation-delay: ($base-animation * $i) + ($base-animation * 3)
+      &__body-list--nested
+        animation-delay: 0ms
+
+  &.section.section--columns.section--bg-image
+    .chapter
+      &__background-images
+        animation-delay: $base-animation * 1
+
+      &__title
+        animation-delay: $base-animation * 2
+
+  &.section--process
+    .inview
+      &.section__phases__phase,
+      &.section__phases__header
+        .section,
+        .chapter
+          &__title,
+          &__body,
+          &__body-list,
+          &__cta,
+          &__images .image
+            display: block
+            +fade-in-up
+
+          &__title::before,
+          &__title::after
+            +fade-in-down
+
+          &__background-images
+            display: flex
+            +fade-in
+            animation-delay: ($base-animation / 4)
+
+          &__title
+            animation-delay: $base-animation * 1
+
+            &::before,
+            &::after
+              animation-delay: $base-animation * 2
+
+          &__images .image
+            @for $i from 1 through 3
+              &:nth-child(#{$i})
+                animation-delay: $base-animation * (2 + ($i - 1))
+
+          &__body,
+          &__body-list
+            animation-delay: $base-animation * 3
+
+      &.section__phases__phase
+        .background-images
+          display: block
+
+        .background-images__image
+          +fade-in-up
+
+          @for $i from 1 through 3
+            &:nth-child(#{$i})
+              animation-delay: ($base-animation * $i) + ($base-animation * 3)
+
+        &--insights.section__phases__phase
+          height: auto
+          max-height: 500px
+
+  &.footer
+    .footer
+      &__next-project
+        &__headline,
+        &__project
+          +fade-in-up
+
+      &__location,
+      &__email,
+      &__logo-icon
+        +fade-in-up
+
+      &__next-project
+        &__headline
+          animation-delay: ($base-animation / 2) * 1
+
+        &__project
+          animation-delay: ($base-animation / 2) * 2
+
+      &__location
+        animation-delay: ($base-animation / 2) * 3
+
+      &__email
+        animation-delay: ($base-animation / 2) * 4
+
+      &__logo-icon
+        animation-delay: ($base-animation / 2) * 5
 
 .fade-enter-active,
 .fade-leave-active

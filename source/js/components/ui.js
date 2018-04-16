@@ -4,6 +4,7 @@
 
 // Libs
 import Vue from 'vue';
+import LazyLoad from 'vanilla-lazyload';
 import utils, { $ } from './../lib/utils';
 
 // Services
@@ -90,6 +91,7 @@ export default class UI extends Vue {
       }, 500)
       .delay(() => {
         $preloader.classList.remove('active');
+        new LazyLoad();
         new PageTransitions();
       }, 0);
     };

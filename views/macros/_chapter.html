@@ -22,7 +22,7 @@
   <div class="chapter__images">
     {% for image in chapter.inline_images %}
     <div class="image chapter__image{% if image.class %} chapter__image--{{ image.class }}{% endif %}">
-      <img src="{{ g.static(image.url).url.path }}" />
+      <img data-src="{{ g.static(image.url).url.path }}" />
     </div>
     {% endfor %}
   </div>

@@ -29,7 +29,7 @@ export default class CaseStudyPage {
     this._$     = $;
 
     // DOM element references
-    this._$sections = this._$('.section:not(.section--process):not(.section--intro), .section__phases__header, .section__phases__phase');
+    this._$sections = this._$('.section:not(.section--intro), .section__phases__header, .section__phases__phase, .footer');
     this._$footer__canvas = this._$('.footer__canvas')[0];
     this._$process__canvas = this._$('.section--process__canvas')[0];
 
