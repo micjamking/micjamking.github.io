@@ -39,7 +39,11 @@ export default class CaseStudyPage {
     this._canvasParticleColors = (settings.canvas) ? settings.canvas.particleColors : ['#2C4050'];
 
     // Callback function
-    this._cb = settings.callback;
+    if (settings.callback){
+      this._cb = () => {
+        settings.callback();
+      };
+    }
 
     // Parallax Settings
     if (settings.parallaxer){

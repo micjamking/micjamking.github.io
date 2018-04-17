@@ -20,6 +20,7 @@ import CaseStudyPage from './pages/caseStudy';
 
 // Case study page config
 import GoHawaii from './pages/case-studies/gohawaii';
+import TourAloha from './pages/case-studies/touraloha';
 
 const _stateService = new StateService();
 Vue.use(VueTouch);
@@ -89,8 +90,10 @@ export default class UI extends Vue {
               case 'gohawaii':
                 caseStudySettings = new GoHawaii();
                 break;
-              case 'touraloha':
-              case 'teacupanalytics':
+              case 'tour-aloha':
+                caseStudySettings = new TourAloha();
+                break;
+              case 'teacup-analytics':
               case 'clearstream':
               case 'mobipcs':
               default:

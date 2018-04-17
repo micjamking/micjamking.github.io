@@ -91,47 +91,68 @@ components:
   background_images:
   - url: '/static/images/case-studies/touraloha/touraloha_animation-background.png'
   elements:
-  - background_images:
+  - class: 'section__element--map-marker'
+    background_images:
     - url: '/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg'
-  - background_images:
+  - class: 'section__element--map-marker'
+    background_images:
     - url: '/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg'
-  - background_images:
+  - class: 'section__element--map-marker'
+    background_images:
     - url: '/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg'
-  - background_images:
+  - class: 'section__element--map-marker'
+    background_images:
     - url: '/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg'
-  - background_images:
+  - class: 'section__element--map-marker'
+    background_images:
     - url: '/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg'
-  - background_images:
+  - class: 'section__element--map-marker'
+    background_images:
     - url: '/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg'
-  - background_images:
+  - class: 'section__element--map-marker'
+    background_images:
     - url: '/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg'
-  - background_images:
+  - class: 'section__element--map-marker'
+    background_images:
     - url: '/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg'
-  - background_images:
+  - class: 'section__element--map-marker'
+    background_images:
     - url: '/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg'
-  - background_images:
+  - class: 'section__element--map-marker'
+    background_images:
     - url: '/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg'
-  - background_images:
+  - class: 'section__element--map-marker'
+    background_images:
     - url: '/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg'
-  - background_images:
+  - class: 'section__element--map-marker'
+    background_images:
     - url: '/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg'
-  - background_images:
+  - class: 'section__element--map-marker'
+    background_images:
     - url: '/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg'
-  - background_images:
+  - class: 'section__element--map-marker'
+    background_images:
     - url: '/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg'
-  - background_images:
+  - class: 'section__element--map-marker'
+    background_images:
     - url: '/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg'
-  - background_images:
+  - class: 'section__element--map-marker'
+    background_images:
     - url: '/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg'
-  - background_images:
+  - class: 'section__element--map-marker'
+    background_images:
     - url: '/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg'
-  - background_images:
+  - class: 'section__element--map-marker'
+    background_images:
     - url: '/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg'
-  - background_images:
+  - class: 'section__element--map-marker'
+    background_images:
     - url: '/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg'
-  - background_images:
+  - class: 'section__element--map-marker'
+    background_images:
     - url: '/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg'
-  - background_images:
+  - class: 'section__element--map-popup'
+    background_images:
     - url: '/static/images/case-studies/touraloha/touraloha_animation-map-popup.png'
 
 - component: 'section-columns'

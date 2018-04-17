@@ -29,3 +29,50 @@
             max-width: 580px
             max-height: 334px
             margin-bottom: -40%
+
+  .section
+    &--custom-animation
+    .section
+      &__elements
+        height: 100%
+
+      &__element
+        position: absolute
+        top: 0
+        left: 0
+
+        &--map-marker
+          width: 33px
+          height: 52px
+          top: 0
+          left: 0
+
+          &:hover
+            cursor: pointer
+
+        &--map-popup
+          display: none
+          width: 264px
+          height: 148px
+          top: 0
+          left: 0
+          z-index: 100
+
+          .background-images__image
+            +process__image--box-shadow
+
+          &.active
+            display: block
+
+            .section__element__background-images
+              +fade-in-up
+
+
+  .inview
+    &.section
+      &--custom-animation
+        .section__element--map-marker
+          +fade-in-up
+          @for $i from 1 through 25
+            &:nth-child(#{$i})
+              animation-delay: $base-animation + (150ms * $i)

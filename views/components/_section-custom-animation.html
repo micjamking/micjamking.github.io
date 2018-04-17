@@ -17,7 +17,7 @@
     {% if component.elements %}
     <div class="section__elements">
       {% for element in component.elements %}
-      <div class="section__element{% if element.class %} {{ element.class }}{% endif %}{% if element.id %} section__element--{{ element.id }}{% endif %}">
+      <div class="section__element section__element--{{ loop.index }}{% if element.class %} {{ element.class }}{% endif %}">
         {% if element.background_images %}
         {{background_images.background_images('section__element__background-images', element.background_images)}}
         {% endif %}

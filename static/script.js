@@ -3648,8 +3648,6 @@ var ParticleCanvas = function () {
     // this.utils.setupHelpers(w, this.mouse, this.touch);
 
     // Start animation
-    console.log('number of particles', this.numOfParticles);
-    console.log('height of canvas', this.maxHeight);
     this._init();
 
     // console.log('instantiated particle canvas', this);
@@ -4205,6 +4203,10 @@ var _gohawaii = __webpack_require__(19);
 
 var _gohawaii2 = _interopRequireDefault(_gohawaii);
 
+var _touraloha = __webpack_require__(20);
+
+var _touraloha2 = _interopRequireDefault(_touraloha);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -4298,8 +4300,10 @@ var UI = function (_Vue) {
               case 'gohawaii':
                 caseStudySettings = new _gohawaii2.default();
                 break;
-              case 'touraloha':
-              case 'teacupanalytics':
+              case 'tour-aloha':
+                caseStudySettings = new _touraloha2.default();
+                break;
+              case 'teacup-analytics':
               case 'clearstream':
               case 'mobipcs':
               default:
@@ -14683,7 +14687,11 @@ var CaseStudyPage = function () {
     this._canvasParticleColors = settings.canvas ? settings.canvas.particleColors : ['#2C4050'];
 
     // Callback function
-    this._cb = settings.callback;
+    if (settings.callback) {
+      this._cb = function () {
+        settings.callback();
+      };
+    }
 
     // Parallax Settings
     if (settings.parallaxer) {
@@ -14842,6 +14850,111 @@ var GoHawaii = function GoHawaii() {
 };
 
 exports.default = GoHawaii;
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * Tour Aloha Page Settings
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+
+
+var _utils = __webpack_require__(0);
+
+var _utils2 = _interopRequireDefault(_utils);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var TourAloha = function () {
+  function TourAloha() {
+    var _this = this;
+
+    _classCallCheck(this, TourAloha);
+
+    this._utils = new _utils2.default();
+    this._$section = (0, _utils.$)('.section--custom-animation')[0];
+    this._$markers = (0, _utils.$)('.section__element--map-marker');
+    this._$popup = (0, _utils.$)('.section__element--map-popup')[0];
+    console.log('Tour Aloha instantiated.');
+    this._top = 0;
+    this._left = 0;
+    this._right = this._$section.offsetWidth;
+    this._bottom = this._$section.offsetHeight;
+
+    this._popupOffsetTop = '125';
+    this._popupOffsetLeft = '32';
+
+    var bg = this._$section.querySelectorAll('.section__elements')[0];
+    bg.addEventListener('click', function () {
+      _this._$popup.classList.remove('active');
+    }, true);
+  }
+
+  _createClass(TourAloha, [{
+    key: 'callback',
+    value: function callback() {
+      this._scatterMarkers();
+    }
+
+    /**
+     * Callback to create popup effect
+     * @param {Event} e - Event object
+     */
+
+  }, {
+    key: '_markerPopup',
+    value: function _markerPopup(e) {
+      console.log('clicked marker: ', el);
+
+      var target = e.target || e.srcElement;
+      var el = target.parentNode.parentNode;
+      var top = parseInt(el.style.top.replace('px', ''), 10) - this._popupOffsetTop;
+      var left = parseInt(el.style.left.replace('px', ''), 10) - this._popupOffsetLeft;
+
+      this._$popup.style.top = top + 'px';
+      this._$popup.style.left = left + 'px';
+
+      this._$popup.classList.add('active');
+    }
+
+    /**
+     * Scatter
+     */
+
+  }, {
+    key: '_scatterMarkers',
+    value: function _scatterMarkers() {
+      var _this2 = this;
+
+      this._$markers.forEach(function ($marker) {
+        var y_pos = _this2._utils.randInt(_this2._top, _this2._bottom);
+        var x_pos = _this2._utils.randInt(_this2._left, _this2._right);
+        $marker.style.top = y_pos + 'px';
+        $marker.style.left = x_pos + 'px';
+
+        $marker.addEventListener('click', function (e) {
+          return _this2._markerPopup(e);
+        }, true);
+
+        // console.log('set marker position', $marker);
+      });
+    }
+  }]);
+
+  return TourAloha;
+}();
+
+exports.default = TourAloha;
 
 /***/ })
 /******/ ]);

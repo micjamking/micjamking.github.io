@@ -86,8 +86,6 @@ export default class ParticleCanvas {
     // this.utils.setupHelpers(w, this.mouse, this.touch);
 
     // Start animation
-    console.log('number of particles', this.numOfParticles);
-    console.log('height of canvas', this.maxHeight);
     this._init();
 
     // console.log('instantiated particle canvas', this);
