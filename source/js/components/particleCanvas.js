@@ -149,7 +149,7 @@ export default class ParticleCanvas {
     w.addEventListener('resize', () => this._onWindowResize());
 
     if (this.$canvasParent !== w){
-      new ResizeObserver(() => {
+      new w.ResizeObserver(() => {
         this._onElementResize();
       }).observe(this.$canvasParent);
     }

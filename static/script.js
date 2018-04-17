@@ -3721,7 +3721,7 @@ var ParticleCanvas = function () {
       });
 
       if (this.$canvasParent !== _utils.w) {
-        new ResizeObserver(function () {
+        new _utils.w.ResizeObserver(function () {
           _this._onElementResize();
         }).observe(this.$canvasParent);
       }
