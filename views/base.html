@@ -121,6 +121,11 @@
   {% include "/views/components/_preloader.html" %}
 
   <div class="container" :class="{ active: isActive }">
+
+    {% if doc.url.path == '/' %}
+    <v-touch v-on:swipeup="onSwipeUp" v-on:swipedown="onSwipeDown">
+    {% endif %}
+
     {% block header %}
       {% include "/views/components/_header.html" %}
 
@@ -145,6 +150,10 @@
 
     {% block footer %}
     {% endblock %}
+
+    {% if doc.url.path == '/' %}
+    </v-touch>
+    {% endif %}
 
   </div>
   <script src="{{ g.static('/static/script.js').url.path }}"></script>

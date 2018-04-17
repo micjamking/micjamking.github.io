@@ -13,6 +13,7 @@ export default class CaseStudyPage {
 
   /**
    * @param {Object} settings - Settings object
+   * @param {Function} settings.callback - Callback function for custom functionality
    * @param {Object} settings.parallaxer - Config object for parallaxer effect
    * @param {NodeList} settings.parallaxer.els - HTML Nodelist of parallax elements
    * @param {NodeList} settings.parallaxer.baseEl - HTMLElement for root element for parallax effect
@@ -37,6 +38,9 @@ export default class CaseStudyPage {
     this._canvasBackgroundColor = (settings.canvas) ? settings.canvas.backgroundColor : '#374650';
     this._canvasParticleColors = (settings.canvas) ? settings.canvas.particleColors : ['#2C4050'];
 
+    // Callback function
+    this._cb = settings.callback;
+
     // Parallax Settings
     if (settings.parallaxer){
       this._parallaxers = [];
@@ -56,6 +60,11 @@ export default class CaseStudyPage {
   _init() {
     this._setupCanvases();
     this._setupScrollEffect();
+
+    if (this._cb){
+      this._cb();
+    }
+
     if (this._parallaxBaseEl){
       this._setupParallaxers();
     }

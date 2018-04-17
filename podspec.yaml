@@ -1,20 +1,18 @@
 grow_version: ">=0.0.60"
 home: "/content/pages/home.yaml"
-root: ""
 
 title: "Mike King | Creative Developer"
 meta:
   search:
     author: "Mike King"
-    description: ""
-    keywords: ""
-    google_site_verification: ""
+    description: "Mike King is a Hawaii-based Creative Developer, specializing in digital interactive design and full-stack javascript web development."
+    keywords: "Mike King, personal website, interaction designer, interactive developer, creative developer, css, javascript"
   open_graph:
     image_path: "/static/images/mikekingio_screenshot.png"
     image_type: "image/png"
     image_width: "1200"
     image_height: "630"
-    facebook_app_id: ""
+    facebook_app_id: "221558811761933"
   twitter:
     username: "@micjamking"
   google:
@@ -22,9 +20,6 @@ meta:
     analytics_id: "UA-67907671-3"
   favicon_path: "/static/favicon.png"
   icon_path: "/static/apple-touch-icon-precomposed.png"
-  social:
-    twitter: "micjamking"
-    facebook: "micjamking"
 
 static_dirs:
 - static_dir: "/static/"

@@ -4,6 +4,7 @@
 
 // Libs
 import Vue from 'vue';
+import VueTouch from 'vue-touch';
 import LazyLoad from 'vanilla-lazyload';
 import utils, { $ } from './../lib/utils';
 
@@ -21,6 +22,7 @@ import CaseStudyPage from './pages/caseStudy';
 import GoHawaii from './pages/case-studies/gohawaii';
 
 const _stateService = new StateService();
+Vue.use(VueTouch);
 
 export default class UI extends Vue {
 
@@ -35,6 +37,17 @@ export default class UI extends Vue {
       data: {
         isActive: false,
         stateService: _stateService
+      }
+    };
+
+    _options.methods = {
+      onSwipeUp: function(){
+        this.stateService.getNextItem();
+        // console.log('swiped up');
+      },
+      onSwipeDown: function(){
+        this.stateService.getPreviousItem();
+        // console.log('swiped down');
       }
     };
 

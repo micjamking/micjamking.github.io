@@ -65,7 +65,7 @@ let webpackConfig = (function(){
              */
             loader: 'babel-loader',
             query: {
-              presets: ['env']
+              presets: ['env', 'es2015-node6', 'stage-2']
             }
           },
           {
