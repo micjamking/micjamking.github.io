@@ -3593,6 +3593,7 @@ var ParticleCanvas = function () {
 
     // DOM & Canvas object references
     this.$canvas = settings.canvasEL;
+    this.$canvasParent = settings.canvasEL.parentNode;
     this.context = this.$canvas.getContext('2d');
     this.left = 0;
     this.top = 0;
@@ -3716,6 +3717,12 @@ var ParticleCanvas = function () {
       _utils.w.addEventListener('resize', function () {
         return _this._onWindowResize();
       });
+
+      if (this.$canvasParent !== _utils.w) {
+        new _utils.w.ResizeObserver(function () {
+          _this._onElementResize();
+        }).observe(this.$canvasParent);
+      }
 
       if (this.utils.allowDeviceOrientation()) {
 
@@ -4001,6 +4008,20 @@ var ParticleCanvas = function () {
     */
 
   }, {
+    key: '_onElementResize',
+    value: function _onElementResize() {
+      this.right = this.$canvas.width = this.$canvasParent.offsetWidth;
+      this.bottom = this.$canvas.height = this.$canvasParent.offsetHeight;
+      this.centerX = this.$canvas.width / 2;
+      this.centerY = this.$canvas.height / 2;
+      this._upscaleCanvas();
+    }
+
+    /**
+    * Window resize callback
+    */
+
+  }, {
     key: '_onWindowResize',
     value: function _onWindowResize() {
       this.right = this.$canvas.width = this.maxWidth || this.utils.screenSize().width;
@@ -4182,6 +4203,10 @@ var _gohawaii = __webpack_require__(19);
 
 var _gohawaii2 = _interopRequireDefault(_gohawaii);
 
+var _touraloha = __webpack_require__(20);
+
+var _touraloha2 = _interopRequireDefault(_touraloha);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -4275,8 +4300,10 @@ var UI = function (_Vue) {
               case 'gohawaii':
                 caseStudySettings = new _gohawaii2.default();
                 break;
-              case 'touraloha':
-              case 'teacupanalytics':
+              case 'tour-aloha':
+                caseStudySettings = new _touraloha2.default();
+                break;
+              case 'teacup-analytics':
               case 'clearstream':
               case 'mobipcs':
               default:
@@ -14660,7 +14687,11 @@ var CaseStudyPage = function () {
     this._canvasParticleColors = settings.canvas ? settings.canvas.particleColors : ['#2C4050'];
 
     // Callback function
-    this._cb = settings.callback;
+    if (settings.callback) {
+      this._cb = function () {
+        settings.callback();
+      };
+    }
 
     // Parallax Settings
     if (settings.parallaxer) {
@@ -14702,6 +14733,7 @@ var CaseStudyPage = function () {
   }, {
     key: '_setupCanvases',
     value: function _setupCanvases() {
+      var _numOfParticles = !this._utils.allowDeviceOrientation() ? 300 : 150;
       if (this._$process__canvas) {
         new _particleCanvas2.default({
           canvasEL: this._$process__canvas,
@@ -14709,12 +14741,13 @@ var CaseStudyPage = function () {
           particleColors: this._canvasParticleColors,
           particleLineWidth: 4,
           maxHeight: this._$process__canvas.parentNode.offsetHeight,
-          numOfParticles: 300,
+          numOfParticles: _numOfParticles,
           particleOpacity: 1.0
         });
       }
 
       if (this._$footer__canvas) {
+        var _numOfParticles2 = !this._utils.allowDeviceOrientation() ? 75 : 25;
         new _particleCanvas2.default({
           canvasEL: this._$footer__canvas,
           canvasBackground: this._canvasBackgroundColor,
@@ -14722,7 +14755,7 @@ var CaseStudyPage = function () {
           particleLineWidth: 4,
           maxHeight: 400,
           respondToMouse: false,
-          numOfParticles: 75,
+          numOfParticles: _numOfParticles2,
           particleOpacity: 1.0
         });
       }
@@ -14817,6 +14850,111 @@ var GoHawaii = function GoHawaii() {
 };
 
 exports.default = GoHawaii;
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * Tour Aloha Page Settings
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+
+
+var _utils = __webpack_require__(0);
+
+var _utils2 = _interopRequireDefault(_utils);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var TourAloha = function () {
+  function TourAloha() {
+    var _this = this;
+
+    _classCallCheck(this, TourAloha);
+
+    this._utils = new _utils2.default();
+    this._$section = (0, _utils.$)('.section--custom-animation')[0];
+    this._$markers = (0, _utils.$)('.section__element--map-marker');
+    this._$popup = (0, _utils.$)('.section__element--map-popup')[0];
+    console.log('Tour Aloha instantiated.');
+    this._top = 0;
+    this._left = 0;
+    this._right = this._$section.offsetWidth;
+    this._bottom = this._$section.offsetHeight;
+
+    this._popupOffsetTop = '125';
+    this._popupOffsetLeft = '32';
+
+    var bg = this._$section.querySelectorAll('.section__elements')[0];
+    bg.addEventListener('click', function () {
+      _this._$popup.classList.remove('active');
+    }, true);
+  }
+
+  _createClass(TourAloha, [{
+    key: 'callback',
+    value: function callback() {
+      this._scatterMarkers();
+    }
+
+    /**
+     * Callback to create popup effect
+     * @param {Event} e - Event object
+     */
+
+  }, {
+    key: '_markerPopup',
+    value: function _markerPopup(e) {
+      console.log('clicked marker: ', el);
+
+      var target = e.target || e.srcElement;
+      var el = target.parentNode.parentNode;
+      var top = parseInt(el.style.top.replace('px', ''), 10) - this._popupOffsetTop;
+      var left = parseInt(el.style.left.replace('px', ''), 10) - this._popupOffsetLeft;
+
+      this._$popup.style.top = top + 'px';
+      this._$popup.style.left = left + 'px';
+
+      this._$popup.classList.add('active');
+    }
+
+    /**
+     * Scatter
+     */
+
+  }, {
+    key: '_scatterMarkers',
+    value: function _scatterMarkers() {
+      var _this2 = this;
+
+      this._$markers.forEach(function ($marker) {
+        var y_pos = _this2._utils.randInt(_this2._top, _this2._bottom);
+        var x_pos = _this2._utils.randInt(_this2._left, _this2._right);
+        $marker.style.top = y_pos + 'px';
+        $marker.style.left = x_pos + 'px';
+
+        $marker.addEventListener('click', function (e) {
+          return _this2._markerPopup(e);
+        }, true);
+
+        // console.log('set marker position', $marker);
+      });
+    }
+  }]);
+
+  return TourAloha;
+}();
+
+exports.default = TourAloha;
 
 /***/ })
 /******/ ]);
