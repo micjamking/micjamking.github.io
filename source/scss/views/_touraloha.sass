@@ -2,6 +2,8 @@
    Tour Aloha Page
    ========================================================================== */
 
+$custom-elements: 25
+
 .tour-aloha
 
   .chapter__background-images
@@ -73,6 +75,6 @@
       &--custom-animation
         .section__element--map-marker
           +fade-in-up
-          @for $i from 1 through 25
+          @for $i from 1 through $custom-elements
             &:nth-child(#{$i})
               animation-delay: $base-animation + (150ms * $i)

@@ -389,7 +389,8 @@
                 width: 50px
                 height: 49px
                 background-image: url('/images/icons/magnifying-glass.svg')
-                margin-left: -25px
+                +lt($global-screen-size-medium)
+                  margin-left: -25px
                 +md
                   margin-top: -24.5px
 
@@ -400,7 +401,8 @@
                 width: 49px
                 height: 42px
                 background-image: url('/images/icons/strategy.svg')
-                margin-left: -24.5px
+                +lt($global-screen-size-medium)
+                  margin-left: -24.5px
                 +md
                   margin-top: -21px
 
@@ -410,14 +412,16 @@
                 width: 50px
                 height: 60px
                 background-image: url('/images/icons/wireframe.svg')
-                margin-left: -25px
+                +lt($global-screen-size-medium)
+                  margin-left: -25px
                 +md
                   margin-top: -30px
 
           &--software-development
             .chapter__title
               &::before
-                margin-left: -24px
+                +lt($global-screen-size-medium)
+                  margin-left: -24px
 
           &--software-development,
           &--frontend-engineering

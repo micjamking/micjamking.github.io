@@ -3717,8 +3717,9 @@ var ParticleCanvas = function () {
       _utils.w.addEventListener('resize', function () {
         return _this._onWindowResize();
       });
+      var $body = document.querySelectorAll('body')[0];
 
-      if (this.$canvasParent !== _utils.w) {
+      if (this.$canvasParent !== _utils.w && !$body.classList.contains('home')) {
         new _utils.w.ResizeObserver(function () {
           _this._onElementResize();
         }).observe(this.$canvasParent);
@@ -4207,6 +4208,10 @@ var _touraloha = __webpack_require__(20);
 
 var _touraloha2 = _interopRequireDefault(_touraloha);
 
+var _teacup = __webpack_require__(21);
+
+var _teacup2 = _interopRequireDefault(_teacup);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -4304,6 +4309,8 @@ var UI = function (_Vue) {
                 caseStudySettings = new _touraloha2.default();
                 break;
               case 'teacup-analytics':
+                caseStudySettings = new _teacup2.default();
+                break;
               case 'clearstream':
               case 'mobipcs':
               default:
@@ -14955,6 +14962,44 @@ var TourAloha = function () {
 }();
 
 exports.default = TourAloha;
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _utils = __webpack_require__(0);
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } } /**
+                                                                                                                                                           * Teacup Analytics Page Settings
+                                                                                                                                                           */
+
+
+var Teacup = function Teacup() {
+  _classCallCheck(this, Teacup);
+
+  this.parallaxer = {};
+  this.parallaxer.baseEl = (0, _utils.$)('.section--custom-animation')[0];
+  this.parallaxer.els = (0, _utils.$)('.section--custom-animation .section__element');
+  this.parallaxer.baseRotationSensitivity = {
+    x: 0,
+    y: 0,
+    increment: 0
+  };
+  this.parallaxer.baseTranslateSensitivity = {
+    x: 0.25,
+    y: 0.35,
+    increment: 0.15
+  };
+};
+
+exports.default = Teacup;
 
 /***/ })
 /******/ ]);

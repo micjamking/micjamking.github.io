@@ -2,6 +2,8 @@
    Teacup Analytics Page
    ========================================================================== */
 
+$custom-elements: 5
+
 .teacup-analytics
 
   .chapter__background-images
@@ -19,3 +21,58 @@
     .chapter__background-images
       .teacup-teapot
         transform: scaleX(-1) translate(50%,-50%)
+
+
+  .section
+    &--custom-animation
+    .section
+      &__elements
+        height: 100%
+
+      &__element
+        position: absolute
+        top: 0
+        left: 0
+
+        .background-images__image
+          +process__image--box-shadow
+
+        &--1,
+        &--2,
+        &--3
+          width: 469px
+          height: 243px
+
+        &--1
+          top: 20%
+          left: 5%
+          z-index: 1
+
+        &--2
+          top: 30%
+          left: 10%
+          z-index: 2
+
+        &--3
+          top: 40%
+          left: 15%
+          z-index: 3
+
+        &--4
+          width: 983px
+          height: 486px
+          left: unset
+          right: -50%
+          top: 50%
+          margin-top: -243px
+          z-index: 4
+
+  .inview
+    &.section
+      &--custom-animation
+        .section__element .background-images__image
+          +fade-in-up
+        .section__element
+          @for $i from 1 through $custom-elements
+            &:nth-child(#{$i}) .background-images__image
+              animation-delay: $base-animation + ($base-animation * $i)
