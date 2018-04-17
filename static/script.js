@@ -3593,6 +3593,7 @@ var ParticleCanvas = function () {
 
     // DOM & Canvas object references
     this.$canvas = settings.canvasEL;
+    this.$canvasParent = settings.canvasEL.parentNode;
     this.context = this.$canvas.getContext('2d');
     this.left = 0;
     this.top = 0;
@@ -3647,6 +3648,8 @@ var ParticleCanvas = function () {
     // this.utils.setupHelpers(w, this.mouse, this.touch);
 
     // Start animation
+    console.log('number of particles', this.numOfParticles);
+    console.log('height of canvas', this.maxHeight);
     this._init();
 
     // console.log('instantiated particle canvas', this);
@@ -3716,6 +3719,12 @@ var ParticleCanvas = function () {
       _utils.w.addEventListener('resize', function () {
         return _this._onWindowResize();
       });
+
+      if (this.$canvasParent !== _utils.w) {
+        new ResizeObserver(function () {
+          _this._onElementResize();
+        }).observe(this.$canvasParent);
+      }
 
       if (this.utils.allowDeviceOrientation()) {
 
@@ -3994,6 +4003,20 @@ var ParticleCanvas = function () {
     value: function _mouseUpCallback() {
       this.isTouching = false;
       this.mouseBall.radius = this.mouseBallThreshold;
+    }
+
+    /**
+    * Window resize callback
+    */
+
+  }, {
+    key: '_onElementResize',
+    value: function _onElementResize() {
+      this.right = this.$canvas.width = this.$canvasParent.offsetWidth;
+      this.bottom = this.$canvas.height = this.$canvasParent.offsetHeight;
+      this.centerX = this.$canvas.width / 2;
+      this.centerY = this.$canvas.height / 2;
+      this._upscaleCanvas();
     }
 
     /**
@@ -14702,6 +14725,7 @@ var CaseStudyPage = function () {
   }, {
     key: '_setupCanvases',
     value: function _setupCanvases() {
+      var _numOfParticles = !this._utils.allowDeviceOrientation() ? 300 : 150;
       if (this._$process__canvas) {
         new _particleCanvas2.default({
           canvasEL: this._$process__canvas,
@@ -14709,12 +14733,13 @@ var CaseStudyPage = function () {
           particleColors: this._canvasParticleColors,
           particleLineWidth: 4,
           maxHeight: this._$process__canvas.parentNode.offsetHeight,
-          numOfParticles: 300,
+          numOfParticles: _numOfParticles,
           particleOpacity: 1.0
         });
       }
 
       if (this._$footer__canvas) {
+        var _numOfParticles2 = !this._utils.allowDeviceOrientation() ? 75 : 25;
         new _particleCanvas2.default({
           canvasEL: this._$footer__canvas,
           canvasBackground: this._canvasBackgroundColor,
@@ -14722,7 +14747,7 @@ var CaseStudyPage = function () {
           particleLineWidth: 4,
           maxHeight: 400,
           respondToMouse: false,
-          numOfParticles: 75,
+          numOfParticles: _numOfParticles2,
           particleOpacity: 1.0
         });
       }

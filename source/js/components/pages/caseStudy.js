@@ -74,6 +74,7 @@ export default class CaseStudyPage {
    * Sets up particle backgrounds
    */
   _setupCanvases() {
+    let _numOfParticles = (!this._utils.allowDeviceOrientation()) ? 300 : 150;
     if (this._$process__canvas){
       new ParticleCanvas({
         canvasEL: this._$process__canvas,
@@ -81,12 +82,13 @@ export default class CaseStudyPage {
         particleColors: this._canvasParticleColors,
         particleLineWidth: 4,
         maxHeight: this._$process__canvas.parentNode.offsetHeight,
-        numOfParticles: 300,
+        numOfParticles: _numOfParticles,
         particleOpacity: 1.0
       });
     }
 
     if (this._$footer__canvas){
+      let _numOfParticles = (!this._utils.allowDeviceOrientation()) ? 75 : 25;
       new ParticleCanvas({
         canvasEL: this._$footer__canvas,
         canvasBackground: this._canvasBackgroundColor,
@@ -94,7 +96,7 @@ export default class CaseStudyPage {
         particleLineWidth: 4,
         maxHeight: 400,
         respondToMouse: false,
-        numOfParticles: 75,
+        numOfParticles: _numOfParticles,
         particleOpacity: 1.0
       });
     }

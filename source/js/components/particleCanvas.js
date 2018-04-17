@@ -23,12 +23,13 @@ export default class ParticleCanvas {
     this.devicePixelRatio      = w.devicePixelRatio;
 
     // DOM & Canvas object references
-    this.$canvas = settings.canvasEL;
-    this.context = this.$canvas.getContext('2d');
-    this.left    = 0;
-    this.top     = 0;
-    this.right   = this.maxWidth || this.utils.screenSize().width;
-    this.bottom  = this.maxHeight || this.utils.screenSize().height;
+    this.$canvas       = settings.canvasEL;
+    this.$canvasParent = settings.canvasEL.parentNode;
+    this.context       = this.$canvas.getContext('2d');
+    this.left          = 0;
+    this.top           = 0;
+    this.right         = this.maxWidth || this.utils.screenSize().width;
+    this.bottom        = this.maxHeight || this.utils.screenSize().height;
 
     // Set canvas size to fullscreen
     this.$canvas.width  = this.maxWidth || this.utils.screenSize().width;
@@ -85,6 +86,8 @@ export default class ParticleCanvas {
     // this.utils.setupHelpers(w, this.mouse, this.touch);
 
     // Start animation
+    console.log('number of particles', this.numOfParticles);
+    console.log('height of canvas', this.maxHeight);
     this._init();
 
     // console.log('instantiated particle canvas', this);
@@ -144,6 +147,12 @@ export default class ParticleCanvas {
 	 */
   _setupListeners(){
     w.addEventListener('resize', () => this._onWindowResize());
+
+    if (this.$canvasParent !== w){
+      new ResizeObserver(() => {
+        this._onElementResize();
+      }).observe(this.$canvasParent);
+    }
 
     if (this.utils.allowDeviceOrientation()){
 
@@ -396,6 +405,18 @@ export default class ParticleCanvas {
     this.isTouching = false;
     this.mouseBall.radius = this.mouseBallThreshold;
 	}
+
+
+  /**
+	 * Window resize callback
+	 */
+  _onElementResize() {
+		this.right   = this.$canvas.width  = this.$canvasParent.offsetWidth;
+		this.bottom  = this.$canvas.height = this.$canvasParent.offsetHeight;
+    this.centerX = this.$canvas.width / 2;
+    this.centerY = this.$canvas.height / 2;
+    this._upscaleCanvas();
+  }
 
 
   /**
