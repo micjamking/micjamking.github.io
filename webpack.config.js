@@ -160,7 +160,7 @@ let webpackConfig = (function(){
       PATH.resolve( VENDOR )
     ],
     alias: {
-      'vue': 'vue/dist/vue.js'
+      'vue': 'vue/dist/vue.min.js'
     }
   };
 
