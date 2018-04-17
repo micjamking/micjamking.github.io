@@ -205,6 +205,14 @@ let webpackConfig = (function(){
 
     config.plugins.push(new UGLIFYJS());
 
+    config.plugins.push(
+      new WEBPACK.DefinePlugin({
+        'process.env': {
+          NODE_ENV: '"production"'
+        }
+      })
+    )
+
   }
 
   return config;
