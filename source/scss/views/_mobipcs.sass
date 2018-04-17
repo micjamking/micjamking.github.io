@@ -24,9 +24,44 @@
     .section__phases__phase--information-architecture
       .background-images__image
         &.background-images__image--ia-1
+          +lt($global-screen-size-medium)
+            height: 70vh
+
           +md
             max-height: 55vh
 
           +lg
             max-width: 453px
             max-height: 746px
+
+
+  .section
+    &--custom-animation
+      opacity: 0
+
+      +lt($global-screen-size-medium)
+        min-height: 65vh
+
+      .background-images__image
+        +lt($global-screen-size-medium)
+          background-size: contain
+          width: 303px
+          height: 421px
+          left: 50%
+          margin-left: -151.5px
+
+      .section__custom-animation__background-video
+        +gt($global-screen-size-xlarge)
+          max-width: 1400px
+          left: 50%
+          transform: translateX(-50%)
+
+  .inview
+    &.section
+      &--custom-animation
+        +fade-in
+
+        .background-images__image
+          +lt($global-screen-size-medium)
+            +fade-in-up
+            animation-delay: $base-animation

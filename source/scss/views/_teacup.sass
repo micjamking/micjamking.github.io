@@ -40,23 +40,39 @@ $custom-elements: 5
         &--1,
         &--2,
         &--3
-          width: 469px
-          height: 243px
+          width: 75%
+          height: 30vh
+
+          +md
+            width: 469px
+            height: 243px
 
         &--1
-          top: 20%
+          top: 5%
           left: 5%
           z-index: 1
 
+          +md
+            top: 20%
+            left: 5%
+
         &--2
-          top: 30%
+          top: 15%
           left: 10%
           z-index: 2
 
+          +md
+            top: 30%
+            left: 10%
+
         &--3
-          top: 40%
-          left: 15%
+          top: 23%
+          left: 18%
           z-index: 3
+
+          +md
+            top: 40%
+            left: 15%
 
         &--4
           width: 983px
@@ -66,6 +82,8 @@ $custom-elements: 5
           top: 50%
           margin-top: -243px
           z-index: 4
+          +lt($global-screen-size-medium)
+            display: none
 
   .inview
     &.section
@@ -76,3 +94,9 @@ $custom-elements: 5
           @for $i from 1 through $custom-elements
             &:nth-child(#{$i}) .background-images__image
               animation-delay: $base-animation + ($base-animation * $i)
+
+    &.section--process
+      .inview.section__phases__phase--insights
+        &.section__phases__phase
+          +lt($global-screen-size-medium)
+            max-height: 600px

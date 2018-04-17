@@ -417,12 +417,6 @@
                 +md
                   margin-top: -30px
 
-          &--software-development
-            .chapter__title
-              &::before
-                +lt($global-screen-size-medium)
-                  margin-left: -24px
-
           &--software-development,
           &--frontend-engineering
             .chapter__title
@@ -430,6 +424,8 @@
                 width: 48px
                 height: 43px
                 background-image: url('/images/icons/engineering.svg')
+                +lt($global-screen-size-medium)
+                  margin-left: -24px
                 +md
                   margin-top: -21.5px
 

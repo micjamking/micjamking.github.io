@@ -28,17 +28,17 @@ $custom-elements: 50
           +md
             max-height: 40vh
 
+            &:nth-child(1)
+              bottom: 60px
+              right: 60px
+
+            &:nth-child(2)
+              bottom: 0px
+              right: 0px
+
           +lg
             max-width: 519px
             max-height: 383px
-
-          &:nth-child(1)
-            bottom: 60px
-            right: 60px
-
-          &:nth-child(2)
-            bottom: 0px
-            right: 0px
 
 
   .section
@@ -76,3 +76,9 @@ $custom-elements: 50
           @for $i from 1 through $custom-elements
             &:nth-child(#{$i}) .background-images__image
               animation-delay: $base-animation + ($base-animation / 2 * $i)
+
+    &.section--process
+      .inview.section__phases__phase--insights
+        &.section__phases__phase
+          +lt($global-screen-size-medium)
+            max-height: 700px
