@@ -5038,6 +5038,317 @@ input[type="button"]:active {
   right: 0px;
 }
 
+.clearstream .section .section__elements {
+  padding-top: 30px;
+  padding-left: 30px;
+  width: 125%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.clearstream .section .section__element {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 180px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.clearstream .section .section__element .background-images__image {
+  -webkit-filter: drop-shadow(0px 24px 32px rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(0px 24px 32px rgba(0, 0, 0, 0.1));
+}
+
+.clearstream .inview.section--custom-animation .section__element .background-images__image {
+  -webkit-animation-name: "fade-in-up";
+          animation-name: "fade-in-up";
+  -webkit-animation-duration: 550ms;
+          animation-duration: 550ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(1) .background-images__image {
+  -webkit-animation-delay: 450ms;
+          animation-delay: 450ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(2) .background-images__image {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(3) .background-images__image {
+  -webkit-animation-delay: 750ms;
+          animation-delay: 750ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(4) .background-images__image {
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(5) .background-images__image {
+  -webkit-animation-delay: 1050ms;
+          animation-delay: 1050ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(6) .background-images__image {
+  -webkit-animation-delay: 1200ms;
+          animation-delay: 1200ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(7) .background-images__image {
+  -webkit-animation-delay: 1350ms;
+          animation-delay: 1350ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(8) .background-images__image {
+  -webkit-animation-delay: 1500ms;
+          animation-delay: 1500ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(9) .background-images__image {
+  -webkit-animation-delay: 1650ms;
+          animation-delay: 1650ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(10) .background-images__image {
+  -webkit-animation-delay: 1800ms;
+          animation-delay: 1800ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(11) .background-images__image {
+  -webkit-animation-delay: 1950ms;
+          animation-delay: 1950ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(12) .background-images__image {
+  -webkit-animation-delay: 2100ms;
+          animation-delay: 2100ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(13) .background-images__image {
+  -webkit-animation-delay: 2250ms;
+          animation-delay: 2250ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(14) .background-images__image {
+  -webkit-animation-delay: 2400ms;
+          animation-delay: 2400ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(15) .background-images__image {
+  -webkit-animation-delay: 2550ms;
+          animation-delay: 2550ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(16) .background-images__image {
+  -webkit-animation-delay: 2700ms;
+          animation-delay: 2700ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(17) .background-images__image {
+  -webkit-animation-delay: 2850ms;
+          animation-delay: 2850ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(18) .background-images__image {
+  -webkit-animation-delay: 3000ms;
+          animation-delay: 3000ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(19) .background-images__image {
+  -webkit-animation-delay: 3150ms;
+          animation-delay: 3150ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(20) .background-images__image {
+  -webkit-animation-delay: 3300ms;
+          animation-delay: 3300ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(21) .background-images__image {
+  -webkit-animation-delay: 3450ms;
+          animation-delay: 3450ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(22) .background-images__image {
+  -webkit-animation-delay: 3600ms;
+          animation-delay: 3600ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(23) .background-images__image {
+  -webkit-animation-delay: 3750ms;
+          animation-delay: 3750ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(24) .background-images__image {
+  -webkit-animation-delay: 3900ms;
+          animation-delay: 3900ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(25) .background-images__image {
+  -webkit-animation-delay: 4050ms;
+          animation-delay: 4050ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(26) .background-images__image {
+  -webkit-animation-delay: 4200ms;
+          animation-delay: 4200ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(27) .background-images__image {
+  -webkit-animation-delay: 4350ms;
+          animation-delay: 4350ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(28) .background-images__image {
+  -webkit-animation-delay: 4500ms;
+          animation-delay: 4500ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(29) .background-images__image {
+  -webkit-animation-delay: 4650ms;
+          animation-delay: 4650ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(30) .background-images__image {
+  -webkit-animation-delay: 4800ms;
+          animation-delay: 4800ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(31) .background-images__image {
+  -webkit-animation-delay: 4950ms;
+          animation-delay: 4950ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(32) .background-images__image {
+  -webkit-animation-delay: 5100ms;
+          animation-delay: 5100ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(33) .background-images__image {
+  -webkit-animation-delay: 5250ms;
+          animation-delay: 5250ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(34) .background-images__image {
+  -webkit-animation-delay: 5400ms;
+          animation-delay: 5400ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(35) .background-images__image {
+  -webkit-animation-delay: 5550ms;
+          animation-delay: 5550ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(36) .background-images__image {
+  -webkit-animation-delay: 5700ms;
+          animation-delay: 5700ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(37) .background-images__image {
+  -webkit-animation-delay: 5850ms;
+          animation-delay: 5850ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(38) .background-images__image {
+  -webkit-animation-delay: 6000ms;
+          animation-delay: 6000ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(39) .background-images__image {
+  -webkit-animation-delay: 6150ms;
+          animation-delay: 6150ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(40) .background-images__image {
+  -webkit-animation-delay: 6300ms;
+          animation-delay: 6300ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(41) .background-images__image {
+  -webkit-animation-delay: 6450ms;
+          animation-delay: 6450ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(42) .background-images__image {
+  -webkit-animation-delay: 6600ms;
+          animation-delay: 6600ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(43) .background-images__image {
+  -webkit-animation-delay: 6750ms;
+          animation-delay: 6750ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(44) .background-images__image {
+  -webkit-animation-delay: 6900ms;
+          animation-delay: 6900ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(45) .background-images__image {
+  -webkit-animation-delay: 7050ms;
+          animation-delay: 7050ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(46) .background-images__image {
+  -webkit-animation-delay: 7200ms;
+          animation-delay: 7200ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(47) .background-images__image {
+  -webkit-animation-delay: 7350ms;
+          animation-delay: 7350ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(48) .background-images__image {
+  -webkit-animation-delay: 7500ms;
+          animation-delay: 7500ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(49) .background-images__image {
+  -webkit-animation-delay: 7650ms;
+          animation-delay: 7650ms;
+}
+
+.clearstream .inview.section--custom-animation .section__element:nth-child(50) .background-images__image {
+  -webkit-animation-delay: 7800ms;
+          animation-delay: 7800ms;
+}
+
 /* ==========================================================================
    GoHawaii Page
    @mixin ========================================================================= */

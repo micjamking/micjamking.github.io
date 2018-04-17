@@ -77,4 +77,4 @@ $custom-elements: 25
           +fade-in-up
           @for $i from 1 through $custom-elements
             &:nth-child(#{$i})
-              animation-delay: $base-animation + (150ms * $i)
+              animation-delay: $base-animation + ($base-animation / 2 * $i)

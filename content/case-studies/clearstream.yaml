@@ -92,8 +92,66 @@ components:
   elements:
   - background_images:
     - url: '/static/images/case-studies/clearstream/clearstream_animation_item-1.png'
+  - background_images:
     - url: '/static/images/case-studies/clearstream/clearstream_animation_item-2.png'
+  - background_images:
     - url: '/static/images/case-studies/clearstream/clearstream_animation_item-3.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-1.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-2.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-3.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-1.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-2.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-3.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-1.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-2.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-3.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-1.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-2.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-3.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-1.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-2.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-3.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-1.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-2.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-3.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-1.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-2.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-3.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-1.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-2.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-3.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-1.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-2.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-3.png'
+  - background_images:
+    - url: '/static/images/case-studies/clearstream/clearstream_animation_item-1.png'
 
 - component: 'section-columns'
   columns:
