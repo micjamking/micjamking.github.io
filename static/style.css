@@ -4865,6 +4865,12 @@ input[type="button"]:active {
   text-align: center;
 }
 
+@media only screen and (max-width: 640px) {
+  .home .case-study__title, .home .case-study__subtitle {
+    color: #FFFFFF;
+  }
+}
+
 @media only screen and (min-width: 1024px) {
   .home .case-study__title, .home .case-study__subtitle {
     position: absolute;
@@ -4895,8 +4901,14 @@ input[type="button"]:active {
 
 .home .case-study__subtitle {
   font-size: 1.25rem;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media only screen and (max-width: 640px) {
+  .home .case-study__subtitle {
+    font-weight: 400;
+  }
 }
 
 @media only screen and (min-width: 640px) {
