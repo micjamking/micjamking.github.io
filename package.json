@@ -11,7 +11,7 @@
   },
   "scripts": {
     "setup": "curl $npm_package_config_grow_sdk_url | bash && npm i",
-    "start": "NODE_ENV=development concurrently --kill-others \"~/bin/grow run --host=192.168.200.69\" \"npm run livereload\" \"webpack --watch\"",
+    "start": "NODE_ENV=development concurrently --kill-others \"~/bin/grow run --port=3000\" \"npm run livereload\" \"webpack --watch\"",
     "import:content": "~/bin/grow preprocess --tag content",
     "postimport:content": "npm run echo:complete",
     "echo:complete": "echo \"$(tput setaf 148)Complete!$(tput sgr0)\"",
