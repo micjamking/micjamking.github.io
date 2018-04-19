@@ -38,6 +38,7 @@ export default class UI extends Vue {
       delimiters: ['[[', ']]'],
       data: {
         isActive: false,
+        isMobileMenuActive: false,
         stateService: _stateService
       }
     };

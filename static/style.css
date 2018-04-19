@@ -2915,6 +2915,7 @@ input[type="button"]:active {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 3;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -2962,7 +2963,8 @@ input[type="button"]:active {
   font-size: 12px;
   text-align: center;
   position: relative;
-  max-width: 180px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .header__tagline::before, .header__tagline::after {
@@ -3264,6 +3266,182 @@ input[type="button"]:active {
 
 .header--case-study .background-images__image {
   background-size: cover;
+}
+
+.header__mobile__menu {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.header__mobile__menu__close__icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  z-index: 1001;
+  display: none;
+}
+
+.header__mobile__menu__close__icon.active {
+  display: block;
+  -webkit-animation-name: "fade-in-down";
+          animation-name: "fade-in-down";
+  -webkit-animation-duration: 550ms;
+          animation-duration: 550ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+}
+
+.header__mobile__menu__close__icon .close__icon__line {
+  fill: #374650;
+}
+
+.header__mobile__menu__icon {
+  width: 25px;
+  height: 20px;
+}
+
+.header__mobile__menu__icon .menu__icon__line {
+  fill: #374650;
+}
+
+.header__mobile__menu__wrapper {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  padding-top: 100px;
+  font-size: 24px;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+.header__mobile__menu__wrapper.active {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 1000;
+  -webkit-animation-name: "fade-in";
+          animation-name: "fade-in";
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.header__mobile__menu__item {
+  margin-bottom: 20px;
+  -webkit-animation-name: "fade-in-up";
+          animation-name: "fade-in-up";
+  -webkit-animation-duration: 550ms;
+          animation-duration: 550ms;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.header__mobile__menu__item:nth-child(1) {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+}
+
+.header__mobile__menu__item:nth-child(2) {
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms;
+}
+
+.header__mobile__menu__item:nth-child(3) {
+  -webkit-animation-delay: 1200ms;
+          animation-delay: 1200ms;
+}
+
+.header__mobile__menu__item:nth-child(4) {
+  -webkit-animation-delay: 1500ms;
+          animation-delay: 1500ms;
+}
+
+.header__mobile__menu__item:nth-child(5) {
+  -webkit-animation-delay: 1800ms;
+          animation-delay: 1800ms;
+}
+
+.header__mobile__menu__item--active {
+  position: relative;
+}
+
+.header__mobile__menu__item--active::before {
+  display: block;
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+  width: 100%;
+  height: 1px;
+  background-color: #374650;
+}
+
+.header__mobile__menu__item:last-child {
+  margin-bottom: 0;
 }
 
 /* ==========================================================================

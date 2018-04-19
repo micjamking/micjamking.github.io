@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "./static/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -719,6 +719,36 @@ exports.default = utils;
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var g;
+
+// This works in non-strict mode
+g = function () {
+	return this;
+}();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1, eval)("this");
+} catch (e) {
+	// This works if the window reference is available
+	if ((typeof window === "undefined" ? "undefined" : _typeof(window)) === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3358,7 +3388,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 })(window, document, 'Hammer');
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3547,7 +3577,7 @@ var Parallaxer = function () {
 exports.default = Parallaxer;
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3564,7 +3594,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 // Libs
 
 
-var _resizeObserverPolyfill = __webpack_require__(22);
+var _resizeObserverPolyfill = __webpack_require__(17);
 
 var _resizeObserverPolyfill2 = _interopRequireDefault(_resizeObserverPolyfill);
 
@@ -3572,7 +3602,7 @@ var _utils = __webpack_require__(0);
 
 var _utils2 = _interopRequireDefault(_utils);
 
-var _particle = __webpack_require__(17);
+var _particle = __webpack_require__(18);
 
 var _particle2 = _interopRequireDefault(_particle);
 
@@ -4046,26 +4076,26 @@ var ParticleCanvas = function () {
 exports.default = ParticleCanvas;
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(5);
-
 __webpack_require__(6);
 
 __webpack_require__(7);
 
+__webpack_require__(8);
+
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4086,7 +4116,7 @@ __webpack_require__(7);
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4102,7 +4132,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _utils = __webpack_require__(0);
 
-var _ui = __webpack_require__(8);
+var _ui = __webpack_require__(9);
 
 var _ui2 = _interopRequireDefault(_ui);
 
@@ -4165,7 +4195,7 @@ exports.default = App;
 new App();
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4175,7 +4205,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _vue = __webpack_require__(9);
+var _vue = __webpack_require__(10);
 
 var _vue2 = _interopRequireDefault(_vue);
 
@@ -4203,19 +4233,19 @@ var _home = __webpack_require__(15);
 
 var _home2 = _interopRequireDefault(_home);
 
-var _caseStudy = __webpack_require__(18);
+var _caseStudy = __webpack_require__(19);
 
 var _caseStudy2 = _interopRequireDefault(_caseStudy);
 
-var _gohawaii = __webpack_require__(19);
+var _gohawaii = __webpack_require__(20);
 
 var _gohawaii2 = _interopRequireDefault(_gohawaii);
 
-var _touraloha = __webpack_require__(20);
+var _touraloha = __webpack_require__(21);
 
 var _touraloha2 = _interopRequireDefault(_touraloha);
 
-var _teacup = __webpack_require__(21);
+var _teacup = __webpack_require__(22);
 
 var _teacup2 = _interopRequireDefault(_teacup);
 
@@ -4261,6 +4291,7 @@ var UI = function (_Vue) {
       delimiters: ['[[', ']]'],
       data: {
         isActive: false,
+        isMobileMenuActive: false,
         stateService: _stateService
       }
     };
@@ -4343,7 +4374,7 @@ var UI = function (_Vue) {
 exports.default = UI;
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6570,37 +6601,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     }return zs.call(this, t, e);
   }, _e.compile = Us, _e;
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-var g;
-
-// This works in non-strict mode
-g = function () {
-	return this;
-}();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1, eval)("this");
-} catch (e) {
-	// This works if the window reference is available
-	if ((typeof window === "undefined" ? "undefined" : _typeof(window)) === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 11 */
@@ -6612,7 +6613,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 (function (global, factory) {
-  ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' ? factory(__webpack_require__(1)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(1)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+  ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' ? factory(__webpack_require__(2)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(2)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : factory(global.Hammer);
@@ -7316,11 +7317,11 @@ var _mouseScroller = __webpack_require__(16);
 
 var _mouseScroller2 = _interopRequireDefault(_mouseScroller);
 
-var _parallaxer = __webpack_require__(2);
+var _parallaxer = __webpack_require__(3);
 
 var _parallaxer2 = _interopRequireDefault(_parallaxer);
 
-var _particleCanvas = __webpack_require__(3);
+var _particleCanvas = __webpack_require__(4);
 
 var _particleCanvas2 = _interopRequireDefault(_particleCanvas);
 
@@ -7578,493 +7579,6 @@ exports.default = MouseScroller;
 
 /***/ }),
 /* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- *  Particle constructor
- */
-
-var Particle = function () {
-  function Particle(radius, color, image, isHSLA, isShadow) {
-    _classCallCheck(this, Particle);
-
-    this.x = 0;
-    this.y = 0;
-    this.vx = 0;
-    this.vy = 0;
-    this.color = color || '#ff0000';
-    this.radius = radius || 40;
-    this.rotation = 0;
-    this.scaleX = 1;
-    this.scaleY = 1;
-    this.lineWidth = 0;
-    this.image = image || null;
-    this.opacity = 1;
-    this.isHSLA = isHSLA || false;
-    this.isShadow = isShadow || false;
-  }
-
-  /**
-   * Draw
-   * @param (2DContext) context - Canvas context
-   */
-
-
-  _createClass(Particle, [{
-    key: 'draw',
-    value: function draw(context, utils) {
-
-      context.save();
-      context.translate(this.x, this.y);
-      context.rotate(this.rotation);
-      context.scale(this.scaleX, this.scaleY);
-      context.lineWidth = this.lineWidth;
-      context.globalAlpha = this.opacity;
-
-      // If image was passed in
-      if (this.image) {
-        var ballWidth = this.radius * 2;
-        var imageHeight = ballWidth * (this.image.height / this.image.width);
-        context.drawImage(this.image, 0 - this.radius, 0 - imageHeight / 2, this.radius * 2, imageHeight);
-        context.fillStyle = 'rgba(255, 255, 255, 0)';
-      } else {
-        if (utils && !this.isHSLA) {
-          context.fillStyle = utils.colorToRGB(this.color, this.opacity);
-        } else {
-          context.fillStyle = this.color;
-        }
-      }
-
-      if (this.isShadow) {
-        context.shadowColor = this.color;
-        context.shadowBlur = this.isShadow;
-        context.shadowOffsetX = 0;
-        context.shadowOffsetY = 0;
-      }
-
-      context.beginPath();
-      // x, y, radius, start_angle, end_angle, anti-clockwise
-      context.arc(0, 0, this.radius, 0, Math.PI * 2, true);
-
-      context.closePath();
-      context.fill();
-      if (this.lineWidth > 0) {
-        context.stroke();
-      }
-      context.restore();
-    }
-
-    /**
-     * Get bounds of particle
-     */
-
-  }, {
-    key: 'getBounds',
-    value: function getBounds() {
-
-      return {
-        x: this.x - this.radius,
-        y: this.y - this.radius,
-        width: this.radius * 2,
-        height: this.radius * 2
-      };
-    }
-  }]);
-
-  return Particle;
-}();
-
-exports.default = Particle;
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *  Case Study Page Component
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
-
-// Libs
-
-
-// Components
-
-
-var _utils = __webpack_require__(0);
-
-var _utils2 = _interopRequireDefault(_utils);
-
-var _parallaxer = __webpack_require__(2);
-
-var _parallaxer2 = _interopRequireDefault(_parallaxer);
-
-var _particleCanvas = __webpack_require__(3);
-
-var _particleCanvas2 = _interopRequireDefault(_particleCanvas);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var CaseStudyPage = function () {
-
-  /**
-   * @param {Object} settings - Settings object
-   * @param {Function} settings.callback - Callback function for custom functionality
-   * @param {Object} settings.parallaxer - Config object for parallaxer effect
-   * @param {NodeList} settings.parallaxer.els - HTML Nodelist of parallax elements
-   * @param {NodeList} settings.parallaxer.baseEl - HTMLElement for root element for parallax effect
-   * @param {Object} settings.parallaxer.baseRotationSensitivity - {x,y,increment} object with rotation sensitivity and increment
-   * @param {NodeList} settings.parallaxer.baseTranslateSensitivity - {x,y,increment} object with translate sensitivity and increment
-   * @param {Object} settings.canvas - Config object for canvas backgrounds
-   * @param {String} settings.canvas.backgroundColor - Hex color for canvas background
-   * @param {Array} settings.canvas.particleColors - Array of hex colors for particles
-   */
-  function CaseStudyPage(settings) {
-    _classCallCheck(this, CaseStudyPage);
-
-    // External utilities
-    this._utils = new _utils2.default();
-    this._$w = _utils.w;
-    this._$ = _utils.$;
-
-    // DOM element references
-    this._$sections = this._$('.section:not(.section--intro), .section__phases__header, .section__phases__phase, .footer');
-    this._$footer__canvas = this._$('.footer__canvas')[0];
-    this._$process__canvas = this._$('.section--process__canvas')[0];
-
-    // Particle background settings
-    this._canvasBackgroundColor = settings.canvas ? settings.canvas.backgroundColor : '#374650';
-    this._canvasParticleColors = settings.canvas ? settings.canvas.particleColors : ['#2C4050'];
-
-    // Callback function
-    if (settings.callback) {
-      this._cb = function () {
-        settings.callback();
-      };
-    }
-
-    // Parallax Settings
-    if (settings.parallaxer) {
-      this._parallaxers = [];
-      this._parallaxBaseEl = settings.parallaxer.baseEl;
-      this._parallaxEls = Array.from(settings.parallaxer.els);
-      this._parallaxBaseRotationSensitivity = settings.parallaxer.baseRotationSensitivity || { x: 0.15, y: 0.15, increment: 0.15 };
-      this._parallaxBaseTranslateSensitivity = settings.parallaxer.baseTranslateSensitivity || { x: 0.15, y: 0.15, increment: 0.15 };
-    }
-
-    // 3, 2, 1... blastOff!
-    this._init();
-  }
-
-  /**
-   * Kick start page
-   */
-
-
-  _createClass(CaseStudyPage, [{
-    key: '_init',
-    value: function _init() {
-      this._setupCanvases();
-      this._setupScrollEffect();
-
-      if (this._cb) {
-        this._cb();
-      }
-
-      if (this._parallaxBaseEl) {
-        this._setupParallaxers();
-      }
-    }
-
-    /**
-     * Sets up particle backgrounds
-     */
-
-  }, {
-    key: '_setupCanvases',
-    value: function _setupCanvases() {
-      var _numOfParticles = !this._utils.allowDeviceOrientation() ? 300 : 150;
-      if (this._$process__canvas) {
-        new _particleCanvas2.default({
-          canvasEL: this._$process__canvas,
-          canvasBackground: this._canvasBackgroundColor,
-          particleColors: this._canvasParticleColors,
-          particleLineWidth: 4,
-          maxHeight: this._$process__canvas.parentNode.offsetHeight,
-          numOfParticles: _numOfParticles,
-          particleOpacity: 1.0
-        });
-      }
-
-      if (this._$footer__canvas) {
-        var _numOfParticles2 = !this._utils.allowDeviceOrientation() ? 75 : 25;
-        new _particleCanvas2.default({
-          canvasEL: this._$footer__canvas,
-          canvasBackground: this._canvasBackgroundColor,
-          particleColors: this._canvasParticleColors,
-          particleLineWidth: 4,
-          maxHeight: 400,
-          respondToMouse: false,
-          numOfParticles: _numOfParticles2,
-          particleOpacity: 1.0
-        });
-      }
-    }
-
-    /**
-     * Sets up parallax animations
-     */
-
-  }, {
-    key: '_setupParallaxers',
-    value: function _setupParallaxers() {
-      var _this = this;
-
-      // On desktop-only...
-      if (!this._utils.allowDeviceOrientation()) {
-
-        if (!this._parallaxers.length) {
-
-          // Generate parallaxers from elements
-          this._parallaxEls.forEach(function (el, i) {
-            var _rotateX = _this._parallaxBaseRotationSensitivity.x + _this._parallaxBaseRotationSensitivity.increment * (i - 1),
-                _rotateY = _this._parallaxBaseRotationSensitivity.y + _this._parallaxBaseRotationSensitivity.increment * (i - 1),
-                _translateX = _this._parallaxBaseTranslateSensitivity.x + _this._parallaxBaseTranslateSensitivity.increment * (i - 1),
-                _translateY = _this._parallaxBaseTranslateSensitivity.y + _this._parallaxBaseTranslateSensitivity.increment * (i - 1);
-
-            _this._parallaxers.push(new _parallaxer2.default(_this._parallaxBaseEl, [el], { x: _rotateX, y: _rotateY }, { x: _translateX, y: _translateY }));
-          });
-
-          // Run parallaxers.
-          this._parallaxers.forEach(function (parallaxer) {
-            parallaxer.run();
-          });
-        }
-      }
-    }
-
-    /**
-     * Adds a class when element enters viewport
-     */
-
-  }, {
-    key: '_setupScrollEffect',
-    value: function _setupScrollEffect() {
-      this._utils.addClassOnScrollInToView({
-        elements: this._$sections,
-        threshold: 0.25,
-        removeClassOnExit: false
-      });
-    }
-  }]);
-
-  return CaseStudyPage;
-}();
-
-exports.default = CaseStudyPage;
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _utils = __webpack_require__(0);
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } } /**
-                                                                                                                                                           * GoHawaii Page Settings
-                                                                                                                                                           */
-
-
-var GoHawaii = function GoHawaii() {
-  _classCallCheck(this, GoHawaii);
-
-  this.parallaxer = {};
-  this.parallaxer.baseEl = (0, _utils.$)('.section--custom-animation')[0];
-  this.parallaxer.els = (0, _utils.$)('.section--custom-animation .section__element');
-  this.parallaxer.baseRotationSensitivity = {
-    x: 0,
-    y: 0,
-    increment: 0
-  };
-  this.parallaxer.baseTranslateSensitivity = {
-    x: 0.25,
-    y: 0.35,
-    increment: 0.15
-  };
-};
-
-exports.default = GoHawaii;
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * Tour Aloha Page Settings
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
-
-
-var _utils = __webpack_require__(0);
-
-var _utils2 = _interopRequireDefault(_utils);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var TourAloha = function () {
-  function TourAloha() {
-    var _this = this;
-
-    _classCallCheck(this, TourAloha);
-
-    this._utils = new _utils2.default();
-    this._$section = (0, _utils.$)('.section--custom-animation')[0];
-    this._$markers = (0, _utils.$)('.section__element--map-marker');
-    this._$popup = (0, _utils.$)('.section__element--map-popup')[0];
-    console.log('Tour Aloha instantiated.');
-    this._top = 0;
-    this._left = 0;
-    this._right = this._$section.offsetWidth;
-    this._bottom = this._$section.offsetHeight;
-
-    this._popupOffsetTop = '125';
-    this._popupOffsetLeft = '32';
-
-    var bg = this._$section.querySelectorAll('.section__elements')[0];
-    bg.addEventListener('click', function () {
-      _this._$popup.classList.remove('active');
-    }, true);
-  }
-
-  _createClass(TourAloha, [{
-    key: 'callback',
-    value: function callback() {
-      this._scatterMarkers();
-    }
-
-    /**
-     * Callback to create popup effect
-     * @param {Event} e - Event object
-     */
-
-  }, {
-    key: '_markerPopup',
-    value: function _markerPopup(e) {
-      console.log('clicked marker: ', el);
-
-      var target = e.target || e.srcElement;
-      var el = target.parentNode.parentNode;
-      var top = parseInt(el.style.top.replace('px', ''), 10) - this._popupOffsetTop;
-      var left = parseInt(el.style.left.replace('px', ''), 10) - this._popupOffsetLeft;
-
-      this._$popup.style.top = top + 'px';
-      this._$popup.style.left = left + 'px';
-
-      this._$popup.classList.add('active');
-    }
-
-    /**
-     * Scatter
-     */
-
-  }, {
-    key: '_scatterMarkers',
-    value: function _scatterMarkers() {
-      var _this2 = this;
-
-      this._$markers.forEach(function ($marker) {
-        var y_pos = _this2._utils.randInt(_this2._top, _this2._bottom);
-        var x_pos = _this2._utils.randInt(_this2._left, _this2._right);
-        $marker.style.top = y_pos + 'px';
-        $marker.style.left = x_pos + 'px';
-
-        $marker.addEventListener('click', function (e) {
-          return _this2._markerPopup(e);
-        }, true);
-
-        // console.log('set marker position', $marker);
-      });
-    }
-  }]);
-
-  return TourAloha;
-}();
-
-exports.default = TourAloha;
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _utils = __webpack_require__(0);
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } } /**
-                                                                                                                                                           * Teacup Analytics Page Settings
-                                                                                                                                                           */
-
-
-var Teacup = function Teacup() {
-  _classCallCheck(this, Teacup);
-
-  this.parallaxer = {};
-  this.parallaxer.baseEl = (0, _utils.$)('.section--custom-animation')[0];
-  this.parallaxer.els = (0, _utils.$)('.section--custom-animation .section__element');
-  this.parallaxer.baseRotationSensitivity = {
-    x: 0,
-    y: 0,
-    increment: 0
-  };
-  this.parallaxer.baseTranslateSensitivity = {
-    x: 0.25,
-    y: 0.35,
-    increment: 0.15
-  };
-};
-
-exports.default = Teacup;
-
-/***/ }),
-/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9102,7 +8616,494 @@ var index = function () {
 }();
 
 exports.default = index;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ *  Particle constructor
+ */
+
+var Particle = function () {
+  function Particle(radius, color, image, isHSLA, isShadow) {
+    _classCallCheck(this, Particle);
+
+    this.x = 0;
+    this.y = 0;
+    this.vx = 0;
+    this.vy = 0;
+    this.color = color || '#ff0000';
+    this.radius = radius || 40;
+    this.rotation = 0;
+    this.scaleX = 1;
+    this.scaleY = 1;
+    this.lineWidth = 0;
+    this.image = image || null;
+    this.opacity = 1;
+    this.isHSLA = isHSLA || false;
+    this.isShadow = isShadow || false;
+  }
+
+  /**
+   * Draw
+   * @param (2DContext) context - Canvas context
+   */
+
+
+  _createClass(Particle, [{
+    key: 'draw',
+    value: function draw(context, utils) {
+
+      context.save();
+      context.translate(this.x, this.y);
+      context.rotate(this.rotation);
+      context.scale(this.scaleX, this.scaleY);
+      context.lineWidth = this.lineWidth;
+      context.globalAlpha = this.opacity;
+
+      // If image was passed in
+      if (this.image) {
+        var ballWidth = this.radius * 2;
+        var imageHeight = ballWidth * (this.image.height / this.image.width);
+        context.drawImage(this.image, 0 - this.radius, 0 - imageHeight / 2, this.radius * 2, imageHeight);
+        context.fillStyle = 'rgba(255, 255, 255, 0)';
+      } else {
+        if (utils && !this.isHSLA) {
+          context.fillStyle = utils.colorToRGB(this.color, this.opacity);
+        } else {
+          context.fillStyle = this.color;
+        }
+      }
+
+      if (this.isShadow) {
+        context.shadowColor = this.color;
+        context.shadowBlur = this.isShadow;
+        context.shadowOffsetX = 0;
+        context.shadowOffsetY = 0;
+      }
+
+      context.beginPath();
+      // x, y, radius, start_angle, end_angle, anti-clockwise
+      context.arc(0, 0, this.radius, 0, Math.PI * 2, true);
+
+      context.closePath();
+      context.fill();
+      if (this.lineWidth > 0) {
+        context.stroke();
+      }
+      context.restore();
+    }
+
+    /**
+     * Get bounds of particle
+     */
+
+  }, {
+    key: 'getBounds',
+    value: function getBounds() {
+
+      return {
+        x: this.x - this.radius,
+        y: this.y - this.radius,
+        width: this.radius * 2,
+        height: this.radius * 2
+      };
+    }
+  }]);
+
+  return Particle;
+}();
+
+exports.default = Particle;
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *  Case Study Page Component
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+
+// Libs
+
+
+// Components
+
+
+var _utils = __webpack_require__(0);
+
+var _utils2 = _interopRequireDefault(_utils);
+
+var _parallaxer = __webpack_require__(3);
+
+var _parallaxer2 = _interopRequireDefault(_parallaxer);
+
+var _particleCanvas = __webpack_require__(4);
+
+var _particleCanvas2 = _interopRequireDefault(_particleCanvas);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var CaseStudyPage = function () {
+
+  /**
+   * @param {Object} settings - Settings object
+   * @param {Function} settings.callback - Callback function for custom functionality
+   * @param {Object} settings.parallaxer - Config object for parallaxer effect
+   * @param {NodeList} settings.parallaxer.els - HTML Nodelist of parallax elements
+   * @param {NodeList} settings.parallaxer.baseEl - HTMLElement for root element for parallax effect
+   * @param {Object} settings.parallaxer.baseRotationSensitivity - {x,y,increment} object with rotation sensitivity and increment
+   * @param {NodeList} settings.parallaxer.baseTranslateSensitivity - {x,y,increment} object with translate sensitivity and increment
+   * @param {Object} settings.canvas - Config object for canvas backgrounds
+   * @param {String} settings.canvas.backgroundColor - Hex color for canvas background
+   * @param {Array} settings.canvas.particleColors - Array of hex colors for particles
+   */
+  function CaseStudyPage(settings) {
+    _classCallCheck(this, CaseStudyPage);
+
+    // External utilities
+    this._utils = new _utils2.default();
+    this._$w = _utils.w;
+    this._$ = _utils.$;
+
+    // DOM element references
+    this._$sections = this._$('.section:not(.section--intro), .section__phases__header, .section__phases__phase, .footer');
+    this._$footer__canvas = this._$('.footer__canvas')[0];
+    this._$process__canvas = this._$('.section--process__canvas')[0];
+
+    // Particle background settings
+    this._canvasBackgroundColor = settings.canvas ? settings.canvas.backgroundColor : '#374650';
+    this._canvasParticleColors = settings.canvas ? settings.canvas.particleColors : ['#2C4050'];
+
+    // Callback function
+    if (settings.callback) {
+      this._cb = function () {
+        settings.callback();
+      };
+    }
+
+    // Parallax Settings
+    if (settings.parallaxer) {
+      this._parallaxers = [];
+      this._parallaxBaseEl = settings.parallaxer.baseEl;
+      this._parallaxEls = Array.from(settings.parallaxer.els);
+      this._parallaxBaseRotationSensitivity = settings.parallaxer.baseRotationSensitivity || { x: 0.15, y: 0.15, increment: 0.15 };
+      this._parallaxBaseTranslateSensitivity = settings.parallaxer.baseTranslateSensitivity || { x: 0.15, y: 0.15, increment: 0.15 };
+    }
+
+    // 3, 2, 1... blastOff!
+    this._init();
+  }
+
+  /**
+   * Kick start page
+   */
+
+
+  _createClass(CaseStudyPage, [{
+    key: '_init',
+    value: function _init() {
+      this._setupCanvases();
+      this._setupScrollEffect();
+
+      if (this._cb) {
+        this._cb();
+      }
+
+      if (this._parallaxBaseEl) {
+        this._setupParallaxers();
+      }
+    }
+
+    /**
+     * Sets up particle backgrounds
+     */
+
+  }, {
+    key: '_setupCanvases',
+    value: function _setupCanvases() {
+      var _numOfParticles = !this._utils.allowDeviceOrientation() ? 300 : 150;
+      if (this._$process__canvas) {
+        new _particleCanvas2.default({
+          canvasEL: this._$process__canvas,
+          canvasBackground: this._canvasBackgroundColor,
+          particleColors: this._canvasParticleColors,
+          particleLineWidth: 4,
+          maxHeight: this._$process__canvas.parentNode.offsetHeight,
+          numOfParticles: _numOfParticles,
+          particleOpacity: 1.0
+        });
+      }
+
+      if (this._$footer__canvas) {
+        var _numOfParticles2 = !this._utils.allowDeviceOrientation() ? 75 : 25;
+        new _particleCanvas2.default({
+          canvasEL: this._$footer__canvas,
+          canvasBackground: this._canvasBackgroundColor,
+          particleColors: this._canvasParticleColors,
+          particleLineWidth: 4,
+          maxHeight: 400,
+          respondToMouse: false,
+          numOfParticles: _numOfParticles2,
+          particleOpacity: 1.0
+        });
+      }
+    }
+
+    /**
+     * Sets up parallax animations
+     */
+
+  }, {
+    key: '_setupParallaxers',
+    value: function _setupParallaxers() {
+      var _this = this;
+
+      // On desktop-only...
+      if (!this._utils.allowDeviceOrientation()) {
+
+        if (!this._parallaxers.length) {
+
+          // Generate parallaxers from elements
+          this._parallaxEls.forEach(function (el, i) {
+            var _rotateX = _this._parallaxBaseRotationSensitivity.x + _this._parallaxBaseRotationSensitivity.increment * (i - 1),
+                _rotateY = _this._parallaxBaseRotationSensitivity.y + _this._parallaxBaseRotationSensitivity.increment * (i - 1),
+                _translateX = _this._parallaxBaseTranslateSensitivity.x + _this._parallaxBaseTranslateSensitivity.increment * (i - 1),
+                _translateY = _this._parallaxBaseTranslateSensitivity.y + _this._parallaxBaseTranslateSensitivity.increment * (i - 1);
+
+            _this._parallaxers.push(new _parallaxer2.default(_this._parallaxBaseEl, [el], { x: _rotateX, y: _rotateY }, { x: _translateX, y: _translateY }));
+          });
+
+          // Run parallaxers.
+          this._parallaxers.forEach(function (parallaxer) {
+            parallaxer.run();
+          });
+        }
+      }
+    }
+
+    /**
+     * Adds a class when element enters viewport
+     */
+
+  }, {
+    key: '_setupScrollEffect',
+    value: function _setupScrollEffect() {
+      this._utils.addClassOnScrollInToView({
+        elements: this._$sections,
+        threshold: 0.25,
+        removeClassOnExit: false
+      });
+    }
+  }]);
+
+  return CaseStudyPage;
+}();
+
+exports.default = CaseStudyPage;
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _utils = __webpack_require__(0);
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } } /**
+                                                                                                                                                           * GoHawaii Page Settings
+                                                                                                                                                           */
+
+
+var GoHawaii = function GoHawaii() {
+  _classCallCheck(this, GoHawaii);
+
+  this.parallaxer = {};
+  this.parallaxer.baseEl = (0, _utils.$)('.section--custom-animation')[0];
+  this.parallaxer.els = (0, _utils.$)('.section--custom-animation .section__element');
+  this.parallaxer.baseRotationSensitivity = {
+    x: 0,
+    y: 0,
+    increment: 0
+  };
+  this.parallaxer.baseTranslateSensitivity = {
+    x: 0.25,
+    y: 0.35,
+    increment: 0.15
+  };
+};
+
+exports.default = GoHawaii;
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * Tour Aloha Page Settings
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+
+
+var _utils = __webpack_require__(0);
+
+var _utils2 = _interopRequireDefault(_utils);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var TourAloha = function () {
+  function TourAloha() {
+    var _this = this;
+
+    _classCallCheck(this, TourAloha);
+
+    this._utils = new _utils2.default();
+    this._$section = (0, _utils.$)('.section--custom-animation')[0];
+    this._$markers = (0, _utils.$)('.section__element--map-marker');
+    this._$popup = (0, _utils.$)('.section__element--map-popup')[0];
+    console.log('Tour Aloha instantiated.');
+    this._top = 0;
+    this._left = 0;
+    this._right = this._$section.offsetWidth;
+    this._bottom = this._$section.offsetHeight;
+
+    this._popupOffsetTop = '125';
+    this._popupOffsetLeft = '32';
+
+    var bg = this._$section.querySelectorAll('.section__elements')[0];
+    bg.addEventListener('click', function () {
+      _this._$popup.classList.remove('active');
+    }, true);
+  }
+
+  _createClass(TourAloha, [{
+    key: 'callback',
+    value: function callback() {
+      this._scatterMarkers();
+    }
+
+    /**
+     * Callback to create popup effect
+     * @param {Event} e - Event object
+     */
+
+  }, {
+    key: '_markerPopup',
+    value: function _markerPopup(e) {
+      console.log('clicked marker: ', el);
+
+      var target = e.target || e.srcElement;
+      var el = target.parentNode.parentNode;
+      var top = parseInt(el.style.top.replace('px', ''), 10) - this._popupOffsetTop;
+      var left = parseInt(el.style.left.replace('px', ''), 10) - this._popupOffsetLeft;
+
+      this._$popup.style.top = top + 'px';
+      this._$popup.style.left = left + 'px';
+
+      this._$popup.classList.add('active');
+    }
+
+    /**
+     * Scatter
+     */
+
+  }, {
+    key: '_scatterMarkers',
+    value: function _scatterMarkers() {
+      var _this2 = this;
+
+      this._$markers.forEach(function ($marker) {
+        var y_pos = _this2._utils.randInt(_this2._top, _this2._bottom);
+        var x_pos = _this2._utils.randInt(_this2._left, _this2._right);
+        $marker.style.top = y_pos + 'px';
+        $marker.style.left = x_pos + 'px';
+
+        $marker.addEventListener('click', function (e) {
+          return _this2._markerPopup(e);
+        }, true);
+
+        // console.log('set marker position', $marker);
+      });
+    }
+  }]);
+
+  return TourAloha;
+}();
+
+exports.default = TourAloha;
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _utils = __webpack_require__(0);
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } } /**
+                                                                                                                                                           * Teacup Analytics Page Settings
+                                                                                                                                                           */
+
+
+var Teacup = function Teacup() {
+  _classCallCheck(this, Teacup);
+
+  this.parallaxer = {};
+  this.parallaxer.baseEl = (0, _utils.$)('.section--custom-animation')[0];
+  this.parallaxer.els = (0, _utils.$)('.section--custom-animation .section__element');
+  this.parallaxer.baseRotationSensitivity = {
+    x: 0,
+    y: 0,
+    increment: 0
+  };
+  this.parallaxer.baseTranslateSensitivity = {
+    x: 0.25,
+    y: 0.35,
+    increment: 0.15
+  };
+};
+
+exports.default = Teacup;
 
 /***/ })
 /******/ ]);
