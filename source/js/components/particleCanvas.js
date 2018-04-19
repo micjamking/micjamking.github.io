@@ -2,6 +2,8 @@
  *  Particle Canvas
  */
 
+// Libs
+import ResizeObserver from 'resize-observer-polyfill';
 import utils, { w } from './../lib/utils';
 import Particle from './../lib/particle';
 
@@ -148,7 +150,7 @@ export default class ParticleCanvas {
     let $body = document.querySelectorAll('body')[0];
 
     if (this.$canvasParent !== w && !$body.classList.contains('home')){
-      new w.ResizeObserver(() => {
+      new ResizeObserver(() => {
         this._onElementResize();
       }).observe(this.$canvasParent);
     }
