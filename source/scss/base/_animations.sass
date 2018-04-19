@@ -494,21 +494,29 @@ $play-state:      running
 .header-main-animation
   &-enter-active
     .header__logo,
-    .header__tagline
+    .header__tagline,
+    .header__mobile-nav__menu__button
       +fade-in-up
 
     .header__logo
       animation-delay: $base-animation + ($animation-increment * 3)
 
     .header__tagline
+      animation-delay: $base-animation + ($animation-increment * 5)
+      +md
+        animation-delay: $base-animation + ($animation-increment * 4)
+
+    .header__mobile-nav__menu__button
       animation-delay: $base-animation + ($animation-increment * 4)
 
   &-leave-active
     .header__logo,
-    .header__tagline
+    .header__tagline,
+    .header__mobile-nav__menu__button
       +fade-out-up
 
-    .header__logo
+    .header__logo,
+    .header__mobile-nav__menu__button
       animation-delay: $base-animation + ($animation-increment * 4)
     .header__tagline
       animation-delay: $base-animation + ($animation-increment * 3)
@@ -583,7 +591,10 @@ $play-state:      running
   .header__logo,
   .header__tagline,
   .nav__down-arrow,
-  .nav__items__item
+  .nav__items__item,
+  .header__mobile-nav__item,
+  .header__mobile-nav__close__button,
+  .header__mobile-nav__menu__button
     +fade-out-up
 
   .hero__title
@@ -595,12 +606,21 @@ $play-state:      running
   .header__logo,
   .header__tagline,
   .nav__down-arrow,
-  .nav__items__item
+  .nav__items__item,
+  .header__mobile-nav__menu__button
     animation-delay: $base-animation + ($animation-increment * 5)
 
   .canvas
     +fade-out
     animation-delay: $base-animation + ($animation-increment * 7)
+
+  .header__mobile-nav__item
+    @for $i from 1 through 2
+      &:nth-child(#{$i})
+        animation-delay: $base-animation + ($animation-increment * $i)
+
+  .header__mobile-nav__close__button
+    animation-delay: $base-animation + ($animation-increment * 3)
 
   .header
     &--case-study
