@@ -93,7 +93,7 @@ $custom-elements: 5
         .section__element
           @for $i from 1 through $custom-elements
             &:nth-child(#{$i}) .background-images__image
-              animation-delay: $base-animation + ($base-animation * $i)
+              animation-delay: $base-animation + ($base-animation * $i) + $global-inview-delay
 
     &.section--process
       .inview.section__phases__phase--insights

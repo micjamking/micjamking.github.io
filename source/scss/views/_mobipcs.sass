@@ -60,8 +60,9 @@
     &.section
       &--custom-animation
         +fade-in
+        animation-delay: $global-inview-delay
 
         .background-images__image
           +lt($global-screen-size-medium)
             +fade-in-up
-            animation-delay: $base-animation
+            animation-delay: $base-animation + $global-inview-delay

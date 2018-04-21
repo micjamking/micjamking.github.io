@@ -76,7 +76,7 @@
             @for $i from 1 through 10
               &:nth-child(#{$i})
                 .background-images
-                  animation-delay: $base-animation * $i
+                  animation-delay: $base-animation * $i + $global-inview-delay
 
 
     &--process

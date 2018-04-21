@@ -955,6 +955,8 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
           animation-fill-mode: both;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
 }
 
 .inview.footer .footer__next-project {
@@ -1015,45 +1017,45 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
 .inview.section:not(.section--intro):not(.section--process) .section__background-images, .inview.section:not(.section--intro):not(.section--process) .section__title,
 .inview.section:not(.section--intro):not(.section--process) .chapter__background-images,
 .inview.section:not(.section--intro):not(.section--process) .chapter__title {
-  -webkit-animation-delay: 600ms;
-          animation-delay: 600ms;
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
 }
 
 .inview.section:not(.section--intro):not(.section--process) .section__images .image:nth-child(1),
 .inview.section:not(.section--intro):not(.section--process) .chapter__images .image:nth-child(1) {
-  -webkit-animation-delay: 900ms;
-          animation-delay: 900ms;
+  -webkit-animation-delay: 1100ms;
+          animation-delay: 1100ms;
 }
 
 .inview.section:not(.section--intro):not(.section--process) .section__images .image:nth-child(2),
 .inview.section:not(.section--intro):not(.section--process) .chapter__images .image:nth-child(2) {
-  -webkit-animation-delay: 1200ms;
-          animation-delay: 1200ms;
+  -webkit-animation-delay: 1400ms;
+          animation-delay: 1400ms;
 }
 
 .inview.section:not(.section--intro):not(.section--process) .section__images .image:nth-child(3),
 .inview.section:not(.section--intro):not(.section--process) .chapter__images .image:nth-child(3) {
-  -webkit-animation-delay: 1500ms;
-          animation-delay: 1500ms;
+  -webkit-animation-delay: 1700ms;
+          animation-delay: 1700ms;
 }
 
 .inview.section:not(.section--intro):not(.section--process) .section__body, .inview.section:not(.section--intro):not(.section--process) .section__body-list,
 .inview.section:not(.section--intro):not(.section--process) .chapter__body,
 .inview.section:not(.section--intro):not(.section--process) .chapter__body-list {
-  -webkit-animation-delay: 1200ms;
-          animation-delay: 1200ms;
+  -webkit-animation-delay: 1400ms;
+          animation-delay: 1400ms;
 }
 
 .inview.section:not(.section--intro):not(.section--process) .section__cta:nth-child(1),
 .inview.section:not(.section--intro):not(.section--process) .chapter__cta:nth-child(1) {
-  -webkit-animation-delay: 1500ms;
-          animation-delay: 1500ms;
+  -webkit-animation-delay: 1700ms;
+          animation-delay: 1700ms;
 }
 
 .inview.section:not(.section--intro):not(.section--process) .section__cta:nth-child(2),
 .inview.section:not(.section--intro):not(.section--process) .chapter__cta:nth-child(2) {
-  -webkit-animation-delay: 1800ms;
-          animation-delay: 1800ms;
+  -webkit-animation-delay: 2000ms;
+          animation-delay: 2000ms;
 }
 
 .inview.section:not(.section--intro):not(.section--process) .section__body-list--nested,
@@ -1063,13 +1065,13 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
 }
 
 .inview.section.section--columns.section--bg-image .chapter__background-images {
-  -webkit-animation-delay: 600ms;
-          animation-delay: 600ms;
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
 }
 
 .inview.section.section--columns.section--bg-image .chapter__title {
-  -webkit-animation-delay: 1200ms;
-          animation-delay: 1200ms;
+  -webkit-animation-delay: 1600ms;
+          animation-delay: 1600ms;
 }
 
 .inview.section--process .inview.section__phases__phase .section__title, .inview.section--process .inview.section__phases__phase .section__body, .inview.section--process .inview.section__phases__phase .section__body-list, .inview.section--process .inview.section__phases__phase .section__cta,
@@ -1150,15 +1152,15 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
           animation-fill-mode: both;
   -webkit-animation-play-state: running;
           animation-play-state: running;
-  -webkit-animation-delay: 375ms;
-          animation-delay: 375ms;
+  -webkit-animation-delay: 575ms;
+          animation-delay: 575ms;
 }
 
 .inview.section--process .inview.section__phases__phase .section__title,
 .inview.section--process .inview.section__phases__phase .chapter__title, .inview.section--process .inview.section__phases__header .section__title,
 .inview.section--process .inview.section__phases__header .chapter__title {
-  -webkit-animation-delay: 600ms;
-          animation-delay: 600ms;
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
 }
 
 .inview.section--process .inview.section__phases__phase .section__title::before, .inview.section--process .inview.section__phases__phase .section__title::after,
@@ -1166,29 +1168,29 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
 .inview.section--process .inview.section__phases__phase .chapter__title::after, .inview.section--process .inview.section__phases__header .section__title::before, .inview.section--process .inview.section__phases__header .section__title::after,
 .inview.section--process .inview.section__phases__header .chapter__title::before,
 .inview.section--process .inview.section__phases__header .chapter__title::after {
-  -webkit-animation-delay: 900ms;
-          animation-delay: 900ms;
+  -webkit-animation-delay: 1100ms;
+          animation-delay: 1100ms;
 }
 
 .inview.section--process .inview.section__phases__phase .section__images .image:nth-child(1),
 .inview.section--process .inview.section__phases__phase .chapter__images .image:nth-child(1), .inview.section--process .inview.section__phases__header .section__images .image:nth-child(1),
 .inview.section--process .inview.section__phases__header .chapter__images .image:nth-child(1) {
-  -webkit-animation-delay: 900ms;
-          animation-delay: 900ms;
+  -webkit-animation-delay: 1100ms;
+          animation-delay: 1100ms;
 }
 
 .inview.section--process .inview.section__phases__phase .section__images .image:nth-child(2),
 .inview.section--process .inview.section__phases__phase .chapter__images .image:nth-child(2), .inview.section--process .inview.section__phases__header .section__images .image:nth-child(2),
 .inview.section--process .inview.section__phases__header .chapter__images .image:nth-child(2) {
-  -webkit-animation-delay: 1200ms;
-          animation-delay: 1200ms;
+  -webkit-animation-delay: 1400ms;
+          animation-delay: 1400ms;
 }
 
 .inview.section--process .inview.section__phases__phase .section__images .image:nth-child(3),
 .inview.section--process .inview.section__phases__phase .chapter__images .image:nth-child(3), .inview.section--process .inview.section__phases__header .section__images .image:nth-child(3),
 .inview.section--process .inview.section__phases__header .chapter__images .image:nth-child(3) {
-  -webkit-animation-delay: 1500ms;
-          animation-delay: 1500ms;
+  -webkit-animation-delay: 1700ms;
+          animation-delay: 1700ms;
 }
 
 .inview.section--process .inview.section__phases__phase .section__body, .inview.section--process .inview.section__phases__phase .section__body-list,
@@ -1196,8 +1198,8 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
 .inview.section--process .inview.section__phases__phase .chapter__body-list, .inview.section--process .inview.section__phases__header .section__body, .inview.section--process .inview.section__phases__header .section__body-list,
 .inview.section--process .inview.section__phases__header .chapter__body,
 .inview.section--process .inview.section__phases__header .chapter__body-list {
-  -webkit-animation-delay: 1200ms;
-          animation-delay: 1200ms;
+  -webkit-animation-delay: 1400ms;
+          animation-delay: 1400ms;
 }
 
 .inview.section--process .inview.section__phases__phase .background-images {
@@ -1224,18 +1226,18 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
 }
 
 .inview.section--process .inview.section__phases__phase .background-images__image:nth-child(1) {
-  -webkit-animation-delay: 1500ms;
-          animation-delay: 1500ms;
+  -webkit-animation-delay: 1700ms;
+          animation-delay: 1700ms;
 }
 
 .inview.section--process .inview.section__phases__phase .background-images__image:nth-child(2) {
-  -webkit-animation-delay: 1800ms;
-          animation-delay: 1800ms;
+  -webkit-animation-delay: 2000ms;
+          animation-delay: 2000ms;
 }
 
 .inview.section--process .inview.section__phases__phase .background-images__image:nth-child(3) {
-  -webkit-animation-delay: 2100ms;
-          animation-delay: 2100ms;
+  -webkit-animation-delay: 2300ms;
+          animation-delay: 2300ms;
 }
 
 .inview.section--process .inview.section__phases__phase--insights.section__phases__phase {
@@ -1282,28 +1284,28 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
 }
 
 .inview.footer .footer__next-project__headline {
-  -webkit-animation-delay: 450ms;
-          animation-delay: 450ms;
+  -webkit-animation-delay: 650ms;
+          animation-delay: 650ms;
 }
 
 .inview.footer .footer__next-project__project {
-  -webkit-animation-delay: 600ms;
-          animation-delay: 600ms;
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
 }
 
 .inview.footer .footer__location {
-  -webkit-animation-delay: 750ms;
-          animation-delay: 750ms;
+  -webkit-animation-delay: 950ms;
+          animation-delay: 950ms;
 }
 
 .inview.footer .footer__email {
-  -webkit-animation-delay: 900ms;
-          animation-delay: 900ms;
+  -webkit-animation-delay: 1100ms;
+          animation-delay: 1100ms;
 }
 
 .inview.footer .footer__logo-icon {
-  -webkit-animation-delay: 1050ms;
-          animation-delay: 1050ms;
+  -webkit-animation-delay: 1250ms;
+          animation-delay: 1250ms;
 }
 
 .fade-enter-active,
@@ -4441,6 +4443,8 @@ input[type="button"]:active {
   max-height: 0;
   -webkit-transition: max-height 700ms ease;
   transition: max-height 700ms ease;
+  -webkit-transition-delay: 500ms;
+          transition-delay: 500ms;
 }
 
 .section--process .section__phases__phase--insights::before {
@@ -5362,253 +5366,253 @@ input[type="button"]:active {
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(1) .background-images__image {
-  -webkit-animation-delay: 450ms;
-          animation-delay: 450ms;
+  -webkit-animation-delay: 950ms;
+          animation-delay: 950ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(2) .background-images__image {
-  -webkit-animation-delay: 600ms;
-          animation-delay: 600ms;
+  -webkit-animation-delay: 1100ms;
+          animation-delay: 1100ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(3) .background-images__image {
-  -webkit-animation-delay: 750ms;
-          animation-delay: 750ms;
+  -webkit-animation-delay: 1250ms;
+          animation-delay: 1250ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(4) .background-images__image {
-  -webkit-animation-delay: 900ms;
-          animation-delay: 900ms;
+  -webkit-animation-delay: 1400ms;
+          animation-delay: 1400ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(5) .background-images__image {
-  -webkit-animation-delay: 1050ms;
-          animation-delay: 1050ms;
+  -webkit-animation-delay: 1550ms;
+          animation-delay: 1550ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(6) .background-images__image {
-  -webkit-animation-delay: 1200ms;
-          animation-delay: 1200ms;
+  -webkit-animation-delay: 1700ms;
+          animation-delay: 1700ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(7) .background-images__image {
-  -webkit-animation-delay: 1350ms;
-          animation-delay: 1350ms;
+  -webkit-animation-delay: 1850ms;
+          animation-delay: 1850ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(8) .background-images__image {
-  -webkit-animation-delay: 1500ms;
-          animation-delay: 1500ms;
+  -webkit-animation-delay: 2000ms;
+          animation-delay: 2000ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(9) .background-images__image {
-  -webkit-animation-delay: 1650ms;
-          animation-delay: 1650ms;
+  -webkit-animation-delay: 2150ms;
+          animation-delay: 2150ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(10) .background-images__image {
-  -webkit-animation-delay: 1800ms;
-          animation-delay: 1800ms;
+  -webkit-animation-delay: 2300ms;
+          animation-delay: 2300ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(11) .background-images__image {
-  -webkit-animation-delay: 1950ms;
-          animation-delay: 1950ms;
+  -webkit-animation-delay: 2450ms;
+          animation-delay: 2450ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(12) .background-images__image {
-  -webkit-animation-delay: 2100ms;
-          animation-delay: 2100ms;
+  -webkit-animation-delay: 2600ms;
+          animation-delay: 2600ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(13) .background-images__image {
-  -webkit-animation-delay: 2250ms;
-          animation-delay: 2250ms;
+  -webkit-animation-delay: 2750ms;
+          animation-delay: 2750ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(14) .background-images__image {
-  -webkit-animation-delay: 2400ms;
-          animation-delay: 2400ms;
+  -webkit-animation-delay: 2900ms;
+          animation-delay: 2900ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(15) .background-images__image {
-  -webkit-animation-delay: 2550ms;
-          animation-delay: 2550ms;
+  -webkit-animation-delay: 3050ms;
+          animation-delay: 3050ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(16) .background-images__image {
-  -webkit-animation-delay: 2700ms;
-          animation-delay: 2700ms;
+  -webkit-animation-delay: 3200ms;
+          animation-delay: 3200ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(17) .background-images__image {
-  -webkit-animation-delay: 2850ms;
-          animation-delay: 2850ms;
+  -webkit-animation-delay: 3350ms;
+          animation-delay: 3350ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(18) .background-images__image {
-  -webkit-animation-delay: 3000ms;
-          animation-delay: 3000ms;
+  -webkit-animation-delay: 3500ms;
+          animation-delay: 3500ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(19) .background-images__image {
-  -webkit-animation-delay: 3150ms;
-          animation-delay: 3150ms;
+  -webkit-animation-delay: 3650ms;
+          animation-delay: 3650ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(20) .background-images__image {
-  -webkit-animation-delay: 3300ms;
-          animation-delay: 3300ms;
+  -webkit-animation-delay: 3800ms;
+          animation-delay: 3800ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(21) .background-images__image {
-  -webkit-animation-delay: 3450ms;
-          animation-delay: 3450ms;
+  -webkit-animation-delay: 3950ms;
+          animation-delay: 3950ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(22) .background-images__image {
-  -webkit-animation-delay: 3600ms;
-          animation-delay: 3600ms;
+  -webkit-animation-delay: 4100ms;
+          animation-delay: 4100ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(23) .background-images__image {
-  -webkit-animation-delay: 3750ms;
-          animation-delay: 3750ms;
+  -webkit-animation-delay: 4250ms;
+          animation-delay: 4250ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(24) .background-images__image {
-  -webkit-animation-delay: 3900ms;
-          animation-delay: 3900ms;
+  -webkit-animation-delay: 4400ms;
+          animation-delay: 4400ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(25) .background-images__image {
-  -webkit-animation-delay: 4050ms;
-          animation-delay: 4050ms;
+  -webkit-animation-delay: 4550ms;
+          animation-delay: 4550ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(26) .background-images__image {
-  -webkit-animation-delay: 4200ms;
-          animation-delay: 4200ms;
+  -webkit-animation-delay: 4700ms;
+          animation-delay: 4700ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(27) .background-images__image {
-  -webkit-animation-delay: 4350ms;
-          animation-delay: 4350ms;
+  -webkit-animation-delay: 4850ms;
+          animation-delay: 4850ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(28) .background-images__image {
-  -webkit-animation-delay: 4500ms;
-          animation-delay: 4500ms;
+  -webkit-animation-delay: 5000ms;
+          animation-delay: 5000ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(29) .background-images__image {
-  -webkit-animation-delay: 4650ms;
-          animation-delay: 4650ms;
+  -webkit-animation-delay: 5150ms;
+          animation-delay: 5150ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(30) .background-images__image {
-  -webkit-animation-delay: 4800ms;
-          animation-delay: 4800ms;
+  -webkit-animation-delay: 5300ms;
+          animation-delay: 5300ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(31) .background-images__image {
-  -webkit-animation-delay: 4950ms;
-          animation-delay: 4950ms;
+  -webkit-animation-delay: 5450ms;
+          animation-delay: 5450ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(32) .background-images__image {
-  -webkit-animation-delay: 5100ms;
-          animation-delay: 5100ms;
+  -webkit-animation-delay: 5600ms;
+          animation-delay: 5600ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(33) .background-images__image {
-  -webkit-animation-delay: 5250ms;
-          animation-delay: 5250ms;
+  -webkit-animation-delay: 5750ms;
+          animation-delay: 5750ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(34) .background-images__image {
-  -webkit-animation-delay: 5400ms;
-          animation-delay: 5400ms;
+  -webkit-animation-delay: 5900ms;
+          animation-delay: 5900ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(35) .background-images__image {
-  -webkit-animation-delay: 5550ms;
-          animation-delay: 5550ms;
+  -webkit-animation-delay: 6050ms;
+          animation-delay: 6050ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(36) .background-images__image {
-  -webkit-animation-delay: 5700ms;
-          animation-delay: 5700ms;
+  -webkit-animation-delay: 6200ms;
+          animation-delay: 6200ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(37) .background-images__image {
-  -webkit-animation-delay: 5850ms;
-          animation-delay: 5850ms;
+  -webkit-animation-delay: 6350ms;
+          animation-delay: 6350ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(38) .background-images__image {
-  -webkit-animation-delay: 6000ms;
-          animation-delay: 6000ms;
+  -webkit-animation-delay: 6500ms;
+          animation-delay: 6500ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(39) .background-images__image {
-  -webkit-animation-delay: 6150ms;
-          animation-delay: 6150ms;
+  -webkit-animation-delay: 6650ms;
+          animation-delay: 6650ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(40) .background-images__image {
-  -webkit-animation-delay: 6300ms;
-          animation-delay: 6300ms;
+  -webkit-animation-delay: 6800ms;
+          animation-delay: 6800ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(41) .background-images__image {
-  -webkit-animation-delay: 6450ms;
-          animation-delay: 6450ms;
+  -webkit-animation-delay: 6950ms;
+          animation-delay: 6950ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(42) .background-images__image {
-  -webkit-animation-delay: 6600ms;
-          animation-delay: 6600ms;
+  -webkit-animation-delay: 7100ms;
+          animation-delay: 7100ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(43) .background-images__image {
-  -webkit-animation-delay: 6750ms;
-          animation-delay: 6750ms;
+  -webkit-animation-delay: 7250ms;
+          animation-delay: 7250ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(44) .background-images__image {
-  -webkit-animation-delay: 6900ms;
-          animation-delay: 6900ms;
+  -webkit-animation-delay: 7400ms;
+          animation-delay: 7400ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(45) .background-images__image {
-  -webkit-animation-delay: 7050ms;
-          animation-delay: 7050ms;
+  -webkit-animation-delay: 7550ms;
+          animation-delay: 7550ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(46) .background-images__image {
-  -webkit-animation-delay: 7200ms;
-          animation-delay: 7200ms;
+  -webkit-animation-delay: 7700ms;
+          animation-delay: 7700ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(47) .background-images__image {
-  -webkit-animation-delay: 7350ms;
-          animation-delay: 7350ms;
+  -webkit-animation-delay: 7850ms;
+          animation-delay: 7850ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(48) .background-images__image {
-  -webkit-animation-delay: 7500ms;
-          animation-delay: 7500ms;
+  -webkit-animation-delay: 8000ms;
+          animation-delay: 8000ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(49) .background-images__image {
-  -webkit-animation-delay: 7650ms;
-          animation-delay: 7650ms;
+  -webkit-animation-delay: 8150ms;
+          animation-delay: 8150ms;
 }
 
 .clearstream .inview.section--custom-animation .section__element:nth-child(50) .background-images__image {
-  -webkit-animation-delay: 7800ms;
-          animation-delay: 7800ms;
+  -webkit-animation-delay: 8300ms;
+          animation-delay: 8300ms;
 }
 
 @media only screen and (max-width: 640px) {
@@ -5729,53 +5733,53 @@ input[type="button"]:active {
 }
 
 .gohawaii .section--custom-animation.inview .section__element:nth-child(1) .background-images {
-  -webkit-animation-delay: 300ms;
-          animation-delay: 300ms;
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
 }
 
 .gohawaii .section--custom-animation.inview .section__element:nth-child(2) .background-images {
-  -webkit-animation-delay: 600ms;
-          animation-delay: 600ms;
+  -webkit-animation-delay: 1100ms;
+          animation-delay: 1100ms;
 }
 
 .gohawaii .section--custom-animation.inview .section__element:nth-child(3) .background-images {
-  -webkit-animation-delay: 900ms;
-          animation-delay: 900ms;
+  -webkit-animation-delay: 1400ms;
+          animation-delay: 1400ms;
 }
 
 .gohawaii .section--custom-animation.inview .section__element:nth-child(4) .background-images {
-  -webkit-animation-delay: 1200ms;
-          animation-delay: 1200ms;
+  -webkit-animation-delay: 1700ms;
+          animation-delay: 1700ms;
 }
 
 .gohawaii .section--custom-animation.inview .section__element:nth-child(5) .background-images {
-  -webkit-animation-delay: 1500ms;
-          animation-delay: 1500ms;
+  -webkit-animation-delay: 2000ms;
+          animation-delay: 2000ms;
 }
 
 .gohawaii .section--custom-animation.inview .section__element:nth-child(6) .background-images {
-  -webkit-animation-delay: 1800ms;
-          animation-delay: 1800ms;
+  -webkit-animation-delay: 2300ms;
+          animation-delay: 2300ms;
 }
 
 .gohawaii .section--custom-animation.inview .section__element:nth-child(7) .background-images {
-  -webkit-animation-delay: 2100ms;
-          animation-delay: 2100ms;
+  -webkit-animation-delay: 2600ms;
+          animation-delay: 2600ms;
 }
 
 .gohawaii .section--custom-animation.inview .section__element:nth-child(8) .background-images {
-  -webkit-animation-delay: 2400ms;
-          animation-delay: 2400ms;
+  -webkit-animation-delay: 2900ms;
+          animation-delay: 2900ms;
 }
 
 .gohawaii .section--custom-animation.inview .section__element:nth-child(9) .background-images {
-  -webkit-animation-delay: 2700ms;
-          animation-delay: 2700ms;
+  -webkit-animation-delay: 3200ms;
+          animation-delay: 3200ms;
 }
 
 .gohawaii .section--custom-animation.inview .section__element:nth-child(10) .background-images {
-  -webkit-animation-delay: 3000ms;
-          animation-delay: 3000ms;
+  -webkit-animation-delay: 3500ms;
+          animation-delay: 3500ms;
 }
 
 @media only screen and (min-width: 640px) {
@@ -5900,6 +5904,8 @@ input[type="button"]:active {
           animation-fill-mode: both;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
 }
 
 @media only screen and (max-width: 640px) {
@@ -5920,8 +5926,8 @@ input[type="button"]:active {
             animation-fill-mode: both;
     -webkit-animation-play-state: running;
             animation-play-state: running;
-    -webkit-animation-delay: 300ms;
-            animation-delay: 300ms;
+    -webkit-animation-delay: 800ms;
+            animation-delay: 800ms;
   }
 }
 
@@ -6052,28 +6058,28 @@ input[type="button"]:active {
 }
 
 .teacup-analytics .inview.section--custom-animation .section__element:nth-child(1) .background-images__image {
-  -webkit-animation-delay: 600ms;
-          animation-delay: 600ms;
+  -webkit-animation-delay: 1100ms;
+          animation-delay: 1100ms;
 }
 
 .teacup-analytics .inview.section--custom-animation .section__element:nth-child(2) .background-images__image {
-  -webkit-animation-delay: 900ms;
-          animation-delay: 900ms;
+  -webkit-animation-delay: 1400ms;
+          animation-delay: 1400ms;
 }
 
 .teacup-analytics .inview.section--custom-animation .section__element:nth-child(3) .background-images__image {
-  -webkit-animation-delay: 1200ms;
-          animation-delay: 1200ms;
+  -webkit-animation-delay: 1700ms;
+          animation-delay: 1700ms;
 }
 
 .teacup-analytics .inview.section--custom-animation .section__element:nth-child(4) .background-images__image {
-  -webkit-animation-delay: 1500ms;
-          animation-delay: 1500ms;
+  -webkit-animation-delay: 2000ms;
+          animation-delay: 2000ms;
 }
 
 .teacup-analytics .inview.section--custom-animation .section__element:nth-child(5) .background-images__image {
-  -webkit-animation-delay: 1800ms;
-          animation-delay: 1800ms;
+  -webkit-animation-delay: 2300ms;
+          animation-delay: 2300ms;
 }
 
 @media only screen and (max-width: 640px) {
@@ -6274,126 +6280,126 @@ input[type="button"]:active {
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(1) {
-  -webkit-animation-delay: 450ms;
-          animation-delay: 450ms;
+  -webkit-animation-delay: 950ms;
+          animation-delay: 950ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(2) {
-  -webkit-animation-delay: 600ms;
-          animation-delay: 600ms;
+  -webkit-animation-delay: 1100ms;
+          animation-delay: 1100ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(3) {
-  -webkit-animation-delay: 750ms;
-          animation-delay: 750ms;
+  -webkit-animation-delay: 1250ms;
+          animation-delay: 1250ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(4) {
-  -webkit-animation-delay: 900ms;
-          animation-delay: 900ms;
+  -webkit-animation-delay: 1400ms;
+          animation-delay: 1400ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(5) {
-  -webkit-animation-delay: 1050ms;
-          animation-delay: 1050ms;
+  -webkit-animation-delay: 1550ms;
+          animation-delay: 1550ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(6) {
-  -webkit-animation-delay: 1200ms;
-          animation-delay: 1200ms;
+  -webkit-animation-delay: 1700ms;
+          animation-delay: 1700ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(7) {
-  -webkit-animation-delay: 1350ms;
-          animation-delay: 1350ms;
+  -webkit-animation-delay: 1850ms;
+          animation-delay: 1850ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(8) {
-  -webkit-animation-delay: 1500ms;
-          animation-delay: 1500ms;
+  -webkit-animation-delay: 2000ms;
+          animation-delay: 2000ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(9) {
-  -webkit-animation-delay: 1650ms;
-          animation-delay: 1650ms;
+  -webkit-animation-delay: 2150ms;
+          animation-delay: 2150ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(10) {
-  -webkit-animation-delay: 1800ms;
-          animation-delay: 1800ms;
+  -webkit-animation-delay: 2300ms;
+          animation-delay: 2300ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(11) {
-  -webkit-animation-delay: 1950ms;
-          animation-delay: 1950ms;
+  -webkit-animation-delay: 2450ms;
+          animation-delay: 2450ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(12) {
-  -webkit-animation-delay: 2100ms;
-          animation-delay: 2100ms;
+  -webkit-animation-delay: 2600ms;
+          animation-delay: 2600ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(13) {
-  -webkit-animation-delay: 2250ms;
-          animation-delay: 2250ms;
+  -webkit-animation-delay: 2750ms;
+          animation-delay: 2750ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(14) {
-  -webkit-animation-delay: 2400ms;
-          animation-delay: 2400ms;
+  -webkit-animation-delay: 2900ms;
+          animation-delay: 2900ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(15) {
-  -webkit-animation-delay: 2550ms;
-          animation-delay: 2550ms;
+  -webkit-animation-delay: 3050ms;
+          animation-delay: 3050ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(16) {
-  -webkit-animation-delay: 2700ms;
-          animation-delay: 2700ms;
+  -webkit-animation-delay: 3200ms;
+          animation-delay: 3200ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(17) {
-  -webkit-animation-delay: 2850ms;
-          animation-delay: 2850ms;
+  -webkit-animation-delay: 3350ms;
+          animation-delay: 3350ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(18) {
-  -webkit-animation-delay: 3000ms;
-          animation-delay: 3000ms;
+  -webkit-animation-delay: 3500ms;
+          animation-delay: 3500ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(19) {
-  -webkit-animation-delay: 3150ms;
-          animation-delay: 3150ms;
+  -webkit-animation-delay: 3650ms;
+          animation-delay: 3650ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(20) {
-  -webkit-animation-delay: 3300ms;
-          animation-delay: 3300ms;
+  -webkit-animation-delay: 3800ms;
+          animation-delay: 3800ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(21) {
-  -webkit-animation-delay: 3450ms;
-          animation-delay: 3450ms;
+  -webkit-animation-delay: 3950ms;
+          animation-delay: 3950ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(22) {
-  -webkit-animation-delay: 3600ms;
-          animation-delay: 3600ms;
+  -webkit-animation-delay: 4100ms;
+          animation-delay: 4100ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(23) {
-  -webkit-animation-delay: 3750ms;
-          animation-delay: 3750ms;
+  -webkit-animation-delay: 4250ms;
+          animation-delay: 4250ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(24) {
-  -webkit-animation-delay: 3900ms;
-          animation-delay: 3900ms;
+  -webkit-animation-delay: 4400ms;
+          animation-delay: 4400ms;
 }
 
 .tour-aloha .inview.section--custom-animation .section__element--map-marker:nth-child(25) {
-  -webkit-animation-delay: 4050ms;
-          animation-delay: 4050ms;
+  -webkit-animation-delay: 4550ms;
+          animation-delay: 4550ms;
 }

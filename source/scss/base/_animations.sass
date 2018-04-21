@@ -8,7 +8,7 @@ $extra-delay: $base-animation + ($animation-increment * 5)
 $case-study-header-duration: 1500ms
 $case-study-header-delay: 1500ms
 $general-mask-duration: 1000ms
-$global-inview-delay: 300ms
+$global-inview-delay: 500ms
 
 // Animation properties
 $duration:        0.25s
@@ -318,6 +318,7 @@ $play-state:      running
   &.section--light-grey-bg,
   &.footer
     +fade-in
+    animation-delay: $global-inview-delay
 
   &.footer
     .footer__next-project
