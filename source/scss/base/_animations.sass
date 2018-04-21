@@ -292,7 +292,7 @@ $play-state:      running
     &__cta,
     &__images .image,
     &__background-images
-      display: none
+      opacity: 0
 
 .section--light-grey-bg,
 .section--process,
@@ -301,17 +301,20 @@ $play-state:      running
 
 .footer
   .footer__next-project
-    display: none
+    opacity: 0
+    transition: all $base-animation ease
 
 .section--custom-animation
   .section__elements
-    display: none
+    opacity: 0
+    transition: all $base-animation ease
 
 .section--process
   .section__phases__phase
     .section__phase__work
       .background-images
-        display: none
+        // opacity: 0
+        // transition: all $base-animation ease
 
 .inview
   &.section--process,
@@ -322,11 +325,11 @@ $play-state:      running
 
   &.footer
     .footer__next-project
-      display: block
+      opacity: 1.0
 
   &.section--custom-animation
     .section__elements
-      display: block
+      opacity: 1.0
 
   &.section:not(.section--intro):not(.section--process),
     .section,
@@ -336,11 +339,11 @@ $play-state:      running
       &__body-list,
       &__cta,
       &__images .image
-        display: block
+        // display: block
         +fade-in-up
 
       &__background-images
-        display: block
+        // display: block
         +fade-in
 
       &__background-images,
@@ -383,7 +386,7 @@ $play-state:      running
           &__body-list,
           &__cta,
           &__images .image
-            display: block
+            // display: block
             +fade-in-up
 
           &__title::before,
@@ -391,7 +394,7 @@ $play-state:      running
             +fade-in-down
 
           &__background-images
-            display: flex
+            // display: flex
             +fade-in
             animation-delay: ($base-animation / 4) + $global-inview-delay
 
@@ -413,7 +416,8 @@ $play-state:      running
 
       &.section__phases__phase
         .background-images
-          display: block
+          // display: block
+          opacity: 1.0
 
         .background-images__image
           +fade-in-up

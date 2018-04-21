@@ -99,7 +99,7 @@ export default class HomePage {
   }
 
   /**
-   * Adds a class when element enters viewport
+   * Custom scrolling on home page
    */
   _setupScrollEffect() {
     new MouseScroller({
