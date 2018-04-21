@@ -191,16 +191,17 @@ $play-state:      running
 .general-content
   &__header
     +general-mask-animation
+    animation-delay: $case-study-header-delay
 
   &__title,
   &__back-home
     +fade-in-down
 
   &__title
-    animation-delay: ($base-animation / 2) * 1 + $general-mask-duration
+    animation-delay: ($base-animation / 2) * 1 + $general-mask-duration + $case-study-header-delay
 
   &__back-home
-    animation-delay: ($base-animation / 2) * 2 + $general-mask-duration
+    animation-delay: ($base-animation / 2) * 2 + $general-mask-duration + $case-study-header-delay
 
   &__container
     .chapter
@@ -210,19 +211,19 @@ $play-state:      running
         +fade-in-up
 
       &__title
-        animation-delay: ($base-animation / 2) * 3 + $general-mask-duration
+        animation-delay: ($base-animation / 2) * 3 + $general-mask-duration + $case-study-header-delay
 
       &__body
-        animation-delay: ($base-animation / 2) * 4 + $general-mask-duration
+        animation-delay: ($base-animation / 2) * 4 + $general-mask-duration + $case-study-header-delay
 
         &::after
           +fade-in-right
-          animation-delay: ($base-animation / 2) * 11 + $general-mask-duration
+          animation-delay: ($base-animation / 2) * 11 + $general-mask-duration + $case-study-header-delay
 
       &__cta
         @for $i from 1 through 6
           &:nth-child(#{$i})
-            animation-delay: ($base-animation / 2) * (4 + $i) + $general-mask-duration
+            animation-delay: ($base-animation / 2) * (4 + $i) + $general-mask-duration + $case-study-header-delay
 
   .contact-form
     &__text,
@@ -232,16 +233,16 @@ $play-state:      running
       +fade-in-up
 
     &__text
-      animation-delay: ($base-animation / 2) * 4 + $general-mask-duration
+      animation-delay: ($base-animation / 2) * 4 + $general-mask-duration + $case-study-header-delay
 
     &__email
-      animation-delay: ($base-animation / 2) * 5 + $general-mask-duration
+      animation-delay: ($base-animation / 2) * 5 + $general-mask-duration + $case-study-header-delay
 
     &__textarea
-      animation-delay: ($base-animation / 2) * 6 + $general-mask-duration
+      animation-delay: ($base-animation / 2) * 6 + $general-mask-duration + $case-study-header-delay
 
     &__submit
-      animation-delay: ($base-animation / 2) * 7 + $general-mask-duration
+      animation-delay: ($base-animation / 2) * 7 + $general-mask-duration + $case-study-header-delay
 
 .header
   &--case-study
@@ -477,10 +478,10 @@ $play-state:      running
       +fade-in-up
 
     .hero__title
-      animation-delay: $base-animation
+      animation-delay: $base-animation + $case-study-header-delay
 
     .hero__subtitle
-      animation-delay: $base-animation + ($animation-increment * 1)
+      animation-delay: $base-animation + ($animation-increment * 1) + $case-study-header-delay
 
   &-leave-active
     .hero__title,

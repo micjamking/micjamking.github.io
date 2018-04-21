@@ -63,6 +63,8 @@ export default class CaseStudyPage {
    * Kick start page
    */
   _init() {
+    // Start page at top of window on refresh
+    this._$w.scrollTo(0, 0);
     this._setupCanvases();
     this._setupScrollEffect();
 

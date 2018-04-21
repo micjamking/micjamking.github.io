@@ -46,11 +46,11 @@
 
       &--about
         +fade-in-up
-        animation-delay: 900ms
+        animation-delay: 900ms + $case-study-header-delay
 
       &--contact
         +fade-in-down
-        animation-delay: 900ms
+        animation-delay: 900ms + $case-study-header-delay
         right: 0
 
   &--pagination
@@ -65,7 +65,7 @@
     background-repeat: no-repeat
     background-size: contain
     +fade-in-down
-    animation-delay: 1100ms
+    animation-delay: 1100ms + $case-study-header-delay
 
     &:hover
       cursor: pointer
