@@ -8,6 +8,7 @@ $extra-delay: $base-animation + ($animation-increment * 5)
 $case-study-header-duration: 1500ms
 $case-study-header-delay: 1500ms
 $general-mask-duration: 1000ms
+$global-inview-delay: 300ms
 
 // Animation properties
 $duration:        0.25s
@@ -342,21 +343,21 @@ $play-state:      running
 
       &__background-images,
       &__title
-        animation-delay: $base-animation * 1
+        animation-delay: $base-animation * 1 + $global-inview-delay
 
       &__images .image
         @for $i from 1 through 3
           &:nth-child(#{$i})
-            animation-delay: $base-animation * (2 + ($i - 1))
+            animation-delay: $base-animation * (2 + ($i - 1)) + $global-inview-delay
 
       &__body,
       &__body-list
-        animation-delay: $base-animation * 3
+        animation-delay: $base-animation * 3 + $global-inview-delay
 
       &__cta
         @for $i from 1 through 2
           &:nth-child(#{$i})
-            animation-delay: $base-animation * (4 + ($i - 1))
+            animation-delay: $base-animation * (4 + ($i - 1)) + $global-inview-delay
 
       &__body-list--nested
         animation-delay: 0ms
@@ -364,10 +365,10 @@ $play-state:      running
   &.section.section--columns.section--bg-image
     .chapter
       &__background-images
-        animation-delay: $base-animation * 1
+        animation-delay: $base-animation * 1 + $global-inview-delay
 
       &__title
-        animation-delay: $base-animation * 2
+        animation-delay: $base-animation * 2 + $global-inview-delay + $global-inview-delay
 
   &.section--process
     .inview
@@ -390,23 +391,23 @@ $play-state:      running
           &__background-images
             display: flex
             +fade-in
-            animation-delay: ($base-animation / 4)
+            animation-delay: ($base-animation / 4) + $global-inview-delay
 
           &__title
-            animation-delay: $base-animation * 1
+            animation-delay: $base-animation * 1 + $global-inview-delay
 
             &::before,
             &::after
-              animation-delay: $base-animation * 2
+              animation-delay: $base-animation * 2 + $global-inview-delay
 
           &__images .image
             @for $i from 1 through 3
               &:nth-child(#{$i})
-                animation-delay: $base-animation * (2 + ($i - 1))
+                animation-delay: $base-animation * (2 + ($i - 1)) + $global-inview-delay
 
           &__body,
           &__body-list
-            animation-delay: $base-animation * 3
+            animation-delay: $base-animation * 3 + $global-inview-delay
 
       &.section__phases__phase
         .background-images
@@ -417,7 +418,7 @@ $play-state:      running
 
           @for $i from 1 through 3
             &:nth-child(#{$i})
-              animation-delay: ($base-animation * $i) + ($base-animation * 3)
+              animation-delay: ($base-animation * $i) + ($base-animation * 3) + $global-inview-delay
 
         &--insights.section__phases__phase
           height: auto
@@ -437,19 +438,19 @@ $play-state:      running
 
       &__next-project
         &__headline
-          animation-delay: ($base-animation / 2) * 1
+          animation-delay: ($base-animation / 2) * 1 + $global-inview-delay
 
         &__project
-          animation-delay: ($base-animation / 2) * 2
+          animation-delay: ($base-animation / 2) * 2 + $global-inview-delay
 
       &__location
-        animation-delay: ($base-animation / 2) * 3
+        animation-delay: ($base-animation / 2) * 3 + $global-inview-delay
 
       &__email
-        animation-delay: ($base-animation / 2) * 4
+        animation-delay: ($base-animation / 2) * 4 + $global-inview-delay
 
       &__logo-icon
-        animation-delay: ($base-animation / 2) * 5
+        animation-delay: ($base-animation / 2) * 5 + $global-inview-delay
 
 .fade-enter-active,
 .fade-leave-active

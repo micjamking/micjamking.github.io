@@ -86,7 +86,7 @@ export default class CaseStudyPage {
         canvasBackground: this._canvasBackgroundColor,
         particleColors: this._canvasParticleColors,
         particleLineWidth: 4,
-        maxHeight: this._$process__canvas.parentNode.offsetHeight + 500,
+        maxHeight: this._$process__canvas.parentNode.offsetHeight + 1500,
         numOfParticles: _numOfParticles,
         particleOpacity: 1.0,
         pauseAnimation: this._pauseBackgroundAnimations
@@ -150,7 +150,7 @@ export default class CaseStudyPage {
   _setupScrollEffect() {
     this._utils.addClassOnScrollInToView({
       elements: this._$sections,
-      threshold: 0.25,
+      threshold: 0,
       removeClassOnExit: false
     });
   }
