@@ -3,7 +3,7 @@
  */
 
 // Libs
-import ResizeObserver from 'resize-observer-polyfill';
+// import ResizeObserver from 'resize-observer-polyfill';
 import utils, { w } from './../lib/utils';
 import Particle from './../lib/particle';
 
@@ -18,11 +18,15 @@ export default class ParticleCanvas {
     this.maxWidth = settings.maxWidth;
     this.maxHeight = settings.maxHeight;
     this.canvasBackground = settings.canvasBackground;
+    this.pauseAnimation = settings.pauseAnimation === true;
+    this.maxFrameCount = settings.maxFrameCount || 400;
+    this.count = 0;
 
     // External utilities
     this.utils                 = new utils();
     this.requestAnimationFrame = w.requestAnimationFrame.bind(w);
     this.devicePixelRatio      = w.devicePixelRatio;
+    this.isMobileDevice        = this.utils.allowDeviceOrientation();
 
     // DOM & Canvas object references
     this.$canvas       = settings.canvasEL;
@@ -146,24 +150,26 @@ export default class ParticleCanvas {
 	 * Setup event listeners
 	 */
   _setupListeners(){
-    w.addEventListener('resize', () => this._onWindowResize());
-    let $body = document.querySelectorAll('body')[0];
+    w.addEventListener('resize', () => this._onWindowResize(), { passive: true });
+    // let $body = document.querySelectorAll('body')[0];
 
-    if (this.$canvasParent !== w && !$body.classList.contains('home')){
-      new ResizeObserver(() => {
-        this._onElementResize();
-      }).observe(this.$canvasParent);
-    }
+    // if (this.$canvasParent !== w && !$body.classList.contains('home')){
+    //   new ResizeObserver(() => {
+    //     this._onElementResize();
+    //   }).observe(this.$canvasParent);
+    // }
 
-    if (this.utils.allowDeviceOrientation()){
+    if (this.isMobileDevice){
 
       // w.addEventListener('deviceorientation', (e) => this._handleOrientation(e), true);
 
     } else {
 
-      document.addEventListener('mousemove', (e) => this._mouseMoveCallback(e));
-      document.addEventListener('mousedown', (e) => this._mouseDownCallback(e));
-      document.addEventListener('mouseup', (e) => this._mouseUpCallback(e));
+      if (this.respondToMouse){
+        document.addEventListener('mousemove', (e) => this._mouseMoveCallback(e), { passive: true });
+        document.addEventListener('mousedown', (e) => this._mouseDownCallback(e), { passive: true });
+        document.addEventListener('mouseup', (e) => this._mouseUpCallback(e), { passive: true });
+      }
 
     }
   }
@@ -307,7 +313,9 @@ export default class ParticleCanvas {
   _animate() {
 
     // Call request animation frame recursively
-    this.requestAnimationFrame(this._animate.bind(this), this.$canvas);
+    if (this.count <= this.maxFrameCount){
+      this.requestAnimationFrame(this._animate.bind(this), this.$canvas);
+    }
 
 		// Clear canvas every frame
     if (this.canvasBackground){
@@ -322,11 +330,11 @@ export default class ParticleCanvas {
       for (let i = 0; i < this.particles.length; i++){
         let particle = this.particles[i];
 
-        this._motion(particle, i);
+        if (!this.pauseAnimation) this._motion(particle, i);
         this._boundaryDetection(particle, i);
         this._collisionCheck(particle, i);
 
-        if (!this.utils.allowDeviceOrientation() && this.respondToMouse){
+        if (!this.isMobileDevice && this.respondToMouse){
           this._mouseCollision(particle, i);
         }
 
@@ -334,7 +342,13 @@ export default class ParticleCanvas {
       }
     }
 
-    this.mouseBall.draw(this.context);
+    if (this.respondToMouse){
+      this.mouseBall.draw(this.context);
+    }
+
+    if (this.pauseAnimation){
+      this.count++;
+    }
 
   }
 

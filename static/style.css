@@ -812,28 +812,28 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
 }
 
 .header--case-study .header__title {
-  -webkit-animation-delay: 1650ms;
-          animation-delay: 1650ms;
+  -webkit-animation-delay: 3150ms;
+          animation-delay: 3150ms;
 }
 
 .header--case-study .header__subtitle {
-  -webkit-animation-delay: 1800ms;
-          animation-delay: 1800ms;
+  -webkit-animation-delay: 3300ms;
+          animation-delay: 3300ms;
 }
 
 .header--case-study .header__service:nth-child(1), .header--case-study .header__project-link:nth-child(1) {
-  -webkit-animation-delay: 1950ms;
-          animation-delay: 1950ms;
+  -webkit-animation-delay: 3450ms;
+          animation-delay: 3450ms;
 }
 
 .header--case-study .header__service:nth-child(2), .header--case-study .header__project-link:nth-child(2) {
-  -webkit-animation-delay: 2100ms;
-          animation-delay: 2100ms;
+  -webkit-animation-delay: 3600ms;
+          animation-delay: 3600ms;
 }
 
 .header--case-study .header__service:nth-child(3), .header--case-study .header__project-link:nth-child(3) {
-  -webkit-animation-delay: 2250ms;
-          animation-delay: 2250ms;
+  -webkit-animation-delay: 3750ms;
+          animation-delay: 3750ms;
 }
 
 .header--case-study .header__back-home {
@@ -853,8 +853,8 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
           animation-fill-mode: both;
   -webkit-animation-play-state: running;
           animation-play-state: running;
-  -webkit-animation-delay: 2400ms;
-          animation-delay: 2400ms;
+  -webkit-animation-delay: 3900ms;
+          animation-delay: 3900ms;
 }
 
 .header--case-study .background-images--case-study {
@@ -874,8 +874,8 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
           animation-fill-mode: both;
   -webkit-animation-play-state: running;
           animation-play-state: running;
-  -webkit-animation-delay: 150ms;
-          animation-delay: 150ms;
+  -webkit-animation-delay: 1650ms;
+          animation-delay: 1650ms;
 }
 
 .section--intro .chapter__images .image, .section--intro .chapter__body {
@@ -898,13 +898,13 @@ a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:
 }
 
 .section--intro .chapter__images .image {
-  -webkit-animation-delay: 2850ms;
-          animation-delay: 2850ms;
+  -webkit-animation-delay: 4350ms;
+          animation-delay: 4350ms;
 }
 
 .section--intro .chapter__body {
-  -webkit-animation-delay: 3000ms;
-          animation-delay: 3000ms;
+  -webkit-animation-delay: 4500ms;
+          animation-delay: 4500ms;
 }
 
 .section:not(.section--intro) .section__title, .section:not(.section--intro) .section__body, .section:not(.section--intro) .section__body-list, .section:not(.section--intro) .section__cta,

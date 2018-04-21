@@ -6,6 +6,7 @@ $base-animation: 300ms
 $animation-increment: 250ms
 $extra-delay: $base-animation + ($animation-increment * 5)
 $case-study-header-duration: 1500ms
+$case-study-header-delay: 1500ms
 $general-mask-duration: 1000ms
 
 // Animation properties
@@ -251,22 +252,22 @@ $play-state:      running
         +fade-in-up
 
       &__title
-        animation-delay: ($base-animation / 2) * 1 + $case-study-header-duration
+        animation-delay: ($base-animation / 2) * 1 + $case-study-header-duration + $case-study-header-delay
       &__subtitle
-        animation-delay: ($base-animation / 2) * 2 + $case-study-header-duration
+        animation-delay: ($base-animation / 2) * 2 + $case-study-header-duration + $case-study-header-delay
       &__service,
       &__project-link
         @for $i from 1 through 3
           &:nth-child(#{$i})
-            animation-delay: ($base-animation / 2) * (2 + $i) + $case-study-header-duration
+            animation-delay: ($base-animation / 2) * (2 + $i) + $case-study-header-duration + $case-study-header-delay
 
       &__back-home
         +fade-in-down
-        animation-delay: ($base-animation / 2) * 6 + $case-study-header-duration
+        animation-delay: ($base-animation / 2) * 6 + $case-study-header-duration + $case-study-header-delay
 
     .background-images--case-study
       +case-study-mask-animation
-      animation-delay: ($base-animation / 2) * 1
+      animation-delay: ($base-animation / 2) * 1 + $case-study-header-delay
 
 .section--intro
   .chapter
@@ -275,10 +276,10 @@ $play-state:      running
       +fade-in-up
 
     &__images .image
-      animation-delay: ($base-animation / 2) * 9 + $case-study-header-duration
+      animation-delay: ($base-animation / 2) * 9 + $case-study-header-duration + $case-study-header-delay
 
     &__body
-      animation-delay: ($base-animation / 2) * 10 + $case-study-header-duration
+      animation-delay: ($base-animation / 2) * 10 + $case-study-header-duration + $case-study-header-delay
 
 .section:not(.section--intro)
   .section,

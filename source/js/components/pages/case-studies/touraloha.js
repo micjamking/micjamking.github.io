@@ -21,7 +21,7 @@ export default class TourAloha {
     let bg = this._$section.querySelectorAll('.section__elements')[0];
     bg.addEventListener('click', () => {
       this._$popup.classList.remove('active');
-    }, true);
+    }, { capture: true, passive: true });
   }
 
   callback() {
@@ -56,7 +56,7 @@ export default class TourAloha {
       $marker.style.top  = `${y_pos}px`;
       $marker.style.left = `${x_pos}px`;
 
-      $marker.addEventListener('click', (e) => this._markerPopup(e), true);
+      $marker.addEventListener('click', (e) => this._markerPopup(e), { capture: true, passive: true });
 
       // console.log('set marker position', $marker);
     });

@@ -25,7 +25,7 @@ export default class PageTransitions {
   _setupListeners() {
     if (this._$ctas.length > 0){
       this._$ctas.forEach(($cta) => {
-        $cta.addEventListener('click', (e) => this._delayPageTransition(e, $cta));
+        $cta.addEventListener('click', (e) => this._delayPageTransition(e, $cta), { passive: false });
       });
     }
   }

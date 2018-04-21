@@ -69,51 +69,49 @@ export default class UI extends Vue {
       let $preloader = $('.preloader')[0];
       let $body = $('body')[0];
       let $logo = $preloader.querySelectorAll('.preloader__logo')[0];
+      this.isActive = true;
 
+      // Wait for DOM to become active...
       _utils
+      .delay(() => {
+        if ($body.classList.contains('home')) {
+          new HomePage(this.stateService);
+        }
+
+        else if ($body.classList.contains('case-study')) {
+          let caseStudy = $body.classList.item(1);
+          let caseStudySettings = {};
+
+          switch (caseStudy) {
+            case 'gohawaii':
+              caseStudySettings = new GoHawaii();
+              break;
+            case 'tour-aloha':
+              caseStudySettings = new TourAloha();
+              break;
+            case 'teacup-analytics':
+              caseStudySettings = new Teacup();
+              break;
+            case 'clearstream':
+            case 'mobipcs':
+            default:
+              console.log('No case study settings available for this page!');
+          }
+
+          new CaseStudyPage(caseStudySettings);
+        }
+
+        new LazyLoad();
+        new PageTransitions();
+      }, 0)
       .delay(() => {
         $logo.classList.remove('fade-in-up');
         $logo.classList.add('fade-out-up');
       }, 1000)
       .delay(() => {
-        this.isActive = true;
         $preloader.classList.add('fade-out');
-
-        _utils.delay(() => {
-          if ($body.classList.contains('home')) {
-            new HomePage(this.stateService);
-          }
-
-          else if ($body.classList.contains('case-study')) {
-            let caseStudy = $body.classList.item(1);
-            let caseStudySettings = {};
-
-            switch (caseStudy) {
-              case 'gohawaii':
-                caseStudySettings = new GoHawaii();
-                break;
-              case 'tour-aloha':
-                caseStudySettings = new TourAloha();
-                break;
-              case 'teacup-analytics':
-                caseStudySettings = new Teacup();
-                break;
-              case 'clearstream':
-              case 'mobipcs':
-              default:
-                console.log('No case study settings available for this page!');
-            }
-
-            new CaseStudyPage(caseStudySettings);
-          }
-        }, 0);
-
-      }, 500)
-      .delay(() => {
         $preloader.classList.remove('active');
-        new LazyLoad();
-        new PageTransitions();
-      }, 0);
+      }, 500);
     };
 
     super(_options);

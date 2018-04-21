@@ -40,7 +40,7 @@ export default class App {
    */
   _registerListeners() {
 
-    w.addEventListener( 'load', (e) => this._initUI(e) );
+    w.addEventListener( 'load', (e) => this._initUI(e), { passive: true });
 
   }
 

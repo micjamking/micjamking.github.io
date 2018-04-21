@@ -35,10 +35,10 @@ export default class MouseScroller {
     };
 
     // Mouse wheel events.
-    window.addEventListener('mousewheel', this.mouseListener);
+    window.addEventListener('mousewheel', this.mouseListener, { passive: true });
 
     // Firefox
-    window.addEventListener('DOMMouseScroll', this.mouseListener);
+    window.addEventListener('DOMMouseScroll', this.mouseListener, { passive: true });
   }
 
 

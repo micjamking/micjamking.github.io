@@ -81,7 +81,7 @@ export default class utils {
 
     }
 
-    el.addEventListener('mousemove', mouseListener);
+    el.addEventListener('mousemove', mouseListener, { passive: true });
 
     return mouse;
 
@@ -128,9 +128,9 @@ export default class utils {
 
     }
 
-    el.addEventListener('touchstart', touchStartListener);
-    el.addEventListener('touchend', touchEndListener);
-    el.addEventListener('touchmove', touchMoveListener);
+    el.addEventListener('touchstart', touchStartListener, { passive: true });
+    el.addEventListener('touchend', touchEndListener, { passive: true });
+    el.addEventListener('touchmove', touchMoveListener, { passive: true });
 
     return touch;
 
@@ -181,7 +181,7 @@ export default class utils {
 
     }
 
-    w.addEventListener('deviceorientation', (e) => handleOrientation(e), true);
+    w.addEventListener('deviceorientation', (e) => handleOrientation(e), { capture: true, passive: true });
 
     return tilt;
 
@@ -388,9 +388,9 @@ export default class utils {
     }
 
     if (touch && which === 'touch'){
-      el.addEventListener('touchmove', canvasTouchListener);
+      el.addEventListener('touchmove', canvasTouchListener, { passive: true });
     } else {
-      el.addEventListener('mousemove', canvasMouseListener);
+      el.addEventListener('mousemove', canvasMouseListener, { passive: true });
     }
 
   }
@@ -413,29 +413,28 @@ export default class utils {
 
   /**
    * Throttle an event and provide custom event for callback
-   * @see https://developer.mozilla.org/en-US/docs/Web/Events/scroll
    * @param {String} type - Type of event to throttle
    * @param {String} name - Name of new CustomEvent to dispatch
-   * @param {Object} obj - Object to attach event to and dispatch the custom event from
-   * @listens {type} Listen for event to throttle and dispatch custom event for
-   * @emits {name} Custom event to dispatch on object
+   * @param {Function} cb - Callback function
+   * @listens {type} Listen for event to throttle
    */
-  throttleEvent(type, name, obj) {
+  throttleEvent(obj, type, cb) {
 
       obj = obj || w;
       var running = false;
 
-      var func = function() {
-          if (running) { return; }
-          running = true;
-          requestAnimationFrame(() => {
-              obj.dispatchEvent(new CustomEvent(name));
-              running = false;
-          });
+      var func = () => {
+        if (running) {
+          return;
+        }
+        running = true;
+        w.requestAnimationFrame(() => {
+          cb && cb();
+          running = false;
+        });
       };
 
-      obj.addEventListener(type, func);
-
+      obj.addEventListener(type, func, { passive: true });
   }
 
 
@@ -481,6 +480,8 @@ export default class utils {
   addClassOnScrollInToView(settings) {
 
     let _utils = this;
+    let videos = Array.from($('[data-video-inview-play]'));
+    let videosExist = videos.length > 0;
 
     settings.activeClass = settings.activeClass || 'inview';
     settings.threshold = settings.threshold || 0.25;
@@ -491,38 +492,32 @@ export default class utils {
     /** Scroll event callback  */
     function _scrollCallback(){
 
-      function playVideosInView(el){
-        let videos = Array.from(el.querySelectorAll('[data-video-inview-play]'));
-        if (videos.length > 0){
-          videos.forEach((video) => {
-            if (!video.isPlaying){
-              video.play();
-              video.isPlaying = true;
-              // console.log('video started!');
-            }
-          });
-        }
+      function playVideosInView(){
+        videos.forEach((video) => {
+          if (!video.isPlaying){
+            video.play();
+            video.isPlaying = true;
+            // console.log('video started!');
+          }
+        });
       }
 
-      function pauseVideosInView(el){
-        let videos = Array.from(el.querySelectorAll('[data-video-inview-play]'));
-        if (videos.length > 0){
-          videos.forEach((video) => {
-            if (video.isPlaying){
-              video.pause();
-              video.isPlaying = false;
-              console.log('video stopped!');
-            }
-          });
-        }
+      function pauseVideosInView(){
+        videos.forEach((video) => {
+          if (video.isPlaying){
+            video.pause();
+            video.isPlaying = false;
+            // console.log('video stopped!');
+          }
+        });
       }
 
       function toggleActiveClass(el){
         if (_utils.isElementInViewport(el, 1 - settings.threshold)) {
           el.classList.add(settings.activeClass);
-          playVideosInView(el);
+          if (videosExist) playVideosInView();
         } else {
-          pauseVideosInView(el);
+          if (videosExist) pauseVideosInView();
         }
 
         if (settings.removeClassOnExit){
@@ -539,8 +534,7 @@ export default class utils {
     }
 
     /** Throttle default scroll event and listen for optimizedScroll event */
-    this.throttleEvent('scroll', 'optimizedScroll');
-    w.addEventListener('optimizedScroll', () => { _scrollCallback(); } );
+    this.throttleEvent(w, 'scroll', _scrollCallback);
 
   }
 

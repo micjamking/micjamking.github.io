@@ -33,6 +33,7 @@ export default class CaseStudyPage {
     this._$sections = this._$('.section:not(.section--intro), .section__phases__header, .section__phases__phase, .footer');
     this._$footer__canvas = this._$('.footer__canvas')[0];
     this._$process__canvas = this._$('.section--process__canvas')[0];
+    this._pauseBackgroundAnimations = this._utils.screenSize().width < 1440;
 
     // Particle background settings
     this._canvasBackgroundColor = (settings.canvas) ? settings.canvas.backgroundColor : '#374650';
@@ -85,9 +86,10 @@ export default class CaseStudyPage {
         canvasBackground: this._canvasBackgroundColor,
         particleColors: this._canvasParticleColors,
         particleLineWidth: 4,
-        maxHeight: this._$process__canvas.parentNode.offsetHeight,
+        maxHeight: this._$process__canvas.parentNode.offsetHeight + 500,
         numOfParticles: _numOfParticles,
-        particleOpacity: 1.0
+        particleOpacity: 1.0,
+        pauseAnimation: this._pauseBackgroundAnimations
       });
     }
 
@@ -101,7 +103,8 @@ export default class CaseStudyPage {
         maxHeight: 400,
         respondToMouse: false,
         numOfParticles: _numOfParticles,
-        particleOpacity: 1.0
+        particleOpacity: 1.0,
+        pauseAnimation: this._pauseBackgroundAnimations
       });
     }
   }
