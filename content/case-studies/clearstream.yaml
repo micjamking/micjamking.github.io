@@ -45,7 +45,7 @@ components:
   columns:
   - order: 1
     chapter:
-      title: "Video advertising<br/>on <span class='italicize'>demand</span>."
+      title: "Video<br/>advertising<br/>on <span class='italicize'>demand</span>."
       background_images:
       - class: 'large-arrow'
         url: '/static/images/case-studies/clearstream/clearstream_arrow.png'

@@ -45,7 +45,7 @@ components:
   columns:
   - order: 1
     chapter:
-      title: "<span class='italicize'>Actionable</span> insight on your data."
+      title: "<span class='italicize'>Actionable</span><br/>insight on<br/>your data."
       background_images:
       - class: 'teacup-teapot'
         url: '/static/images/case-studies/teacup/teacup_teapot.svg'

@@ -61,7 +61,7 @@ $custom-elements: 25
 
           @for $i from 13 through $custom-elements
             &:nth-child(#{$i})
-              +lt($global-screen-size-medium)
+              +lt($global-screen-size-medium - 1px)
                 display: none
 
         &--map-popup

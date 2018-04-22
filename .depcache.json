@@ -1,5 +1,7 @@
 {
   "/content/case-studies/clearstream.yaml": [
+    "/content/pages/about.yaml",
+    "/content/pages/contact.yaml",
     "/static/apple-touch-icon-precomposed.png",
     "/static/favicon.png",
     "/static/images/case-studies/clearstream/clearstream_animation-background.png",
@@ -25,6 +27,7 @@
     "/static/script.js",
     "/static/style.css",
     "/views/components/_header-case-study.html",
+    "/views/components/_header-mobile-menu.html",
     "/views/components/_page-footer.html",
     "/views/components/_preloader.html",
     "/views/components/_section-columns.html",
@@ -97,6 +100,8 @@
     "/views/components/_section-process.html"
   ],
   "/content/case-studies/teacupanalytics.yaml": [
+    "/content/pages/about.yaml",
+    "/content/pages/contact.yaml",
     "/static/apple-touch-icon-precomposed.png",
     "/static/favicon.png",
     "/static/images/case-studies/teacup/teacup_animation_item-1.png",
@@ -121,6 +126,7 @@
     "/static/script.js",
     "/static/style.css",
     "/views/components/_header-case-study.html",
+    "/views/components/_header-mobile-menu.html",
     "/views/components/_page-footer.html",
     "/views/components/_preloader.html",
     "/views/components/_section-columns.html",
@@ -128,6 +134,8 @@
     "/views/components/_section-process.html"
   ],
   "/content/case-studies/touraloha.yaml": [
+    "/content/pages/about.yaml",
+    "/content/pages/contact.yaml",
     "/static/apple-touch-icon-precomposed.png",
     "/static/favicon.png",
     "/static/images/case-studies/touraloha/touraloha_animation-background.png",
@@ -150,6 +158,7 @@
     "/static/script.js",
     "/static/style.css",
     "/views/components/_header-case-study.html",
+    "/views/components/_header-mobile-menu.html",
     "/views/components/_page-footer.html",
     "/views/components/_preloader.html",
     "/views/components/_section-columns.html",

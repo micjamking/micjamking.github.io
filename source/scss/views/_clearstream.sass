@@ -10,16 +10,11 @@ $custom-elements: 50
       width: 60%
       height: 112px
       top: 0%
-      left: 35%
+      left: 50%
       transform: translate(-50%, 0%)
 
       +md
         width: 240px
-
-  .column--order--2
-    .chapter__background-images
-      .large-arrow
-        left: 50%
 
   .section--process
     .section__phases__phase--frontend-engineering
@@ -80,5 +75,5 @@ $custom-elements: 50
     &.section--process
       .inview.section__phases__phase--insights
         &.section__phases__phase
-          +lt($global-screen-size-medium)
+          +lt($global-screen-size-medium - 1px)
             max-height: 700px

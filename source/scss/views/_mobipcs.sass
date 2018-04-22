@@ -28,7 +28,7 @@
     .section__phases__phase--information-architecture
       .background-images__image
         &.background-images__image--ia-1
-          +lt($global-screen-size-medium)
+          +lt($global-screen-size-medium - 1px)
             height: 70vh
 
           +md
@@ -45,11 +45,11 @@
     &--custom-animation
       opacity: 0
 
-      +lt($global-screen-size-medium)
+      +lt($global-screen-size-medium - 1px)
         min-height: 65vh
 
       .background-images__image
-        +lt($global-screen-size-medium)
+        +lt($global-screen-size-medium - 1px)
           background-size: contain
           width: 303px
           height: 421px
@@ -69,6 +69,6 @@
         animation-delay: $global-inview-delay
 
         .background-images__image
-          +lt($global-screen-size-medium)
+          +lt($global-screen-size-medium - 1px)
             +fade-in-up
             animation-delay: $base-animation + $global-inview-delay

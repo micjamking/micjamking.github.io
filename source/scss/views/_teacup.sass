@@ -84,7 +84,7 @@ $custom-elements: 5
           z-index: 4
           +xl
             right: -5%
-          +lt($global-screen-size-medium)
+          +lt($global-screen-size-medium - 1px)
             display: none
 
   .inview
@@ -100,5 +100,5 @@ $custom-elements: 5
     &.section--process
       .inview.section__phases__phase--insights
         &.section__phases__phase
-          +lt($global-screen-size-medium)
+          +lt($global-screen-size-medium - 1px)
             max-height: 600px
