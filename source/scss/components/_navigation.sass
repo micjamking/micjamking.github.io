@@ -43,15 +43,20 @@
 
         a
           transform: rotate(-90deg)
+          padding: $global-spacing-xs
 
       &--about
         +fade-in-up
         animation-delay: 900ms + $case-study-header-delay
+        a
+          padding-top: 0
 
       &--contact
         +fade-in-down
         animation-delay: 900ms + $case-study-header-delay
         right: 0
+        a
+          padding-bottom: 0
 
   &--pagination
     bottom: $global-spacing-lg

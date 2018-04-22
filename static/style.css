@@ -178,6 +178,10 @@ a[href] {
   transition: all 0.25s ease;
 }
 
+a[href]:hover {
+  cursor: pointer;
+}
+
 a[href]:link:not(.button):hover, a[href]:link:not(.button):active, a[href]:link:not(.button):focus {
   outline: none;
 }
@@ -3668,6 +3672,7 @@ input[type="button"]:active {
   -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
           transform: rotate(-90deg);
+  padding: 10px;
 }
 
 .nav__items__item--about {
@@ -3691,6 +3696,10 @@ input[type="button"]:active {
           animation-delay: 2400ms;
 }
 
+.nav__items__item--about a {
+  padding-top: 0;
+}
+
 .nav__items__item--contact {
   -webkit-animation-name: "fade-in-down";
           animation-name: "fade-in-down";
@@ -3711,6 +3720,10 @@ input[type="button"]:active {
   -webkit-animation-delay: 2400ms;
           animation-delay: 2400ms;
   right: 0;
+}
+
+.nav__items__item--contact a {
+  padding-bottom: 0;
 }
 
 .nav--pagination {
