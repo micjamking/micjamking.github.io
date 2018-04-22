@@ -20,17 +20,24 @@ $custom-elements: 25
   .section--process
     .section__phases__phase--project-management
       .section__phase__work.left
-        .background-images__image--pm-1
+        .background-images
           +md
-            right: 0
-            bottom: 50%
-            margin-bottom: -25%
-            max-height: 33vh
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: flex-end
 
-          +lg
-            max-width: 580px
-            max-height: 334px
-            margin-bottom: -40%
+          &__image--pm-1
+            +md
+              top: auto
+              bottom: auto
+              left: auto
+              right: auto
+              max-height: 33vh
+
+            +lg
+              max-width: 580px
+              max-height: 334px
 
   .section
     &--custom-animation
