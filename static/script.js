@@ -569,6 +569,8 @@ var utils = function () {
      * @param {String} settings.activeClass - Name of class to add
      * @param {Array} settings.elements - Array of HTML elements to watch
      * @param {Number} settings.threshold - Percentage threshold the element needs to come into view before class is added
+     * @param {Number} settings.enterCallback - Callback to fire when element enters view
+     * @param {Number} settings.exitCallback - Callback to fire when element exits view
      * @param {Boolean} settings.removeClassOnExit - Whether to remove the active class on exit of viewport
      * @param {Boolean} settings.playVideosInView - Whether to play videos when they enter viewport
      * @param {Boolean} settings.inviewVideoAttribute - The data-* attribute to check for videos that need to be played
@@ -581,6 +583,8 @@ var utils = function () {
   }, {
     key: 'addClassOnScrollInToView',
     value: function addClassOnScrollInToView(settings) {
+
+      console.log(settings);
 
       var _utils = this;
       var videos = Array.from($('[data-video-inview-play]'));
@@ -618,8 +622,19 @@ var utils = function () {
         function toggleActiveClass(el) {
           if (_utils.isElementInViewport(el, 1 - settings.threshold)) {
             el.classList.add(settings.activeClass);
+            if (el.enterCbFired !== true) {
+              settings.enterCallback && settings.enterCallback();
+              el.exitCbFired = false;
+              el.enterCbFired = true;
+            }
             if (videosExist) playVideosInView();
           } else {
+            console.log(el);
+            if (el.exitCbFired !== true && el.enterCbFired === true) {
+              settings.exitCallback && settings.exitCallback();
+              el.exitCbFired = true;
+              el.enterCbFired = false;
+            }
             if (videosExist) pauseVideosInView();
           }
 
@@ -631,6 +646,9 @@ var utils = function () {
         }
 
         Array.prototype.forEach.call(settings.elements, function (el) {
+          el.setAttribute('exitCbFired', 'value');
+          el.exitCbFired = null;
+          el.enterCbFired = null;
           toggleActiveClass(el);
         });
       }
@@ -7748,9 +7766,11 @@ var CaseStudyPage = function () {
     this._$ = _utils.$;
 
     // DOM element references
-    this._$sections = this._$('.section:not(.section--intro), .section__phases__header, .section__phases__phase, .footer');
-    this._$footer__canvas = this._$('.footer__canvas')[0];
-    this._$process__canvas = this._$('.section--process__canvas')[0];
+    this._$sections = this._$('.section:not(.section--intro):not(.section--process), .section__phases__header, .section__phases__phase');
+    this._$footer = this._$('.footer');
+    this._$process = this._$('.section--process');
+    this._$footer__canvas = this._$footer[0].querySelectorAll('.footer__canvas')[0];
+    this._$process__canvas = this._$process[0].querySelectorAll('.section--process__canvas')[0];
     this._pauseBackgroundAnimations = this._utils.screenSize().width < 1024;
 
     // Particle background settings
@@ -7875,10 +7895,21 @@ var CaseStudyPage = function () {
   }, {
     key: '_setupScrollEffect',
     value: function _setupScrollEffect() {
+      // this._utils.addClassOnScrollInToView({
+      //   elements: this._$sections,
+      //   threshold: 0,
+      //   removeClassOnExit: false
+      // });
       this._utils.addClassOnScrollInToView({
-        elements: this._$sections,
+        elements: this._$process,
         threshold: 0,
-        removeClassOnExit: false
+        removeClassOnExit: false,
+        enterCallback: function enterCallback() {
+          console.log('entered!');
+        },
+        exitCallback: function exitCallback() {
+          console.log('exited!');
+        }
       });
     }
   }]);

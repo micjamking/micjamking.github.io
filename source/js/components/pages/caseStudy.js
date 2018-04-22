@@ -30,9 +30,11 @@ export default class CaseStudyPage {
     this._$     = $;
 
     // DOM element references
-    this._$sections = this._$('.section:not(.section--intro), .section__phases__header, .section__phases__phase, .footer');
-    this._$footer__canvas = this._$('.footer__canvas')[0];
-    this._$process__canvas = this._$('.section--process__canvas')[0];
+    this._$sections = this._$('.section:not(.section--intro):not(.section--process), .section__phases__header, .section__phases__phase');
+    this._$footer = this._$('.footer');
+    this._$process = this._$('.section--process');
+    this._$footer__canvas = this._$footer[0].querySelectorAll('.footer__canvas')[0];
+    this._$process__canvas = this._$process[0].querySelectorAll('.section--process__canvas')[0];
     this._pauseBackgroundAnimations = this._utils.screenSize().width < 1024;
 
     // Particle background settings
@@ -150,10 +152,21 @@ export default class CaseStudyPage {
    * Adds a class when element enters viewport
    */
   _setupScrollEffect() {
+    // this._utils.addClassOnScrollInToView({
+    //   elements: this._$sections,
+    //   threshold: 0,
+    //   removeClassOnExit: false
+    // });
     this._utils.addClassOnScrollInToView({
-      elements: this._$sections,
+      elements: this._$process,
       threshold: 0,
-      removeClassOnExit: false
+      removeClassOnExit: false,
+      enterCallback: () => {
+        console.log('entered!');
+      },
+      exitCallback: () => {
+        console.log('exited!');
+      }
     });
   }
 

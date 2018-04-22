@@ -469,6 +469,8 @@ export default class utils {
    * @param {String} settings.activeClass - Name of class to add
    * @param {Array} settings.elements - Array of HTML elements to watch
    * @param {Number} settings.threshold - Percentage threshold the element needs to come into view before class is added
+   * @param {Number} settings.enterCallback - Callback to fire when element enters view
+   * @param {Number} settings.exitCallback - Callback to fire when element exits view
    * @param {Boolean} settings.removeClassOnExit - Whether to remove the active class on exit of viewport
    * @param {Boolean} settings.playVideosInView - Whether to play videos when they enter viewport
    * @param {Boolean} settings.inviewVideoAttribute - The data-* attribute to check for videos that need to be played
@@ -478,6 +480,8 @@ export default class utils {
    * @emits {optimizedScroll} Dispatch custom scroll event after throttling default scroll event
    */
   addClassOnScrollInToView(settings) {
+
+    console.log(settings);
 
     let _utils = this;
     let videos = Array.from($('[data-video-inview-play]'));
@@ -515,8 +519,19 @@ export default class utils {
       function toggleActiveClass(el){
         if (_utils.isElementInViewport(el, 1 - settings.threshold)) {
           el.classList.add(settings.activeClass);
+          if (el.enterCbFired !== true){
+            settings.enterCallback && settings.enterCallback();
+            el.exitCbFired = false;
+            el.enterCbFired = true;
+          }
           if (videosExist) playVideosInView();
         } else {
+          console.log(el);
+          if (el.exitCbFired !== true && el.enterCbFired === true){
+            settings.exitCallback && settings.exitCallback();
+            el.exitCbFired = true;
+            el.enterCbFired = false;
+          }
           if (videosExist) pauseVideosInView();
         }
 
@@ -528,6 +543,9 @@ export default class utils {
       }
 
       Array.prototype.forEach.call(settings.elements, (el) => {
+        el.setAttribute('exitCbFired', 'value')
+        el.exitCbFired = null;
+        el.enterCbFired = null;
         toggleActiveClass(el);
       });
 
