@@ -250,7 +250,8 @@ $play-state:      running
       &__title,
       &__subtitle,
       &__service,
-      &__project-link
+      &__project-link,
+      &__mobile-nav__menu__button
         +fade-in-up
 
       &__title
@@ -266,6 +267,9 @@ $play-state:      running
       &__back-home
         +fade-in-down
         animation-delay: ($base-animation / 2) * 6 + $case-study-header-duration + $case-study-header-delay
+
+      &__mobile-nav__menu__button
+        animation-delay: ($base-animation / 2) * 7 + $case-study-header-duration + $case-study-header-delay
 
     .background-images--case-study
       +case-study-mask-animation
@@ -636,8 +640,7 @@ $play-state:      running
         &__title,
         &__subtitle,
         &__service,
-        &__project-link,
-        &__back-home
+        &__project-link
           +fade-out-up
 
         &__title
@@ -650,7 +653,8 @@ $play-state:      running
             &:nth-child(#{$i})
               animation-delay: ($base-animation / 2) * (2 + $i)
 
-        &__back-home
+        &__back-home,
+        &__mobile-nav__menu__button
           +fade-out-down
           animation-delay: ($base-animation / 2) * 5
 

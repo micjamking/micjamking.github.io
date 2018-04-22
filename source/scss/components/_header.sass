@@ -93,6 +93,7 @@ $number-of-menu-items: 2
   &--case-study
     position: relative
     height: 50vh
+    z-index: 3
     +lg
       min-height: 460px
 
@@ -216,14 +217,14 @@ $number-of-menu-items: 2
 
       &__back-home
         position: absolute
-        top: 5vh
-        left: 50%
-        z-index: 3
-        margin-left: -16.5px
+        top: $global-spacing-lg
+        left: $global-spacing-lg
+        z-index: 4
 
         +md
           top: 60px
           left: 60px
+          margin-left: -16.5px
 
         &__link
           display: flex
@@ -241,10 +242,20 @@ $number-of-menu-items: 2
       &__image
         background-size: cover
 
+    .header__mobile-nav
+      z-index: 3
+
+      &.active
+        z-index: 5
+
+      &__menu__icon
+        .menu__icon__line
+          fill: $global-color-white
+
   &__mobile-nav
     position: absolute
-    top: 40px
-    right: 40px
+    top: $global-spacing-lg
+    right: $global-spacing-lg
     width: 100%
     height: 100%
     display: flex
@@ -300,6 +311,9 @@ $number-of-menu-items: 2
       opacity: 0
       transform: translate(0, -100%)
       transition: opacity ($menu-transition-speed * 2) ease ($menu-transition-speed * ($number-of-menu-items + 1)), transform 10ms ease ($menu-transition-speed * ($number-of-menu-items + 2))
+
+      &__button
+        margin-top: 3px
 
       &.active
         z-index: 1000

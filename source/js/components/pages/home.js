@@ -35,6 +35,9 @@ export default class HomePage {
     this._parallaxOffsetEls = $('.background-images__image--offset');
     this._parallaxContentEls = $('.case-study__inner-content');
 
+    // Detect mobile features and screen size to determine current device type
+    this._isDesktop = !this._utils.allowDeviceOrientation() && this._utils.screenSize().width > 768
+
     // 3, 2, 1... blastOff!
     this._init();
   }
@@ -55,7 +58,8 @@ export default class HomePage {
     if (this._$canvas){
       new ParticleCanvas({
         canvasEL: this._$canvas,
-        particleColors: this._canvasParticleColors
+        particleColors: this._canvasParticleColors,
+        respondToMouse: this._isDesktop
       });
     }
   }
@@ -65,7 +69,7 @@ export default class HomePage {
    */
   _setupParallaxers() {
     // On desktop-only...
-    if (!this._utils.allowDeviceOrientation()){
+    if (this._isDesktop){
 
       if(!this._parallaxers.length) {
         this._parallaxers = [

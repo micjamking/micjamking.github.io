@@ -89,6 +89,7 @@ export default class CaseStudyPage {
         particleColors: this._canvasParticleColors,
         particleLineWidth: 4,
         maxHeight: this._$process__canvas.parentNode.offsetHeight + 1500,
+        respondToMouse: false,
         numOfParticles: _numOfParticles,
         particleOpacity: 1.0,
         pauseAnimation: this._pauseBackgroundAnimations

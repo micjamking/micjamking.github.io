@@ -7,6 +7,9 @@
   <div class="header__back-home">
     <a href="/" class="header__back-home__link{% if doc.header.delayExit %} delay-transition{% endif %}"{% if doc.header.delayExit %} data-delay="{{doc.header.delayExit}}"{% endif %}></a>
   </div>
+
+  {% include "/views/components/_header-mobile-menu.html" %}
+
   <div class="header__container">
     <div class="header__headings">
       <h1 class="header__title">{{ doc.header.title }}</h1>
