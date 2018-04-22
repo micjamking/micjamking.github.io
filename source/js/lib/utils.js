@@ -480,8 +480,6 @@ export default class utils {
   addClassOnScrollInToView(settings) {
 
     let _utils = this;
-    let videos = Array.from($('[data-video-inview-play]'));
-    let videosExist = videos.length > 0;
 
     settings.activeClass = settings.activeClass || 'inview';
     settings.threshold = settings.threshold || 0.25;
@@ -492,7 +490,7 @@ export default class utils {
     /** Scroll event callback  */
     function _scrollCallback(){
 
-      function playVideosInView(){
+      function playVideosInView(videos){
         videos.forEach((video) => {
           if (!video.isPlaying){
             video.play();
@@ -502,7 +500,7 @@ export default class utils {
         });
       }
 
-      function pauseVideosInView(){
+      function pauseVideosInView(videos){
         videos.forEach((video) => {
           if (video.isPlaying){
             video.pause();
@@ -513,11 +511,14 @@ export default class utils {
       }
 
       function toggleActiveClass(el){
+        let videos = Array.from(el.querySelectorAll('[data-video-inview-play]')),
+            videosExist = videos.length > 0;
+
         if (_utils.isElementInViewport(el, 1 - settings.threshold)) {
           el.classList.add(settings.activeClass);
-          if (videosExist) playVideosInView();
+          if (videosExist) playVideosInView(videos);
         } else {
-          if (videosExist) pauseVideosInView();
+          if (videosExist) pauseVideosInView(videos);
         }
 
         if (settings.removeClassOnExit){

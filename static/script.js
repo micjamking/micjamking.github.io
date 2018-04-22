@@ -583,8 +583,6 @@ var utils = function () {
     value: function addClassOnScrollInToView(settings) {
 
       var _utils = this;
-      var videos = Array.from($('[data-video-inview-play]'));
-      var videosExist = videos.length > 0;
 
       settings.activeClass = settings.activeClass || 'inview';
       settings.threshold = settings.threshold || 0.25;
@@ -595,7 +593,7 @@ var utils = function () {
       /** Scroll event callback  */
       function _scrollCallback() {
 
-        function playVideosInView() {
+        function playVideosInView(videos) {
           videos.forEach(function (video) {
             if (!video.isPlaying) {
               video.play();
@@ -605,7 +603,7 @@ var utils = function () {
           });
         }
 
-        function pauseVideosInView() {
+        function pauseVideosInView(videos) {
           videos.forEach(function (video) {
             if (video.isPlaying) {
               video.pause();
@@ -616,11 +614,14 @@ var utils = function () {
         }
 
         function toggleActiveClass(el) {
+          var videos = Array.from(el.querySelectorAll('[data-video-inview-play]')),
+              videosExist = videos.length > 0;
+
           if (_utils.isElementInViewport(el, 1 - settings.threshold)) {
             el.classList.add(settings.activeClass);
-            if (videosExist) playVideosInView();
+            if (videosExist) playVideosInView(videos);
           } else {
-            if (videosExist) pauseVideosInView();
+            if (videosExist) pauseVideosInView(videos);
           }
 
           if (settings.removeClassOnExit) {

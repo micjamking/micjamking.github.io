@@ -2373,6 +2373,10 @@ input[type="button"]:active {
   font-style: italic;
 }
 
+.chapter__body {
+  max-width: 470px;
+}
+
 .chapter__body, .chapter__body-list {
   font-size: 1.5rem;
   -webkit-box-ordinal-group: 4;
@@ -3977,14 +3981,38 @@ input[type="button"]:active {
 
 .section__columns__column--single-column {
   margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section__columns__column--single-column .chapter {
+  width: 100%;
+  height: 100%;
 }
 
 .section__columns__column--single-column .chapter__title, .section__columns__column--single-column .chapter__body, .section__columns__column--single-column .chapter__images, .section__columns__column--single-column .chapter__ctas {
   text-align: center;
 }
 
-.section__columns__column--single-column .chapter__body {
-  max-width: 700px;
+@media only screen and (min-width: 1024px) {
+  .section__columns__column--single-column .chapter__body {
+    max-width: 700px;
+  }
 }
 
 .section__columns .column--order--1 {
@@ -4256,8 +4284,10 @@ input[type="button"]:active {
   margin-bottom: 0;
 }
 
-.section--two-column-carousel .section__columns__column .chapter__body {
-  max-width: 430px;
+@media only screen and (min-width: 1024px) {
+  .section--two-column-carousel .section__columns__column .chapter__body {
+    max-width: 430px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
