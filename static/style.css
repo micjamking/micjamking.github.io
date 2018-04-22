@@ -5830,6 +5830,23 @@ input[type="button"]:active {
 
 @media only screen and (min-width: 768px) {
   .mobipcs .section--process .section__phase__work.right .background-images {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     min-height: 700px;
   }
 }
@@ -5842,7 +5859,9 @@ input[type="button"]:active {
 
 @media only screen and (min-width: 768px) {
   .mobipcs .section--process .section__phases__phase--information-architecture .background-images__image.background-images__image--ia-1 {
-    max-height: 55vh;
+    max-height: 55vw;
+    bottom: auto;
+    left: auto;
   }
 }
 

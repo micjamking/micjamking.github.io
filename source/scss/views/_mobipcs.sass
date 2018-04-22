@@ -20,6 +20,10 @@
         min-height: 700px
       .background-images
         +md
+          display: flex
+          flex-direction: column
+          justify-content: center
+          align-items: flex-start
           min-height: 700px
     .section__phases__phase--information-architecture
       .background-images__image
@@ -28,7 +32,9 @@
             height: 70vh
 
           +md
-            max-height: 55vh
+            max-height: 55vw
+            bottom: auto
+            left: auto
 
           +lg
             max-width: 453px
