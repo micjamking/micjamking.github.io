@@ -34,8 +34,7 @@ export default class App {
 
   /**
    * Setup Event Listeners
-   * @listens {DOMContentLoaded} Initialize UI
-   * @listens {load} Initialize Social Media API
+   * @listens {load} Initialize UI
    * @private
    */
   _registerListeners() {

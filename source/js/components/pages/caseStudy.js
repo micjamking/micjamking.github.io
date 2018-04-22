@@ -33,7 +33,7 @@ export default class CaseStudyPage {
     this._$sections = this._$('.section:not(.section--intro), .section__phases__header, .section__phases__phase, .footer');
     this._$footer__canvas = this._$('.footer__canvas')[0];
     this._$process__canvas = this._$('.section--process__canvas')[0];
-    this._pauseBackgroundAnimations = this._utils.screenSize().width < 1440;
+    this._pauseBackgroundAnimations = this._utils.screenSize().width < 1024;
 
     // Particle background settings
     this._canvasBackgroundColor = (settings.canvas) ? settings.canvas.backgroundColor : '#374650';
