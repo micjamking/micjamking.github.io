@@ -97,6 +97,42 @@
   <div class="header__back-home">
     <a href="/" class="header__back-home__link delay-transition" data-delay="3000"></a>
   </div>
+
+<div class="header__mobile-nav"
+     :class="{ active: isMobileMenuActive }">
+  <div class="header__mobile-nav__menu__button"
+       @click="isMobileMenuActive = !isMobileMenuActive">
+    <svg class="header__mobile-nav__menu__icon" preserveAspectRatio="none" viewBox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g class="menu__icon__group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect class="menu__icon__line" x="0" y="14" width="20" height="1.5" rx="1"></rect>
+        <rect class="menu__icon__line" x="0" y="7" width="20" height="1.5" rx="1"></rect>
+        <rect class="menu__icon__line" x="0" y="0" width="20" height="1.5" rx="1"></rect>
+      </g>
+    </svg>
+  </div>
+
+  <div class="header__mobile-nav__menu header__mobile-nav__menu--off-canvas"
+       :class="{ active: isMobileMenuActive }">
+    <div class="header__mobile-nav__close__button"
+         @click="isMobileMenuActive = !isMobileMenuActive">
+      <svg class="header__mobile-nav__close__icon" preserveAspectRatio="none" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g class="close__icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <rect class="close__icon__line" transform="translate(8.000000, 8.000000) rotate(-315.000000) translate(-8.000000, -8.000000) " x="-2" y="7" width="20" height="2" rx="1"></rect>
+          <rect class="close__icon__line" transform="translate(8.000000, 8.000000) scale(-1, 1) rotate(-315.000000) translate(-8.000000, -8.000000) " x="-2" y="7" width="20" height="2" rx="1"></rect>
+        </g>
+      </svg>
+    </div>
+
+    <ul class="header__mobile-nav__items">
+        <li class="header__mobile-nav__item header__mobile-nav__item--about">
+          <a href="/about/" class="delay-transition" data-delay="3000">About</a>
+        </li>
+        <li class="header__mobile-nav__item header__mobile-nav__item--contact">
+          <a href="/contact/" class="delay-transition" data-delay="3000">Contact</a>
+        </li>
+    </ul>
+  </div>
+</div>
   <div class="header__container">
     <div class="header__headings">
       <h1 class="header__title">Tour Aloha</h1>
