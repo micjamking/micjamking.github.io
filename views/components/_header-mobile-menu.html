@@ -24,6 +24,9 @@
     </div>
 
     <ul class="header__mobile-nav__items">
+      <li class="header__mobile-nav__item header__mobile-nav__item--home{% if doc.url.path == '/' %} header__mobile-nav__item--active{% endif %}">
+        <a href="/" class="delay-transition" data-delay="2000">Home</a>
+      </li>
       {% for item in g.docs('pages') %}
         {% if item.url.path == '/' %}
           {% set item_class = 'home' %}
@@ -31,7 +34,7 @@
           {% set item_class = item.url.path|replace("/", "")|replace("case-study", "") %}
         {% endif %}
         <li class="header__mobile-nav__item header__mobile-nav__item--{{item_class}}{% if doc == item %} header__mobile-nav__item--active{% endif %}">
-          <a href="{{item.url.path}}" class="delay-transition" data-delay="3000">{{item.title}}</a>
+          <a href="{{item.url.path}}" class="delay-transition" data-delay="2000">{{item.title}}</a>
         </li>
       {% endfor %}
     </ul>
