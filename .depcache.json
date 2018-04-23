@@ -169,17 +169,22 @@
     "/views/components/_section-process.html"
   ],
   "/content/pages/about.yaml": [
+    "/content/pages/about.yaml",
+    "/content/pages/contact.yaml",
     "/static/apple-touch-icon-precomposed.png",
     "/static/favicon.png",
     "/static/images/mikekingio_screenshot.png",
     "/static/script.js",
     "/static/style.css",
     "/views/components/_general-content.html",
+    "/views/components/_header-mobile-menu.html",
     "/views/components/_header.html",
     "/views/components/_navigation.html",
     "/views/components/_preloader.html"
   ],
   "/content/pages/contact.yaml": [
+    "/content/pages/about.yaml",
+    "/content/pages/contact.yaml",
     "/static/apple-touch-icon-precomposed.png",
     "/static/favicon.png",
     "/static/images/mikekingio_screenshot.png",
@@ -187,6 +192,7 @@
     "/static/style.css",
     "/views/components/_contact-form.html",
     "/views/components/_general-content.html",
+    "/views/components/_header-mobile-menu.html",
     "/views/components/_header.html",
     "/views/components/_navigation.html",
     "/views/components/_preloader.html"

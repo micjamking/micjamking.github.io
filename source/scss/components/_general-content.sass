@@ -39,7 +39,6 @@
     display: flex
     width: 100%
     height: 80px
-    background-color: $global-color-dark-blue
     flex-direction: column
     justify-content: center
     align-items: center
@@ -48,6 +47,10 @@
       width: 142px
       height: 100%
       margin-bottom: 0
+
+    .background-images__image--general-content
+      background-color: $global-color-dark-blue
+
 
   &__title
     display: none
@@ -65,9 +68,11 @@
     display: flex
     width: 33px
     height: 30px
+    left: $global-spacing-lg
     background-image: url('/images/mikeking_logo_icon.white.svg')
     background-repeat: no-repeat
     background-size: contain
+    z-index: 2
     +md
       top: 60px
       left: 50%
@@ -76,6 +81,23 @@
       display: block
       width: 100%
       height: 100%
+
+  .header
+    &__mobile-nav
+      top: 0
+      right: 0
+      z-index: 3
+
+      &.active
+        z-index: 5
+
+      &__menu__button
+        position: relative
+        top: 27px
+        right: $global-spacing-lg
+
+      .menu__icon__line
+        fill: $global-color-white
 
   &__container
     +lt($global-screen-size-medium - 1px)
