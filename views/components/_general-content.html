@@ -2,12 +2,18 @@
 
 <section class="general-content{% if component.class %} {{ component.class }}{% endif %}">
   <header class="general-content__header">
+    <div class="general-content__header__background-images background-images">
+      <div class="background-images__image background-images__image--general-content"></div>
+    </div>
     <div class="general-content__title">
       <div class="general-content__title__content">{{_(doc.title)}}</div>
     </div>
     <div class="general-content__back-home">
       <a href="/" class="general-content__back-home__link{% if doc.header.delayExit %} delay-transition{% endif %}"{% if doc.header.delayExit %} data-delay="{{doc.header.delayExit}}"{% endif %}></a>
     </div>
+
+    {% include "/views/components/_header-mobile-menu.html" %}
+
   </header>
   <div class="general-content__container">
     {% if component.chapter %}

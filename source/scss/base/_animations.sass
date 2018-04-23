@@ -190,14 +190,19 @@ $play-state:      running
 
 .general-content
   &__header
-    +general-mask-animation
-    animation-delay: $case-study-header-delay
+    .background-images
+      +general-mask-animation
+      animation-delay: $case-study-header-delay
 
   &__title,
   &__back-home
     +fade-in-down
 
-  &__title
+  .header__mobile-nav__menu__button
+    +fade-in-up
+
+  &__title,
+  .header__mobile-nav__menu__button
     animation-delay: ($base-animation / 2) * 1 + $general-mask-duration + $case-study-header-delay
 
   &__back-home
@@ -709,18 +714,21 @@ $play-state:      running
         animation-delay: ($base-animation / 2) * 5
 
   .general-content
-    &__header
-      +general-mask-animation--reverse
-      animation-delay: ($base-animation / 2) * 12
+    &__header,
+      .background-images
+        +general-mask-animation--reverse
+        animation-delay: ($base-animation / 2) * 12
 
     &__title,
-    &__back-home
+    &__back-home,
+    .header__mobile-nav__menu__button
       +fade-out-down
 
     &__title
       animation-delay: ($base-animation / 2) * 10
 
-    &__back-home
+    &__back-home,
+    .header__mobile-nav__menu__button
       animation-delay: ($base-animation / 2) * 11
 
     &__container
