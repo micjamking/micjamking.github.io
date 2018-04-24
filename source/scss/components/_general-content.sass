@@ -28,11 +28,13 @@
         max-width: 600px
 
   &__container
+    position: relative
     display: flex
     flex-direction: column
     justify-content: center
     align-items: center
     flex: auto
+    z-index: 1
 
   &__header
     position: relative
@@ -43,6 +45,7 @@
     justify-content: center
     align-items: center
     margin-bottom: $global-spacing-lg
+    z-index: 2
     +md
       width: 142px
       height: 100%
@@ -53,9 +56,11 @@
 
 
   &__title
+    position: relative
     display: none
     color: $global-color-white
     font-size: em-calc(18px)
+    z-index: 2
     +md
       display: block
 
