@@ -1,5 +1,10 @@
 {
   "/content/case-studies/clearstream.yaml": [
+    "/content/case-studies/clearstream.yaml",
+    "/content/case-studies/gohawaii.yaml",
+    "/content/case-studies/mobipcs.yaml",
+    "/content/case-studies/teacupanalytics.yaml",
+    "/content/case-studies/touraloha.yaml",
     "/content/pages/about.yaml",
     "/content/pages/contact.yaml",
     "/static/apple-touch-icon-precomposed.png",
@@ -35,6 +40,11 @@
     "/views/components/_section-process.html"
   ],
   "/content/case-studies/gohawaii.yaml": [
+    "/content/case-studies/clearstream.yaml",
+    "/content/case-studies/gohawaii.yaml",
+    "/content/case-studies/mobipcs.yaml",
+    "/content/case-studies/teacupanalytics.yaml",
+    "/content/case-studies/touraloha.yaml",
     "/content/pages/about.yaml",
     "/content/pages/contact.yaml",
     "/static/apple-touch-icon-precomposed.png",
@@ -72,6 +82,11 @@
     "/views/components/_section-process.html"
   ],
   "/content/case-studies/mobipcs.yaml": [
+    "/content/case-studies/clearstream.yaml",
+    "/content/case-studies/gohawaii.yaml",
+    "/content/case-studies/mobipcs.yaml",
+    "/content/case-studies/teacupanalytics.yaml",
+    "/content/case-studies/touraloha.yaml",
     "/content/pages/about.yaml",
     "/content/pages/contact.yaml",
     "/static/apple-touch-icon-precomposed.png",
@@ -103,6 +118,11 @@
     "/views/components/_section-process.html"
   ],
   "/content/case-studies/teacupanalytics.yaml": [
+    "/content/case-studies/clearstream.yaml",
+    "/content/case-studies/gohawaii.yaml",
+    "/content/case-studies/mobipcs.yaml",
+    "/content/case-studies/teacupanalytics.yaml",
+    "/content/case-studies/touraloha.yaml",
     "/content/pages/about.yaml",
     "/content/pages/contact.yaml",
     "/static/apple-touch-icon-precomposed.png",
@@ -137,6 +157,11 @@
     "/views/components/_section-process.html"
   ],
   "/content/case-studies/touraloha.yaml": [
+    "/content/case-studies/clearstream.yaml",
+    "/content/case-studies/gohawaii.yaml",
+    "/content/case-studies/mobipcs.yaml",
+    "/content/case-studies/teacupanalytics.yaml",
+    "/content/case-studies/touraloha.yaml",
     "/content/pages/about.yaml",
     "/content/pages/contact.yaml",
     "/static/apple-touch-icon-precomposed.png",
@@ -169,6 +194,11 @@
     "/views/components/_section-process.html"
   ],
   "/content/pages/about.yaml": [
+    "/content/case-studies/clearstream.yaml",
+    "/content/case-studies/gohawaii.yaml",
+    "/content/case-studies/mobipcs.yaml",
+    "/content/case-studies/teacupanalytics.yaml",
+    "/content/case-studies/touraloha.yaml",
     "/content/pages/about.yaml",
     "/content/pages/contact.yaml",
     "/static/apple-touch-icon-precomposed.png",
@@ -183,6 +213,11 @@
     "/views/components/_preloader.html"
   ],
   "/content/pages/contact.yaml": [
+    "/content/case-studies/clearstream.yaml",
+    "/content/case-studies/gohawaii.yaml",
+    "/content/case-studies/mobipcs.yaml",
+    "/content/case-studies/teacupanalytics.yaml",
+    "/content/case-studies/touraloha.yaml",
     "/content/pages/about.yaml",
     "/content/pages/contact.yaml",
     "/static/apple-touch-icon-precomposed.png",
@@ -198,6 +233,11 @@
     "/views/components/_preloader.html"
   ],
   "/content/pages/home.yaml": [
+    "/content/case-studies/clearstream.yaml",
+    "/content/case-studies/gohawaii.yaml",
+    "/content/case-studies/mobipcs.yaml",
+    "/content/case-studies/teacupanalytics.yaml",
+    "/content/case-studies/touraloha.yaml",
     "/content/pages/about.yaml",
     "/content/pages/contact.yaml",
     "/static/apple-touch-icon-precomposed.png",

@@ -9,6 +9,7 @@ $case-study-header-duration: 1500ms
 $case-study-header-delay: 1500ms
 $general-mask-duration: 1000ms
 $global-inview-delay: 500ms
+$number-of-case-studies: 5
 
 // Animation properties
 $duration:        0.25s
@@ -609,7 +610,11 @@ $play-state:      running
   .header__tagline,
   .nav__down-arrow,
   .nav__items__item,
-  .header__mobile-nav__item,
+  .header__mobile-nav__item--home,
+  .header__mobile-nav__item--about,
+  .header__mobile-nav__item--contact,
+  .header__mobile-nav__item--case-studies .header__mobile-nav__item__subheader,
+  .header__mobile-nav__item--case-studies .header__mobile-nav__items--subnav .header__mobile-nav__item,
   .header__mobile-nav__close__button,
   .header__mobile-nav__menu__button
     +fade-out-up
@@ -631,13 +636,29 @@ $play-state:      running
     +fade-out
     animation-delay: $base-animation + ($animation-increment * 7)
 
-  .header__mobile-nav__item
-    @for $i from 1 through 3
-      &:nth-child(#{$i})
-        animation-delay: $base-animation + ($animation-increment * $i)
+  .header__mobile-nav__menu.active
+    .header__mobile-nav__item
+      &--home
+        animation-delay: $base-animation + (($base-animation / 2) * ($number-of-case-studies + 4))
 
-  .header__mobile-nav__close__button
-    animation-delay: $base-animation + ($animation-increment * 4)
+      &--about
+        animation-delay: $base-animation + (($base-animation / 2) * ($number-of-case-studies + 3))
+
+      &--contact
+        animation-delay: $base-animation + (($base-animation / 2) * 1)
+
+      &--case-studies
+        .header__mobile-nav
+          &__item__subheader
+            animation-delay: $base-animation + (($base-animation / 2) * ($number-of-case-studies + 2))
+
+          &__items--subnav .header__mobile-nav__item
+            @for $i from 1 through $number-of-case-studies
+              &:nth-child(#{$i})
+                animation-delay: ($base-animation + (($base-animation / 2) * (($number-of-case-studies - $i) + 3)))
+
+    .header__mobile-nav__close__button
+      animation-delay: $base-animation + (($base-animation / 2) * ($number-of-case-studies + 5))
 
   .header
     &--case-study

@@ -25,18 +25,35 @@
 
     <ul class="header__mobile-nav__items">
       <li class="header__mobile-nav__item header__mobile-nav__item--home{% if doc.url.path == '/' %} header__mobile-nav__item--active{% endif %}">
-        <a href="/" class="delay-transition" data-delay="2000">Home</a>
+        <a href="/" class="delay-transition" data-delay="2500">Home</a>
       </li>
-      {% for item in g.docs('pages') %}
+      <li class="header__mobile-nav__item header__mobile-nav__item--about{% if doc.url.path == '/about/' %} header__mobile-nav__item--active{% endif %}">
+        <a href="/about/" class="delay-transition" data-delay="2500">About</a>
+      </li>
+      <li class="header__mobile-nav__item header__mobile-nav__item--case-studies">
+        <span class="header__mobile-nav__item__subheader{% if 'case-study' in doc.url.path %} header__mobile-nav__item--active{% endif %}">Case Studies</span>
+        <ul class="header__mobile-nav__items header__mobile-nav__items--subnav">
+          {% for item in g.docs('case-studies') %}
+            {% set item_class = item.url.path|replace("/", "")|replace("case-study", "") %}
+            <li class="header__mobile-nav__item header__mobile-nav__item--{{item_class}}{% if doc == item %} header__mobile-nav__item--active{% endif %}">
+              <a href="{{item.url.path}}" class="delay-transition" data-delay="2500">{{item.title}}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+      <li class="header__mobile-nav__item header__mobile-nav__item--contact{% if doc.url.path == '/contact/' %} header__mobile-nav__item--active{% endif %}">
+        <a href="/contact/" class="delay-transition" data-delay="2500">Contact</a>
+      </li>
+      <!-- {% for item in g.docs('pages') %}
         {% if item.url.path == '/' %}
           {% set item_class = 'home' %}
         {% else %}
           {% set item_class = item.url.path|replace("/", "")|replace("case-study", "") %}
         {% endif %}
         <li class="header__mobile-nav__item header__mobile-nav__item--{{item_class}}{% if doc == item %} header__mobile-nav__item--active{% endif %}">
-          <a href="{{item.url.path}}" class="delay-transition" data-delay="2000">{{item.title}}</a>
+          <a href="{{item.url.path}}" class="delay-transition" data-delay="2500">{{item.title}}</a>
         </li>
-      {% endfor %}
+      {% endfor %} -->
     </ul>
   </div>
 </div>
