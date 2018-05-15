@@ -1,0 +1,207 @@
+header_service_1_user_experience_design:
+  component: header
+  string: User Experience Design
+  type: service_1
+header_service_2_frontend_engineering:
+  component: header
+  string: Frontend Engineering
+  type: service_2
+header_subtitle_wireless_services_management_platform:
+  component: header
+  string: Wireless Services Management Platform
+  type: subtitle
+header_title_mobipcs:
+  component: header
+  string: MobiPCS
+  type: title
+intro_body_in_the_spring_of:
+  component: intro
+  string: In the spring of 2013, I had the opportunity to lead the redesign of MobiPCS, a regional wireless service provider in Hawaii.
+  type: body
+section_contained_body_mobipcs_is_a:
+  component: section_contained
+  string: MobiPCS is a Hawaii-based regional wireless service provider, known as a simple, hassle-free, and cost-efficient wireless carrier with great customer service; all phones come with unlimited talk & text and you only pay extra for data, with complete plans ranging from $35–70/mo. (If you’re wondering how they can offer such a great deal, they mostly carry older phone models, and strictly Androids.)
+  type: body
+section_contained_title_hawaiis_wireless_service:
+  component: section_contained
+  string: Hawaii’s Wireless Service Provider
+  type: title
+section_credits_list_item_name_1:
+  component: section_credits
+  string: Client
+  type: list_item_name_1
+section_credits_list_item_name_10:
+  component: section_credits
+  string: Backend Development
+  type: list_item_name_10
+section_credits_list_item_name_2:
+  component: section_credits
+  string: Agency
+  type: list_item_name_2
+section_credits_list_item_name_3:
+  component: section_credits
+  string: Engagement
+  type: list_item_name_3
+section_credits_list_item_name_4:
+  component: section_credits
+  string: Technology
+  type: list_item_name_4
+section_credits_list_item_name_5:
+  component: section_credits
+  string: Frontend
+  type: list_item_name_5
+section_credits_list_item_name_6:
+  component: section_credits
+  string: Backend
+  type: list_item_name_6
+section_credits_list_item_name_7:
+  component: section_credits
+  string: UX Design
+  type: list_item_name_7
+section_credits_list_item_name_8:
+  component: section_credits
+  string: UI Design
+  type: list_item_name_8
+section_credits_list_item_name_9:
+  component: section_credits
+  string: Frontend Development
+  type: list_item_name_9
+section_credits_list_item_value_1:
+  component: section_credits
+  string: MobiPCS
+  type: list_item_value_1
+section_credits_list_item_value_10:
+  component: section_credits
+  string: Chris Kobayashi, George Lee, Leo DeCandia
+  type: list_item_value_10
+section_credits_list_item_value_2:
+  component: section_credits
+  string: Ikayzo, Inc.
+  type: list_item_value_2
+section_credits_list_item_value_3:
+  component: section_credits
+  string: January 2013 — October 2013
+  type: list_item_value_3
+section_credits_list_item_value_4:
+  component: section_credits
+  type: list_item_value_4
+section_credits_list_item_value_5:
+  component: section_credits
+  string: AngularJS
+  type: list_item_value_5
+section_credits_list_item_value_6:
+  component: section_credits
+  string: Ruby on Rails
+  type: list_item_value_6
+section_credits_list_item_value_7:
+  component: section_credits
+  string: Mike King
+  type: list_item_value_7
+section_credits_list_item_value_8:
+  component: section_credits
+  string: Arlyn Ramos
+  type: list_item_value_8
+section_credits_list_item_value_9:
+  component: section_credits
+  string: Mike King
+  type: list_item_value_9
+section_credits_title_credits:
+  component: section_credits
+  string: Credits
+  type: title
+section_offset_1_body_1_the:
+  component: section_offset_1
+  string: The project involved in-depth stakeholder & customer research which lead to a mobile-first strategy, user experience design exercises to flesh out the task flows through the site, and front-end development to create complex UI interactions for creation and purchase of family phone plans online.
+  type: body_1
+section_offset_1_body_2_the:
+  component: section_offset_1
+  string: The end result was a highly performant, mobile first web application with increased YOY mobile traffic of ~300&#37; and a significant decrease in calls to customer support.
+  type: body_2
+section_offset_1_title_wirelessbrservice_in:
+  component: section_offset_1
+  string: Wireless<br/>service in a<br/><span class='bold'>mobile-first</span><br/>world.
+  type: title
+section_offset_2_body_1_due:
+  component: section_offset_2
+  string: Due to their lower than normal pricing, the brand was also actively fighting the stigma of being the “cheap phone guys” and only servicing low income customers. The previous website featured a legacy, fixed-width design (ie. no mobile support) and included multiple pain points in their product purchase and bill-payment user flows.
+  type: body_1
+section_offset_2_body_2_additionally:
+  component: section_offset_2
+  string: Additionally, the client was also interested in expanding the “self-care” portion of the site, allowing users to perform common account-level tasks online (ie. bill payment, upgrade their phone, add a new line/phone number, etc.).
+  type: body_2
+section_offset_2_title_low_pricebrdoesnt:
+  component: section_offset_2
+  string: Low price<br/>doesn’t mean<br/>low quality.
+  type: title
+section_process_insights_body_1_as:
+  component: section_process
+  string: 'As previously noted, the Discovery process uncovered a lot of very valuable information about the MobiPCS customer; below are a few of the insights we were able to pull together:'
+  type: insights_body_1
+section_process_insights_body_2_6037:
+  component: section_process
+  string: 60&#37; of their target audience made above the median-household income for the state of Hawaii, directly contradicting the stigma placed on them for being a cheap carrier for low-income individuals
+  type: insights_body_2
+section_process_insights_body_3_over:
+  component: section_process
+  string: Over 70&#37; of current customers at the time used their smartphone as their primary device for accessing the internet.
+  type: insights_body_3
+section_process_insights_body_4_a:
+  component: section_process
+  string: A significant portion of the customer base (up to 30&#37; at some locations) were non-native english speakers.
+  type: insights_body_4
+section_process_phase_1_body_1:
+  component: section_process
+  string: During the discovery process, I lead several rounds of interviews, including <span class='bold'>stakeholder interviews</span> with executive management, regional managers, store managers, customer care representatives, and store associates, as well as <span class='bold'>interviews with customers on-location</span> (i.e., in-context).
+  type: phase_1_body_1
+section_process_phase_1_body_2:
+  component: section_process
+  string: I also completed two rounds of <span class='bold'>user surveys</span>, sent via text message to ~5000 customers to gather quantitative data, with ~1000 responses. We then developed <span class='bold'>user personas</span> based on the quality & quantitative information we received directly and indirectly during the interview process.
+  type: phase_1_body_2
+section_process_phase_1_title_discovery:
+  component: section_process
+  string: Discovery
+  type: phase_1_title
+section_process_phase_2_body_1:
+  component: section_process
+  string: Once we had consensus from the stakeholders on the business problems we were solving, as well as the motivations of their customers, I proceeded to create user flows, mapping out the current navigational paths across the site and highlighted many pain points along the way.
+  type: phase_2_body_1
+section_process_phase_2_body_2:
+  component: section_process
+  string: After proposing improved user-flows, I then moved into creating mobile-first wireframes based on our insights from Discovery, where we learned their target audiences primary devices for accessing the internet is their mobile phones.
+  type: phase_2_body_2
+section_process_phase_2_title_information:
+  component: section_process
+  string: Information Architecture
+  type: phase_2_title
+section_process_phase_3_body_1:
+  component: section_process
+  string: After approval of the site architecture and wireframes, I then began <span class='bold'>rapidly prototyping</span> the more complex parts of the UI design in HTML/CSS/JS. Using <span class='bold'>AngularJS + Foundation Framework</span>, I was able to quickly put together a testable, interactive prototype allowing test users to create Ohana (family) plans with multiple phone lines, plan options and add-ons, and devices, from browse to checkout.
+  type: phase_3_body_1
+section_process_phase_3_title_frontend:
+  component: section_process
+  string: Frontend Engineering
+  type: phase_3_title
+section_results_body_1_in_the:
+  component: section_results
+  string: In the end, user personas, founded on qualitative research and observation of real people, provided a common design language that lead to a successful redesign and development of the site. Customers enjoyed an enhanced and intuitive mobile experience that was simplified and easy to navigate. The client enjoyed a month-over-month increase in mobile traffic visits of +160&#37; and year-over-year increase of +290&#37;.
+  type: body_1
+section_results_title_29037_yoy_increase:
+  component: section_results
+  string: 290&#37; YOY increase in mobile traffic
+  type: title
+section_single_body_from_a_business:
+  component: section_single
+  string: From a business perspective, the primary goals of the redesign were to bring the site up to date with a responsive web design approach, improve the overall usability & navigation, and provide efficient and adequate tools to aid existing & potential customers. Increasing online sales wasn’t a major concern because they were well known for their in-store customer service and wanted to maintain that human touch in the sales process.
+  type: body
+section_single_title_modernize_mobilize:
+  component: section_single
+  string: Modernize & mobilize
+  type: title
+section_slideshow_body_1_based_on:
+  component: section_slideshow
+  string: Based on what we uncovered during the Discovery phase, our solution was based on a mobile first design strategy, with a user experience focused largely around mobile behavior.
+  type: body_1
+section_slideshow_body_2_additionally_to:
+  component: section_slideshow
+  string: Additionally, to accommodate the large percentage of non-native english speaking customer base, our content strategy focused on simplification as well as using iconography and other universal symbology to help direct users without a lot of text.
+  type: body_2

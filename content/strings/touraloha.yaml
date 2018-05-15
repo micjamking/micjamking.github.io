@@ -1,0 +1,211 @@
+header_service_1_user_experience_design:
+  component: header
+  string: User Experience Design
+  type: service_1
+header_service_2_project_management:
+  component: header
+  string: Project Management
+  type: service_2
+header_subtitle_historical_travel_guide_mobile:
+  component: header
+  string: Historical Travel Guide Mobile App
+  type: subtitle
+header_title_tour_aloha:
+  component: header
+  string: Tour Aloha
+  type: title
+intro_body_launched_in_september_of:
+  component: intro
+  string: Launched in September of 2015, Tour Aloha is a travel companion mobile app for visitors to the islands created in partnership with Roberts Hawaii.
+  type: body
+section_contained_body_roberts_hawaii_is:
+  component: section_contained
+  string: Roberts Hawaii is a full-service tour operator in the state of Hawaii, known for providing personalized sightseeing tours and activities across the islands of Kaua‘i, O‘ahu, Maui and Hawaii Island. Roberts Hawaii was interested in developing a mobile application as a companion guide to its popular tours and provide island visitors with a Roberts well known hospitality experience even when outside of their tour bus.
+  type: body
+section_contained_title_hawaiis_premier_tour:
+  component: section_contained
+  string: Hawaii’s Premier Tour Operator
+  type: title
+section_credits_list_item_name_1:
+  component: section_credits
+  string: Client
+  type: list_item_name_1
+section_credits_list_item_name_10:
+  component: section_credits
+  string: Software Development
+  type: list_item_name_10
+section_credits_list_item_name_11:
+  component: section_credits
+  string: Project Management
+  type: list_item_name_11
+section_credits_list_item_name_2:
+  component: section_credits
+  string: Agency
+  type: list_item_name_2
+section_credits_list_item_name_3:
+  component: section_credits
+  string: Engagement
+  type: list_item_name_3
+section_credits_list_item_name_4:
+  component: section_credits
+  string: Technology
+  type: list_item_name_4
+section_credits_list_item_name_5:
+  component: section_credits
+  string: Mobile App
+  type: list_item_name_5
+section_credits_list_item_name_6:
+  component: section_credits
+  string: Backend CMS / API
+  type: list_item_name_6
+section_credits_list_item_name_7:
+  component: section_credits
+  string: Awards
+  type: list_item_name_7
+section_credits_list_item_name_8:
+  component: section_credits
+  string: UX Design
+  type: list_item_name_8
+section_credits_list_item_name_9:
+  component: section_credits
+  string: UI Design
+  type: list_item_name_9
+section_credits_list_item_value_1:
+  component: section_credits
+  string: Roberts Hawaii
+  type: list_item_value_1
+section_credits_list_item_value_10:
+  component: section_credits
+  string: Scott Yano
+  type: list_item_value_10
+section_credits_list_item_value_11:
+  component: section_credits
+  string: Mike King
+  type: list_item_value_11
+section_credits_list_item_value_2:
+  component: section_credits
+  string: Ikayzo, Inc.
+  type: list_item_value_2
+section_credits_list_item_value_3:
+  component: section_credits
+  string: March 2015 — Sepember 2015
+  type: list_item_value_3
+section_credits_list_item_value_4:
+  component: section_credits
+  type: list_item_value_4
+section_credits_list_item_value_5:
+  component: section_credits
+  string: Ionic (AngularJS + Cordova)
+  type: list_item_value_5
+section_credits_list_item_value_6:
+  component: section_credits
+  string: Nodejs + Express
+  type: list_item_value_6
+section_credits_list_item_value_7:
+  component: section_credits
+  string: Best Mobile App—2016 Pele Awards
+  type: list_item_value_7
+section_credits_list_item_value_8:
+  component: section_credits
+  string: Mike King
+  type: list_item_value_8
+section_credits_list_item_value_9:
+  component: section_credits
+  string: Jen Zheng
+  type: list_item_value_9
+section_credits_title_credits:
+  component: section_credits
+  string: Credits
+  type: title
+section_offset_1_body_the_tour:
+  component: section_offset_1
+  string: The Tour Aloha app provides a unique and interactive deep knowledge travel guide for Hawaii. As you tour scenic destinations, Tour Aloha shares exclusive images and stories from a time past but not forgotten.
+  type: body
+section_offset_1_title_local_guidesbr:
+  component: section_offset_1
+  string: 'Local guides<br/>     at your     <br/>fingertips.'
+  type: title
+section_offset_2_body_1_while:
+  component: section_offset_2
+  string: While Roberts Hawaii is very well-known for its island sightseeing tours, the current generation of travelers to the islands aren’t as keen on renting bus tours as travelers from the past.
+  type: body_1
+section_offset_2_body_2_today:
+  component: section_offset_2
+  string: Today, many people, specifically in the younger demographic, rent cars or do private tours to have a more personal experience while on vacation.
+  type: body_2
+section_offset_2_body_3_roberts:
+  component: section_offset_2
+  string: 'Roberts Hawaii felt they had something compelling to offer these visitors, even if they didn’t book a bus tour: the stories of the islands.'
+  type: body_3
+section_offset_2_title_the_storiesbr:
+  component: section_offset_2
+  string: 'The stories<br/>     of the<br/>     islands.'
+  type: title
+section_process_insights_body_1_we:
+  component: section_process
+  string: We learned through Discovery process that a large portion of their current user base was Android, however their target audience being a different market, they wanted to target both iOS and Android devices.
+  type: insights_body_1
+section_process_insights_body_2_additionally:
+  component: section_process
+  string: Additionally, we learned the client had direct access to raw audio recordings of Pearl Harbor survivors which they eventually obtained the rights to use as part of one of their tour experiences.
+  type: insights_body_2
+section_process_phase_1_body_1:
+  component: section_process
+  string: During the Discovery process, we performed <span class='bold'>stakeholder interviews</span> with the marketing department and executive management to define the objectives, goals, and metrics for the project, as well as defined the scope of the user experience through the creation of <span class='bold'>use-case scenarios</span> which outlined the primary tasks within the mobile application from a business perspective.
+  type: phase_1_body_1
+section_process_phase_1_body_2:
+  component: section_process
+  string: We performed a <span class='bold'>competitor analysis</span> across 7 different comparable applications to help surface opportunities to differentiate the app. We also created <span class='bold'>user profiles</span> to assist in understanding the motivations for using the app and the features that would be most helpful for each audience type.
+  type: phase_1_body_2
+section_process_phase_1_title_discovery:
+  component: section_process
+  string: Discovery
+  type: phase_1_title
+section_process_phase_2_body_1:
+  component: section_process
+  string: We created <span class='bold'>key task flow diagrams</span> to help outline the general experience for users navigating through the app to discover and experience a virtual tour, from downloading an individual tour (available as in-app purchases) to viewing images and listening to audio at an individual tour stop.
+  type: phase_2_body_1
+section_process_phase_2_body_2:
+  component: section_process
+  string: Once we established consensus with the user flow, we developed <span class='bold'>wireframes</span> for the screens representing each step in the flow and providing additional context for interactive behavior (swiping, tapping, etc.)
+  type: phase_2_body_2
+section_process_phase_2_title_information:
+  component: section_process
+  string: Information Architecture
+  type: phase_2_title
+section_process_phase_3_body_1:
+  component: section_process
+  string: As project lead, I managed all phases of the engagement, from the initial consultation and estimates, through the discovery and design strategy phases, and finally through development, QA testing and launch.
+  type: phase_3_body_1
+section_process_phase_3_body_2:
+  component: section_process
+  string: The client had a tight marketing deadline, so we were able to split the project into multiple phases that allowed for an earlier launch with minimal capability, with updates following shortly after launch to help improve the user experience.
+  type: phase_3_body_2
+section_process_phase_3_title_project:
+  component: section_process
+  string: Project Management
+  type: phase_3_title
+section_results_body_1_the_final:
+  component: section_results
+  string: The final result was a unique and interactive way for visitors to explore the Hawaiian islands, providing exclusive images and stories from a time past but not forgotten. The mobile application design won a <span class="bold">2016 Pele Gold Award</span> for best mobile app.
+  type: body_1
+section_results_title_hawaiis_best_historical:
+  component: section_results
+  string: Hawaii’s Best Historical Guide App
+  type: title
+section_single_body_the_primary_objective:
+  component: section_single
+  string: The primary objective of the Roberts Hawaii project was to expand the target market and enhance their current tour experience by providing exclusive content visitors couldn’t get anywhere else. The strategy was to provide a mobile app that simulated the tour experience by providing GPS navigation of tour routes with overlayed text, audio narration, photography, and video to provide users with unique stories about historical destinations across the islands, told from people who experienced them first hand.
+  type: body
+section_single_title_an_exclusive_travel:
+  component: section_single
+  string: An exclusive travel experience
+  type: title
+section_slideshow_body_1_due_to:
+  component: section_slideshow
+  string: Due to the requirements for the project, we recommended a “hybrid” mobile application solution for mobile development, and settled on Ionic Framework (AngularJS + Cordova) to allow the transfer of knowledge we already had with frontend JS technologies and the ability to write in one codebase and deploy to multiple platforms (iOS and Android).
+  type: body_1
+section_slideshow_body_2_we_also:
+  component: section_slideshow
+  string: We also developed a custom backend administrative dashboard to allow for managing the content and data for tours, along with GPS coordinates, as well as development of a tour packaging system to allow for creation of new tours on the fly and downloading tours as in-app purchases.
+  type: body_2

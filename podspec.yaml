@@ -36,6 +36,20 @@ extensions:
   - extensions.google_forms.GoogleFormsPreprocessor
 
 preprocessors:
+- name: "strings"
+  kind: "google_sheets"
+  id: "1n9Hup5OLl2cwVtzDXxGMM1Cys2TMDUjdyqaXdq-1lL8"
+  collection: /content/strings
+  format: grid
+  autorun: false
+  generate_ids: true
+
+- name: "contact"
+  kind: "google_forms"
+  id: "1FAIpQLScQzlYZ59CI9mk1QZU6gIjOSeVWB7VpCtQEWg0SX2Po3L6M2w"
+  path: /content/partials/contact-form.yaml
+  autorun: false
+
 - name: "gohawaii"
   kind: "google_docs"
   autorun: false
@@ -44,6 +58,8 @@ preprocessors:
   convert: true
   tags:
   - content
+  - docs
+
 - name: "touraloha"
   kind: "google_docs"
   autorun: false
@@ -52,6 +68,8 @@ preprocessors:
   convert: true
   tags:
   - content
+  - docs
+
 - name: "teacupanalytics"
   kind: "google_docs"
   autorun: false
@@ -60,6 +78,8 @@ preprocessors:
   convert: true
   tags:
   - content
+  - docs
+
 - name: "mobipcs"
   kind: "google_docs"
   autorun: false
@@ -68,6 +88,8 @@ preprocessors:
   convert: true
   tags:
   - content
+  - docs
+
 - name: "clearstream"
   kind: "google_docs"
   autorun: false
@@ -76,11 +98,7 @@ preprocessors:
   convert: true
   tags:
   - content
-- name: "contact"
-  kind: "google_forms"
-  id: "1FAIpQLScQzlYZ59CI9mk1QZU6gIjOSeVWB7VpCtQEWg0SX2Po3L6M2w"
-  path: /content/partials/contact-form.yaml
-  autorun: false
+  - docs
 
 deployments:
   default:

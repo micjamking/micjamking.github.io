@@ -1,0 +1,211 @@
+header_service_1_user_experience_design:
+  component: header
+  string: User Experience Design
+  type: service_1
+header_service_2_data_information_design:
+  component: header
+  string: Data / Information Design
+  type: service_2
+header_service_3_frontend_engineering:
+  component: header
+  string: Frontend Engineering
+  type: service_3
+header_subtitle_video_advertising_management_platform:
+  component: header
+  string: Video Advertising Management Platform
+  type: subtitle
+header_title_clearstream:
+  component: header
+  string: Clearstream
+  type: title
+intro_body_in_the_summer_of:
+  component: intro
+  string: In the summer of 2014, I had the opportunity to redesign one of the largest video advertising campaign management platforms in the industry, which provides retargeting services for hundreds of international brands.
+  type: body
+section_contained_body_clearstream_is_an:
+  component: section_contained
+  string: Clearstream is an advertising technology company whose primary service is video campaign management, built on top of an advertising exchange to provide real-time bidding and serving of ad impressions based on a website visitor’s location, technology and device. In essence, the service Clearstream provides allows brands & marketers to place targeted video ads based on a user’s browsing behavior all in real-time, and receive real-time analytics on the ad’s performance.
+  type: body
+section_contained_title_market_leaders_inbr:
+  component: section_contained
+  string: 'Market Leaders in<br/>     Digital Video Advertising'
+  type: title
+section_credits_list_item_name_1:
+  component: section_credits
+  string: Client
+  type: list_item_name_1
+section_credits_list_item_name_10:
+  component: section_credits
+  string: Backend Development
+  type: list_item_name_10
+section_credits_list_item_name_2:
+  component: section_credits
+  string: Agency
+  type: list_item_name_2
+section_credits_list_item_name_3:
+  component: section_credits
+  string: Engagement
+  type: list_item_name_3
+section_credits_list_item_name_4:
+  component: section_credits
+  string: Technology
+  type: list_item_name_4
+section_credits_list_item_name_5:
+  component: section_credits
+  string: Frontend
+  type: list_item_name_5
+section_credits_list_item_name_6:
+  component: section_credits
+  string: Backend
+  type: list_item_name_6
+section_credits_list_item_name_7:
+  component: section_credits
+  string: UX Design
+  type: list_item_name_7
+section_credits_list_item_name_8:
+  component: section_credits
+  string: UI Design
+  type: list_item_name_8
+section_credits_list_item_name_9:
+  component: section_credits
+  string: Frontend Development
+  type: list_item_name_9
+section_credits_list_item_value_1:
+  component: section_credits
+  string: Clearstream.tv
+  type: list_item_value_1
+section_credits_list_item_value_10:
+  component: section_credits
+  string: Chris Kobayashi, George Lee, Leo DeCandia
+  type: list_item_value_10
+section_credits_list_item_value_2:
+  component: section_credits
+  string: Ikayzo, Inc.
+  type: list_item_value_2
+section_credits_list_item_value_3:
+  component: section_credits
+  string: January 2014 — October 2014
+  type: list_item_value_3
+section_credits_list_item_value_4:
+  component: section_credits
+  type: list_item_value_4
+section_credits_list_item_value_5:
+  component: section_credits
+  string: AngularJS
+  type: list_item_value_5
+section_credits_list_item_value_6:
+  component: section_credits
+  string: Ruby on Rails
+  type: list_item_value_6
+section_credits_list_item_value_7:
+  component: section_credits
+  string: Mike King
+  type: list_item_value_7
+section_credits_list_item_value_8:
+  component: section_credits
+  string: Chris Ota
+  type: list_item_value_8
+section_credits_list_item_value_9:
+  component: section_credits
+  string: Mike King, George Lee
+  type: list_item_value_9
+section_credits_title_credits:
+  component: section_credits
+  string: Credits
+  type: title
+section_offset_1_body_1_if:
+  component: section_offset_1
+  string: If you’ve ever browsed on a website for some kind of product or service, and then switched to a different site, only to see a video advertisement playing in the sidebar for that same product, then you’re familiar with the concept of ‘retargeting’.
+  type: body_1
+section_offset_1_body_2_in:
+  component: section_offset_1
+  string: In the summer of 2014, I had the opportunity to redesign one of the largest video advertising campaign management platforms in the industry, which provides this same retargeting service for hundreds of international brands.
+  type: body_2
+section_offset_1_title_videobradvertisingbron_span:
+  component: section_offset_1
+  string: Video<br/>advertising<br/>on <span class='italicize'>demand</span>.
+  type: title
+section_offset_2_body_1_at:
+  component: section_offset_2
+  string: At the time, the primary service that Clearstream provided for their clients was at the cutting edge of advertising technology. To give their clients an edge, Clearstream’s consultants used two (2) different, yet similar, demand-side advertising platforms for managing bids for video ads and deploying the creative to campaigns.
+  type: body_1
+section_offset_2_body_2_clearstream:
+  component: section_offset_2
+  string: Clearstream had reached a point in their business where switching back and forth between the tools was costing them thousands of dollars a day.
+  type: body_2
+section_offset_2_title_the_costbrof:
+  component: section_offset_2
+  string: 'The cost<br/>of context<br/>     switching.'
+  type: title
+section_process_insights_body_1_unlike:
+  component: section_process
+  string: 'Unlike most typical client projects, the Clearstream project was purely an internal tool used by their consultants to assist their clients with video campaign management. As such, the Discovery process yielded some interesting information about the goals and motivations of the people using the product:'
+  type: insights_body_1
+section_process_insights_body_2_the:
+  component: section_process
+  string: The current platform(s) provides the business with the most capabilities/flexibility available in video advertising demand side platforms. This in turn allows the company to stay ahead of the curve and provide tailored (“non-cookie-cutter”) solutions for their clients.
+  type: insights_body_2
+section_process_insights_body_3_the:
+  component: section_process
+  string: The head of operations relied on accurate and relevant data from the bid management platforms to determine how best to optimize yields and increase margins for the company as a whole.
+  type: insights_body_3
+section_process_insights_body_4_at:
+  component: section_process
+  string: At the time, they did not have any accountability within their platforms, i.e. if two people were working on the same campaign, they had no way of tracking who made the changes and when.
+  type: insights_body_4
+section_process_phase_1_body_1:
+  component: section_process
+  string: For the initial Discovery process, I had the opportunity of flying to Chicago, along with an engineering consultant, to lead a <span class='bold'>1-week UX intensive research session</span> with the client and their staff to kick the project off.
+  type: phase_1_body_1
+section_process_phase_1_body_2:
+  component: section_process
+  string: We organized each day into working sessions to cover several distinct areas of user and technical research including <span class='bold'>stakeholder interviews, goal definitions, experience audits, user profile definitions, competitor analyses, branding workshops, and system architecture.</span>
+  type: phase_1_body_2
+section_process_phase_1_title_discovery:
+  component: section_process
+  string: Discovery
+  type: phase_1_title
+section_process_phase_2_body_1:
+  component: section_process
+  string: With a project of this nature and domain complexity, the initial step in defining the IA was to <span class='bold'>establish a common vocabulary to represent objects and entities within our system</span>, ie. advertisers vs agencies vs brands, campaigns vs placements vs flights, etc.
+  type: phase_2_body_1
+section_process_phase_2_body_2:
+  component: section_process
+  string: Once we had a consensus on terminology, we were able to start laying out the different components that communicate with each other and make up the system through <span class='bold'>user flows</span> and <span class='bold'>wireframes</span>.
+  type: phase_2_body_2
+section_process_phase_2_title_information:
+  component: section_process
+  string: Information Architecture
+  type: phase_2_title
+section_process_phase_3_body_1:
+  component: section_process
+  string: Once the visual design had been approved, my focus turned to reporting, where I developed <span class='bold'>custom interactive data-visualizations</span> in the form of charts & graphs. The application interface was developed using <span class='bold'>AngularJS + Foundation Framework</span>, while the charting component was built on top of <span class='bold'>Kendo UI</span>’s charting components.
+  type: phase_3_body_1
+section_process_phase_3_body_2:
+  component: section_process
+  string: Kendo UI provides Angular UI components with built-in data-binding, so all of the pieces worked nicely together, and I could focus on customizing the experience of the charts rather than just getting them to work.
+  type: phase_3_body_2
+section_process_phase_3_title_frontend:
+  component: section_process
+  string: Frontend Engineering
+  type: phase_3_title
+section_results_body_1_the_final:
+  component: section_results
+  string: The final results after launching the initial phase of Clearstream’s project was a platform capable of processing more than 60 million rows of data based on user behavior per day and serving video advertisements in milliseconds for multinational brands like McDonald’s, MGM and British Petroleum.
+  type: body_1
+section_results_title_60_million_rows:
+  component: section_results
+  string: 60 million rows of data every day
+  type: title
+section_single_body_the_primary_objective:
+  component: section_single
+  string: The primary objective of the Clearstream project was to provide their clients with a premium, streamlined experience for executing targeted, real-time video advertising. Additionally, the client also wanted to focus on creating a clean and modern user interface that simplified their existing processes and unified data for reporting and visualization.
+  type: body
+section_single_title_unifying_visualizing_big:
+  component: section_single
+  string: Unifying & visualizing big data
+  type: title
+section_slideshow_body_1_our_final:
+  component: section_slideshow
+  string: Our final solution was an all-inclusive dashboard for managing bids, campaigns & customers (CRM), as well as provided custom, real-time reports and charting using HTML5 technologies and served from the cloud.
+  type: body_1

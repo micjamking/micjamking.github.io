@@ -1,0 +1,32 @@
+home_case_study_clearstream:
+  page: home
+  subtitle: Video Advertising Management Platform
+  title: Clearstream
+  type: case_study
+  url: /case-study/clearstream/
+home_case_study_gohawaii:
+  award: 2017 Pele Award
+  page: home
+  subtitle: Travel Safety Mobile App
+  title: GoHawaii
+  type: case_study
+  url: /case-study/gohawaii/
+home_case_study_mobipcs:
+  page: home
+  subtitle: Wireless Services Management Platform
+  title: MobiPCS
+  type: case_study
+  url: /case-study/mobipcs/
+home_case_study_teacup_analytics:
+  page: home
+  subtitle: Web Analytics Reporting App
+  title: Teacup Analytics
+  type: case_study
+  url: /case-study/teacup-analytics/
+home_case_study_tour_aloha:
+  award: 2016 Pele Award
+  page: home
+  subtitle: Historical Travel Guide Mobile App
+  title: Tour Aloha
+  type: case_study
+  url: /case-study/tour-aloha/

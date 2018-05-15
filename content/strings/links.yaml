@@ -1,0 +1,48 @@
+about_behance:
+  cta: Behance
+  cta_link: https://www.behance.net/micjamking
+  page: about
+about_codepen:
+  cta: Codepen
+  cta_link: https://codepen.io/micjamking/
+  page: about
+about_dribbble:
+  cta: Dribbble
+  cta_link: https://dribbble.com/micjamking
+  page: about
+about_github:
+  cta: Github
+  cta_link: https://github.com/micjamking/
+  page: about
+about_linkedin:
+  cta: LinkedIn
+  cta_link: https://www.linkedin.com/in/micjamking/
+  page: about
+about_medium:
+  cta: Medium
+  cta_link: https://medium.com/@micjamking
+  page: about
+clearstream_clearstreamtv:
+  cta: clearstream.tv
+  cta_link: https://www.clearstream.tv/
+  page: clearstream
+gohawaii_google_play_store:
+  cta: Google Play Store
+  cta_link: https://play.google.com/store/apps/details?id=com.gohawaii.htamobile
+  page: gohawaii
+gohawaii_itunes_app_store:
+  cta: iTunes App Store
+  cta_link: https://itunes.apple.com/us/app/gohawaii/id1100071565?mt=8
+  page: gohawaii
+teacupanalytics_teacupanalyticscom:
+  cta: teacupanalytics.com
+  cta_link: https://www.teacupanalytics.com/
+  page: teacupanalytics
+touraloha_google_play_store:
+  cta: Google Play Store
+  cta_link: https://play.google.com/store/apps/details?id=com.robertshawaii.digitaltours
+  page: touraloha
+touraloha_itunes_app_store:
+  cta: iTunes App Store
+  cta_link: https://itunes.apple.com/us/app/tour-aloha/id1032587135?mt=8
+  page: touraloha
