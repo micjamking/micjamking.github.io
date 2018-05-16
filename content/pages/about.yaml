@@ -8,18 +8,18 @@ components:
 - component: 'general-content'
   class: 'general-content--about'
   chapter:
-    title: "Aloha World."
-    body: "I'm Mike King, an interactive designer & developer residing in Honolulu, Hawaii. My passion is assisting brands with telling their story across the digital landscape. For the past decade I've been developing my craft as a user-experience designer and web developer in a high-paced agency environment, operating as a generalist to continually expand my knowledge and skill-set in keeping with the rapid pace and change of technology. My aim is to provide clients with streamlined, end-to-end creative solutions that match their digital & technical challenges."
+    title: !g.yaml /content/strings/strings.yaml?about_title_aloha_world.string
+    body: !g.yaml /content/strings/strings.yaml?about_body_im_mike_king_an.string
     ctas:
-    - url: 'https://dribbble.com/micjamking'
-      label: 'Dribbble'
-    - url: 'https://www.behance.net/micjamking'
-      label: 'Behance'
-    - url: 'https://codepen.io/micjamking/'
-      label: 'Codepen'
-    - url: 'https://github.com/micjamking/'
-      label: 'Github'
-    - url: 'https://medium.com/@micjamking'
-      label: 'Medium'
-    - url: 'https://www.linkedin.com/in/micjamking/'
-      label: 'LinkedIn'
+    - url: !g.yaml /content/strings/links.yaml?about_dribbble.cta_link
+      label: !g.yaml /content/strings/links.yaml?about_dribbble.cta
+    - url: !g.yaml /content/strings/links.yaml?about_behance.cta_link
+      label: !g.yaml /content/strings/links.yaml?about_behance.cta
+    - url: !g.yaml /content/strings/links.yaml?about_codepen.cta_link
+      label: !g.yaml /content/strings/links.yaml?about_codepen.cta
+    - url: !g.yaml /content/strings/links.yaml?about_github.cta_link
+      label: !g.yaml /content/strings/links.yaml?about_github.cta
+    - url: !g.yaml /content/strings/links.yaml?about_medium.cta_link
+      label: !g.yaml /content/strings/links.yaml?about_medium.cta
+    - url: !g.yaml /content/strings/links.yaml?about_linkedin.cta_link
+      label: !g.yaml /content/strings/links.yaml?about_linkedin.cta

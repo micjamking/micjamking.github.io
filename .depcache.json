@@ -85,6 +85,8 @@
     "/content/case-studies/touraloha.yaml",
     "/content/pages/about.yaml",
     "/content/pages/contact.yaml",
+    "/content/strings/links.yaml",
+    "/content/strings/strings.yaml",
     "/static/apple-touch-icon-precomposed.png",
     "/static/favicon.png",
     "/static/images/mikekingio_screenshot.png",
