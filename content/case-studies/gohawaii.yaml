@@ -4,8 +4,8 @@ $order: 2
 page_footer: true
 
 header:
-  title: 'GoHawaii'
-  subtitle: 'Travel Safety Mobile App'
+  title: !g.yaml /content/strings/case-studies.yaml?home_case_study_gohawaii.title
+  subtitle: !g.yaml /content/strings/case-studies.yaml?home_case_study_gohawaii.subtitle
   services:
   - label: 'Creative Direction'
   - label: 'User Experience Design'
