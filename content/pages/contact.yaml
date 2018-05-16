@@ -9,4 +9,4 @@ components:
   class: 'general-content--contact'
   form: true
   chapter:
-    title: "Lets Chat."
+    title: !g.yaml /content/strings/strings.yaml?contact_title_lets_chat.string
