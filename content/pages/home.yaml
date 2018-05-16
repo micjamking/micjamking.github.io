@@ -4,8 +4,8 @@ $order: -1
 $hidden: true
 
 id: "mike-king"
-subtitle: "Creative Developer"
-tagline: "Elevating digital experiences through creative technology"
+subtitle: !g.yaml /content/strings/strings.yaml?home_subtitle_creative_developer.string
+tagline: !g.yaml /content/strings/strings.yaml?home_tagline_elevating_digital_experiences_through.string
 header: 'header--main'
 hero: true
 navigation: true
@@ -15,71 +15,71 @@ components:
 # GoHawaii
 - component: "case-study"
   id: "gohawaii"
-  title: "GoHawaii"
-  subtitle: "Travel Safety Mobile App"
-  award: 2017
+  title: !g.yaml /content/strings/case-studies.yaml?home_case_study_gohawaii.title
+  subtitle: !g.yaml /content/strings/case-studies.yaml?home_case_study_gohawaii.subtitle
+  award: !g.yaml /content/strings/case-studies.yaml?home_case_study_gohawaii.award
   background_images:
   - url: "/static/images/case-studies/case-study-tile__gohawaii.png"
   - class: 'background-images__image--offset'
   cta:
     delay: 3000
     class: "delay-transition"
-    url: "/case-study/gohawaii"
-    label: "View Case Study"
+    url: !g.yaml /content/strings/case-studies.yaml?home_case_study_gohawaii.url
+    label: !g.yaml /content/strings/strings.yaml?home_cta_view_case_study.string
 
 # Tour Aloha
 - component: "case-study"
   id: "tour-aloha"
-  title: "Tour Aloha"
-  subtitle: "Historical Travel Guide Mobile App"
-  award: 2016
+  title: !g.yaml /content/strings/case-studies.yaml?home_case_study_tour_aloha.title
+  subtitle: !g.yaml /content/strings/case-studies.yaml?home_case_study_tour_aloha.subtitle
+  award: !g.yaml /content/strings/case-studies.yaml?home_case_study_tour_aloha.award
   background_images:
   - url: "/static/images/case-studies/case-study-tile__tour-aloha.png"
   - class: 'background-images__image--offset'
   cta:
     delay: 3000
     class: "delay-transition"
-    url: "/case-study/tour-aloha"
-    label: "View Case Study"
+    url: !g.yaml /content/strings/case-studies.yaml?home_case_study_tour_aloha.url
+    label: !g.yaml /content/strings/strings.yaml?home_cta_view_case_study.string
 
 # Teacup Analytics
 - component: "case-study"
   id: "teacup-analytics"
-  title: "Teacup Analytics"
-  subtitle: "Web Analytics Reporting App"
+  title: !g.yaml /content/strings/case-studies.yaml?home_case_study_teacup_analytics.title
+  subtitle: !g.yaml /content/strings/case-studies.yaml?home_case_study_teacup_analytics.subtitle
   background_images:
   - url: "/static/images/case-studies/case-study-tile__teacup-analytics.png"
   - class: 'background-images__image--offset'
   cta:
     delay: 3000
     class: "delay-transition"
-    url: "/case-study/teacup-analytics"
-    label: "View Case Study"
+    url: !g.yaml /content/strings/case-studies.yaml?home_case_study_teacup_analytics.url
+    label: !g.yaml /content/strings/strings.yaml?home_cta_view_case_study.string
 
 # Clearstream
 - component: "case-study"
   id: "clearstream"
-  title: "Clearstream"
-  subtitle: "Video Advertising Management Platform"
+  title: !g.yaml /content/strings/case-studies.yaml?home_case_study_clearstream.title
+  subtitle: !g.yaml /content/strings/case-studies.yaml?home_case_study_clearstream.subtitle
   background_images:
   - url: "/static/images/case-studies/case-study-tile__clearstream.png"
   - class: 'background-images__image--offset'
   cta:
     delay: 3000
     class: "delay-transition"
-    url: "/case-study/clearstream"
-    label: "View Case Study"
+    url: !g.yaml /content/strings/case-studies.yaml?home_case_study_clearstream.url
+    label: !g.yaml /content/strings/strings.yaml?home_cta_view_case_study.string
 
 # MobiPCS
 - component: "case-study"
   id: "mobipcs"
-  title: "MobiPCS"
-  subtitle: "Wireless Services Management Platform"
+  title: !g.yaml /content/strings/case-studies.yaml?home_case_study_mobipcs.title
+  subtitle: !g.yaml /content/strings/case-studies.yaml?home_case_study_mobipcs.subtitle
   background_images:
   - url: "/static/images/case-studies/case-study-tile__mobipcs.png"
   - class: 'background-images__image--offset'
   cta:
     delay: 3000
     class: "delay-transition"
-    url: "/case-study/mobipcs"
-    label: "View Case Study"
+    url: !g.yaml /content/strings/case-studies.yaml?home_case_study_mobipcs.url
+    label: !g.yaml /content/strings/strings.yaml?home_cta_view_case_study.string

@@ -30,6 +30,10 @@ contact_title_lets_chat:
   page: contact
   string: Lets Chat.
   type: title
+home_cta_view_case_study:
+  page: home
+  string: View Case Study
+  type: cta
 home_subtitle_creative_developer:
   page: home
   string: Creative Developer
