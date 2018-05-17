@@ -1,20 +1,20 @@
-$title: 'Tour Aloha'
+$title: !g.yaml /content/strings/touraloha.yaml?header_title_tour_aloha.string
 $path: '/case-study/tour-aloha/'
 $order: 5
 
 page_footer: true
 
 header:
-  title: 'Tour Aloha'
-  subtitle: 'Historical Travel Guide Mobile App'
+  title: !g.yaml /content/strings/touraloha.yaml?header_title_tour_aloha.string
+  subtitle: !g.yaml /content/strings/touraloha.yaml?header_subtitle_historical_travel_guide_mobile.string
   services:
-  - label: 'User Experience Design'
-  - label: 'Project Management'
+  - label: !g.yaml /content/strings/touraloha.yaml?header_service_1_user_experience_design.string
+  - label: !g.yaml /content/strings/touraloha.yaml?header_service_2_project_management.string
   project_links:
-  - label: 'iTunes App Store'
-    url: 'https://itunes.apple.com/us/app/tour-aloha/id1032587135?mt=8'
-  - label: 'Google Play Store'
-    url: 'https://play.google.com/store/apps/details?id=com.robertshawaii.digitaltours'
+  - label: !g.yaml /content/strings/links.yaml?touraloha_itunes_app_store.cta
+    url: !g.yaml /content/strings/links.yaml?touraloha_itunes_app_store.cta_link
+  - label: !g.yaml /content/strings/links.yaml?touraloha_google_play_store.cta
+    url: !g.yaml /content/strings/links.yaml?touraloha_google_play_store.cta_link
   background_images:
   - url: '/static/images/case-studies/touraloha/touraloha_header-background.png'
   delayExit: 3000
@@ -22,8 +22,8 @@ header:
 footer:
   next_project:
     delayExit: 2000
-    url: '/case-study/teacup-analytics'
-    label: 'Teacup Analytics'
+    url: !g.yaml /content/strings/case-studies.yaml?home_case_study_teacup_analytics.url
+    label: !g.yaml /content/strings/case-studies.yaml?home_case_study_teacup_analytics.title
 
 components:
 - component: 'section-columns'
@@ -31,7 +31,7 @@ components:
   columns:
   - class: 'section__columns__column--single-column section__columns__column--body-large'
     chapter:
-      body: 'Launched in September of 2015, Tour Aloha is a travel companion mobile app for visitors to the islands created in partnership with Roberts Hawaii.'
+      body: !g.yaml /content/strings/touraloha.yaml?intro_body_launched_in_september_of.string
       inline_images:
       - url: '/static/images/case-studies/touraloha/touraloha_graphic.svg'
 
@@ -47,14 +47,14 @@ components:
   columns:
   - order: 1
     chapter:
-      title: 'Local guides<br/> at your <br/>fingertips.'
+      title: !g.yaml /content/strings/touraloha.yaml?section_offset_1_title_local_guidesbr.string
       background_images:
       - class: 'map-marker'
         url: '/static/images/case-studies/touraloha/touraloha_map-marker.svg'
   - order: 2
     class: 'section__columns__column--columns-offset'
     chapter:
-      body: 'The Tour Aloha app provides a unique and interactive deep knowledge travel guide for Hawaii. As you tour scenic destinations, Tour Aloha shares exclusive images and stories from a time past but not forgotten.'
+      body: !g.yaml /content/strings/touraloha.yaml?section_offset_1_body_the_tour.string
 
 - component: 'section-columns'
   class: 'section--bg-image section--padded'
@@ -62,8 +62,8 @@ components:
   columns:
   - class: 'section__columns__column--single-column'
     chapter:
-      title: "Hawaii’s Premier Tour Operator"
-      body: "Roberts Hawaii is a full-service tour operator in the state of Hawaii, known for providing personalized sightseeing tours and activities across the islands of Kaua‘i, O‘ahu, Maui and Hawaii Island. Roberts Hawaii was interested in developing a mobile application as a companion guide to its popular tours and provide island visitors with a Roberts well known hospitality experience even when outside of their tour bus."
+      title: !g.yaml /content/strings/touraloha.yaml?section_contained_title_hawaiis_premier_tour.string
+      body: !g.yaml /content/strings/touraloha.yaml?section_contained_body_roberts_hawaii_is.string
       background_images:
       - url: '/static/images/case-studies/touraloha/touraloha_contained-background.png'
 
@@ -75,13 +75,13 @@ components:
     class: 'section__columns__column--columns-offset'
     chapter:
       body:
-      - 'While Roberts Hawaii is very well-known for its island sightseeing tours, the current generation of travelers to the islands aren’t as keen on renting bus tours as travelers from the past.'
-      - 'Today, many people, specifically in the younger demographic, rent cars or do private tours to have a more personal experience while on vacation.'
-      - 'Roberts Hawaii felt they had something compelling to offer these visitors, even if they didn’t book a bus tour: the stories of the islands.'
+      - !g.yaml /content/strings/touraloha.yaml?section_offset_2_body_1_while.string
+      - !g.yaml /content/strings/touraloha.yaml?section_offset_2_body_2_today.string
+      - !g.yaml /content/strings/touraloha.yaml?section_offset_2_body_3_roberts.string
   - order: 2
     mobile_order: 1
     chapter:
-      title: 'The stories<br/> of the<br/> islands.'
+      title: !g.yaml /content/strings/touraloha.yaml?section_offset_2_title_the_storiesbr.string
       background_images:
       - class: 'map-marker'
         url: '/static/images/case-studies/touraloha/touraloha_map-marker.svg'
@@ -159,14 +159,14 @@ components:
   columns:
   - class: "section__columns__column--single-column"
     chapter:
-      title: 'An exclusive travel experience'
-      body: 'The primary objective of the Roberts Hawaii project was to expand the target market and enhance their current tour experience by providing exclusive content visitors couldn’t get anywhere else. The strategy was to provide a mobile app that simulated the tour experience by providing GPS navigation of tour routes with overlayed text, audio narration, photography, and video to provide users with unique stories about historical destinations across the islands, told from people who experienced them first hand.'
+      title: !g.yaml /content/strings/touraloha.yaml?section_single_title_an_exclusive_travel.string
+      body: !g.yaml /content/strings/touraloha.yaml?section_single_body_the_primary_objective.string
       inline_images:
       - url: '/static/images/case-studies/touraloha/touraloha_laurenbrunner-photo.png'
 
 - component: 'section-process'
   theme: 'dark'
-  title: 'The Process'
+  title: !g.yaml /content/strings/strings.yaml?case_study_process_the_process.string
   phases:
   - phase: 'discovery'
     work:
@@ -181,17 +181,17 @@ components:
     details:
       class: 'right'
       chapter:
-        title: 'Discovery'
+        title: !g.yaml /content/strings/touraloha.yaml?section_process_phase_1_title_discovery.string
         body:
-          - "During the Discovery process, we performed <span class='bold'>stakeholder interviews</span> with the marketing department and executive management to define the objectives, goals, and metrics for the project, as well as defined the scope of the user experience through the creation of <span class='bold'>use-case scenarios</span> which outlined the primary tasks within the mobile application from a business perspective."
-          - "We performed a <span class='bold'>competitor analysis</span> across 7 different comparable applications to help surface opportunities to differentiate the app. We also created <span class='bold'>user profiles</span> to assist in understanding the motivations for using the app and the features that would be most helpful for each audience type."
+          - !g.yaml /content/strings/touraloha.yaml?section_process_phase_1_body_1.string
+          - !g.yaml /content/strings/touraloha.yaml?section_process_phase_1_body_2.string
 
   - phase: 'insights'
     chapter:
-      title: "Insights"
+      title: !g.yaml /content/strings/strings.yaml?case_study_insights_insights.string
       body:
-        - "We learned through Discovery process that a large portion of their current user base was Android, however their target audience being a different market, they wanted to target both iOS and Android devices."
-        - "Additionally, we learned the client had direct access to raw audio recordings of Pearl Harbor survivors which they eventually obtained the rights to use as part of one of their tour experiences."
+        - !g.yaml /content/strings/touraloha.yaml?section_process_insights_body_1_we.string
+        - !g.yaml /content/strings/touraloha.yaml?section_process_insights_body_2_additionally.string
 
   - phase: 'information-architecture'
     work:
@@ -204,10 +204,10 @@ components:
     details:
       class: 'left'
       chapter:
-        title: 'Information Architecture'
+        title: !g.yaml /content/strings/touraloha.yaml?section_process_phase_2_title_information.string
         body:
-          - "We created <span class='bold'>key task flow diagrams</span> to help outline the general experience for users navigating through the app to discover and experience a virtual tour, from downloading an individual tour (available as in-app purchases) to viewing images and listening to audio at an individual tour stop."
-          - "Once we established consensus with the user flow, we developed <span class='bold'>wireframes</span> for the screens representing each step in the flow and providing additional context for interactive behavior (swiping, tapping, etc.)"
+          - !g.yaml /content/strings/touraloha.yaml?section_process_phase_2_body_1.string
+          - !g.yaml /content/strings/touraloha.yaml?section_process_phase_2_body_2.string
 
   - phase: 'project-management'
     work:
@@ -218,10 +218,10 @@ components:
     details:
       class: 'right'
       chapter:
-        title: 'Project Management'
+        title: !g.yaml /content/strings/touraloha.yaml?section_process_phase_3_title_project.string
         body:
-          - "As project lead, I managed all phases of the engagement, from the initial consultation and estimates, through the discovery and design strategy phases, and finally through development, QA testing and launch."
-          - "The client had a tight marketing deadline, so we were able to split the project into multiple phases that allowed for an earlier launch with minimal capability, with updates following shortly after launch to help improve the user experience."
+          - !g.yaml /content/strings/touraloha.yaml?section_process_phase_3_body_1.string
+          - !g.yaml /content/strings/touraloha.yaml?section_process_phase_3_body_2.string
 
 - component: 'section-columns'
   class: 'section--min-height-600 section--two-column-carousel'
@@ -242,51 +242,51 @@ components:
   #     - url: ''
   - chapter:
       body:
-      - "Due to the requirements for the project, we recommended a “hybrid” mobile application solution for mobile development, and settled on Ionic Framework (AngularJS + Cordova) to allow the transfer of knowledge we already had with frontend JS technologies and the ability to write in one codebase and deploy to multiple platforms (iOS and Android)."
-      - "We also developed a custom backend administrative dashboard to allow for managing the content and data for tours, along with GPS coordinates, as well as development of a tour packaging system to allow for creation of new tours on the fly and downloading tours as in-app purchases."
+      - !g.yaml /content/strings/touraloha.yaml?section_slideshow_body_1_due_to.string
+      - !g.yaml /content/strings/touraloha.yaml?section_slideshow_body_2_we_also.string
 
 - component: 'section-columns'
   class: 'section--light-grey-bg section--min-height-600'
   columns:
   - class: "section__columns__column--single-column"
     chapter:
-      title: 'Hawaii’s Best Historical Guide App'
-      body: 'The final result was a unique and interactive way for visitors to explore the Hawaiian islands, providing exclusive images and stories from a time past but not forgotten. The mobile application design won a <span class="bold">2016 Pele Gold Award</span> for best mobile app.'
+      title: !g.yaml /content/strings/touraloha.yaml?section_results_title_hawaiis_best_historical.string
+      body: !g.yaml /content/strings/touraloha.yaml?section_results_body_1_the_final.string
       ctas:
         - class: 'button itunes'
-          url: 'https://itunes.apple.com/us/app/tour-aloha/id1032587135?mt=8'
-          label: 'Download on the iTunes App Store'
+          url: !g.yaml /content/strings/links.yaml?touraloha_itunes_app_store.cta_link
+          label: !g.yaml /content/strings/strings.yaml?case_study_itunes_button_download_on.string
         - class: 'button play'
-          url: 'https://play.google.com/store/apps/details?id=com.robertshawaii.digitaltours'
-          label: 'Download on the Google Play Store'
+          url: !g.yaml /content/strings/links.yaml?touraloha_google_play_store.cta_link
+          label: !g.yaml /content/strings/strings.yaml?case_study_play_button_download_on.string
 
 - component: 'section-columns'
   class: 'section--min-height-600'
   columns:
   - class: "section__columns__column--single-column"
     chapter:
-      title: 'Credits'
+      title: !g.yaml /content/strings/strings.yaml?case_study_title_credits.string
       body_list_class: 'chapter__body-list--2-column'
       body_list:
-        - name: 'Client'
-          value: 'Roberts Hawaii'
-        - name: 'Agency'
-          value: 'Ikayzo, Inc.'
-        - name: 'Engagement'
-          value: 'March 2015 — Sepember 2015'
-        - name: 'Technology'
+        - name: !g.yaml /content/strings/touraloha.yaml?section_credits_list_item_name_1.string
+          value: !g.yaml /content/strings/touraloha.yaml?section_credits_list_item_value_1.string
+        - name: !g.yaml /content/strings/touraloha.yaml?section_credits_list_item_name_2.string
+          value: !g.yaml /content/strings/touraloha.yaml?section_credits_list_item_value_2.string
+        - name: !g.yaml /content/strings/touraloha.yaml?section_credits_list_item_name_3.string
+          value: !g.yaml /content/strings/touraloha.yaml?section_credits_list_item_value_3.string
+        - name: !g.yaml /content/strings/touraloha.yaml?section_credits_list_item_name_4.string
           list:
-          - name: 'Mobile App'
-            value: 'Ionic (AngularJS + Cordova)'
-          - name: 'Backend CMS / API'
-            value: 'Nodejs + Express'
-        - name: 'Awards'
-          value: 'Best Mobile App—2016 Pele Awards'
-        - name: 'UX Design'
-          value: 'Mike King'
-        - name: 'UI Design'
-          value: 'Jen Zheng'
-        - name: 'Software Development'
-          value: 'Scott Yano'
-        - name: 'Project Management'
-          value: 'Mike King'
+          - name: !g.yaml /content/strings/touraloha.yaml?section_credits_list_item_name_5.string
+            value: !g.yaml /content/strings/touraloha.yaml?section_credits_list_item_value_5.string
+          - name: !g.yaml /content/strings/touraloha.yaml?section_credits_list_item_name_6.string
+            value: !g.yaml /content/strings/touraloha.yaml?section_credits_list_item_value_6.string
+        - name: !g.yaml /content/strings/touraloha.yaml?section_credits_list_item_name_7.string
+          value: !g.yaml /content/strings/touraloha.yaml?section_credits_list_item_value_7.string
+        - name: !g.yaml /content/strings/touraloha.yaml?section_credits_list_item_name_8.string
+          value: !g.yaml /content/strings/touraloha.yaml?section_credits_list_item_value_8.string
+        - name: !g.yaml /content/strings/touraloha.yaml?section_credits_list_item_name_9.string
+          value: !g.yaml /content/strings/touraloha.yaml?section_credits_list_item_value_9.string
+        - name: !g.yaml /content/strings/touraloha.yaml?section_credits_list_item_name_10.string
+          value: !g.yaml /content/strings/touraloha.yaml?section_credits_list_item_value_10.string
+        - name: !g.yaml /content/strings/touraloha.yaml?section_credits_list_item_name_11.string
+          value: !g.yaml /content/strings/touraloha.yaml?section_credits_list_item_value_11.string
