@@ -1,20 +1,20 @@
-$title: GoHawaii
+$title: !g.yaml /content/strings/gohawaii.yaml?header_title_gohawaii.string
 $order: 2
 
 page_footer: true
 
 header:
-  title: !g.yaml /content/strings/case-studies.yaml?home_case_study_gohawaii.title
-  subtitle: !g.yaml /content/strings/case-studies.yaml?home_case_study_gohawaii.subtitle
+  title: !g.yaml /content/strings/gohawaii.yaml?header_title_gohawaii.string
+  subtitle: !g.yaml /content/strings/gohawaii.yaml?header_subtitle_travel_safety_mobile_app.string
   services:
-  - label: 'Creative Direction'
-  - label: 'User Experience Design'
-  - label: 'Software Development'
+  - label: !g.yaml /content/strings/gohawaii.yaml?header_service_1_creative_direction.string
+  - label: !g.yaml /content/strings/gohawaii.yaml?header_service_2_user_experience_design.string
+  - label: !g.yaml /content/strings/gohawaii.yaml?header_service_3_software_development.string
   project_links:
-  - label: 'iTunes App Store'
-    url: 'https://itunes.apple.com/us/app/gohawaii/id1100071565?mt=8'
-  - label: 'Google Play Store'
-    url: 'https://play.google.com/store/apps/details?id=com.gohawaii.htamobile'
+  - label: !g.yaml /content/strings/links.yaml?gohawaii_itunes_app_store.cta
+    url: !g.yaml /content/strings/links.yaml?gohawaii_itunes_app_store.cta_link
+  - label: !g.yaml /content/strings/links.yaml?gohawaii_google_play_store.cta
+    url: !g.yaml /content/strings/links.yaml?gohawaii_google_play_store.cta_link
   background_images:
   - url: '/static/images/case-studies/gohawaii/gohawaii_header-background.png'
   delayExit: 3000
@@ -22,8 +22,8 @@ header:
 footer:
   next_project:
     delayExit: 2000
-    url: '/case-study/tour-aloha'
-    label: 'Tour Aloha'
+    url: !g.yaml /content/strings/case-studies.yaml?home_case_study_tour_aloha.url
+    label: !g.yaml /content/strings/case-studies.yaml?home_case_study_tour_aloha.title
 
 components:
 - component: 'section-columns'
@@ -31,7 +31,7 @@ components:
   columns:
   - class: 'section__columns__column--single-column section__columns__column--body-large'
     chapter:
-      body: 'Launched in June of 2016, GoHawaiʻi is the state of Hawaii’s first official mobile app for travel tips and safety information for visitors from the US mainland, China, Japan, Korea and Germany, developed in partnership with Hawaiʻi Tourism Authority.'
+      body: !g.yaml /content/strings/gohawaii.yaml?intro_body_launched_in_june_of.string
       inline_images:
       - url: '/static/images/case-studies/gohawaii/gohawaii_graphic.png'
 
@@ -47,14 +47,14 @@ components:
   columns:
   - order: 1
     chapter:
-      title: "Illustrated,<br/>storytelling<br/>in <span class='italicize'>your</span><br/>language."
+      title: !g.yaml /content/strings/gohawaii.yaml?section_offset_1_title_illustratedbrstorytellingbrin_span.string
       background_images:
       - class: 'monsterra-leaf'
         url: '/static/images/case-studies/gohawaii/gohawaii_monsterra-leaf.svg'
   - order: 2
     class: 'section__columns__column--columns-offset'
     chapter:
-      body: 'We implemented a multilingual mobile content management system that delivers fresh tips to Android and iOS users dynamically with information presented in an interactive, illustrated storytelling experience using characters and scenes created just for GoHawaiʻi.'
+      body: !g.yaml /content/strings/gohawaii.yaml?section_offset_1_body_we_implemented.string
 
 - component: 'section-columns'
   class: 'section--bg-image section--padded'
@@ -62,8 +62,8 @@ components:
   columns:
   - class: 'section__columns__column--single-column'
     chapter:
-      title: "Hawaii's State Tourism Agency"
-      body: "As Hawaii's state tourism agency, the <span class='bold'>Hawaii Tourism Authority</span> (HTA) uses its research, industry and marketing expertise to develop and implement the state's strategic tourism marketing plan. Equally important, the HTA is responsible for supporting programs that enhance and showcase Hawaii's people, place and culture in order to deliver an incomparable visitor experience."
+      title: !g.yaml /content/strings/gohawaii.yaml?section_contained_title_hawaiis_state_tourism.string
+      body: !g.yaml /content/strings/gohawaii.yaml?section_contained_body_as_hawaiis_state.string
       background_images:
       - url: '/static/images/case-studies/gohawaii/gohawaii_contained-background.png'
 
@@ -75,13 +75,13 @@ components:
     class: 'section__columns__column--columns-offset'
     chapter:
       body:
-      - 'While Hawaii continues to serve as one of the world’s most popular tourist destinations, it is also unfortunately home to one of the highest rates of visitor drownings in the country.'
-      - 'As the state’s official tourism agency, HTA is responsible for administering and promoting the state’s visitor safety guidelines.'
-      - 'HTA wanted to take advantage of mobile technology to provide visitors direct access to safety information from their smartphones.'
+      - !g.yaml /content/strings/gohawaii.yaml?section_offset_2_body_1_while.string
+      - !g.yaml /content/strings/gohawaii.yaml?section_offset_2_body_2_as.string
+      - !g.yaml /content/strings/gohawaii.yaml?section_offset_2_body_3_hta.string
   - order: 2
     mobile_order: 1
     chapter:
-      title: "Safety tips<br/>at your<br/><span class='italicize'>fingertips</span>."
+      title: !g.yaml /content/strings/gohawaii.yaml?section_offset_2_title_safety_tipsbrat.string
       background_images:
       - class: 'monsterra-leaf'
         url: '/static/images/case-studies/gohawaii/gohawaii_monsterra-leaf.svg'
@@ -103,8 +103,8 @@ components:
   columns:
   - class: "section__columns__column--single-column"
     chapter:
-      title: 'All-access safety & travel info'
-      body: 'Hawaii Tourism Authority’s primary objective was to increase awareness and accessibility of publicly available safety and travel information, while also provide a single resource for travel destination information across the major Hawaiian Islands. HTA wanted to provide “all-access” safety and travel destination information to users in the most convenient means as possible, using the latest forms of mobile technology.'
+      title: !g.yaml /content/strings/gohawaii.yaml?section_single_title_all_access_safety.string
+      body: !g.yaml /content/strings/gohawaii.yaml?section_single_body_hawaii_tourism_authoritys.string
       inline_images:
       - url: '/static/images/case-studies/gohawaii/gohawaii_badge-airport.png'
       - url: '/static/images/case-studies/gohawaii/gohawaii_badge-ocean.png'
@@ -112,7 +112,7 @@ components:
 
 - component: 'section-process'
   theme: 'dark'
-  title: 'The Process'
+  title: !g.yaml /content/strings/strings.yaml?case_study_process_the_process.string
   phases:
   - phase: 'discovery'
     work:
@@ -127,19 +127,19 @@ components:
     details:
       class: 'right'
       chapter:
-        title: 'Discovery'
+        title: !g.yaml /content/strings/gohawaii.yaml?section_process_phase_1_title_discovery.string
         body:
-          - "I lead multiple rounds of <span class='bold'>stakeholder interviews</span> with the international marketing teams for HTA, including their Japanese, Korean, Chinese & Taiwanese teams, to identify overarching concerns in regards to end customers motivations and technology habits."
-          - "We performed a <span class='bold'>competitor analysis</span> across 9 different local and national competitors in the travel and tourism space. Additionally, we created <span class='bold'>user profiles</span> to define the audience of the application, extrapolated from market research performed by the client."
+          - !g.yaml /content/strings/gohawaii.yaml?section_process_phase_1_body_1.string
+          - !g.yaml /content/strings/gohawaii.yaml?section_process_phase_1_body_2.string
 
   - phase: 'insights'
     chapter:
-      title: "Insights"
+      title: !g.yaml /content/strings/strings.yaml?case_study_insights_insights.string
       body:
-        - "Through the Discovery process, we learned the majority of visitors to the Hawaiian Islands today come from Asian countries, ie. China, Japan, and Korea."
-        - "This finding influenced our creative strategy and subsequently, the branding and visual design for the application."
-        - "In Japanese culture, the concept of “cute” or “cuteness” permeates many products, and is used as design strategy to create an emotional impact with customers."
-        - "Leaning on this discovery, we created a set of “cute” character guides for the mobile application to help guide users safely on their journey through the islands."
+        - !g.yaml /content/strings/gohawaii.yaml?section_process_insights_body_1_through.string
+        - !g.yaml /content/strings/gohawaii.yaml?section_process_insights_body_2_this.string
+        - !g.yaml /content/strings/gohawaii.yaml?section_process_insights_body_3_in.string
+        - !g.yaml /content/strings/gohawaii.yaml?section_process_insights_body_4_leaning.string
 
   - phase: 'information-architecture'
     work:
@@ -152,10 +152,10 @@ components:
     details:
       class: 'left'
       chapter:
-        title: 'Information Architecture'
+        title: !g.yaml /content/strings/gohawaii.yaml?section_process_phase_2_title_information.string
         body:
-          - "Once we had a clear understanding of the requirements, business goals, and user motivations, we began designing <span class='bold'>user task-flow diagrams</span> to outline the experience for users navigating through the app to discover safety information and recommended attractions, events, and island tips."
-          - "Once the user-flows had been defined and agreed upon, we created <span class='bold'>wireframe schematics</span> to outline the introductory flow, safety “travel smart” experience, destination experience, and menu interactions."
+          - !g.yaml /content/strings/gohawaii.yaml?section_process_phase_2_body_1.string
+          - !g.yaml /content/strings/gohawaii.yaml?section_process_phase_2_body_2.string
 
   - phase: 'creative-direction'
     work:
@@ -170,11 +170,11 @@ components:
     details:
       class: 'right'
       chapter:
-        title: 'Creative Direction'
+        title: !g.yaml /content/strings/gohawaii.yaml?section_process_phase_3_title_creative.string
         body:
-          - "One of the primary challenges for the project was defining a <span class='bold'>creative strategy</span> that could make safety information exciting and interesting for visitors to the islands."
-          - "Based on the business requirements and potential motivations of the target audience, I presented two creative design strategies for the mobile experience: a conservative, content-centric brochure experience that used animations and transitions as supporting elements of the design, and an interactive narrative experience that uses storytelling and illustrations to escort users through the content, using animated characters as friendly guides."
-          - "As the client’s concern was making the safety content more accessible and digestible, they chose to pursue the interactive storytelling direction. From here, I collaborated with our art director and visual designers to ensure the brand and user interface designs created the right narrative experience for first time visitors to the islands."
+          - !g.yaml /content/strings/gohawaii.yaml?section_process_phase_3_body_1.string
+          - !g.yaml /content/strings/gohawaii.yaml?section_process_phase_3_body_2.string
+          - !g.yaml /content/strings/gohawaii.yaml?section_process_phase_3_body_3.string
 
   - phase: 'software-development'
     work:
@@ -185,10 +185,10 @@ components:
     details:
       class: 'left'
       chapter:
-        title: 'Software Development'
+        title: !g.yaml /content/strings/gohawaii.yaml?section_process_phase_4_title_software.string
         body:
-          - "Once the information architecture had been agreed upon, I shifted my focus to the <span class='bold'>technical architecture</span> of the system. Based on the requirements of the project, we needed to develop a system that would allow for managing and serving content from 6 different locales while allowing the user to dynamically switch languages within the mobile app and the client to update the content in any language on the fly. "
-          - "We decided to use a Headless WordPress CMS as the backend, and through a combined usage of localization plugins, custom fields / custom post type development, and WordPress’ new built-in REST API, we were able to develop a seamless editorial workflow that allowed HTA’s local and international marketing teams to add and update content within the mobile app without pushing new versions to the app store."
+          - !g.yaml /content/strings/gohawaii.yaml?section_process_phase_4_body_1.string
+          - !g.yaml /content/strings/gohawaii.yaml?section_process_phase_4_body_2.string
 
 - component: 'section-columns'
   class: 'section--min-height-600 section--two-column-carousel'
@@ -209,61 +209,61 @@ components:
   #     - url: ''
   - chapter:
       body:
-      - "Given the broad demographics of the target user base, we recommended a “hybrid” mobile application solution for mobile development, allowing us to write in one codebase and deploy to multiple platforms (iOS and Android)."
-      - "As previously mentioned, we developed a custom backend and API server using a headless WordPress solution, allowing the client to manage safety and travel destination content across 6 different locales and perform content updates in the app without the need to deploy new versions to the native app stores."
+      - !g.yaml /content/strings/gohawaii.yaml?section_slideshow_body_1_given_the.string
+      - !g.yaml /content/strings/gohawaii.yaml?section_slideshow_body_2_as_previously.string
 
 - component: 'section-columns'
   class: 'section--light-grey-bg section--min-height-600'
   columns:
   - class: "section__columns__column--single-column"
     chapter:
-      title: 'Hawaii’s Official Travel & Tourism App'
+      title: !g.yaml /content/strings/gohawaii.yaml?section_results_title_hawaiis_official_travel.string
       body:
-      - 'In the end, we successfully created the state of Hawaii’s first official travel and tourism app; a fun and interactive way to learn both safety and historical information about the Hawaiian Islands. The client had a goal of achieving 10,000 downloads by the annual Hawaii Tourism Conference, 3 months after launch.'
-      - 'We were happily surprised when we had reached more than 15,000 downloads several weeks ahead of the conference. Additionally, the mobile application design won a <span class="bold">2017 Pele Gold award</span> for best mobile app. The annual competition, formerly known as the ADDYs, recognizes the best advertising and design work in Hawaii.'
+      - !g.yaml /content/strings/gohawaii.yaml?section_results_body_1_in_the.string
+      - !g.yaml /content/strings/gohawaii.yaml?section_results_body_2_we_were.string
       ctas:
         - class: 'button itunes'
-          url: 'https://itunes.apple.com/us/app/gohawaii/id1100071565?mt=8'
-          label: 'Download on the iTunes App Store'
+          url: !g.yaml /content/strings/links.yaml?gohawaii_itunes_app_store.cta_link
+          label: !g.yaml /content/strings/strings.yaml?case_study_itunes_button_download_on.string
         - class: 'button play'
-          url: 'https://play.google.com/store/apps/details?id=com.gohawaii.htamobile'
-          label: 'Download on the Google Play Store'
+          url: !g.yaml /content/strings/links.yaml?gohawaii_google_play_store.cta_link
+          label: !g.yaml /content/strings/strings.yaml?case_study_play_button_download_on.string
 
 - component: 'section-columns'
   class: 'section--min-height-600'
   columns:
   - class: "section__columns__column--single-column"
     chapter:
-      title: 'Credits'
+      title: !g.yaml /content/strings/strings.yaml?case_study_title_credits.string
       body_list_class: 'chapter__body-list--2-column'
       body_list:
-        - name: 'Client'
-          value: 'Hawaii Tourism Authority'
-        - name: 'Agency'
-          value: 'Ikayzo, Inc.'
-        - name: 'Engagement'
-          value: 'January 2016 — March 2017'
-        - name: 'Technology'
+        - name: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_name_1.string
+          value: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_value_1.string
+        - name: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_name_2.string
+          value: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_value_2.string
+        - name: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_name_3.string
+          value: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_value_3.string
+        - name: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_name_4.string
           list:
-          - name: 'Mobile App'
-            value: 'Ionic (AngularJS + Cordova)'
-          - name: 'Backend CMS / API'
-            value: 'WordPress'
-        - name: 'Awards'
-          value: 'Best Mobile App—2017 Pele Awards'
-        - name: 'Concept, Creative Direction'
-          value: 'Mike King'
-        - name: 'UX Design, Software Architecture'
-          value: 'Mike King'
-        - name: 'Branding, Art Direction'
-          value: 'Arlyn Ramos'
-        - name: 'Character Design'
-          value: 'Arlyn Ramos'
-        - name: 'UI Design'
-          value: 'Jen Zheng'
-        - name: 'Animation'
-          value: 'Nainoa Shizuru'
-        - name: 'Mobile Development'
-          value: 'Scott Yano'
-        - name: 'CMS / API Development'
-          value: 'Mike King'
+          - name: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_name_5.string
+            value: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_value_5.string
+          - name: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_name_6.string
+            value: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_value_6.string
+        - name: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_name_7.string
+          value: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_value_7.string
+        - name: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_name_8.string
+          value: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_value_8.string
+        - name: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_name_9.string
+          value: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_value_9.string
+        - name: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_name_10.string
+          value: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_value_10.string
+        - name: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_name_11.string
+          value: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_value_11.string
+        - name: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_name_12.string
+          value: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_value_12.string
+        - name: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_name_13.string
+          value: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_value_13.string
+        - name: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_name_14.string
+          value: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_value_14.string
+        - name: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_name_15.string
+          value: !g.yaml /content/strings/gohawaii.yaml?section_credits_list_item_value_15.string

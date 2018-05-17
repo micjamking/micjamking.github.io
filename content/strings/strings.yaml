@@ -22,6 +22,10 @@ case_study_process_the_process:
   page: case_study
   string: The Process
   type: process
+case_study_title_credits:
+  page: case_study
+  string: Credits
+  type: title
 case_study_website_button_visit_website:
   page: case_study
   string: Visit Website
