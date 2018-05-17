@@ -9,7 +9,7 @@ At a minimum, you will need the following prerequisite tools installed:
 2. [Node.js & npm](https://nodejs.org/en/)
 2. [Grow](https://grow.io)
 
-If you do not have Grow, you can install it (allow with dependent NPM packages):
+If you do not have Grow locally installed, you can install it along with dependent NPM packages:
 
 ```
 $ npm run setup
