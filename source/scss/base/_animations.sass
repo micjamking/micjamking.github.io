@@ -68,14 +68,6 @@ $play-state:      running
     opacity: 1
     transform: none
 
-@keyframes fade-out-left
-  0%
-    opacity: 1
-    transform: none
-  100%
-    opacity: 0
-    transform: translateX(-20px)
-
 @keyframes fade-in-right
   0%
     opacity: 0
@@ -100,6 +92,23 @@ $play-state:      running
     opacity: 0
     transform: translateY(20px)
 
+@keyframes fade-out-left
+  0%
+    opacity: 1
+    transform: none
+  100%
+    opacity: 0
+    transform: translateX(-20px)
+
+@keyframes fade-out-right
+  0%
+    opacity: 1
+    transform: none
+  100%
+    opacity: 0
+    transform: translateX(20px)
+
+// Mask Animations
 @keyframes case-study-mask-animation
   0%
     clip-path: polygon(100% 0%, 0% 0%, 0% 0%, 50% 0%, 100% 0%)
@@ -144,9 +153,6 @@ $play-state:      running
 =fade-in-left
   +animation('fade-in-left', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
 
-=fade-out-left
-  +animation('fade-out-left', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
-
 =fade-in-right
   +animation('fade-in-right', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
 
@@ -155,6 +161,12 @@ $play-state:      running
 
 =fade-out-down
   +animation('fade-out-down', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
+
+=fade-out-left
+  +animation('fade-out-left', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
+
+=fade-out-right
+  +animation('fade-out-right', $duration: $base-animation + ($animation-increment * 1), $iteration-count: 1)
 
 =case-study-mask-animation
   +animation('case-study-mask-animation', $duration: $case-study-header-duration, $iteration-count: 1)
