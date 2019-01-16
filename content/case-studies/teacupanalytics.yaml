@@ -1,12 +1,12 @@
-$title: 'Teacup Analytics'
+$title: !g.yaml /content/strings/teacupanalytics.yaml?header_title_teacup_analytics.string
 $path: '/case-study/teacup-analytics/'
 $order: 6
 
 page_footer: true
 
 header:
-  title: 'Teacup Analytics'
-  subtitle: 'Web Analytics Reporting App'
+  title: !g.yaml /content/strings/teacupanalytics.yaml?header_title_teacup_analytics.string
+  subtitle: !g.yaml /content/strings/teacupanalytics.yaml?header_subtitle_web_analytics_reporting_app.string
   services:
   - label: 'User Experience Design'
   - label: 'Data / Information Design'
