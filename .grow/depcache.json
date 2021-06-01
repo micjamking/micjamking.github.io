@@ -1,0 +1,64 @@
+{
+  "/content/case-studies/clearstream.yaml": [
+    "/content/case-studies/clearstream.yaml",
+    "/static/favicon.png",
+    "/static/images/mikekingio_screenshot.png",
+    "/static/style.css"
+  ],
+  "/content/case-studies/gohawaii.yaml": [
+    "/content/case-studies/gohawaii.yaml",
+    "/content/strings/case-studies.yaml",
+    "/content/strings/gohawaii.yaml",
+    "/content/strings/links.yaml",
+    "/content/strings/strings.yaml",
+    "/static/favicon.png",
+    "/static/images/mikekingio_screenshot.png",
+    "/static/style.css"
+  ],
+  "/content/case-studies/mobipcs.yaml": [
+    "/content/case-studies/mobipcs.yaml",
+    "/static/favicon.png",
+    "/static/images/mikekingio_screenshot.png",
+    "/static/style.css"
+  ],
+  "/content/case-studies/teacupanalytics.yaml": [
+    "/content/case-studies/teacupanalytics.yaml",
+    "/content/strings/teacupanalytics.yaml",
+    "/static/favicon.png",
+    "/static/images/mikekingio_screenshot.png",
+    "/static/style.css"
+  ],
+  "/content/case-studies/touraloha.yaml": [
+    "/content/case-studies/touraloha.yaml",
+    "/content/strings/case-studies.yaml",
+    "/content/strings/links.yaml",
+    "/content/strings/strings.yaml",
+    "/content/strings/touraloha.yaml",
+    "/static/favicon.png",
+    "/static/images/mikekingio_screenshot.png",
+    "/static/style.css"
+  ],
+  "/content/pages/about.yaml": [
+    "/content/pages/about.yaml",
+    "/content/strings/links.yaml",
+    "/content/strings/strings.yaml",
+    "/static/favicon.png",
+    "/static/images/mikekingio_screenshot.png",
+    "/static/style.css"
+  ],
+  "/content/pages/contact.yaml": [
+    "/content/pages/contact.yaml",
+    "/content/strings/strings.yaml",
+    "/static/favicon.png",
+    "/static/images/mikekingio_screenshot.png",
+    "/static/style.css"
+  ],
+  "/content/pages/home.yaml": [
+    "/content/pages/home.yaml",
+    "/content/strings/case-studies.yaml",
+    "/content/strings/strings.yaml",
+    "/static/favicon.png",
+    "/static/images/mikekingio_screenshot.png",
+    "/static/style.css"
+  ]
+}

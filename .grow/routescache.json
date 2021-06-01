@@ -1,0 +1,2657 @@
+{
+  "concrete": {
+    "null": {
+      "/": {
+        "options": {},
+        "value": {
+          "hashed": "06eb702fee6509daa34ce7e4f8a22a9c5723bd45d711c485d09fb3ca73eb5dbc",
+          "kind": "doc",
+          "meta": {
+            "collection_path": "/content/pages",
+            "locale": "en",
+            "pod_path": "/content/pages/home.yaml"
+          },
+          "pod_path": "/content/pages/home.yaml"
+        }
+      },
+      "/CNAME": {
+        "options": null,
+        "value": {
+          "hashed": "f21844d7d61cf2ff2a73dfd91a2d19e4129912a3a8928d9596c24364c2655271",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/CNAME",
+            "static_filter": {}
+          },
+          "pod_path": "/static/CNAME"
+        }
+      },
+      "/README.md": {
+        "options": null,
+        "value": {
+          "hashed": "30b531e7b645061d9f3b2ddc2f6c49361040aec20da0a1c9ef55581fbddab7cf",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/README.md",
+            "static_filter": {}
+          },
+          "pod_path": "/static/README.md"
+        }
+      },
+      "/about/": {
+        "options": {},
+        "value": {
+          "hashed": "1fb0585f5368edf4d9399db8a312473ae914f05e0fc759286c1b5ee14d172da3",
+          "kind": "doc",
+          "meta": {
+            "collection_path": "/content/pages",
+            "locale": "en",
+            "pod_path": "/content/pages/about.yaml"
+          },
+          "pod_path": "/content/pages/about.yaml"
+        }
+      },
+      "/case-study/clearstream/": {
+        "options": {},
+        "value": {
+          "hashed": "e951230623b6613f4cd18ffcc6b392a4560b6c035f9baa46bb742a58eff1a789",
+          "kind": "doc",
+          "meta": {
+            "collection_path": "/content/case-studies",
+            "locale": "en",
+            "pod_path": "/content/case-studies/clearstream.yaml"
+          },
+          "pod_path": "/content/case-studies/clearstream.yaml"
+        }
+      },
+      "/case-study/gohawaii/": {
+        "options": {},
+        "value": {
+          "hashed": "2ccdcf142769e73a5e82f3c6d9efd327febb2c60f505db33155eabe607ed7b50",
+          "kind": "doc",
+          "meta": {
+            "collection_path": "/content/case-studies",
+            "locale": "en",
+            "pod_path": "/content/case-studies/gohawaii.yaml"
+          },
+          "pod_path": "/content/case-studies/gohawaii.yaml"
+        }
+      },
+      "/case-study/mobipcs/": {
+        "options": {},
+        "value": {
+          "hashed": "a91953e8deabc115fd8acd673f0b35d3784d4aee3f83464e9b2cdb79addac684",
+          "kind": "doc",
+          "meta": {
+            "collection_path": "/content/case-studies",
+            "locale": "en",
+            "pod_path": "/content/case-studies/mobipcs.yaml"
+          },
+          "pod_path": "/content/case-studies/mobipcs.yaml"
+        }
+      },
+      "/case-study/teacup-analytics/": {
+        "options": {},
+        "value": {
+          "hashed": "258c9ed0167b85b59c502bffcd7b6f982887ff24425eca6f1b37994bc5ba11d7",
+          "kind": "doc",
+          "meta": {
+            "collection_path": "/content/case-studies",
+            "locale": "en",
+            "pod_path": "/content/case-studies/teacupanalytics.yaml"
+          },
+          "pod_path": "/content/case-studies/teacupanalytics.yaml"
+        }
+      },
+      "/case-study/tour-aloha/": {
+        "options": {},
+        "value": {
+          "hashed": "3ba8e6abb3d31053d80593d6c130c6f8268697a3af0a70a13f73cffb8151a8a5",
+          "kind": "doc",
+          "meta": {
+            "collection_path": "/content/case-studies",
+            "locale": "en",
+            "pod_path": "/content/case-studies/touraloha.yaml"
+          },
+          "pod_path": "/content/case-studies/touraloha.yaml"
+        }
+      },
+      "/contact/": {
+        "options": {},
+        "value": {
+          "hashed": "0f04c20ddcf5d8a578610ced8bd80f8cb7637ad3af4630d4b0236268970a8b4b",
+          "kind": "doc",
+          "meta": {
+            "collection_path": "/content/pages",
+            "locale": "en",
+            "pod_path": "/content/pages/contact.yaml"
+          },
+          "pod_path": "/content/pages/contact.yaml"
+        }
+      },
+      "/favicon.png": {
+        "options": null,
+        "value": {
+          "hashed": "828c03ddfb6ecc3e7c74523e149a0a6e760b8538456389f4684fa5b801e949e9",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/favicon.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/favicon.png"
+        }
+      },
+      "/images/case-studies/case-study-tile__clearstream.png": {
+        "options": null,
+        "value": {
+          "hashed": "694cb4837734542c202ed1ad84825b08a6db4ba776d061f2ba31a199c9fd0d58",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/case-study-tile__clearstream.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/case-study-tile__clearstream.png"
+        }
+      },
+      "/images/case-studies/case-study-tile__gohawaii.png": {
+        "options": null,
+        "value": {
+          "hashed": "17b28251eb7b358fde7fa1e68966ada5dfe27c61f21be7efe31d57a6ceeae907",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/case-study-tile__gohawaii.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/case-study-tile__gohawaii.png"
+        }
+      },
+      "/images/case-studies/case-study-tile__mobipcs.png": {
+        "options": null,
+        "value": {
+          "hashed": "d74df47fb8f5c861e13e46f53871192f3e51a136a5eb8aab81aa5090447ee792",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/case-study-tile__mobipcs.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/case-study-tile__mobipcs.png"
+        }
+      },
+      "/images/case-studies/case-study-tile__teacup-analytics.png": {
+        "options": null,
+        "value": {
+          "hashed": "f37258d284021774ae88cb096bb659976ee6db5d5de16b147fda3d34bad2f5c8",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/case-study-tile__teacup-analytics.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/case-study-tile__teacup-analytics.png"
+        }
+      },
+      "/images/case-studies/case-study-tile__tour-aloha.png": {
+        "options": null,
+        "value": {
+          "hashed": "fa87969ce10cc947bd5b38876f54ecea2ff15bbf78f727f61acef32e9124e124",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/case-study-tile__tour-aloha.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/case-study-tile__tour-aloha.png"
+        }
+      },
+      "/images/case-studies/clearstream/clearstream_animation-background.png": {
+        "options": null,
+        "value": {
+          "hashed": "a7b3c6fb496d215448d6d35a3f1571c0c4ab076ba5f4cd68eddb32f751039629",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/clearstream/clearstream_animation-background.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/clearstream/clearstream_animation-background.png"
+        }
+      },
+      "/images/case-studies/clearstream/clearstream_animation_item-1.png": {
+        "options": null,
+        "value": {
+          "hashed": "ba927b12660080b0fa7295a5d107d71a9504021ffb8b1cd960ee00bf184f2313",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/clearstream/clearstream_animation_item-1.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/clearstream/clearstream_animation_item-1.png"
+        }
+      },
+      "/images/case-studies/clearstream/clearstream_animation_item-2.png": {
+        "options": null,
+        "value": {
+          "hashed": "c29c3e037c4239113ea2389d0d5e92286a70a38460121f5406a750f0b70fb6a3",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/clearstream/clearstream_animation_item-2.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/clearstream/clearstream_animation_item-2.png"
+        }
+      },
+      "/images/case-studies/clearstream/clearstream_animation_item-3.png": {
+        "options": null,
+        "value": {
+          "hashed": "b9b60ce1ba5110746b29a24ed77e0ee9d84f296d39415057567fbb8cf1aaa373",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/clearstream/clearstream_animation_item-3.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/clearstream/clearstream_animation_item-3.png"
+        }
+      },
+      "/images/case-studies/clearstream/clearstream_arrow.png": {
+        "options": null,
+        "value": {
+          "hashed": "517b61a1452cb7303f1a64025eecb02080ec527f24fe60e102f494572d132d09",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/clearstream/clearstream_arrow.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/clearstream/clearstream_arrow.png"
+        }
+      },
+      "/images/case-studies/clearstream/clearstream_contained-background.png": {
+        "options": null,
+        "value": {
+          "hashed": "a660210905951abe44b15c1514403812ec4d450fa0675e4949751b9707c6e3b6",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/clearstream/clearstream_contained-background.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/clearstream/clearstream_contained-background.png"
+        }
+      },
+      "/images/case-studies/clearstream/clearstream_full-background.png": {
+        "options": null,
+        "value": {
+          "hashed": "09430288051e6b36139abad942c08a4f86eb4a30253284c761b34e4ceb7ceac6",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/clearstream/clearstream_full-background.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/clearstream/clearstream_full-background.png"
+        }
+      },
+      "/images/case-studies/clearstream/clearstream_graphic.png": {
+        "options": null,
+        "value": {
+          "hashed": "25c92e65d6fc317a9bcb3184d9c0ca8a2f618361a801a7e71468863590715c2a",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/clearstream/clearstream_graphic.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/clearstream/clearstream_graphic.png"
+        }
+      },
+      "/images/case-studies/clearstream/clearstream_header-background.png": {
+        "options": null,
+        "value": {
+          "hashed": "7abcc9521006f1e77cf86baa96222df84b06e32d7823544a8f9735fb6d8ab598",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/clearstream/clearstream_header-background.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/clearstream/clearstream_header-background.png"
+        }
+      },
+      "/images/case-studies/clearstream/clearstream_process_discovery_1.png": {
+        "options": null,
+        "value": {
+          "hashed": "be825ef26c877b1923adafc240c694f0b2f726f5852fafdf1165a761ad74c0b6",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/clearstream/clearstream_process_discovery_1.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/clearstream/clearstream_process_discovery_1.png"
+        }
+      },
+      "/images/case-studies/clearstream/clearstream_process_discovery_2.png": {
+        "options": null,
+        "value": {
+          "hashed": "7b1661bced2c84edc7fcce1bd5b6f4b1412de5f9b09ca2cf817193d3adab92ba",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/clearstream/clearstream_process_discovery_2.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/clearstream/clearstream_process_discovery_2.png"
+        }
+      },
+      "/images/case-studies/clearstream/clearstream_process_discovery_3.png": {
+        "options": null,
+        "value": {
+          "hashed": "675ca2b3fd11dcdb4dd1be4dcc58524ffa7d5e115fae055c8b186a9e2ac1a701",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/clearstream/clearstream_process_discovery_3.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/clearstream/clearstream_process_discovery_3.png"
+        }
+      },
+      "/images/case-studies/clearstream/clearstream_process_fe_1.png": {
+        "options": null,
+        "value": {
+          "hashed": "c84d6953db4840b804e705d160b5f2afa6e6c491435e52e42d02e77d18bb22da",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/clearstream/clearstream_process_fe_1.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/clearstream/clearstream_process_fe_1.png"
+        }
+      },
+      "/images/case-studies/clearstream/clearstream_process_fe_2.png": {
+        "options": null,
+        "value": {
+          "hashed": "c156f04e239a2253754b1231918c6b1400a5993a8c4462d9f03a13dd3f60576f",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/clearstream/clearstream_process_fe_2.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/clearstream/clearstream_process_fe_2.png"
+        }
+      },
+      "/images/case-studies/clearstream/clearstream_process_ia_1.png": {
+        "options": null,
+        "value": {
+          "hashed": "c0e2005e73d2971456bd2114c909671eb04e47a296c38c5f7b88593c21bab99e",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/clearstream/clearstream_process_ia_1.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/clearstream/clearstream_process_ia_1.png"
+        }
+      },
+      "/images/case-studies/clearstream/clearstream_process_ia_2.png": {
+        "options": null,
+        "value": {
+          "hashed": "cb4eee2221b813299bbbaffe26188b49c8fce988240fac0aff7918631fe0a573",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/clearstream/clearstream_process_ia_2.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/clearstream/clearstream_process_ia_2.png"
+        }
+      },
+      "/images/case-studies/clearstream/clearstream_process_ia_3.png": {
+        "options": null,
+        "value": {
+          "hashed": "77e247e34f3ef0b4f6e28b55a4d22052bec31053102957d74a8153522aa17f72",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/clearstream/clearstream_process_ia_3.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/clearstream/clearstream_process_ia_3.png"
+        }
+      },
+      "/images/case-studies/clearstream/clearstream_reporting-graph.png": {
+        "options": null,
+        "value": {
+          "hashed": "674b1a7999a1305559f8e5fb93ef05d5dd4a9324aa6cb9e13d3c1c6fb96a9074",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/clearstream/clearstream_reporting-graph.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/clearstream/clearstream_reporting-graph.png"
+        }
+      },
+      "/images/case-studies/clearstream/clearstream_slideshow--laptop-bg.png": {
+        "options": null,
+        "value": {
+          "hashed": "e2f83bc11ae3deb5585fcda754f2dc7c00639f7f8d8620240f1b2920d3752a65",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/clearstream/clearstream_slideshow--laptop-bg.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/clearstream/clearstream_slideshow--laptop-bg.png"
+        }
+      },
+      "/images/case-studies/common/case-study-header-mask.svg": {
+        "options": null,
+        "value": {
+          "hashed": "be5d29cb1e54b891d97bbc6b764ede11a225182a5c46a100aeda190224d76021",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/common/case-study-header-mask.svg",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/common/case-study-header-mask.svg"
+        }
+      },
+      "/images/case-studies/common/case-study-process-mask.svg": {
+        "options": null,
+        "value": {
+          "hashed": "5049547d1a813971229bd33afce0315d58fa00f8399f1d0dbc958232114c8fea",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/common/case-study-process-mask.svg",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/common/case-study-process-mask.svg"
+        }
+      },
+      "/images/case-studies/gohawaii/gohawaii_animation_item-1.png": {
+        "options": null,
+        "value": {
+          "hashed": "962854601d64dbef5d17fedddd851aad0a2d3d06c667ac874405a8fd5cc40449",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/gohawaii/gohawaii_animation_item-1.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/gohawaii/gohawaii_animation_item-1.png"
+        }
+      },
+      "/images/case-studies/gohawaii/gohawaii_animation_item-2.png": {
+        "options": null,
+        "value": {
+          "hashed": "c22d6c3f17b7fa88cce64fcefbceaf5ac9b6957de0813c1247a6f25102c7bff5",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/gohawaii/gohawaii_animation_item-2.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/gohawaii/gohawaii_animation_item-2.png"
+        }
+      },
+      "/images/case-studies/gohawaii/gohawaii_animation_item-3.png": {
+        "options": null,
+        "value": {
+          "hashed": "cf4d27ea22b917807b02a721b126397ad672e97c3f867ac06cd9755ac4680a0a",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/gohawaii/gohawaii_animation_item-3.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/gohawaii/gohawaii_animation_item-3.png"
+        }
+      },
+      "/images/case-studies/gohawaii/gohawaii_badge-airport.png": {
+        "options": null,
+        "value": {
+          "hashed": "cea67eef1c3b075fafd892c97aa296e344507ecb18b86a5f96c371c61b0252ac",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/gohawaii/gohawaii_badge-airport.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/gohawaii/gohawaii_badge-airport.png"
+        }
+      },
+      "/images/case-studies/gohawaii/gohawaii_badge-marine.png": {
+        "options": null,
+        "value": {
+          "hashed": "2127e28de2651038fc9ce55c9d8214decadc21d3267d999af1f54c49bf76530d",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/gohawaii/gohawaii_badge-marine.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/gohawaii/gohawaii_badge-marine.png"
+        }
+      },
+      "/images/case-studies/gohawaii/gohawaii_badge-ocean.png": {
+        "options": null,
+        "value": {
+          "hashed": "8173fb4990284841ab445a5a874d28710c83b552bf9cc51166359ad5ac2bd010",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/gohawaii/gohawaii_badge-ocean.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/gohawaii/gohawaii_badge-ocean.png"
+        }
+      },
+      "/images/case-studies/gohawaii/gohawaii_contained-background.png": {
+        "options": null,
+        "value": {
+          "hashed": "8140ff4c03fef320da894b28ca1dce98377fbae4cb703a4eb633371ba42ec282",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/gohawaii/gohawaii_contained-background.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/gohawaii/gohawaii_contained-background.png"
+        }
+      },
+      "/images/case-studies/gohawaii/gohawaii_full-background.png": {
+        "options": null,
+        "value": {
+          "hashed": "022eaa97d8ea9a1f7051f6c44d2e7e80ce6fee9c2a45ad4e5b27cad94e1f2a5c",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/gohawaii/gohawaii_full-background.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/gohawaii/gohawaii_full-background.png"
+        }
+      },
+      "/images/case-studies/gohawaii/gohawaii_graphic.png": {
+        "options": null,
+        "value": {
+          "hashed": "def00e43c927d0977d89b7eebab0cf8af52080dd2bc3aec6a35f0dcc980b19b4",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/gohawaii/gohawaii_graphic.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/gohawaii/gohawaii_graphic.png"
+        }
+      },
+      "/images/case-studies/gohawaii/gohawaii_header-background.png": {
+        "options": null,
+        "value": {
+          "hashed": "ed58d0de1f1549212bbf0b825d7946341bfc827af900ddd3134260b37270ca28",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/gohawaii/gohawaii_header-background.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/gohawaii/gohawaii_header-background.png"
+        }
+      },
+      "/images/case-studies/gohawaii/gohawaii_monsterra-leaf.svg": {
+        "options": null,
+        "value": {
+          "hashed": "0297a6abc042f48c5151fb99de20b682c6f51aecd94cc90820daa265a2dc54fe",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/gohawaii/gohawaii_monsterra-leaf.svg",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/gohawaii/gohawaii_monsterra-leaf.svg"
+        }
+      },
+      "/images/case-studies/gohawaii/gohawaii_process_creative_1.png": {
+        "options": null,
+        "value": {
+          "hashed": "4ed4ce7c84e1a8f8baddccfcde9b87828c3831b0e4f71ff77556f353d9b59852",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/gohawaii/gohawaii_process_creative_1.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/gohawaii/gohawaii_process_creative_1.png"
+        }
+      },
+      "/images/case-studies/gohawaii/gohawaii_process_creative_2.png": {
+        "options": null,
+        "value": {
+          "hashed": "85d6a8b618b881ef548a45f8a51526eceb7b41add2d9fc93b8a4126226f0f17d",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/gohawaii/gohawaii_process_creative_2.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/gohawaii/gohawaii_process_creative_2.png"
+        }
+      },
+      "/images/case-studies/gohawaii/gohawaii_process_creative_3.png": {
+        "options": null,
+        "value": {
+          "hashed": "73b1133d85028e58e77293690fc6d74d2cb3d31639b3734fb05322b3ea42d134",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/gohawaii/gohawaii_process_creative_3.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/gohawaii/gohawaii_process_creative_3.png"
+        }
+      },
+      "/images/case-studies/gohawaii/gohawaii_process_discovery_1.png": {
+        "options": null,
+        "value": {
+          "hashed": "c383ffeb496d3ed99aaced40b6dad67c587e8ea9d929fac8ae7f9349191e915b",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/gohawaii/gohawaii_process_discovery_1.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/gohawaii/gohawaii_process_discovery_1.png"
+        }
+      },
+      "/images/case-studies/gohawaii/gohawaii_process_discovery_2.png": {
+        "options": null,
+        "value": {
+          "hashed": "8c29697774cc424bc8288bb7eafc12bb69675d7523ea1dad34b8d77cf3c94607",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/gohawaii/gohawaii_process_discovery_2.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/gohawaii/gohawaii_process_discovery_2.png"
+        }
+      },
+      "/images/case-studies/gohawaii/gohawaii_process_discovery_3.png": {
+        "options": null,
+        "value": {
+          "hashed": "0b0b0cf24a4bddf1b97bd17839749cc9e5f136607e083cd9aa9e8261b5d6dd55",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/gohawaii/gohawaii_process_discovery_3.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/gohawaii/gohawaii_process_discovery_3.png"
+        }
+      },
+      "/images/case-studies/gohawaii/gohawaii_process_engineering.png": {
+        "options": null,
+        "value": {
+          "hashed": "e719b8b32e6813b3162cd46530a8434c2ec8e938f55696337e949ae2a59cb015",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/gohawaii/gohawaii_process_engineering.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/gohawaii/gohawaii_process_engineering.png"
+        }
+      },
+      "/images/case-studies/gohawaii/gohawaii_process_ia_1.png": {
+        "options": null,
+        "value": {
+          "hashed": "641aa3216a18bee9096ebac62349d8bf70646c4ddd3a311b353df948e0ce642b",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/gohawaii/gohawaii_process_ia_1.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/gohawaii/gohawaii_process_ia_1.png"
+        }
+      },
+      "/images/case-studies/gohawaii/gohawaii_process_ia_2.png": {
+        "options": null,
+        "value": {
+          "hashed": "233f3faa17c2138f2f9d83d34c7fc94fa0be83bed2d09af99607446e9d042196",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/gohawaii/gohawaii_process_ia_2.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/gohawaii/gohawaii_process_ia_2.png"
+        }
+      },
+      "/images/case-studies/gohawaii/gohawaii_slideshow--mobile-bg.png": {
+        "options": null,
+        "value": {
+          "hashed": "94892f7907e4ae81e92c10511b6f2ee437afd4092651e88922d5831ea0f2a1cc",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/gohawaii/gohawaii_slideshow--mobile-bg.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/gohawaii/gohawaii_slideshow--mobile-bg.png"
+        }
+      },
+      "/images/case-studies/mobipcs/mobipcs_animation-background.png": {
+        "options": null,
+        "value": {
+          "hashed": "9eebe2614edae8977b77842b75bcfc2452ea9f8bfa0d3aac147260ad5f2eb728",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/mobipcs/mobipcs_animation-background.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/mobipcs/mobipcs_animation-background.png"
+        }
+      },
+      "/images/case-studies/mobipcs/mobipcs_contained-background.png": {
+        "options": null,
+        "value": {
+          "hashed": "258f680292c9301007a5e977b60305a98196d40ac91117f441416db26854db24",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/mobipcs/mobipcs_contained-background.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/mobipcs/mobipcs_contained-background.png"
+        }
+      },
+      "/images/case-studies/mobipcs/mobipcs_devices.png": {
+        "options": null,
+        "value": {
+          "hashed": "48281070dbcecd3fc68bb4bb87bde20fedc20f0bc2a9aa765f9f6204f5c93e48",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/mobipcs/mobipcs_devices.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/mobipcs/mobipcs_devices.png"
+        }
+      },
+      "/images/case-studies/mobipcs/mobipcs_full-background.png": {
+        "options": null,
+        "value": {
+          "hashed": "7db557262484e1d73a5445bb9cd4a8dbdf71ab57caa0d406ad97642a543d0b41",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/mobipcs/mobipcs_full-background.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/mobipcs/mobipcs_full-background.png"
+        }
+      },
+      "/images/case-studies/mobipcs/mobipcs_graphic--large.png": {
+        "options": null,
+        "value": {
+          "hashed": "16257df9f0b69e5a90b04d4eba3cdf6d2c18ddde4446c019be616696e2dac42c",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/mobipcs/mobipcs_graphic--large.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/mobipcs/mobipcs_graphic--large.png"
+        }
+      },
+      "/images/case-studies/mobipcs/mobipcs_graphic.png": {
+        "options": null,
+        "value": {
+          "hashed": "102c219e15283304a1b059a55b0bde7c4c62bd0252f664a1964f782f12eb89fc",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/mobipcs/mobipcs_graphic.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/mobipcs/mobipcs_graphic.png"
+        }
+      },
+      "/images/case-studies/mobipcs/mobipcs_header-background.png": {
+        "options": null,
+        "value": {
+          "hashed": "5e5229d6b6ee4939d52a9e3ea7c49f004cf068b95b6bb580f3bbfa581741b236",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/mobipcs/mobipcs_header-background.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/mobipcs/mobipcs_header-background.png"
+        }
+      },
+      "/images/case-studies/mobipcs/mobipcs_process_discovery_1.png": {
+        "options": null,
+        "value": {
+          "hashed": "35981a9f35291b47c7e257cb50f4a8c470c9e50e7c3998b780fb9fc1bf7bfde3",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/mobipcs/mobipcs_process_discovery_1.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/mobipcs/mobipcs_process_discovery_1.png"
+        }
+      },
+      "/images/case-studies/mobipcs/mobipcs_process_discovery_2.png": {
+        "options": null,
+        "value": {
+          "hashed": "43f864287679a7200226098829db67ebb0fa494fdbe3a4982fb7fef09d13f187",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/mobipcs/mobipcs_process_discovery_2.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/mobipcs/mobipcs_process_discovery_2.png"
+        }
+      },
+      "/images/case-studies/mobipcs/mobipcs_process_discovery_3.png": {
+        "options": null,
+        "value": {
+          "hashed": "136f187a0bbdb52e8bf081cbf26838234b0161e480c9b1261f4b4c5489732130",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/mobipcs/mobipcs_process_discovery_3.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/mobipcs/mobipcs_process_discovery_3.png"
+        }
+      },
+      "/images/case-studies/mobipcs/mobipcs_process_fe_1.png": {
+        "options": null,
+        "value": {
+          "hashed": "b23f21838d9640932b1859d669841936e43f7619191a6f5e71a746bb52ca586f",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/mobipcs/mobipcs_process_fe_1.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/mobipcs/mobipcs_process_fe_1.png"
+        }
+      },
+      "/images/case-studies/mobipcs/mobipcs_process_fe_2.png": {
+        "options": null,
+        "value": {
+          "hashed": "1e40fe94a3d67c3ef4c54c537519495f913ca2d9f4f708640c10ef3fd9110df9",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/mobipcs/mobipcs_process_fe_2.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/mobipcs/mobipcs_process_fe_2.png"
+        }
+      },
+      "/images/case-studies/mobipcs/mobipcs_process_ia_1.png": {
+        "options": null,
+        "value": {
+          "hashed": "13cd257fb263e83228e4937c9b671f007432acf5e7bbde9ba633b02858354078",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/mobipcs/mobipcs_process_ia_1.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/mobipcs/mobipcs_process_ia_1.png"
+        }
+      },
+      "/images/case-studies/mobipcs/mobipcs_slideshow--mobile-bg.png": {
+        "options": null,
+        "value": {
+          "hashed": "38813e18fb3f819bae866c24ecdece741abbfb3e11592a1b75271c2b8aed25b2",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/mobipcs/mobipcs_slideshow--mobile-bg.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/mobipcs/mobipcs_slideshow--mobile-bg.png"
+        }
+      },
+      "/images/case-studies/teacup/teacup_animation_item-1.png": {
+        "options": null,
+        "value": {
+          "hashed": "f5d84ab070d3667a0435c2348e4dde7fc884bb86a3c2e713a696e5b2c77375cd",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/teacup/teacup_animation_item-1.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/teacup/teacup_animation_item-1.png"
+        }
+      },
+      "/images/case-studies/teacup/teacup_animation_item-2.png": {
+        "options": null,
+        "value": {
+          "hashed": "a967616ee5a579bf28b5701a656432a3587b6deefe12e8677096c92cbc0b90dd",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/teacup/teacup_animation_item-2.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/teacup/teacup_animation_item-2.png"
+        }
+      },
+      "/images/case-studies/teacup/teacup_animation_item-3.png": {
+        "options": null,
+        "value": {
+          "hashed": "539e1e06cd843caaf2e35eedff0ea15a2456aec4fe6b87872a483b81025f6711",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/teacup/teacup_animation_item-3.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/teacup/teacup_animation_item-3.png"
+        }
+      },
+      "/images/case-studies/teacup/teacup_animation_item-4.png": {
+        "options": null,
+        "value": {
+          "hashed": "9ea650bb54cf232919bb096c8a5d0ebd9eea1c231b502b38504d992dd28325b5",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/teacup/teacup_animation_item-4.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/teacup/teacup_animation_item-4.png"
+        }
+      },
+      "/images/case-studies/teacup/teacup_badge-1.png": {
+        "options": null,
+        "value": {
+          "hashed": "ef47a0e8c90330c2a0e46fe2de3cde9bebbd9180ce2698a9883d2e39841743f9",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/teacup/teacup_badge-1.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/teacup/teacup_badge-1.png"
+        }
+      },
+      "/images/case-studies/teacup/teacup_badge-2.png": {
+        "options": null,
+        "value": {
+          "hashed": "fa35ad075d74765130f6d5076f4a59dbb1e0485e442985e0f58b72ea9b2aa56f",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/teacup/teacup_badge-2.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/teacup/teacup_badge-2.png"
+        }
+      },
+      "/images/case-studies/teacup/teacup_badge-3.png": {
+        "options": null,
+        "value": {
+          "hashed": "93c38a2b264aba34e44f60087e03d807b746bee9f36a5088ae912ea122cb2cea",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/teacup/teacup_badge-3.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/teacup/teacup_badge-3.png"
+        }
+      },
+      "/images/case-studies/teacup/teacup_contained-background.png": {
+        "options": null,
+        "value": {
+          "hashed": "b7b9d6eddf17f8410b15a30392f38037824f6bfb79ce8990bd419b1242364982",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/teacup/teacup_contained-background.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/teacup/teacup_contained-background.png"
+        }
+      },
+      "/images/case-studies/teacup/teacup_full-background.png": {
+        "options": null,
+        "value": {
+          "hashed": "7fed828b30894b2526a8d83752519daa266248a4680277237fe1ec48fb0873a7",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/teacup/teacup_full-background.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/teacup/teacup_full-background.png"
+        }
+      },
+      "/images/case-studies/teacup/teacup_graphic.png": {
+        "options": null,
+        "value": {
+          "hashed": "0e5766d702f12865e9a64b370634f36459ca3e5d6b73f9e4b6085be7d8e774ea",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/teacup/teacup_graphic.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/teacup/teacup_graphic.png"
+        }
+      },
+      "/images/case-studies/teacup/teacup_header-background.png": {
+        "options": null,
+        "value": {
+          "hashed": "fdb70d82c2d57649032cbcb8d551af8cc4ced8ec706a64df6d38bb332b315d83",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/teacup/teacup_header-background.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/teacup/teacup_header-background.png"
+        }
+      },
+      "/images/case-studies/teacup/teacup_process_discovery_1.png": {
+        "options": null,
+        "value": {
+          "hashed": "aed244da55db815722b7fb451d5ddddd534df505020ffc8e205c0a9c8732ccf9",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/teacup/teacup_process_discovery_1.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/teacup/teacup_process_discovery_1.png"
+        }
+      },
+      "/images/case-studies/teacup/teacup_process_discovery_2.png": {
+        "options": null,
+        "value": {
+          "hashed": "f7bcd332b30408b9b9c8133948775d648261a032c2abf6da1522c23b4b5299b5",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/teacup/teacup_process_discovery_2.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/teacup/teacup_process_discovery_2.png"
+        }
+      },
+      "/images/case-studies/teacup/teacup_process_discovery_3.png": {
+        "options": null,
+        "value": {
+          "hashed": "cb7f1701e3718964554120910c5b6e3c9f33c96f2e3311f0f875999210d982f6",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/teacup/teacup_process_discovery_3.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/teacup/teacup_process_discovery_3.png"
+        }
+      },
+      "/images/case-studies/teacup/teacup_process_ia_1.png": {
+        "options": null,
+        "value": {
+          "hashed": "863e9b5db5c5f590bbf64272fbdf7a50751762ed1af072a90f39f057be29107a",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/teacup/teacup_process_ia_1.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/teacup/teacup_process_ia_1.png"
+        }
+      },
+      "/images/case-studies/teacup/teacup_process_ia_2.png": {
+        "options": null,
+        "value": {
+          "hashed": "c573a5705492635ddb535ad6048e1625137e65c913c2cae1c308a07fa17e29c3",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/teacup/teacup_process_ia_2.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/teacup/teacup_process_ia_2.png"
+        }
+      },
+      "/images/case-studies/teacup/teacup_slideshow--laptop-bg.png": {
+        "options": null,
+        "value": {
+          "hashed": "cdb941f34fb36eff1a0dde16af6a45286f6c84d07d42aaa564d183f7a433bfe7",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/teacup/teacup_slideshow--laptop-bg.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/teacup/teacup_slideshow--laptop-bg.png"
+        }
+      },
+      "/images/case-studies/teacup/teacup_teapot.svg": {
+        "options": null,
+        "value": {
+          "hashed": "9a8d2b63b937d24a69d418394ce132c72240445dc04e88d362c7960df84f51d8",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/teacup/teacup_teapot.svg",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/teacup/teacup_teapot.svg"
+        }
+      },
+      "/images/case-studies/touraloha/touraloha_animation-background.png": {
+        "options": null,
+        "value": {
+          "hashed": "cbf19616cbc804a172c5eeb984f2f4497f3c3e257336a48caf65d9a31a41bf2f",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/touraloha/touraloha_animation-background.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/touraloha/touraloha_animation-background.png"
+        }
+      },
+      "/images/case-studies/touraloha/touraloha_animation-map-marker.svg": {
+        "options": null,
+        "value": {
+          "hashed": "9190f39b8f6058de6630b30e28d3cfb9b91326bc3894facda616d743b94a010b",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/touraloha/touraloha_animation-map-marker.svg"
+        }
+      },
+      "/images/case-studies/touraloha/touraloha_animation-map-popup.png": {
+        "options": null,
+        "value": {
+          "hashed": "572a7ab345b81244c2c01b72b82229a7753d34139012845abd00b939f5c444dd",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/touraloha/touraloha_animation-map-popup.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/touraloha/touraloha_animation-map-popup.png"
+        }
+      },
+      "/images/case-studies/touraloha/touraloha_contained-background.png": {
+        "options": null,
+        "value": {
+          "hashed": "b007650554bdb99500e0475a0027b4d1dfeda08e49d65e14315a12c8951233b2",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/touraloha/touraloha_contained-background.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/touraloha/touraloha_contained-background.png"
+        }
+      },
+      "/images/case-studies/touraloha/touraloha_full-background.png": {
+        "options": null,
+        "value": {
+          "hashed": "53fce706c4441d36b0cb081f8c5e249722194ea25ccfec36bfe521e4e7bb8292",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/touraloha/touraloha_full-background.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/touraloha/touraloha_full-background.png"
+        }
+      },
+      "/images/case-studies/touraloha/touraloha_graphic.svg": {
+        "options": null,
+        "value": {
+          "hashed": "9af7dc044eac541be13297f8ed0eb09439550e4b052d13e31a46287b21518442",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/touraloha/touraloha_graphic.svg",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/touraloha/touraloha_graphic.svg"
+        }
+      },
+      "/images/case-studies/touraloha/touraloha_header-background.png": {
+        "options": null,
+        "value": {
+          "hashed": "49d20ca20c31edb57bedf27ddcf8714e5372dedccd775c59b2a6e18891992d40",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/touraloha/touraloha_header-background.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/touraloha/touraloha_header-background.png"
+        }
+      },
+      "/images/case-studies/touraloha/touraloha_laurenbrunner-photo.png": {
+        "options": null,
+        "value": {
+          "hashed": "2f6f239fb9947408a15ea8a8f65761c5ea33828016df4246ebab4d922de1e405",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/touraloha/touraloha_laurenbrunner-photo.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/touraloha/touraloha_laurenbrunner-photo.png"
+        }
+      },
+      "/images/case-studies/touraloha/touraloha_map-marker.svg": {
+        "options": null,
+        "value": {
+          "hashed": "44a353ef37b7642f29f2d70aa26aeca1bd9913755448032ed6e5eedeb605a6b3",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/touraloha/touraloha_map-marker.svg",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/touraloha/touraloha_map-marker.svg"
+        }
+      },
+      "/images/case-studies/touraloha/touraloha_process_discovery_1.png": {
+        "options": null,
+        "value": {
+          "hashed": "3896242d00b494529c56f434823e41ef033752fa3bca26de336c39fdbf3fdc0a",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/touraloha/touraloha_process_discovery_1.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/touraloha/touraloha_process_discovery_1.png"
+        }
+      },
+      "/images/case-studies/touraloha/touraloha_process_discovery_2.png": {
+        "options": null,
+        "value": {
+          "hashed": "1a59412090e03aacf690d3b50d627705ac6009303b20ef1d4bb9daf5059a928a",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/touraloha/touraloha_process_discovery_2.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/touraloha/touraloha_process_discovery_2.png"
+        }
+      },
+      "/images/case-studies/touraloha/touraloha_process_discovery_3.png": {
+        "options": null,
+        "value": {
+          "hashed": "04a4caa3c83541be974b058eeeda70f83826884fb5060e797b4e95906c5d3b48",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/touraloha/touraloha_process_discovery_3.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/touraloha/touraloha_process_discovery_3.png"
+        }
+      },
+      "/images/case-studies/touraloha/touraloha_process_ia_1.png": {
+        "options": null,
+        "value": {
+          "hashed": "c00a9bc8e13b46982951c41273c755c5843762f11dac5e381b6b442f888dcf75",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/touraloha/touraloha_process_ia_1.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/touraloha/touraloha_process_ia_1.png"
+        }
+      },
+      "/images/case-studies/touraloha/touraloha_process_ia_2.png": {
+        "options": null,
+        "value": {
+          "hashed": "9a2f063bfddb8f1902e40448c2f3367362adc01ee9203b5e3dff000c5599e534",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/touraloha/touraloha_process_ia_2.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/touraloha/touraloha_process_ia_2.png"
+        }
+      },
+      "/images/case-studies/touraloha/touraloha_process_pm.png": {
+        "options": null,
+        "value": {
+          "hashed": "cc334245d694898f28d11824fdde034600b2197e09852f44a9dc9e11069262db",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/touraloha/touraloha_process_pm.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/touraloha/touraloha_process_pm.png"
+        }
+      },
+      "/images/case-studies/touraloha/touraloha_slideshow--mobile-bg.png": {
+        "options": null,
+        "value": {
+          "hashed": "0ee80bbd1b9f31e1e8fbfc8a71d8047ccee6c072dcc8862af6ae3f15d73bed6e",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/case-studies/touraloha/touraloha_slideshow--mobile-bg.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/case-studies/touraloha/touraloha_slideshow--mobile-bg.png"
+        }
+      },
+      "/images/close-icon.svg": {
+        "options": null,
+        "value": {
+          "hashed": "3df04dee1839d87008226f600e916567cf2ff3d615f9cdadaa87e502f9d3b936",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/close-icon.svg",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/close-icon.svg"
+        }
+      },
+      "/images/hamburger-menu-icon.svg": {
+        "options": null,
+        "value": {
+          "hashed": "c68320f7e9d92da1296ea952b9e3abefaa365b679d2a5f9a0f1b944807974fa4",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/hamburger-menu-icon.svg",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/hamburger-menu-icon.svg"
+        }
+      },
+      "/images/icons/back-arrow.svg": {
+        "options": null,
+        "value": {
+          "hashed": "836023b1f7bbfab881d1d922551c53acc8a00b2804f94dc84b8e7e6ecfb12201",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/icons/back-arrow.svg",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/icons/back-arrow.svg"
+        }
+      },
+      "/images/icons/down-arrow.svg": {
+        "options": null,
+        "value": {
+          "hashed": "9f904da4cda9245f3465c7efa9cb828c78795da9f171bb11f137e6542b887ce9",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/icons/down-arrow.svg",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/icons/down-arrow.svg"
+        }
+      },
+      "/images/icons/engineering.svg": {
+        "options": null,
+        "value": {
+          "hashed": "4a7d8a22e375b3c7d80b77502fee28d8a57d7f406c7e36a8af25968d0beed4c5",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/icons/engineering.svg",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/icons/engineering.svg"
+        }
+      },
+      "/images/icons/gold-arrow.svg": {
+        "options": null,
+        "value": {
+          "hashed": "86f202b41087aa44ad5ed7df32b1de69c307ffa03ad5f52e36f612308951db9a",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/icons/gold-arrow.svg",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/icons/gold-arrow.svg"
+        }
+      },
+      "/images/icons/magnifying-glass.svg": {
+        "options": null,
+        "value": {
+          "hashed": "5ae82e72a7be2c5276d093f6d52b559a92c4f334549e5f9c73286b6a15ec4bc2",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/icons/magnifying-glass.svg",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/icons/magnifying-glass.svg"
+        }
+      },
+      "/images/icons/strategy.svg": {
+        "options": null,
+        "value": {
+          "hashed": "de1c9b12072ab4e1268b5431fa03b834740baab95431f50a0b951da5d9bb0c7c",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/icons/strategy.svg",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/icons/strategy.svg"
+        }
+      },
+      "/images/icons/wireframe.svg": {
+        "options": null,
+        "value": {
+          "hashed": "5c3cc5649bc421bd827a10a2d45e2de603c4db5bf594a9ad0845da856dea5031",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/icons/wireframe.svg",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/icons/wireframe.svg"
+        }
+      },
+      "/images/mikeking_logo.svg": {
+        "options": null,
+        "value": {
+          "hashed": "f804c51545756ed480b195feeb09d9f5dbc70452b304dc1d1829e61891559327",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/mikeking_logo.svg",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/mikeking_logo.svg"
+        }
+      },
+      "/images/mikeking_logo_icon.svg": {
+        "options": null,
+        "value": {
+          "hashed": "d3479204a9eeac25de25d9a8df84c8c28b76eabd39ea9bc64df199433cc7fa3d",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/mikeking_logo_icon.svg",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/mikeking_logo_icon.svg"
+        }
+      },
+      "/images/mikeking_logo_icon.white.svg": {
+        "options": null,
+        "value": {
+          "hashed": "1ba78bffe43513bf635fe72247fba9bded789f118a87f0a7972178337d21bfec",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/mikeking_logo_icon.white.svg",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/mikeking_logo_icon.white.svg"
+        }
+      },
+      "/images/mikekingio_screenshot.png": {
+        "options": null,
+        "value": {
+          "hashed": "d3b5fb5f574790705223e95fa97614c88972ff81f830b03e1f633b8004385d38",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/images/mikekingio_screenshot.png",
+            "static_filter": {}
+          },
+          "pod_path": "/static/images/mikekingio_screenshot.png"
+        }
+      },
+      "/script.js": {
+        "options": null,
+        "value": {
+          "hashed": "6be449c22e5c13307a04b299fd48e74ef485ff691158d1663cc1beb8fed6e6ba",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/script.js",
+            "static_filter": {}
+          },
+          "pod_path": "/static/script.js"
+        }
+      },
+      "/sitemap.xml": {
+        "options": null,
+        "value": {
+          "hashed": null,
+          "kind": "sitemap",
+          "meta": {
+            "collections": null,
+            "filters": null,
+            "locales": null,
+            "path": "/sitemap.xml",
+            "template": null
+          },
+          "pod_path": null
+        }
+      },
+      "/style.css": {
+        "options": null,
+        "value": {
+          "hashed": "6318bc0795f1f586208dc749a7d293b2c9868c8a3dfc79ef7991a35b62462568",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/style.css",
+            "static_filter": {}
+          },
+          "pod_path": "/static/style.css"
+        }
+      },
+      "/videos/mobipcs/mobipcs_ohana-plans-converted-1200.jpg": {
+        "options": null,
+        "value": {
+          "hashed": "b817fa867d57d133cb5aa3402c6073ec0730a7804f2870a57a7ae6611e9998b3",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/videos/mobipcs/mobipcs_ohana-plans-converted-1200.jpg",
+            "static_filter": {}
+          },
+          "pod_path": "/static/videos/mobipcs/mobipcs_ohana-plans-converted-1200.jpg"
+        }
+      },
+      "/videos/mobipcs/mobipcs_ohana-plans-converted-1200.mp4": {
+        "options": null,
+        "value": {
+          "hashed": "e3dfc1aa15b6ce275f6665f436373c250d0aaff9e2dc264b8fd0c19ff4e8c80f",
+          "kind": "static",
+          "meta": {
+            "fingerprinted": false,
+            "locale": null,
+            "localization": null,
+            "localized": false,
+            "path_filter": {
+              "ignored": [
+                "^.*/\\.[^/]*$"
+              ],
+              "included": []
+            },
+            "pod_path": "/static/videos/mobipcs/mobipcs_ohana-plans-converted-1200.mp4",
+            "static_filter": {}
+          },
+          "pod_path": "/static/videos/mobipcs/mobipcs_ohana-plans-converted-1200.mp4"
+        }
+      }
+    }
+  },
+  "dynamic": {},
+  "version": 1
+}
