@@ -113,6 +113,6 @@ deployments:
     destination: "git"
     repo: "https://github.com/micjamking/micjamking.github.io.git"
     branch: "master"
-
-  env:
-    host: mikeking.io
+    env:
+      host: mikeking.io
+      scheme: https
